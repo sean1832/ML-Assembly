@@ -885,20 +885,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1cdaf69be704f9ab852c02a229c786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timberLengths: []
-  timberNames: []
-  wallXScale: 5
-  wallYScale: 3
-  maxNogging: 0.45
-  timberWidth: 0.045
-  timberDepth: 0.09
-  lintelHeight: 0.18
-  minDoorHeight: 1.8
+  TimberLengths: []
+  TimberNames: []
+  WallXScale: 0
+  WallYScale: 0
+  MaxNogging: 0.45
+  TimberWidth: 0.045
+  TimberDepth: 0.09
+  LintelHeight: 0.18
+  MinDoorHeight: 1.8
   Openings: []
   Gaps: []
-  numDoors: 1
-  numWindows: 1
-  timberLengthsText: {fileID: 78517109}
+  NumDoors: 0
+  NumWindows: 0
+  TimberLengthsText: {fileID: 0}
 --- !u!4 &84776454
 Transform:
   m_ObjectHideFlags: 0
@@ -2345,7 +2345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: -31.28}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: -72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
