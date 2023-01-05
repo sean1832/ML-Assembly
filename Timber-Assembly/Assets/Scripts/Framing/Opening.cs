@@ -16,7 +16,6 @@ public class Opening
     public int oldNumStuds;
     public List<GameObject> Vertical;
     public List<GameObject> Horizontal;
-    public GameObject boundingBox;
 
     public Opening(string type, float Xpos, float Ypos, float width, float height, int studs)
     {
