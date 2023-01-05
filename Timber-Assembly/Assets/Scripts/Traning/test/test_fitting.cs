@@ -64,7 +64,7 @@ public class test_fitting : MonoBehaviour
         // assign salvaged timbers
         foreach (var timberData in _timberSalvageData)
         {
-
+            if (timberData[0] == string.Empty) break;
             string name = timberData[0];
             float length = float.Parse(timberData[1]);
 
@@ -76,22 +76,42 @@ public class test_fitting : MonoBehaviour
             };
 
             _timberSalvage.Add(element);
+
         }
 
-        foreach (var timberTarget in _timberTargets)
-        {
-            foreach (var salvagedTimber in _timberSalvage)
-            {
-
-            }
-        }
+        List<TimberElement> matchElements = SoloMatch(_timberTargets, _timberSalvage);
         stop = true;
     }
 
-    private static GameObject CreateObject(string name)
+    // solo fitting
+    private static List<TimberElement> SoloMatch(List<TimberElement> targets, List<TimberElement> salvagedTimbers)
     {
-        GameObject obj = new GameObject(name);
-        return obj;
+        List<TimberElement> matchElements = new List<TimberElement>();
+
+        foreach (var timberTarget in targets)
+        {
+            foreach (var salvaged in salvagedTimbers)
+            {
+                float margin = 0.05f; // 5%
+                float SalvagedLength = salvaged.Length;
+                float SalvagedMax = SalvagedLength + SalvagedLength * margin;
+                float SalvagedMin = SalvagedLength - SalvagedLength * margin;
+
+                if (timberTarget.Length >= SalvagedMin && timberTarget.Length <= SalvagedMax && !salvaged.IsFitted)
+                {
+                    timberTarget.IsFitted = true;
+                    timberTarget.FittedSalvageNames = new List<string>(){salvaged.Name};
+
+                    salvaged.IsFitted = true;
+
+                    matchElements.Add(timberTarget);
+
+                    print($"match!   [{timberTarget.Name}] with [{salvaged.Name}]");
+                    break; // if match found, exit inner loop
+                }
+            }
+        }
+        return matchElements;
     }
 
     private static List<GameObject> GetChildren(GameObject parent, GameObject filter = null, string filterName = null)
