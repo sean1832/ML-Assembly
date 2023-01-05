@@ -8,5 +8,6 @@ public class TimberElement
     public string Name { get; set; }
     public float Length { get; set; }
     public bool IsFitted { get; set; }
+    public List<string> FittedSalvageNames { get; set; }
     public string TimberType { get; set; }
 }
