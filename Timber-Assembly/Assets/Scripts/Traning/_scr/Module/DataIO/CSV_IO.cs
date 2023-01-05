@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class CSV_IO
+public class CSV_IO : MonoBehaviour
 {
     public static List<string[]> Read(string path)
     {
