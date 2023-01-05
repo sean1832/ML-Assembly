@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CSV_IO
 {
-    static List<string[]> Read(string path)
+    public static List<string[]> Read(string path)
     {
         try
         {
