@@ -38,6 +38,7 @@ public class DummyDataGenerator: MonoBehaviour
         }
         string[] lines = csvBuilder.ToString().Split(new[] { Environment.NewLine }, StringSplitOptions.None); ;
 
+        // write to file
         File.WriteAllLines(_path, lines);
     }
 }
