@@ -3,16 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
+using System;
+using UnityEditor.VersionControl;
 
 public class UdpServer : MonoBehaviour
 {
-    public static void UdpSender(string data, string address, int port)
+    public static void Sender(string message, IPEndPoint endPoint, UdpClient client)
     {
-        using (var client = new UdpClient(port))
+        try
         {
-            byte[] dataBytes = System.Text.Encoding.UTF8.GetBytes(data);
-            int dataSize = dataBytes.Length;
-            client.Send(dataBytes, dataSize, address, port);
+            // encode string to UTF8-coded bytes
+            byte[] data = Encoding.UTF8.GetBytes(message);
+
+            // send the data
+            client.Send(data, data.Length, endPoint);
+
+        }
+        catch (Exception err)
+        {
+            print($"UDP Send error: {err.ToString()}");
         }
     }
 }
