@@ -14,7 +14,6 @@ public class Gh_IO : MonoBehaviour
     [SerializeField] private string IP = "127.0.0.1";
     [SerializeField] private int sendPort = 6000;
     [SerializeField] private int receivePort = 6001;
-    [SerializeField] private string message = "hi, this message is from unity";
 
     private IPEndPoint _endPoint;
     private UdpClient _client;
@@ -25,6 +24,12 @@ public class Gh_IO : MonoBehaviour
     private Thread receiveThread;
     private string lastReceivedMessage = "";
     private string previousMessage = "";
+
+
+    // public fields
+    public string ghMessage;
+    public string unityMessage;
+
 
 
     // Start is called before the first frame update
@@ -50,13 +55,14 @@ public class Gh_IO : MonoBehaviour
     {
         if (send)
         {
-            UdpServer.Sender(message,_endPoint, _client);
+            UdpServer.Sender(ghMessage, _endPoint, _client);
         }
 
 
         if (_messageChanged)
         {
             print($"Receiving message: [{lastReceivedMessage}]");
+            unityMessage = lastReceivedMessage;
             _messageChanged = false;
         }
     }
