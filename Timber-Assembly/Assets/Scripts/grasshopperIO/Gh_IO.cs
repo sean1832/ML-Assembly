@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class test_frameConnection : MonoBehaviour
+public class Gh_IO : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
         
     }
 

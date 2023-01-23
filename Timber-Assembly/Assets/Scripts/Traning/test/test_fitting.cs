@@ -24,7 +24,7 @@ public class test_fitting : MonoBehaviour
     void Start()
     {
         _frame = gameObject.GetComponent<FramingSystem>();
-        Transform framingParent = _frame.framingParent;
+        Transform framingParent = _frame.framingParent; // access framing system public fields
         _frameParentObj = framingParent.GameObject();
         _timberSalvageData = CSV_IO.Read(@"Assets\Data\data.csv"); // csv: (name, length)
 
