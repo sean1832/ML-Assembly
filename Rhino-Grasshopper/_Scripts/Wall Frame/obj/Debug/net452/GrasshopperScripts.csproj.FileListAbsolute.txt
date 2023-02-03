@@ -1,0 +1,5 @@
+E:\02-school\02-Master of Architecture\2022\sem2.5\Research Assistance_ML_Salvage\_Scripts\Grasshopper\Wall Frame\obj\Debug\net452\GrasshopperScripts.csproj.AssemblyReference.cache
+E:\02-school\02-Master of Architecture\2022\sem2.5\Research Assistance_ML_Salvage\_Scripts\Grasshopper\Wall Frame\obj\Debug\net452\GrasshopperScripts.GeneratedMSBuildEditorConfig.editorconfig
+E:\02-school\02-Master of Architecture\2022\sem2.5\Research Assistance_ML_Salvage\_Scripts\Grasshopper\Wall Frame\obj\Debug\net452\GrasshopperScripts.AssemblyInfoInputs.cache
+E:\02-school\02-Master of Architecture\2022\sem2.5\Research Assistance_ML_Salvage\_Scripts\Grasshopper\Wall Frame\obj\Debug\net452\GrasshopperScripts.AssemblyInfo.cs
+E:\02-school\02-Master of Architecture\2022\sem2.5\Research Assistance_ML_Salvage\_Scripts\Grasshopper\Wall Frame\obj\Debug\net452\GrasshopperScripts.csproj.CoreCompileInputs.cache
