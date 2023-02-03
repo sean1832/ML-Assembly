@@ -1,0 +1,52 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.5.2": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.5.2": []
+  },
+  "packageFolders": {
+    "C:\\Users\\sean1\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "E:\\02-school\\02-Master of Architecture\\2022\\sem2.5\\Research Assistance_ML_Salvage\\_Scripts\\Grasshopper\\Wall Frame\\GrasshopperScripts.csproj",
+      "projectName": "GrasshopperScripts",
+      "projectPath": "E:\\02-school\\02-Master of Architecture\\2022\\sem2.5\\Research Assistance_ML_Salvage\\_Scripts\\Grasshopper\\Wall Frame\\GrasshopperScripts.csproj",
+      "packagesPath": "C:\\Users\\sean1\\.nuget\\packages\\",
+      "outputPath": "E:\\02-school\\02-Master of Architecture\\2022\\sem2.5\\Research Assistance_ML_Salvage\\_Scripts\\Grasshopper\\Wall Frame\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\sean1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net452"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net452": {
+          "targetAlias": "net452",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net452": {
+        "targetAlias": "net452",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

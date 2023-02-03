@@ -25,40 +25,40 @@ public class UdpServer : MonoBehaviour
         }
     }
 
-    public static (string, bool) Receiver(int port, bool changeStatus)
-    {
-        UdpClient client = new UdpClient(port);
-        string lastReceivedMessage = "";
-        string previousMessage = "";
-        bool messageChanged = changeStatus;
-        while (true)
-        {
-            try
-            {
-                // receive bytes
-                IPEndPoint IP = new IPEndPoint(IPAddress.Any, 0);
-                byte[] data = client.Receive(ref IP);
+    //public static (string, bool) Receiver(int port, bool changeStatus)
+    //{
+    //    UdpClient client = new UdpClient(port);
+    //    string lastReceivedMessage = "";
+    //    string previousMessage = "";
+    //    bool messageChanged = changeStatus;
+    //    while (true)
+    //    {
+    //        try
+    //        {
+    //            // receive bytes
+    //            IPEndPoint IP = new IPEndPoint(IPAddress.Any, 0);
+    //            byte[] data = client.Receive(ref IP);
 
-                // decode
-                string message = Encoding.UTF8.GetString(data);
+    //            // decode
+    //            string message = Encoding.UTF8.GetString(data);
 
-                // manage changes, only update if change happens, else do nothing
-                previousMessage = lastReceivedMessage;
-                lastReceivedMessage = message;
-                if (lastReceivedMessage != previousMessage)
-                {
-                    messageChanged = true;
+    //            // manage changes, only update if change happens, else do nothing
+    //            previousMessage = lastReceivedMessage;
+    //            lastReceivedMessage = message;
+    //            if (lastReceivedMessage != previousMessage)
+    //            {
+    //                messageChanged = true;
 
-                    // show message
-                    print($"received message: [{message}]");
-                }
+    //                // show message
+    //                print($"received message: [{message}]");
+    //            }
 
-                return (lastReceivedMessage, messageChanged);
-            }
-            catch (Exception ex)
-            {
-                print($"UDP Receiver error: {ex.ToString()}");
-            }
-        }
-    }
+    //            return (lastReceivedMessage, messageChanged);
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            print($"UDP Receiver error: {ex.ToString()}");
+    //        }
+    //    }
+    //}
 }
