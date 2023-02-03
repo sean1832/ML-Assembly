@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\02-school\\02-Master of Architecture\\2022\\sem2.5\\Research Assistance_ML_Salvage\\_Scripts\\Grasshopper\\Wall Frame\\GrasshopperScripts.csproj": {}
+    "F:\\01-EngineProjects\\02-Unity\\01-Prototype\\Reserach-Assistance-ML-Assembly\\Rhino-Grasshopper\\_Scripts\\Wall Frame\\GrasshopperScripts.csproj": {}
   },
   "projects": {
-    "E:\\02-school\\02-Master of Architecture\\2022\\sem2.5\\Research Assistance_ML_Salvage\\_Scripts\\Grasshopper\\Wall Frame\\GrasshopperScripts.csproj": {
+    "F:\\01-EngineProjects\\02-Unity\\01-Prototype\\Reserach-Assistance-ML-Assembly\\Rhino-Grasshopper\\_Scripts\\Wall Frame\\GrasshopperScripts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\02-school\\02-Master of Architecture\\2022\\sem2.5\\Research Assistance_ML_Salvage\\_Scripts\\Grasshopper\\Wall Frame\\GrasshopperScripts.csproj",
+        "projectUniqueName": "F:\\01-EngineProjects\\02-Unity\\01-Prototype\\Reserach-Assistance-ML-Assembly\\Rhino-Grasshopper\\_Scripts\\Wall Frame\\GrasshopperScripts.csproj",
         "projectName": "GrasshopperScripts",
-        "projectPath": "E:\\02-school\\02-Master of Architecture\\2022\\sem2.5\\Research Assistance_ML_Salvage\\_Scripts\\Grasshopper\\Wall Frame\\GrasshopperScripts.csproj",
+        "projectPath": "F:\\01-EngineProjects\\02-Unity\\01-Prototype\\Reserach-Assistance-ML-Assembly\\Rhino-Grasshopper\\_Scripts\\Wall Frame\\GrasshopperScripts.csproj",
         "packagesPath": "C:\\Users\\sean1\\.nuget\\packages\\",
-        "outputPath": "E:\\02-school\\02-Master of Architecture\\2022\\sem2.5\\Research Assistance_ML_Salvage\\_Scripts\\Grasshopper\\Wall Frame\\obj\\",
+        "outputPath": "F:\\01-EngineProjects\\02-Unity\\01-Prototype\\Reserach-Assistance-ML-Assembly\\Rhino-Grasshopper\\_Scripts\\Wall Frame\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sean1\\AppData\\Roaming\\NuGet\\NuGet.Config",

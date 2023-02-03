@@ -53,7 +53,7 @@ public abstract class Script_Instance_b29af : GH_ScriptInstance
   /// they will have a default value.
   /// </summary>
   #region Runscript
-  private void RunScript(object refresh, bool write, string path, ref object data)
+  private void RunScript(object refresh, bool write, string dir, ref object data)
   {
     List<string> result = GetAssembly();
 
@@ -61,7 +61,7 @@ public abstract class Script_Instance_b29af : GH_ScriptInstance
 
     if (write)
     {
-      WriteToPath(result, path, "plugin requirements");
+      WriteToPath(result, dir, "plugin requirements");
     }
 
   }
