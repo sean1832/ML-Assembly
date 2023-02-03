@@ -10,14 +10,13 @@ using Grasshopper.Kernel;
 using Grasshopper.Kernel.Data;
 using Grasshopper.Kernel.Types;
 
-using System.CodeDom;
-using System.Linq;
+using System.IO;
 
 
 /// <summary>
 /// This class will be instantiated on demand by the Script component.
 /// </summary>
-public abstract class Script_Instance_8234d : GH_ScriptInstance
+public abstract class Script_Instance_b29af : GH_ScriptInstance
 {
   #region Utility functions
   /// <summary>Print a String to the [Out] Parameter of the Script component.</summary>
@@ -54,82 +53,55 @@ public abstract class Script_Instance_8234d : GH_ScriptInstance
   /// they will have a default value.
   /// </summary>
   #region Runscript
-  private void RunScript(List<string> datas, int SalvageTimberTotal, ref object score)
+  private void RunScript(object refresh, bool write, string dir, ref object data)
   {
-    List<double> timberALs = new List<double>();
-    List<double> timberBLs = new List<double>();
-    List<double> timberBLs_Clean = new List<double>();
-    List<double> offcuts = new List<double>();
-    DeSerialize(datas, out timberALs, out timberBLs, out offcuts);
+    List<string> result = GetAssembly();
 
-    // count all salvage timber that were used
-    int salvageTimberUsedCount = timberALs.Count;
-    foreach (double timberB in timberBLs)
+    data = result;
+
+    if (write)
     {
-      if (!double.IsNaN(timberB))
-      {
-        salvageTimberUsedCount ++;
-        timberBLs_Clean.Add(timberB);
-      }
+      WriteToPath(result, dir, "plugin requirements");
     }
-    // total offcuts calculation
-    double totalOffcuts = offcuts.Sum();
 
-    // total salvage timber length
-    double totalSalvageLength = timberALs.Sum() + timberBLs_Clean.Sum();
-
-    // length usage efficiency
-    double materialEfficiency = totalOffcuts/ totalSalvageLength ;
-    materialEfficiency = (1.0 / materialEfficiency) * 10;
-
-    // labor efficiency
-    int offcutsCount = CountOffcuts(offcuts);
-    double laborEfficiency = (double)datas.Count/ (double)offcutsCount * 10;
-
-
-    double calculation = (laborEfficiency / 2.0) + (materialEfficiency / 2.0);
-
-
-    score = Math.Round(calculation, 5).ToString();
   }
   #endregion
   #region Additional
-
-  private void DeSerialize(List<string> datas, out List<double> timberALs, out List<double> timberBLs, out List<double> offcuts)
+  private List<string> GetAssembly()
   {
-    timberALs = new List<double>();
-    timberBLs = new List<double>();
-    offcuts = new List<double>();
-    foreach (var data in datas)
+    Dictionary<string, string> asms = new Dictionary<string, string>();
+    List<string> results = new List<string>();
+    foreach (IGH_DocumentObject obj in Grasshopper.Instances.ActiveCanvas.Document.Objects)
     {
-      string[] offcutsData = data.Split(new string[]{"|", "|"}, StringSplitOptions.RemoveEmptyEntries);
-      double offcut = double.Parse(offcutsData[0]);
-      offcuts.Add(offcut);
+      GH_AssemblyInfo asm = Grasshopper.Instances.ComponentServer.FindAssemblyByObject(obj.ComponentGuid);
 
-
-      string[] values = data.Split(new string[]{"<", ">"}, StringSplitOptions.RemoveEmptyEntries);
-      double timberA = double.Parse(values[1].Split(',')[1]);
-      double timberB = Double.NaN;
-      if (values.Length == 3)
+      if (asm != null && !asm.IsCoreLibrary)
       {
-        timberB = double.Parse(values[2].Split(',')[1]);
+        asms[asm.Name] = asm.Version;
       }
-      timberALs.Add(timberA);
-      timberBLs.Add(timberB);
     }
+
+    foreach (KeyValuePair<string, string> pair in asms)
+    {
+      if (!string.IsNullOrEmpty(pair.Key))
+      {
+        results.Add(pair.Key + " : " + pair.Value);
+      }
+    }
+    return results;
   }
 
-  private int CountOffcuts(List<double> offcuts)
+  private static void WriteToPath(List<string> contents ,string dir, string fileName, string extension = ".txt")
   {
-    int count = 0;
-    foreach (var cut in offcuts)
+    dir = Path.GetDirectoryName(dir);
+    string path = dir + "/" + fileName + extension;
+    using (StreamWriter writer = new StreamWriter(path))
     {
-      if (cut != 0)
+      foreach (var content in contents)
       {
-        count++;
+        writer.WriteLine(content);
       }
     }
-    return count;
   }
   #endregion
 }
