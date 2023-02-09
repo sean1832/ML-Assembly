@@ -243,7 +243,7 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
     Dictionary<string, double> doubleRemainSal = new Dictionary<string, double>();
 
     // single matching
-    Dictionary<string, string> singleMatchedDict = singleMatch(
+    Dictionary<string, string> singleMatchedDict = SingleMatch(
       targetDict,
       salvageDict,
       tolerance,
@@ -304,13 +304,14 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
 
   private static double CalculateOffcuts(double target, double salvage)
   {
-    double offcuts = Math.Abs(target - salvage);
+    double offcuts = salvage - target;
     return Math.Round(offcuts, 2);
   }
 
   private static Dictionary<string, string> FindRestComb(Dictionary<string, double> targets, Dictionary<string, double> salvages)
   {
     Dictionary<string, string> foundPairsDict = new Dictionary<string, string>();
+    
 
     List<string> matchList = new List<string>();
 
@@ -321,10 +322,11 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
       string targetName = target.Key;
 
       Dictionary<string, double> pairs = new Dictionary<string, double>();
-
+      
       foreach (var salvage in salvages)
       {
-        double difference = Math.Abs(targetValue - salvage.Value);
+        double difference = salvage.Value - targetValue;
+        if (difference < 0) continue;
         pairs.Add(salvage.Key, difference);
       }
 
@@ -456,7 +458,7 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
   }
 
 
-  private static Dictionary<string, string> singleMatch(Dictionary<string, double> targets, Dictionary<string, double> salvages, double tolerance, out Dictionary<string, double> remainTargets, out Dictionary<string, double> remainSal)
+  private static Dictionary<string, string> SingleMatch(Dictionary<string, double> targets, Dictionary<string, double> salvages, double tolerance, out Dictionary<string, double> remainTargets, out Dictionary<string, double> remainSal)
   {
     remainTargets = new Dictionary<string, double>();
     remainSal = new Dictionary<string, double>();
@@ -528,17 +530,33 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
     value = double.Parse(salADataSplit[1]);
   }
 
-  private static bool MatchSolo(double a, double target, double tolerance)
+  private static bool MatchSolo(double salvage, double target, double tolerance)
   {
-    double difference = Math.Abs(a - target);
-    return difference <= tolerance;
+    double difference = salvage - target;
+
+    if (difference < 0)
+    {
+      return false;
+    }
+    else
+    {
+      return difference <= tolerance;
+    }
   }
 
   private static bool MatchDouble(double a, double b, double target, double tolerance)
   {
     double sum = a + b;
-    double difference = Math.Abs(sum - target);
-    return difference < tolerance;
+    double difference = sum - target;
+
+    if (difference < 0)
+    {
+      return false;
+    }
+    else
+    {
+      return difference < tolerance;
+    }
   }
 
   private static string Serializer(string tarName, double tarLen, string salAName, double salAVal)
