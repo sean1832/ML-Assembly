@@ -290,16 +290,35 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
       }
     }
 
-    Dictionary<string, string> restComb = FindRestComb(doubleRemainTargets, doubleRemainSal);
+    Dictionary<string, Tuple<string, double, bool>> restComb = FindRestComb(doubleRemainTargets, doubleRemainSal, tolerance);
     foreach (var match in restComb)
     {
-      string dataStr = Serializer(match.Key, targetDict[match.Key], match.Value, salvageDict[match.Value]);
-      double offcuts = CalculateOffcuts(targetDict[match.Key], salvageDict[match.Value]);
+      double originalSalLength = salvageDict[match.Value.Item1];
+      double cutLength = originalSalLength - match.Value.Item2;
+      string dataStr = Serializer(match.Key, targetDict[match.Key], match.Value.Item1, match.Value.Item2, match.Value.Item3, cutLength);
+      double offcuts = CalculateOffcuts(targetDict[match.Key], match.Value.Item2);
       dataStr = "|" + offcuts + "|" + "{elseCut}" + dataStr;
       serializedData.Add(dataStr);
     }
 
     return serializedData;
+  }
+
+  private static string Serializer(string tarName, double tarLen, string salName, double salLen, bool isCut, double cutLength)
+  {
+    if (isCut)
+    {
+      string target = "(" + tarName + "," + tarLen + ")";
+      string salvage = "<" + salName + "," + salLen + ">";
+      string cut = "[" + Math.Round(cutLength, 2) + "]";
+      return target + salvage + cut;
+    }
+    else
+    {
+      string target = "(" + tarName + "," + tarLen + ")";
+      string salvage = "<" + salName + "," + salLen + ">";
+      return target + salvage;
+    }
   }
 
   private static double CalculateOffcuts(double target, double salvage)
@@ -308,9 +327,12 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
     return Math.Round(offcuts, 2);
   }
 
-  private static Dictionary<string, string> FindRestComb(Dictionary<string, double> targets, Dictionary<string, double> salvages)
+  private static Dictionary<string, Tuple<string, double, bool>> FindRestComb(Dictionary<string, double> targets, Dictionary<string, double> salvages, double tolerance)
   {
-    Dictionary<string, string> foundPairsDict = new Dictionary<string, string>();
+    // (targetName, <SalvageName, lengthLeft, isCut>)
+    Dictionary<string, Tuple<string, double, bool>> resultsDictionary = new Dictionary<string, Tuple<string, double, bool>>();
+
+    Dictionary<string, Tuple<string, double>> foundPairsDict = new Dictionary<string, Tuple<string, double>>();
     
 
     List<string> matchList = new List<string>();
@@ -340,57 +362,46 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
       var smallestPair = sortedPairs.ElementAt(elementIdx);
 
       matchList.Add(smallestPair.Key);
-      foundPairsDict.Add(targetName, smallestPair.Key);
+      foundPairsDict.Add(targetName, Tuple.Create(smallestPair.Key, smallestPair.Value));
     }
 
-    return foundPairsDict;
+
+    foreach (var pair in foundPairsDict)
+    {
+      string targetName = pair.Key;
+      double targetLength = targets[pair.Key];
+      string salvageName = pair.Value.Item1;
+      double salvageLength = pair.Value.Item2;
+      double difference = targetLength - salvageLength;
+      if (difference >= 0.3)
+      {
+        double cutLength = difference;
+        salvageLength = targetLength;
+        foreach (var newTarget in targets)
+        {
+          bool matched = MatchSolo(cutLength, newTarget.Value, tolerance);
+          if (matched)
+          {
+            // Check if the key already exists in the dictionary before adding it
+            if (resultsDictionary.ContainsKey(targetName)) continue;
+            resultsDictionary.Add(targetName, Tuple.Create(salvageName, salvageLength, true));
+            if (resultsDictionary.ContainsKey(newTarget.Key)) continue;
+            resultsDictionary.Add(newTarget.Key, Tuple.Create(salvageName, cutLength, true));
+            break;
+          }
+        }
+      }
+
+      else
+      {
+        // Check if the key already exists in the dictionary before adding it
+        if (resultsDictionary.ContainsKey(targetName)) continue;
+        resultsDictionary.Add(targetName, Tuple.Create(salvageName, salvageLength, false));
+      }
+    }
+
+    return resultsDictionary;
   }
-
-
-  //private static Dictionary<string, Tuple<string, string>> DoubleMatch(Dictionary<string, double> targets, Dictionary<string, double> salvages, double tolerance)
-  //{
-  //  Dictionary<string, Tuple<string, string>> matchedID = new Dictionary<string, Tuple<string, string>>();
-
-  //  List<string> matchList = new List<string>();
-
-  //  //foreach (var target in targets)
-  //  for (int z = 0; z < targets.Count; z++)
-  //  {
-  //    KeyValuePair<string, double> target = targets.ElementAt(z);
-
-  //    for (int i = 0; i < salvages.Count; i++)
-  //    {
-  //      string timberA_Name = salvages.Keys.ElementAt(i);
-  //      double timberA_Val = salvages.Values.ElementAt(i);
-
-  //      for (int j = i + 1; j < salvages.Count; j++)
-  //      {
-  //        string timberB_Name = salvages.Keys.ElementAt(j);
-  //        double timberB_Val = salvages.Values.ElementAt(j);
-
-  //        bool matched = MatchDouble(timberA_Val, timberB_Val, target.Value, tolerance);
-  //        bool inListA = matchList.Contains(timberA_Name);
-  //        bool inListB = matchList.Contains(timberB_Name);
-
-
-  //        if (!matched || inListA || inListB) continue;
-  //        matchList.Add(timberA_Name);
-  //        matchList.Add(timberB_Name);
-
-  //        Tuple<string, string> pairs = Tuple.Create(timberA_Name, timberB_Name);
-  //        matchedID.Add(target.Key, pairs);
-
-  //        // break compare loop
-  //        goto CompareExit;
-  //      }
-  //    }
-  //  // exit compare loop
-  //  CompareExit:
-  //    ;
-  //  }
-
-  //  return matchedID;
-  //}
 
 
 
