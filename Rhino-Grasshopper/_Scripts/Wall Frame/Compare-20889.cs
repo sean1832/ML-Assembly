@@ -67,8 +67,6 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
   #region Additional
   private List<string> FindCombinationBinary(List<double> targetLengths, List<string> salData, double tolerance, bool doubleMatch)
   {
-    List<string> matchedList = new List<string>();
-
     List<string> serializedData = new List<string>();
 
     Dictionary<string, double> targetDict = DeSerializer(targetLengths);
