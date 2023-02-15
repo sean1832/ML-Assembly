@@ -130,10 +130,24 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
     Dictionary<string, Tuple<string, double, bool>> restComb = FindRestComb(doubleRemainTargets, doubleRemainSal, tolerance);
     foreach (var match in restComb)
     {
-      double originalSalLength = salvageDict[match.Value.Item1];
+      
+      
+
+      // target
+      string targetName = match.Key;
+      double targetLength = targetDict[targetName];
+
+      //salvage
+      string salvageName = match.Value.Item1;
+      double salvageLength = match.Value.Item2;
+      double originalSalLength = salvageDict[salvageName];
+
+      // cut
+      bool isCut = match.Value.Item3;
       double cutLength = originalSalLength - match.Value.Item2;
-      string dataStr = Serializer(match.Key, targetDict[match.Key], match.Value.Item1, match.Value.Item2, match.Value.Item3, cutLength);
-      double offcuts = CalculateOffcuts(targetDict[match.Key], match.Value.Item2);
+
+      string dataStr = Serializer(targetName, targetLength, salvageName, salvageLength, isCut, cutLength);
+      double offcuts = CalculateOffcuts(targetLength, salvageLength);
       dataStr = "|" + offcuts + "|" + "{elseCut}" + dataStr;
       serializedData.Add(dataStr);
     }
