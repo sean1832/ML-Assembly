@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using System.Drawing.Printing;
 using Rhino;
 using Rhino.Geometry;
 
@@ -130,9 +130,6 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
     Dictionary<string, Tuple<string, double, bool>> restComb = FindRestComb(doubleRemainTargets, doubleRemainSal, tolerance);
     foreach (var match in restComb)
     {
-      
-      
-
       // target
       string targetName = match.Key;
       double targetLength = targetDict[targetName];
@@ -180,7 +177,7 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
 
   private static Dictionary<string, Tuple<string, double, bool>> FindRestComb(Dictionary<string, double> targets, Dictionary<string, double> salvages, double tolerance)
   {
-    // (targetName, <SalvageName, lengthLeft, isCut>)
+    // (targetName, <SalvageName, lengthRemain, isCut>)
     Dictionary<string, Tuple<string, double, bool>> resultsDictionary = new Dictionary<string, Tuple<string, double, bool>>();
 
     Dictionary<string, Tuple<string, double>> foundPairsDict = new Dictionary<string, Tuple<string, double>>();
@@ -216,30 +213,26 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
       foundPairsDict.Add(targetName, Tuple.Create(smallestPair.Key, smallestPair.Value));
     }
 
-
+    
     foreach (var pair in foundPairsDict)
     {
       string targetName = pair.Key;
       double targetLength = targets[pair.Key];
       string salvageName = pair.Value.Item1;
       double salvageLength = pair.Value.Item2;
-      double difference = targetLength - salvageLength;
+      double difference = salvageLength - targetLength;
       if (difference >= 0.3)
       {
         double cutLength = difference;
         salvageLength = targetLength;
         foreach (var newTarget in targets)
         {
-          bool matched = MatchSolo(cutLength, newTarget.Value, tolerance);
-          if (matched)
-          {
-            // Check if the key already exists in the dictionary before adding it
-            if (resultsDictionary.ContainsKey(targetName)) continue;
-            resultsDictionary.Add(targetName, Tuple.Create(salvageName, salvageLength, true));
-            if (resultsDictionary.ContainsKey(newTarget.Key)) continue;
-            resultsDictionary.Add(newTarget.Key, Tuple.Create(salvageName, cutLength, true));
-            break;
-          }
+          // Check if the key already exists in the dictionary before adding it
+          if (resultsDictionary.ContainsKey(targetName)) continue;
+          resultsDictionary.Add(targetName, Tuple.Create(salvageName, salvageLength, true));
+          if (resultsDictionary.ContainsKey(newTarget.Key)) continue;
+          resultsDictionary.Add(newTarget.Key, Tuple.Create(salvageName, cutLength, true));
+          break;
         }
       }
 
@@ -247,6 +240,7 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
       {
         // Check if the key already exists in the dictionary before adding it
         if (resultsDictionary.ContainsKey(targetName)) continue;
+        if (difference < 0) continue;
         resultsDictionary.Add(targetName, Tuple.Create(salvageName, salvageLength, false));
       }
     }
@@ -394,7 +388,9 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
 
   private static bool MatchSolo(double salvage, double target, double tolerance)
   {
-    double difference = salvage - target;
+    //double difference = salvage - target;
+    double difference = CalculateOffcuts(target, salvage);
+    
 
     if (difference < 0)
     {
