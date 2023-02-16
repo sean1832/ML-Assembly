@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing.Printing;
+
 using Rhino;
 using Rhino.Geometry;
 
@@ -10,6 +10,7 @@ using Grasshopper.Kernel;
 using Grasshopper.Kernel.Data;
 using Grasshopper.Kernel.Types;
 
+using System.Drawing.Printing;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Threading.Tasks;
