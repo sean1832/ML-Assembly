@@ -222,28 +222,25 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
       string salvageName = pair.Value.Item1;
       double salvageLength = pair.Value.Item2;
       double difference = salvageLength - targetLength;
-      if (difference >= 0.3)
-      {
-        double cutLength = difference;
-        salvageLength = targetLength;
-        foreach (var newTarget in targets)
-        {
-          // Check if the key already exists in the dictionary before adding it
-          if (resultsDictionary.ContainsKey(targetName)) continue;
-          resultsDictionary.Add(targetName, Tuple.Create(salvageName, salvageLength, true));
-          if (resultsDictionary.ContainsKey(newTarget.Key)) continue;
-          resultsDictionary.Add(newTarget.Key, Tuple.Create(salvageName, cutLength, true));
-          break;
-        }
-      }
 
-      else
+      double cutLength = difference;
+      salvageLength = targetLength;
+
+      if (resultsDictionary.ContainsKey(targetName)) continue;
+      resultsDictionary.Add(targetName, Tuple.Create(salvageName, salvageLength, true));
+      foreach (var newTarget in targets)
       {
         // Check if the key already exists in the dictionary before adding it
-        if (resultsDictionary.ContainsKey(targetName)) continue;
-        if (difference < 0) continue;
-        resultsDictionary.Add(targetName, Tuple.Create(salvageName, salvageLength, false));
+
+        if (resultsDictionary.ContainsKey(newTarget.Key)) continue;
+        if (cutLength - newTarget.Value < 0) continue;
+        RhinoApp.WriteLine(newTarget.Key);
+        resultsDictionary.Add(newTarget.Key, Tuple.Create(salvageName, cutLength, true));
+        break;
       }
+
+
+
     }
 
     return resultsDictionary;
