@@ -234,7 +234,6 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
 
         if (resultsDictionary.ContainsKey(newTarget.Key)) continue;
         if (cutLength - newTarget.Value < 0) continue;
-        RhinoApp.WriteLine(newTarget.Key);
         resultsDictionary.Add(newTarget.Key, Tuple.Create(salvageName, cutLength, true));
         break;
       }
