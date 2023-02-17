@@ -27,8 +27,8 @@ public class Gh_IO : MonoBehaviour
 
 
     // public fields
-    public string ghMessage;
-    public string unityMessage;
+    public string msgToGh;
+    public string msgFromGh;
 
 
 
@@ -53,13 +53,13 @@ public class Gh_IO : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UdpServer.Sender(ghMessage, _endPoint, _client);
+        UdpServer.Sender(msgToGh, _endPoint, _client);
 
 
         if (_messageChanged)
         {
             print($"Receiving message: [{lastReceivedMessage}]");
-            unityMessage = lastReceivedMessage;
+            msgFromGh = lastReceivedMessage;
             _messageChanged = false;
         }
     }
