@@ -10,6 +10,7 @@ using Grasshopper.Kernel;
 using Grasshopper.Kernel.Data;
 using Grasshopper.Kernel.Types;
 
+using System.Drawing.Printing;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Threading.Tasks;
@@ -65,172 +66,8 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
   }
   #endregion
   #region Additional
-
-  private List<string> FindCombination(List<double> targetLengths, List<string>salData, double tolerance, bool doubleMatch)
-  {
-    List<string> matchedList = new List<string>();
-
-    List<string> serializedData = new List<string>();
-
-    // iterate through target frames
-    for (int z = 0; z < targetLengths.Count; z++)
-    {
-      var targetLength = targetLengths[z];
-      targetLength = Math.Round(targetLength, 2);
-      var targetName = "Tar" + z;
-
-      // iterate through first salvage timber
-      for (int i = 0; i < salData.Count; i++)
-      {
-        string salAData = salData[i];
-        string[] salADataSplit = salAData.Split(new string[] { "::" }, StringSplitOptions.None);
-        string salAName = salADataSplit[0];
-        double salAValue = double.Parse(salADataSplit[1]);
-
-        // solo pair condition
-        bool inMatchListA = matchedList.Contains(salAName);
-        bool matchedSolo = MatchSolo(salAValue, targetLength, tolerance);
-
-
-        //if (matchedSolo && !inMatchListA && !doubleMatch)
-        if (matchedSolo && !inMatchListA)
-        {
-          matchedList.Add(salAName);
-
-          string dataSolo = Serializer(targetName, targetLength, salAName, salAValue);
-          dataSolo = "{MinCut}" + dataSolo;
-          serializedData.Add(dataSolo);
-
-          // break compare loop
-          break;
-        }
-
-        // double match (heavy)
-        if (!doubleMatch) continue;
-
-        // iterate through second salvage timber
-        for (int j = i + 1; j < salData.Count; j++)
-        {
-          string salBData = salData[j];
-          string[] salBDataSplit = salBData.Split(new string[] { "::" }, StringSplitOptions.None);
-          string salBName = salBDataSplit[0];
-          double salBValue = double.Parse(salBDataSplit[1]);
-
-          // conditions
-          bool matched = MatchDouble(salAValue, salBValue, targetLength, tolerance);
-          bool inMatchListB = matchedList.Contains(salBName);
-
-          // if match
-          if (!matched || inMatchListA || inMatchListB) continue;
-          matchedList.Add(salAName);
-          matchedList.Add(salBName);
-
-          string dataDouble = Serializer(targetName, targetLength, salAName, salAValue, salBName, salBValue);
-          dataDouble = "{MinCut}" + dataDouble;
-          serializedData.Add(dataDouble);
-          // break compare loop
-          goto CompareExit;
-        }
-
-      }
-      // exit compare loop
-      CompareExit:
-        ;
-    }
-
-    return serializedData;
-  }
-
-  private List<string> FindCombinationParallel(List<double> targetLengths, List<string> salData, double tolerance, bool doubleMatch)
-  {
-
-    List<string> matchedSal = new List<string>();
-    List<string> matchedTarget = new List<string>();
-
-    List<string> serializedData = new List<string>();
-    
-    // iterate through target frames
-    for(int z=0; z<targetLengths.Count; z++)
-    {
-      var targetLength = targetLengths[z];
-      targetLength = Math.Round(targetLength, 2);
-      var targetName = "Tar" + z;
-
-      bool breakInner = false;
-
-      Parallel.For(0, salData.Count, (i, stateI) =>
-      {
-        if (breakInner)
-        {
-          stateI.Break();
-        }
-
-        string salAData = salData[i];
-        string salAName;
-        double salAValue;
-        DeSerializer(salAData, out salAValue, out salAName);
-
-
-        // solo pair condition
-        bool inMatchListA = matchedSal.Contains(salAName);
-        bool inMatchTarget = matchedTarget.Contains(targetName);
-        bool matchedSolo = MatchSolo(salAValue, targetLength, tolerance);
-
-
-        //if (matchedSolo && !inMatchListA && !doubleMatch)
-        if (matchedSolo && !inMatchListA && !inMatchTarget)
-        { 
-          matchedSal.Add(salAName);
-          matchedTarget.Add(targetName);
-
-          string dataSolo = Serializer(targetName, targetLength, salAName, salAValue);
-          dataSolo = "{MinCut}" + dataSolo;
-          serializedData.Add(dataSolo);
-
-          // break compare loop
-          stateI.Break();
-        }
-
-        // double match (heavy) ** if not (double Match) continue
-        if (!doubleMatch) return;
-
-        Parallel.For(i + 1, salData.Count, (j, stateJ) =>
-        {
-          string salBData = salData[j];
-          string salBName;
-          double salBValue;
-          DeSerializer(salBData, out salBValue, out salBName);
-
-
-          // conditions
-          bool matched = MatchDouble(salAValue, salBValue, targetLength, tolerance);
-          bool inMatchListB = matchedSal.Contains(salBName);
-
-          // if match
-          if (!matched || inMatchListA || inMatchListB || inMatchTarget) return;
-          matchedSal.Add(salAName);
-          matchedSal.Add(salBName);
-
-          string dataDouble = Serializer(targetName, targetLength, salAName, salAValue, salBName, salBValue);
-          dataDouble = "{MinCut}" + dataDouble;
-          serializedData.Add(dataDouble);
-
-          // break compare loop
-          breakInner = true;
-          stateJ.Break();
-        });
-
-      });
-
-    }
-
-    return serializedData;
-  }
-
   private List<string> FindCombinationBinary(List<double> targetLengths, List<string> salData, double tolerance, bool doubleMatch)
   {
-    List<string> matchedList = new List<string>();
-
     List<string> serializedData = new List<string>();
 
     Dictionary<string, double> targetDict = DeSerializer(targetLengths);
@@ -243,7 +80,7 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
     Dictionary<string, double> doubleRemainSal = new Dictionary<string, double>();
 
     // single matching
-    Dictionary<string, string> singleMatchedDict = singleMatch(
+    Dictionary<string, string> singleMatchedDict = SingleMatch(
       targetDict,
       salvageDict,
       tolerance,
@@ -290,11 +127,25 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
       }
     }
 
-    Dictionary<string, string> restComb = FindRestComb(doubleRemainTargets, doubleRemainSal);
+    // find rest of combination
+    Dictionary<string, Tuple<string, double, bool>> restComb = FindRestComb(doubleRemainTargets, doubleRemainSal, tolerance);
     foreach (var match in restComb)
     {
-      string dataStr = Serializer(match.Key, targetDict[match.Key], match.Value, salvageDict[match.Value]);
-      double offcuts = CalculateOffcuts(targetDict[match.Key], salvageDict[match.Value]);
+      // target
+      string targetName = match.Key;
+      double targetLength = targetDict[targetName];
+
+      //salvage
+      string salvageName = match.Value.Item1;
+      double salvageLength = match.Value.Item2;
+      double originalSalLength = salvageDict[salvageName];
+
+      // cut
+      bool isCut = match.Value.Item3;
+      double cutLength = originalSalLength - match.Value.Item2;
+
+      string dataStr = Serializer(targetName, targetLength, salvageName, salvageLength, isCut, cutLength);
+      double offcuts = CalculateOffcuts(targetLength, salvageLength);
       dataStr = "|" + offcuts + "|" + "{elseCut}" + dataStr;
       serializedData.Add(dataStr);
     }
@@ -302,15 +153,36 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
     return serializedData;
   }
 
+  private static string Serializer(string tarName, double tarLen, string salName, double salLen, bool isCut, double cutLength)
+  {
+    if (isCut)
+    {
+      string target = "(" + tarName + "," + tarLen + ")";
+      string salvage = "<" + salName + "," + salLen + ">";
+      string cut = "[" + Math.Round(cutLength, 2) + "]";
+      return target + salvage + cut;
+    }
+    else
+    {
+      string target = "(" + tarName + "," + tarLen + ")";
+      string salvage = "<" + salName + "," + salLen + ">";
+      return target + salvage;
+    }
+  }
+
   private static double CalculateOffcuts(double target, double salvage)
   {
-    double offcuts = Math.Abs(target - salvage);
+    double offcuts = salvage - target;
     return Math.Round(offcuts, 2);
   }
 
-  private static Dictionary<string, string> FindRestComb(Dictionary<string, double> targets, Dictionary<string, double> salvages)
+  private static Dictionary<string, Tuple<string, double, bool>> FindRestComb(Dictionary<string, double> targets, Dictionary<string, double> salvages, double tolerance)
   {
-    Dictionary<string, string> foundPairsDict = new Dictionary<string, string>();
+    // (targetName, <SalvageName, lengthRemain, isCut>)
+    Dictionary<string, Tuple<string, double, bool>> resultsDictionary = new Dictionary<string, Tuple<string, double, bool>>();
+
+    Dictionary<string, Tuple<string, double>> foundPairsDict = new Dictionary<string, Tuple<string, double>>();
+    
 
     List<string> matchList = new List<string>();
 
@@ -321,10 +193,11 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
       string targetName = target.Key;
 
       Dictionary<string, double> pairs = new Dictionary<string, double>();
-
+      
       foreach (var salvage in salvages)
       {
-        double difference = Math.Abs(targetValue - salvage.Value);
+        double difference = salvage.Value - targetValue;
+        if (difference < 0) continue;
         pairs.Add(salvage.Key, difference);
       }
 
@@ -338,57 +211,39 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
       var smallestPair = sortedPairs.ElementAt(elementIdx);
 
       matchList.Add(smallestPair.Key);
-      foundPairsDict.Add(targetName, smallestPair.Key);
+      foundPairsDict.Add(targetName, Tuple.Create(smallestPair.Key, smallestPair.Value));
     }
 
-    return foundPairsDict;
+    
+    foreach (var pair in foundPairsDict)
+    {
+      string targetName = pair.Key;
+      double targetLength = targets[pair.Key];
+      string salvageName = pair.Value.Item1;
+      double salvageLength = pair.Value.Item2;
+      double difference = salvageLength - targetLength;
+
+      double cutLength = difference;
+      salvageLength = targetLength;
+
+      if (resultsDictionary.ContainsKey(targetName)) continue;
+      resultsDictionary.Add(targetName, Tuple.Create(salvageName, salvageLength, true));
+      foreach (var newTarget in targets)
+      {
+        // Check if the key already exists in the dictionary before adding it
+
+        if (resultsDictionary.ContainsKey(newTarget.Key)) continue;
+        if (cutLength - newTarget.Value < 0) continue;
+        resultsDictionary.Add(newTarget.Key, Tuple.Create(salvageName, cutLength, true));
+        break;
+      }
+
+
+
+    }
+
+    return resultsDictionary;
   }
-
-
-  //private static Dictionary<string, Tuple<string, string>> DoubleMatch(Dictionary<string, double> targets, Dictionary<string, double> salvages, double tolerance)
-  //{
-  //  Dictionary<string, Tuple<string, string>> matchedID = new Dictionary<string, Tuple<string, string>>();
-
-  //  List<string> matchList = new List<string>();
-
-  //  //foreach (var target in targets)
-  //  for (int z = 0; z < targets.Count; z++)
-  //  {
-  //    KeyValuePair<string, double> target = targets.ElementAt(z);
-
-  //    for (int i = 0; i < salvages.Count; i++)
-  //    {
-  //      string timberA_Name = salvages.Keys.ElementAt(i);
-  //      double timberA_Val = salvages.Values.ElementAt(i);
-
-  //      for (int j = i + 1; j < salvages.Count; j++)
-  //      {
-  //        string timberB_Name = salvages.Keys.ElementAt(j);
-  //        double timberB_Val = salvages.Values.ElementAt(j);
-
-  //        bool matched = MatchDouble(timberA_Val, timberB_Val, target.Value, tolerance);
-  //        bool inListA = matchList.Contains(timberA_Name);
-  //        bool inListB = matchList.Contains(timberB_Name);
-
-
-  //        if (!matched || inListA || inListB) continue;
-  //        matchList.Add(timberA_Name);
-  //        matchList.Add(timberB_Name);
-
-  //        Tuple<string, string> pairs = Tuple.Create(timberA_Name, timberB_Name);
-  //        matchedID.Add(target.Key, pairs);
-
-  //        // break compare loop
-  //        goto CompareExit;
-  //      }
-  //    }
-  //  // exit compare loop
-  //  CompareExit:
-  //    ;
-  //  }
-
-  //  return matchedID;
-  //}
 
 
 
@@ -456,7 +311,7 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
   }
 
 
-  private static Dictionary<string, string> singleMatch(Dictionary<string, double> targets, Dictionary<string, double> salvages, double tolerance, out Dictionary<string, double> remainTargets, out Dictionary<string, double> remainSal)
+  private static Dictionary<string, string> SingleMatch(Dictionary<string, double> targets, Dictionary<string, double> salvages, double tolerance, out Dictionary<string, double> remainTargets, out Dictionary<string, double> remainSal)
   {
     remainTargets = new Dictionary<string, double>();
     remainSal = new Dictionary<string, double>();
@@ -528,17 +383,35 @@ public abstract class Script_Instance_20889 : GH_ScriptInstance
     value = double.Parse(salADataSplit[1]);
   }
 
-  private static bool MatchSolo(double a, double target, double tolerance)
+  private static bool MatchSolo(double salvage, double target, double tolerance)
   {
-    double difference = Math.Abs(a - target);
-    return difference <= tolerance;
+    //double difference = salvage - target;
+    double difference = CalculateOffcuts(target, salvage);
+    
+
+    if (difference < 0)
+    {
+      return false;
+    }
+    else
+    {
+      return difference <= tolerance;
+    }
   }
 
   private static bool MatchDouble(double a, double b, double target, double tolerance)
   {
     double sum = a + b;
-    double difference = Math.Abs(sum - target);
-    return difference < tolerance;
+    double difference = sum - target;
+
+    if (difference < 0)
+    {
+      return false;
+    }
+    else
+    {
+      return difference < tolerance;
+    }
   }
 
   private static string Serializer(string tarName, double tarLen, string salAName, double salAVal)

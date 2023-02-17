@@ -60,7 +60,9 @@ public abstract class Script_Instance_8234d : GH_ScriptInstance
     List<double> timberBLs = new List<double>();
     List<double> timberBLs_Clean = new List<double>();
     List<double> offcuts = new List<double>();
-    DeSerialize(datas, out timberALs, out timberBLs, out offcuts);
+    List<double> cuts = new List<double>();
+    int reuseCount = 0;
+    DeSerialize(datas, out timberALs, out timberBLs, out offcuts, out cuts, out reuseCount);
 
     // count all salvage timber that were used
     int salvageTimberUsedCount = timberALs.Count;
@@ -86,8 +88,11 @@ public abstract class Script_Instance_8234d : GH_ScriptInstance
     int offcutsCount = CountOffcuts(offcuts);
     double laborEfficiency = (double)datas.Count/ (double)offcutsCount * 10;
 
+    // material reuse efficiency
+    double materialReuseEfficiency = (double)reuseCount * 2;
 
-    double calculation = (laborEfficiency / 2.0) + (materialEfficiency / 2.0);
+    // calculation
+    double calculation = (laborEfficiency / 2.0) + (materialEfficiency / 2.0) + materialReuseEfficiency;
 
 
     score = Math.Round(calculation, 5).ToString();
@@ -95,29 +100,69 @@ public abstract class Script_Instance_8234d : GH_ScriptInstance
   #endregion
   #region Additional
 
-  private void DeSerialize(List<string> datas, out List<double> timberALs, out List<double> timberBLs, out List<double> offcuts)
+  private void DeSerialize(List<string> datas, out List<double> timberALs, out List<double> timberBLs, out List<double> offcuts, out List<double> cuts, out int reuseCount)
   {
     timberALs = new List<double>();
     timberBLs = new List<double>();
     offcuts = new List<double>();
+    cuts = new List<double>();
+    reuseCount = 0;
+
+    Dictionary<string, int> reuse_count_dict = new Dictionary<string, int>();
+
     foreach (var data in datas)
     {
-      string[] offcutsData = data.Split(new string[]{"|", "|"}, StringSplitOptions.RemoveEmptyEntries);
+      // Check if the string contains square brackets
+      if (data.Contains("[") && data.Contains("]"))
+      {
+        double cut = double.Parse(ParseString(data, "[", "]"));
+        cuts.Add(cut);
+        string[] timber = data.Split(new string[] { "<", ">" }, StringSplitOptions.RemoveEmptyEntries);
+        string timber_name = timber[1].Split(',')[0];
+
+        if (reuse_count_dict.ContainsKey(timber_name))
+        {
+          reuse_count_dict[timber_name]++;
+          if (reuse_count_dict[timber_name] >= 2)
+          {
+            reuseCount++;
+          }
+        }
+        else
+        {
+          reuse_count_dict[timber_name] = 1;
+        }
+      }
+
+
+      string[] offcutsData = data.Split(new string[] { "|", "|" }, StringSplitOptions.RemoveEmptyEntries);
       double offcut = double.Parse(offcutsData[0]);
       offcuts.Add(offcut);
 
 
-      string[] values = data.Split(new string[]{"<", ">"}, StringSplitOptions.RemoveEmptyEntries);
+      string[] values = data.Split(new string[] { "<", ">" }, StringSplitOptions.RemoveEmptyEntries);
       double timberA = double.Parse(values[1].Split(',')[1]);
       double timberB = Double.NaN;
-      if (values.Length == 3)
+      int count = data.Count(x => x == '<');
+      if (count == 2)
       {
         timberB = double.Parse(values[2].Split(',')[1]);
       }
       timberALs.Add(timberA);
       timberBLs.Add(timberB);
+
     }
   }
+
+  private string ParseString(string input, string separator1, string separator2)
+  {
+    // Extract the value inside the separators
+    int startIndex = input.IndexOf(separator1) + 1;
+    int endIndex = input.IndexOf(separator2, startIndex);
+    string value = input.Substring(startIndex, endIndex - startIndex);
+    return value;
+  }
+
 
   private int CountOffcuts(List<double> offcuts)
   {

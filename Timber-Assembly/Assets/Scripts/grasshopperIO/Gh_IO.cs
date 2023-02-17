@@ -10,7 +10,7 @@ using System;
 
 public class Gh_IO : MonoBehaviour
 {
-    [SerializeField] private bool send;
+    //[SerializeField] private bool send;
     [SerializeField] private string IP = "127.0.0.1";
     [SerializeField] private int sendPort = 6000;
     [SerializeField] private int receivePort = 6001;
@@ -27,8 +27,8 @@ public class Gh_IO : MonoBehaviour
 
 
     // public fields
-    public string ghMessage;
-    public string unityMessage;
+    public string msgToGh;
+    public string msgFromGh;
 
 
 
@@ -53,16 +53,13 @@ public class Gh_IO : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (send)
-        {
-            UdpServer.Sender(ghMessage, _endPoint, _client);
-        }
+        UdpServer.Sender(msgToGh, _endPoint, _client);
 
 
         if (_messageChanged)
         {
             print($"Receiving message: [{lastReceivedMessage}]");
-            unityMessage = lastReceivedMessage;
+            msgFromGh = lastReceivedMessage;
             _messageChanged = false;
         }
     }
