@@ -95,7 +95,7 @@ public abstract class Script_Instance_8234d : GH_ScriptInstance
     double calculation = (_laborEfficiency / 2.0) + (_materialEfficiency / 2.0) + _materialReuseEfficiency;
 
 
-    score = Math.Round(calculation, 5).ToString();
+    score = Math.Round(calculation, 5);
     totalOffcuts = _totalOffcuts;
     totalSalvageLength = _totalSalvageLength;
     materialEfficiency = _materialEfficiency;
