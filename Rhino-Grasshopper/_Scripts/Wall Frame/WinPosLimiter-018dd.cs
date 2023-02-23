@@ -57,20 +57,20 @@ public abstract class Script_Instance_018dd : GH_ScriptInstance
     Point2d maxPosUv = new Point2d();
     double wallXSize = wallSize.X;
     double wallYSize = wallSize.Y;
-    double winXPerPos = winPos.X;
-    double winYPerPos = winPos.Y;
+    //double winXPerPos = winPos.X;
+    //double winYPerPos = winPos.Y;
     double winXSize = winSize.X;
     double winYSize = winSize.Y;
 
     //double winXPos = winXPerPos * wallXSize;
     //double winYPos = winYPerPos * wallYSize;
 
-    double winXPos = winXPerPos;
-    double winYPos = winYPerPos;
+    double winXPos = winPos.X;
+    double winYPos = winPos.Y;
 
     double WinXMinPos = winXSize * 0.5;
     double winYMinPos = winYSize * 0.5;
-
+    Print(WinXMinPos.ToString());
     double winXMaxPos = wallXSize - WinXMinPos;
     double winYMaxPos = wallYSize - winYMinPos;
 
