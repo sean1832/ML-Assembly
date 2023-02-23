@@ -9,6 +9,7 @@ using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using Random = UnityEngine.Random;
 
+
 public class Train : Agent
 {
 
@@ -25,7 +26,7 @@ public class Train : Agent
     // each window size
     //  - up & down
     //  - left & right
-    
+
 
     // observe:
     // position of the window
@@ -38,9 +39,10 @@ public class Train : Agent
     // reward:
     // score
 
-    // continue to manipulate value until ...
-    [SerializeField] [Range(0.01f, 1.0f)] private float _windowMoveSpeed = 0.1f;
-    [SerializeField] [Range(0.01f, 0.5f)] private float _windowSizeSpeed = 0.1f;
+    // continue to manipulate value until ..
+
+    [SerializeField][Range(0.01f, 1.0f)] private float _windowMoveSpeed = 0.1f;
+    [SerializeField][Range(0.01f, 0.5f)] private float _windowSizeSpeed = 0.1f;
 
     private float _wallHeight;
     private float _wallWidth;
@@ -55,14 +57,31 @@ public class Train : Agent
     private bool _dataFromGhIsChanged = false;
 
 
+    [System.Serializable]
+    public class GhData
+    {
+        public float Score;
+        public float TotalOffcutsAmount;
+        public float TotalSalvageLength;
+        public float MaterialEfficiency;
+        public int OffcutsCount;
+        public float LaborEfficiency;
+        public int ReuseCount;
+        public Vector2 WallScale;
+        public Vector3[] WindowPos;
+        public Vector2[] WindowScale;
+        public bool[] IsAtBounds;
+    }
 
 
-    private GhData _ghData = new GhData();
+    private GhData _ghData;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
+
 
     public override void OnEpisodeBegin()
     {
@@ -83,33 +102,38 @@ public class Train : Agent
         _windowPosX = Random.Range(halfWindowSizeX + tenPercWallWidth, _wallWidth - halfWindowSizeX - tenPercWallWidth);
         _windowPosY = Random.Range(halfWindowSizeY + tenPercWallHeight, _wallHeight - halfWindowSizeY - tenPercWallHeight);
 
+        gameObject.GetComponent<Gh_IO>().msgToGh = $"{_windowPosX},{_windowPosY},{_windowSizeX},{_windowSizeY},{_wallHeight},{_wallWidth}";
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        // efficiency = 6
-        sensor.AddObservation(_ghData.TotalOffcutsAmount);
-        sensor.AddObservation(_ghData.TotalSalvageLength);
-        sensor.AddObservation(_ghData.MaterialEfficiency);
-        sensor.AddObservation(_ghData.OffcutsCount);
-        sensor.AddObservation(_ghData.LaborEfficiency);
-        sensor.AddObservation(_ghData.ReuseCount);
-
-        // position & scale = 7
-        sensor.AddObservation(_ghData.WallScale.H);
-        sensor.AddObservation(_ghData.WallScale.W);
-        foreach (var winPos in _ghData.WindowPosition)
+        if (_dataFromGhIsChanged)
         {
-            sensor.AddObservation(winPos.X);
-            sensor.AddObservation(winPos.Y);
-            sensor.AddObservation(winPos.Z);
-        }
+            // efficiency = 6
+            sensor.AddObservation(_ghData.TotalOffcutsAmount);
+            sensor.AddObservation(_ghData.TotalSalvageLength);
+            sensor.AddObservation(_ghData.MaterialEfficiency);
+            sensor.AddObservation(_ghData.OffcutsCount);
+            sensor.AddObservation(_ghData.LaborEfficiency);
+            sensor.AddObservation(_ghData.ReuseCount);
 
-        foreach (var winScale in _ghData.WindowScale)
-        {
-            sensor.AddObservation(winScale.H);
-            sensor.AddObservation(winScale.W);
+            // position & scale = 7
+            sensor.AddObservation(_ghData.WallScale.x);
+            sensor.AddObservation(_ghData.WallScale.y);
+            foreach (var winPos in _ghData.WindowPos)
+            {
+                sensor.AddObservation(winPos.x);
+                sensor.AddObservation(winPos.y);
+                sensor.AddObservation(winPos.z);
+            }
+
+            foreach (var winScale in _ghData.WindowScale)
+            {
+                sensor.AddObservation(winScale.x);
+                sensor.AddObservation(winScale.y);
+            }
         }
+        
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -139,15 +163,14 @@ public class Train : Agent
         _ghData = JsonUtility.FromJson<GhData>(dataFromGh);
 
         SetReward(_ghData.Score);
-        print(_ghData.Score);
         // if any of the window smaller than 200x200, end episode
-        if (_ghData.WindowScale.Any(winScale => winScale.H < 0.2f || winScale.W < 0.2f))
+        if (_ghData.WindowScale.Any(winScale => winScale.x < 0.2f || winScale.y < 0.2f))
         {
             AddReward(-50);
             EndEpisode();
         }
 
-        // if any of the window is touching boundary, end episode
+        //if any of the window is touching boundary, end episode
         if (_ghData.IsAtBounds.Any(isAtBound => isAtBound))
         {
             AddReward(-50);
@@ -162,7 +185,7 @@ public class Train : Agent
         continuousActions[1] = Input.GetAxisRaw("Vertical");
     }
 
-    
+
     //void Update()
     //{
     //    gameObject.GetComponent<Gh_IO>().msgToGh = $"{wallHeight},{wallLength}";

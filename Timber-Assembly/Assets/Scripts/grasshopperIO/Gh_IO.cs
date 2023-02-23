@@ -58,7 +58,7 @@ public class Gh_IO : MonoBehaviour
 
         if (_messageChanged)
         {
-            print($"Receiving message: [{lastReceivedMessage}]");
+            //print($"Receiving message: {lastReceivedMessage}");
             msgFromGh = lastReceivedMessage;
             _messageChanged = false;
         }
