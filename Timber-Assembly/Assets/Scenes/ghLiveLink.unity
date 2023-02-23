@@ -305,8 +305,8 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
-  wallHeight: 1
-  wallLength: 5
+  _windowMoveSpeed: 0.1
+  _windowSizeSpeed: 0.1
 --- !u!114 &1528339527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,14 +320,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 1
-    NumStackedVectorObservations: 1
+    VectorObservationSize: 13
+    NumStackedVectorObservations: 3
     m_ActionSpec:
-      m_NumContinuousActions: 0
-      BranchSizes: 01000000
-    VectorActionSize: 01000000
+      m_NumContinuousActions: 4
+      BranchSizes: 
+    VectorActionSize: 04000000
     VectorActionDescriptions: []
-    VectorActionSpaceType: 0
+    VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
