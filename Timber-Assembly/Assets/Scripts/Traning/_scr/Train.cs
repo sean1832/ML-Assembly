@@ -138,6 +138,8 @@ public class Train : Agent
         if (!_dataFromGhIsChanged) return;
         _ghData = JsonUtility.FromJson<GhData>(dataFromGh);
 
+        SetReward(_ghData.Score);
+        print(_ghData.Score);
         // if any of the window smaller than 200x200, end episode
         if (_ghData.WindowScale.Any(winScale => winScale.H < 0.2f || winScale.W < 0.2f))
         {
@@ -151,12 +153,14 @@ public class Train : Agent
             AddReward(-50);
             EndEpisode();
         }
-
-        // otherwise
-        SetReward(_ghData.Score);
-
     }
 
+    public override void Heuristic(in ActionBuffers actionOut)
+    {
+        ActionSegment<float> continuousActions = actionOut.ContinuousActions;
+        continuousActions[0] = Input.GetAxisRaw("Horizontal");
+        continuousActions[1] = Input.GetAxisRaw("Vertical");
+    }
 
     
     //void Update()
