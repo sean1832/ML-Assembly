@@ -52,37 +52,65 @@ public abstract class Script_Instance_018dd : GH_ScriptInstance
   /// they will have a default value.
   /// </summary>
   #region Runscript
-  private void RunScript(Point3d wallSize, Point3d winPos, Point3d winSize, ref object uv)
+  private void RunScript(Point3d wallSize, Point3d winPos, Point3d winSize, ref object uv, ref object isAtBounds)
   {
     Point2d maxPosUv = new Point2d();
     double wallXSize = wallSize.X;
     double wallYSize = wallSize.Y;
-    double winXPerPos = winPos.X;
-    double winYPerPos = winPos.Y;
+    //double winXPerPos = winPos.X;
+    //double winYPerPos = winPos.Y;
     double winXSize = winSize.X;
     double winYSize = winSize.Y;
 
-    double winXPos = winXPerPos * wallXSize;
-    double winYPos = winYPerPos * wallYSize;
+    //double winXPos = winXPerPos * wallXSize;
+    //double winYPos = winYPerPos * wallYSize;
+
+    double winXPos = winPos.X;
+    double winYPos = winPos.Y;
 
     double WinXMinPos = winXSize * 0.5;
     double winYMinPos = winYSize * 0.5;
-
+    Print(WinXMinPos.ToString());
     double winXMaxPos = wallXSize - WinXMinPos;
     double winYMaxPos = wallYSize - winYMinPos;
 
-    Print(winXPos.ToString());
     // Horizontal limiter (X)
-    if (winXPos < WinXMinPos) winXPos = WinXMinPos; // minimum limiter
-    else if (winXPos > winXMaxPos) winXPos = winXMaxPos; // maximum limiter
-
+    if (winXPos < WinXMinPos)
+    {
+      winXPos = WinXMinPos;
+      isAtBounds = true; // minimum limiter
+    } 
+    else if (winXPos > winXMaxPos)
+    {
+      winXPos = winXMaxPos; // maximum limiter
+      isAtBounds = true;
+    }
+    else
+    {
+      isAtBounds = false;
+    }
 
     // Vertical limiter (y)
-    if (winYPos < winYMinPos) winYPos = winYMinPos; // minimum limiter
-    else if (winYPos > winYMaxPos) winYPos = winYMaxPos; // maximum limiter
+    if (winYPos < winYMinPos)
+    {
+      winYPos = winYMinPos; // minimum limiter
+      isAtBounds = true;
+    } 
+    else if (winYPos > winYMaxPos)
+    {
+      winYPos = winYMaxPos; // maximum limiter
+      isAtBounds = true;
+    }
+    else
+    {
+      isAtBounds = false;
+    }
 
-    maxPosUv.X = winYPos / wallYSize;
-    maxPosUv.Y = winXPos / wallXSize;
+    //maxPosUv.X = winYPos / wallYSize;
+    //maxPosUv.Y = winXPos / wallXSize;
+
+    maxPosUv.X = winYPos;
+    maxPosUv.Y = winXPos;
     uv = maxPosUv;
 
   }

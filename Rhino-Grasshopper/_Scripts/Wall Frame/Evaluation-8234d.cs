@@ -54,15 +54,15 @@ public abstract class Script_Instance_8234d : GH_ScriptInstance
   /// they will have a default value.
   /// </summary>
   #region Runscript
-  private void RunScript(List<string> datas, int SalvageTimberTotal, ref object score)
+  private void RunScript(List<string> datas, int SalvageTimberTotal, ref object score, ref object totalOffcuts, ref object totalSalvageLength, ref object materialEfficiency, ref object offcutsCount, ref object laborEfficiency, ref object reuseCount)
   {
     List<double> timberALs = new List<double>();
     List<double> timberBLs = new List<double>();
     List<double> timberBLs_Clean = new List<double>();
     List<double> offcuts = new List<double>();
     List<double> cuts = new List<double>();
-    int reuseCount = 0;
-    DeSerialize(datas, out timberALs, out timberBLs, out offcuts, out cuts, out reuseCount);
+    int _reuseCount = 0;
+    DeSerialize(datas, out timberALs, out timberBLs, out offcuts, out cuts, out _reuseCount);
 
     // count all salvage timber that were used
     int salvageTimberUsedCount = timberALs.Count;
@@ -75,27 +75,33 @@ public abstract class Script_Instance_8234d : GH_ScriptInstance
       }
     }
     // total offcuts calculation
-    double totalOffcuts = offcuts.Sum();
+    double _totalOffcuts = offcuts.Sum();
 
     // total salvage timber length
-    double totalSalvageLength = timberALs.Sum() + timberBLs_Clean.Sum();
+    double _totalSalvageLength = timberALs.Sum() + timberBLs_Clean.Sum();
 
     // length usage efficiency
-    double materialEfficiency = totalOffcuts/ totalSalvageLength ;
-    materialEfficiency = (1.0 / materialEfficiency) * 10;
+    double _materialEfficiency = _totalOffcuts/ _totalSalvageLength ;
+    _materialEfficiency = (1.0 / _materialEfficiency) * 10;
 
     // labor efficiency
-    int offcutsCount = CountOffcuts(offcuts);
-    double laborEfficiency = (double)datas.Count/ (double)offcutsCount * 10;
+    int _offcutsCount = CountOffcuts(offcuts);
+    double _laborEfficiency = (double)datas.Count/ (double)_offcutsCount * 10;
 
     // material reuse efficiency
-    double materialReuseEfficiency = (double)reuseCount * 2;
+    double _materialReuseEfficiency = (double)_reuseCount * 2;
 
     // calculation
-    double calculation = (laborEfficiency / 2.0) + (materialEfficiency / 2.0) + materialReuseEfficiency;
+    double calculation = (_laborEfficiency / 2.0) + (_materialEfficiency / 2.0) + _materialReuseEfficiency;
 
 
-    score = Math.Round(calculation, 5).ToString();
+    score = Math.Round(calculation, 5);
+    totalOffcuts = _totalOffcuts;
+    totalSalvageLength = _totalSalvageLength;
+    materialEfficiency = _materialEfficiency;
+    offcutsCount = _offcutsCount;
+    laborEfficiency = _laborEfficiency;
+    reuseCount = _reuseCount;
   }
   #endregion
   #region Additional

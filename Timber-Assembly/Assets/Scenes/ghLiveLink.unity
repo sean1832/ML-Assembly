@@ -247,9 +247,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1528339524}
-  - component: {fileID: 1528339525}
+  - component: {fileID: 1528339529}
   - component: {fileID: 1528339527}
   - component: {fileID: 1528339526}
+  - component: {fileID: 1528339528}
   m_Layer: 0
   m_Name: Training
   m_TagString: Untagged
@@ -272,23 +273,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1528339525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1528339523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07dd63abb96637247880a1c73c4a8796, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IP: 127.0.0.1
-  sendPort: 6000
-  receivePort: 6001
-  msgToGh: 
-  msgFromGh: 
 --- !u!114 &1528339526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,8 +289,8 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
-  wallHeight: 1
-  wallLength: 5
+  _windowMoveSpeed: 0.2
+  _windowSizeSpeed: 0.1
 --- !u!114 &1528339527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,23 +304,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 1
-    NumStackedVectorObservations: 1
+    VectorObservationSize: 13
+    NumStackedVectorObservations: 3
     m_ActionSpec:
-      m_NumContinuousActions: 0
-      BranchSizes: 01000000
-    VectorActionSize: 01000000
+      m_NumContinuousActions: 4
+      BranchSizes: 
+    VectorActionSize: 04000000
     VectorActionDescriptions: []
-    VectorActionSpaceType: 0
+    VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 0
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: Assembly
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
+--- !u!114 &1528339528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528339523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 5
+  TakeActionsBetweenDecisions: 1
+--- !u!114 &1528339529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528339523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07dd63abb96637247880a1c73c4a8796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IP: 127.0.0.1
+  sendPort: 6000
+  receivePort: 6001
+  msgToGh: 
+  msgFromGh: 
 --- !u!1 &1798074444
 GameObject:
   m_ObjectHideFlags: 0
