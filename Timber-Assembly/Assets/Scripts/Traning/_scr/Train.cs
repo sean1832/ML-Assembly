@@ -12,35 +12,7 @@ using Random = UnityEngine.Random;
 
 public class Train : Agent
 {
-
-    //[SerializeField][Range(1,5)] private float wallHeight = 1;
-    //[SerializeField][Range(5,20)] private float wallLength = 5;
-
-    // actions:
-    // wall height
-    // wall length
-    // window number choice (1-2)
-    // each window position
-    //  - up & down
-    //  - left & right
-    // each window size
-    //  - up & down
-    //  - left & right
-
-
-    // observe:
-    // position of the window
-    // scale of window
-    // wall height & width
-
-    // number of minimum cut
-    // 
-
-    // reward:
-    // score
-
-    // continue to manipulate value until ..
-
+    
     [SerializeField][Range(0.01f, 1.0f)] private float _windowMoveSpeed = 0.1f;
     [SerializeField][Range(0.01f, 0.5f)] private float _windowSizeSpeed = 0.1f;
 
@@ -184,10 +156,4 @@ public class Train : Agent
         continuousActions[0] = Input.GetAxisRaw("Horizontal");
         continuousActions[1] = Input.GetAxisRaw("Vertical");
     }
-
-
-    //void Update()
-    //{
-    //    gameObject.GetComponent<Gh_IO>().msgToGh = $"{wallHeight},{wallLength}";
-    //}
 }
