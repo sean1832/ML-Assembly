@@ -107,6 +107,7 @@ public class Train : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
+        // only observe until package is received
         if (_dataFromGhIsChanged)
         {
             // efficiency = 6
@@ -133,7 +134,6 @@ public class Train : Agent
                 sensor.AddObservation(winScale.y);
             }
         }
-        
     }
 
     public override void OnActionReceived(ActionBuffers actions)
