@@ -54,7 +54,7 @@ public abstract class Script_Instance_8234d : GH_ScriptInstance
   /// they will have a default value.
   /// </summary>
   #region Runscript
-  private void RunScript(List<string> datas, int SalvageTimberTotal, ref object score, ref object totalOffcuts, ref object totalSalvageLength, ref object materialEfficiency, ref object offcutsCount, ref object laborEfficiency, ref object reuseCount)
+  private void RunScript(List<string> datas, int SalvageTimberTotal, ref object score, ref object totalOffcuts, ref object totalSalvageLength, ref object materialEfficiency, ref object offcutsCount, ref object laborEfficiency, ref object reuseCount, ref object minCutRatio)
   {
     List<double> timberALs = new List<double>();
     List<double> timberBLs = new List<double>();
@@ -62,7 +62,8 @@ public abstract class Script_Instance_8234d : GH_ScriptInstance
     List<double> offcuts = new List<double>();
     List<double> cuts = new List<double>();
     int _reuseCount = 0;
-    DeSerialize(datas, out timberALs, out timberBLs, out offcuts, out cuts, out _reuseCount);
+    int _minCutCount = 0;
+    DeSerialize(datas, out timberALs, out timberBLs, out offcuts, out cuts, out _reuseCount, out _minCutCount);
 
     // count all salvage timber that were used
     int salvageTimberUsedCount = timberALs.Count;
@@ -91,8 +92,11 @@ public abstract class Script_Instance_8234d : GH_ScriptInstance
     // material reuse efficiency
     double _materialReuseEfficiency = (double)_reuseCount * 2;
 
+    // min cut ratio
+    double _minCutRatio =  (double)_minCutCount / (double)datas.Count * 100;
+
     // calculation
-    double calculation = (_laborEfficiency / 2.0) + (_materialEfficiency / 2.0) + _materialReuseEfficiency;
+    double calculation = (_laborEfficiency / 2.0) + (_materialEfficiency / 2.0) + _materialReuseEfficiency + _minCutRatio;
 
 
     score = Math.Round(calculation, 5);
@@ -102,16 +106,18 @@ public abstract class Script_Instance_8234d : GH_ScriptInstance
     offcutsCount = _offcutsCount;
     laborEfficiency = _laborEfficiency;
     reuseCount = _reuseCount;
+    minCutRatio = _minCutRatio;
   }
   #endregion
   #region Additional
 
-  private void DeSerialize(List<string> datas, out List<double> timberALs, out List<double> timberBLs, out List<double> offcuts, out List<double> cuts, out int reuseCount)
+  private void DeSerialize(List<string> datas, out List<double> timberALs, out List<double> timberBLs, out List<double> offcuts, out List<double> cuts, out int reuseCount, out int minCutCount)
   {
     timberALs = new List<double>();
     timberBLs = new List<double>();
     offcuts = new List<double>();
     cuts = new List<double>();
+    minCutCount = 0;
     reuseCount = 0;
 
     Dictionary<string, int> reuse_count_dict = new Dictionary<string, int>();
@@ -138,6 +144,13 @@ public abstract class Script_Instance_8234d : GH_ScriptInstance
         {
           reuse_count_dict[timber_name] = 1;
         }
+      }
+
+      // min cut count
+      string cutMessage = ParseString(data, "{", "}");
+      if (cutMessage == "minCut")
+      {
+        minCutCount++;
       }
 
 

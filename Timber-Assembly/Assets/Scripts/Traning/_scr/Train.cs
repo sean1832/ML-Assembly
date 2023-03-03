@@ -19,6 +19,11 @@ public class Train : Agent
     private float _wallHeight;
     private float _wallWidth;
 
+    private float _windowInitPosX;
+    private float _windowInitPosY;
+    private float _windowInitSizeX;
+    private float _windowInitSizeY;
+
     private float _windowPosX;
     private float _windowPosY;
     private float _windowSizeX;
@@ -39,6 +44,7 @@ public class Train : Agent
         public int OffcutsCount;
         public float LaborEfficiency;
         public int ReuseCount;
+        public int MinCutRatio;
         public Vector2 WallScale;
         public Vector3[] WindowPos;
         public Vector2[] WindowScale;
@@ -48,13 +54,6 @@ public class Train : Agent
 
     private GhData _ghData;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-
     public override void OnEpisodeBegin()
     {
         // randomize wall height & length
@@ -62,8 +61,8 @@ public class Train : Agent
         _wallHeight = Random.Range(2.1f, 3.5f);
 
         // randomize window initial scale
-        _windowSizeX = Random.Range(0.5f, 1.5f);
-        _windowSizeY = Random.Range(0.5f, 1.0f);
+        _windowInitSizeX = Random.Range(0.5f, 1.5f);
+        _windowInitSizeY = Random.Range(0.5f, 1.0f);
 
         // randomize window initial position
         float tenPercWallWidth = _wallWidth * 0.1f;
@@ -71,8 +70,13 @@ public class Train : Agent
         float halfWindowSizeX = _windowSizeX * 0.5f;
         float halfWindowSizeY = _windowSizeY * 0.5f;
 
-        _windowPosX = Random.Range(halfWindowSizeX + tenPercWallWidth, _wallWidth - halfWindowSizeX - tenPercWallWidth);
-        _windowPosY = Random.Range(halfWindowSizeY + tenPercWallHeight, _wallHeight - halfWindowSizeY - tenPercWallHeight);
+        _windowInitPosX = Random.Range(halfWindowSizeX + tenPercWallWidth, _wallWidth - halfWindowSizeX - tenPercWallWidth);
+        _windowInitPosY = Random.Range(halfWindowSizeY + tenPercWallHeight, _wallHeight - halfWindowSizeY - tenPercWallHeight);
+
+        _windowPosX = _windowInitPosX;
+        _windowPosY = _windowInitPosY;
+        _windowSizeX = _windowInitSizeX;
+        _windowSizeY = _windowInitSizeY;
 
         gameObject.GetComponent<Gh_IO>().msgToGh = $"{_windowPosX},{_windowPosY},{_windowSizeX},{_windowSizeY},{_wallHeight},{_wallWidth}";
     }
@@ -89,6 +93,7 @@ public class Train : Agent
             sensor.AddObservation(_ghData.OffcutsCount);
             sensor.AddObservation(_ghData.LaborEfficiency);
             sensor.AddObservation(_ghData.ReuseCount);
+            sensor.AddObservation(_ghData.MinCutRatio);
 
             // position & scale = 7
             sensor.AddObservation(_ghData.WallScale.x);
@@ -139,13 +144,19 @@ public class Train : Agent
         if (_ghData.WindowScale.Any(winScale => winScale.x < 0.2f || winScale.y < 0.2f))
         {
             AddReward(-50);
-            EndEpisode();
+            ResetWindow();
         }
 
         //if any of the window is touching boundary, end episode
         if (_ghData.IsAtBounds.Any(isAtBound => isAtBound))
         {
             AddReward(-50);
+            ResetWindow();
+        }
+
+        if (_ghData.MinCutRatio >= 90)
+        {
+            AddReward(+100);
             EndEpisode();
         }
     }
@@ -155,5 +166,13 @@ public class Train : Agent
         ActionSegment<float> continuousActions = actionOut.ContinuousActions;
         continuousActions[0] = Input.GetAxisRaw("Horizontal");
         continuousActions[1] = Input.GetAxisRaw("Vertical");
+    }
+
+    private void ResetWindow()
+    {
+        _windowPosX = _windowInitPosX;
+        _windowPosY = _windowInitPosY;
+        _windowSizeX = _windowInitSizeX;
+        _windowSizeY = _windowInitSizeY;
     }
 }

@@ -288,7 +288,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 0
+  MaxStep: 3000
   _windowMoveSpeed: 0.2
   _windowSizeSpeed: 0.1
 --- !u!114 &1528339527
