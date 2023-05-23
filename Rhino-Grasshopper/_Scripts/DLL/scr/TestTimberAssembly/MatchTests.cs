@@ -138,7 +138,7 @@ namespace TestTimberAssembly
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
             // Act
-            List<MatchPair> pairs = _sut.SecondMatch(remain, out dummyRemain);
+            List<MatchPair> pairs = _sut.SecondMatchFast(remain, out dummyRemain);
 
             // Assert
             Assert.That(pairs.Count == 0); // there should be no matches
@@ -163,7 +163,7 @@ namespace TestTimberAssembly
             Remain remain =  new Remain(){ Targets = targets, Subjects = salvages };
 
             // Act
-            List<MatchPair> pairs = _sut.SecondMatch(remain, out dummyRemain);
+            List<MatchPair> pairs = _sut.SecondMatchFast(remain, out dummyRemain);
 
             // Assert
             Assert.That(pairs.Count == 1);
@@ -193,7 +193,7 @@ namespace TestTimberAssembly
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
             // Act
-            List<MatchPair> pairs = _sut.SecondMatchSlow(remain, out dummyRemain);
+            List<MatchPair> pairs = _sut.SecondMatchFast(remain, out dummyRemain);
 
             // Assert
             Assert.That(dummyRemain.Subjects.Count == 1);

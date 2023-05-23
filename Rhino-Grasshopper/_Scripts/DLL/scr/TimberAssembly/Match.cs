@@ -108,68 +108,59 @@ namespace TimberAssembly
             return pairs;
         }
 
-        public List<MatchPair> SecondMatch(Remain previousRemains, out Remain remains)
+        public List<MatchPair> SecondMatchFast(Remain previousRemains, out Remain remains)
         {
             remains = new Remain();
-            HashSet<Agent> remainTargets = new HashSet<Agent>(previousRemains.Targets);
-            HashSet<Agent> remainSalvages = new HashSet<Agent>(previousRemains.Subjects);
+            List<Agent> remainTargets = previousRemains.Targets.ToList();
+            List<Agent> remainSalvages = previousRemains.Subjects.ToList();
 
-            List<MatchPair> pairs = new List<MatchPair>();
+            Dictionary<(Agent target, Agent firstAgent), Agent> pairDict = new Dictionary<(Agent target, Agent firstAgent), Agent>();
 
-            // a dictionary to store pairs of salvages that have already been checked with each target
-            Dictionary<(Agent, Agent), bool> checkedPairs = new Dictionary<(Agent, Agent), bool>();
-
+            // Loop over targets and the first agents to find pairs that match the criteria
             foreach (var target in remainTargets)
             {
-                // retrieve the list of salvages for the target from the dictionary
-                var salvagePairs = remainSalvages
-                    .SelectMany((v, i) => remainSalvages
-                        .Skip(i + 1)
-                        .Select(w => (v, w)));
-
-                foreach (var salvagePair in salvagePairs)
+                for (int i = 0; i < remainSalvages.Count; i++)
                 {
-                    // check if we have already checked this pair with the target
-                    if (checkedPairs.TryGetValue((salvagePair.v, salvagePair.w), out bool isMatched))
+                    var salvage1 = remainSalvages[i];
+                    for (int j = i + 1; j < remainSalvages.Count; j++)
                     {
-                        if (!isMatched) continue;
-                        MatchPair pair = new MatchPair
+                        var salvage2 = remainSalvages[j];
+                        if (Utilities.IsAgentSecondMatched(target, salvage1, salvage2, Tolerance))
                         {
-                            Target = target,
-                            Subjects = new List<Agent>() { salvagePair.v, salvagePair.w }
-                        };
-                        pairs.Add(pair);
-
-                        remainSalvages.Remove(salvagePair.v);
-                        remainSalvages.Remove(salvagePair.w);
-                        break;
-                    }
-                    else
-                    {
-                        // if we have not checked this pair, then we do the check and store the result
-                        isMatched = Utilities.IsAgentSecondMatched(target, salvagePair.v, salvagePair.w, Tolerance);
-                        checkedPairs[(salvagePair.v, salvagePair.w)] = isMatched;
-
-                        if (!isMatched) continue;
-                        MatchPair pair = new MatchPair
-                        {
-                            Target = target,
-                            Subjects = new List<Agent>() { salvagePair.v, salvagePair.w }
-                        };
-                        pairs.Add(pair);
-
-                        remainSalvages.Remove(salvagePair.v);
-                        remainSalvages.Remove(salvagePair.w);
-                        break;
+                            pairDict[(target, salvage1)] = salvage2;
+                            break;
+                        }
                     }
                 }
             }
 
-            remains.Targets = remainTargets.ToList();
-            remains.Subjects = remainSalvages.ToList();
+            HashSet<Agent> matchedSubjects = new HashSet<Agent>();
+            List<MatchPair> pairs = new List<MatchPair>();
+
+            // Loop over the dictionary to create the pairs and remove the matched agents
+            foreach (var pair in pairDict)
+            {
+                MatchPair newPair = new MatchPair
+                {
+                    Target = pair.Key.target,
+                    Subjects = new List<Agent> { pair.Key.firstAgent, pair.Value }
+                };
+                pairs.Add(newPair);
+
+                matchedSubjects.Add(pair.Key.firstAgent);
+                matchedSubjects.Add(pair.Value);
+
+                remainTargets.Remove(pair.Key.target);
+                remainSalvages.Remove(pair.Key.firstAgent);
+                remainSalvages.Remove(pair.Value);
+            }
+
+            remains.Targets = remainTargets;
+            remains.Subjects = remainSalvages;
 
             return pairs;
         }
+
 
         public List<MatchPair> RemainMatch(Remain previousRemains)
         {
