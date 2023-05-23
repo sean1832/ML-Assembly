@@ -9,6 +9,9 @@ using Newtonsoft.Json;
 
 namespace TimberAssembly
 {
+    /// <summary>
+    /// Matching algorithm for timber assembly.
+    /// </summary>
     public class Match
     {
         public List<Agent> TargetAgents { get; set; }
@@ -22,6 +25,10 @@ namespace TimberAssembly
             Tolerance = tolerance;
         }
 
+        /// <summary>
+        /// One subject is exactly matched to one target.
+        /// </summary>
+        /// <param name="remains">Output remainders</param>
         public List<MatchPair> ExactMatch(out Remain remains)
         {
             remains = new Remain();
@@ -54,6 +61,12 @@ namespace TimberAssembly
             return pairs;
         }
 
+        /// <summary>
+        /// WARNING: This is a slow method!
+        /// Two subjects from the remainders of ExactMatch are combined to match one target.
+        /// </summary>
+        /// <param name="previousRemains">Remainders from ExactMatch</param>
+        /// <param name="remains">Output remainders</param>
         public List<MatchPair> SecondMatchSlow(Remain previousRemains, out Remain remains)
         {
             remains = new Remain();
@@ -108,6 +121,11 @@ namespace TimberAssembly
             return pairs;
         }
 
+        /// <summary>
+        /// Two subjects from the remainder of ExactMatch are combined to match one target.
+        /// </summary>
+        /// <param name="previousRemains">Remainder from ExactMatch</param>
+        /// <param name="remains">Output remainder</param>
         public List<MatchPair> SecondMatchFast(Remain previousRemains, out Remain remains)
         {
             remains = new Remain();
@@ -161,7 +179,11 @@ namespace TimberAssembly
             return pairs;
         }
 
-
+        /// <summary>
+        /// Match the rest of the targets with the rest of the subjects.
+        /// Introduce offcuts if necessary.
+        /// </summary>
+        /// <param name="previousRemains">Remainder from SecondMatch</param>
         public List<MatchPair> RemainMatch(Remain previousRemains)
         {
             List<Agent> remainTargets;
@@ -173,8 +195,7 @@ namespace TimberAssembly
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                throw new NullReferenceException("Previous Remain is null, please ensure you have the right input.");
+                return null;
             }
             
             List<MatchPair> pairs = new List<MatchPair>();

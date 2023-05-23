@@ -10,6 +10,9 @@ namespace TimberAssembly
 {
     public static class Parser
     {
+        /// <summary>
+        /// Parse a list of json strings to a list of agents.
+        /// </summary>
         public static List<Agent> ParseAgents(List<string> jsons)
         {
             List<Agent> agents = new List<Agent>();
