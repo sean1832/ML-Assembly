@@ -18,5 +18,8 @@
       <HintPath>D:\02-design\01-3D\01-Rhino\Rhino 7\System\RhinoCommon.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="TimberAssembly">
+      <HintPath>..\DLL\scr\TimberAssembly\bin\Debug\TimberAssembly.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
