@@ -10,6 +10,7 @@ using Grasshopper.Kernel;
 using Grasshopper.Kernel.Data;
 using Grasshopper.Kernel.Types;
 
+using System.Reflection;
 using TimberAssembly;
 using TimberAssembly.Component;
 
@@ -56,8 +57,13 @@ public abstract class Script_Instance_f7dfd : GH_ScriptInstance
   #region Runscript
   private void RunScript(List<string> salvageData, List<string> TargetFrameData, double tolerance, bool EnableSecondMatch, ref object pairDatas, ref object D1, ref object D2, ref object D3)
   {
-    List<Agent> salvageAgents = Parser.ParseAgents(salvageData);
-    List<Agent> targetAgents = Parser.ParseAgents(TargetFrameData);
+    Assembly assembly = Assembly.GetAssembly(typeof(TimberAssembly.Match));
+    string version = assembly.GetName().Version.ToString();
+
+    Component.Message = "Ver " + version;
+
+    List<Agent> salvageAgents = Parser.DeserializeToAgents(salvageData);
+    List<Agent> targetAgents = Parser.DeserializeToAgents(TargetFrameData);
 
     Match matchOperation = new Match(targetAgents, salvageAgents, tolerance);
 
@@ -67,21 +73,9 @@ public abstract class Script_Instance_f7dfd : GH_ScriptInstance
 
     List<MatchPair> matchedPairs = matchOperation.ExactMatch(out remainFirst);
     matchedPairs.AddRange(matchOperation.SecondMatchSlow(remainFirst, out remainSecond));
-    //matchedPairs.AddRange(matchOperation.RemainMatch(remainSecond));
-
-
-    List<Agent> targets = remainSecond.Targets;
-    List<Agent> salvages = remainSecond.Subjects;
-
-    D1 = targets.Count;
-    D2 = salvages.Count;
-
-    D3 = matchedPairs.Count;
-
+    matchedPairs.AddRange(matchOperation.RemainMatch(remainSecond));
     
-
-
-
+    pairDatas = Parser.SerializeAgentPairs(matchedPairs);
   }
   #endregion
   #region Additional

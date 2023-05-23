@@ -225,13 +225,13 @@ namespace TimberAssembly
                 Agent selectedSalvage = sortedMatches[0].Key;
                 Dimension remainingDimension = sortedMatches[0].Value;
 
-                MatchPair matchPair = new MatchPair
+                MatchPair matchPair = new MatchPair   
                 {
                     Target = target,
                     Subjects = new List<Agent>
                     {
                         selectedSalvage,
-                        new Agent()
+                        new Agent() 
                         {
                             Name = $"NewTimber{i:D2}",
                             Dimension = remainingDimension

@@ -7,20 +7,20 @@ namespace TestTimberAssembly
     public class ParserTests
     {
         [Test]
-        public void ParseAgents_ReturnsEmptyList_WhenGivenEmptyList()
+        public void DeserializeToAgents_ReturnsEmptyList_WhenGivenEmptyList()
         {
             // Arrange
             var jsonList = new List<string>();
             
             // Act
-            var actual = Parser.DeserializeToAgent(jsonList);
+            var actual = Parser.DeserializeToAgents(jsonList);
             
             // Assert
             Assert.That(actual, Is.Empty);
         }
 
         [Test]
-        public void ParseAgents_ReturnsCorrectNumberOfAgents()
+        public void DeserializeToAgents_ReturnsCorrectNumberOfAgents()
         {
             // Arrange
             var jsonList = new List<string>{
@@ -29,14 +29,14 @@ namespace TestTimberAssembly
             };
             
             // Act
-            var actual = Parser.DeserializeToAgent(jsonList);
+            var actual = Parser.DeserializeToAgents(jsonList);
             
             // Assert
             Assert.That(actual, Has.Exactly(2).Items);
         }
 
         [Test]
-        public void ParseAgents_CallsDeserializeObject_ForEachJsonString()
+        public void DeserializeToAgents_CallsDeserializeObject_ForEachJsonString()
         {
             // Arrange
             var jsonList = new List<string> {
@@ -62,6 +62,42 @@ namespace TestTimberAssembly
                 Assert.That(actual[1].Dimension.Width, Is.EqualTo(5));
                 Assert.That(actual[1].Dimension.Height, Is.EqualTo(6));
             });
+        }
+
+        [Test]
+        public void SerializeAgentPairs_JsonString()
+        {
+            // Arrange
+            List<MatchPair> pairs = new List<MatchPair>()
+            {
+                new MatchPair()
+                {
+                    Target = new Agent()
+                    {
+                        Name = "T01",
+                        Dimension = new Dimension(1, 2, 3)
+                    },
+                    Subjects = new List<Agent>()
+                    {
+                        new Agent()
+                        {
+                            Name = "S01",
+                            Dimension = new Dimension(1, 2, 3)
+                        },
+                        new Agent()
+                        {
+                            Name = "S02",
+                            Dimension = new Dimension(1, 2, 3)
+                        }
+                    }
+                },  
+            };
+
+            // Act
+            var jsonString = Parser.SerializeAgentPairs(pairs);
+
+            // Assert
+            Assert.That(jsonString.Count == 1);
         }
     }
 }
