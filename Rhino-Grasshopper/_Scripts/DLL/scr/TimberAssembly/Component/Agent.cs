@@ -21,7 +21,6 @@ namespace TimberAssembly.Component
     {
         public Agent Target { get; set; }
         public List<Agent> Subjects { get; set; }
-        public Agent OffcutsAgent { get; set; }
     }
 
 

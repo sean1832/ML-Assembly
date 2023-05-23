@@ -201,8 +201,9 @@ namespace TimberAssembly
             List<MatchPair> pairs = new List<MatchPair>();
 
             // Match each target with a suitable subject
-            foreach (Agent target in remainTargets)
+            for (var i = 0; i < remainTargets.Count; i++)
             {
+                var target = remainTargets[i];
                 Dictionary<Agent, Dimension> potentialMatches = new Dictionary<Agent, Dimension>();
 
                 foreach (Agent salvage in remainSalvages)
@@ -212,7 +213,8 @@ namespace TimberAssembly
                     potentialMatches.Add(salvage, difference);
                 }
 
-                var sortedMatches = potentialMatches.OrderBy(x => x.Value.Length + x.Value.Width + x.Value.Height).ToList();
+                var sortedMatches = potentialMatches.OrderBy(x => x.Value.Length + x.Value.Width + x.Value.Height)
+                    .ToList();
 
                 // check if sortedMatches is empty
                 if (sortedMatches.Count == 0)
@@ -226,8 +228,15 @@ namespace TimberAssembly
                 MatchPair matchPair = new MatchPair
                 {
                     Target = target,
-                    Subjects = new List<Agent> { selectedSalvage },
-                    OffcutsAgent = new Agent() { Dimension = remainingDimension }
+                    Subjects = new List<Agent>
+                    {
+                        selectedSalvage,
+                        new Agent()
+                        {
+                            Name = $"NewTimber{i:D2}",
+                            Dimension = remainingDimension
+                        }
+                    }
                 };
                 pairs.Add(matchPair);
 
@@ -235,6 +244,5 @@ namespace TimberAssembly
             }
             return pairs;
         }
-
     }
 }

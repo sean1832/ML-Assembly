@@ -13,7 +13,7 @@ namespace TestTimberAssembly
             var jsonList = new List<string>();
             
             // Act
-            var actual = Parser.ParseAgents(jsonList);
+            var actual = Parser.DeserializeToAgent(jsonList);
             
             // Assert
             Assert.That(actual, Is.Empty);
@@ -29,7 +29,7 @@ namespace TestTimberAssembly
             };
             
             // Act
-            var actual = Parser.ParseAgents(jsonList);
+            var actual = Parser.DeserializeToAgent(jsonList);
             
             // Assert
             Assert.That(actual, Has.Exactly(2).Items);

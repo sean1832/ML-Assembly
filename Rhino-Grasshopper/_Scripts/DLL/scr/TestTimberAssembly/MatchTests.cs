@@ -252,14 +252,14 @@ namespace TestTimberAssembly
             List<MatchPair> result = match.RemainMatch(previousRemains);
 
             // Assert
-            Assert.IsNotNull(result[0].OffcutsAgent);
-            Assert.AreEqual(1, result[0].OffcutsAgent.Dimension.Length);
-            Assert.AreEqual(1, result[0].OffcutsAgent.Dimension.Width);
-            Assert.AreEqual(1, result[0].OffcutsAgent.Dimension.Height);
+            Assert.IsNotNull(result[0].Subjects[1]);
+            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Length);
+            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Width);
+            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Height);
 
-            Assert.AreEqual(1, result[1].OffcutsAgent.Dimension.Length);
-            Assert.AreEqual(1, result[1].OffcutsAgent.Dimension.Width);
-            Assert.AreEqual(2, result[1].OffcutsAgent.Dimension.Height);
+            Assert.AreEqual(1, result[1].Subjects[1].Dimension.Length);
+            Assert.AreEqual(1, result[1].Subjects[1].Dimension.Width);
+            Assert.AreEqual(2, result[1].Subjects[1].Dimension.Height);
         }
 
         [Test]
@@ -288,13 +288,13 @@ namespace TestTimberAssembly
 
             // Assert
             Assert.AreEqual(2, result.Count);
-            Assert.AreEqual(1, result[0].OffcutsAgent.Dimension.Length);
-            Assert.AreEqual(1, result[0].OffcutsAgent.Dimension.Width);
-            Assert.AreEqual(1, result[0].OffcutsAgent.Dimension.Height);
+            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Length);
+            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Width);
+            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Height);
 
-            Assert.AreEqual(1, result[1].OffcutsAgent.Dimension.Length);
-            Assert.AreEqual(1, result[1].OffcutsAgent.Dimension.Width);
-            Assert.AreEqual(2, result[1].OffcutsAgent.Dimension.Height);
+            Assert.AreEqual(1, result[1].Subjects[1].Dimension.Length);
+            Assert.AreEqual(1, result[1].Subjects[1].Dimension.Width);
+            Assert.AreEqual(2, result[1].Subjects[1].Dimension.Height);
         }
 
         [Test]
@@ -325,13 +325,13 @@ namespace TestTimberAssembly
 
             // Assert
             Assert.AreEqual(3, result.Count);
-            Assert.AreEqual(1, result[0].OffcutsAgent.Dimension.Length);
-            Assert.AreEqual(1, result[0].OffcutsAgent.Dimension.Width);
-            Assert.AreEqual(1, result[0].OffcutsAgent.Dimension.Height);
+            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Length);
+            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Width);
+            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Height);
 
-            Assert.AreEqual(1, result[1].OffcutsAgent.Dimension.Length);
-            Assert.AreEqual(1, result[1].OffcutsAgent.Dimension.Width);
-            Assert.AreEqual(2, result[1].OffcutsAgent.Dimension.Height);
+            Assert.AreEqual(1, result[1].Subjects[1].Dimension.Length);
+            Assert.AreEqual(1, result[1].Subjects[1].Dimension.Width);
+            Assert.AreEqual(2, result[1].Subjects[1].Dimension.Height);
         }
     }
 }
