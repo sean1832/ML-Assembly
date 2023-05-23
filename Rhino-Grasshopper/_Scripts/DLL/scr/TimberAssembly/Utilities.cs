@@ -36,7 +36,7 @@ namespace TimberAssembly
             if (Math.Abs(agent2.Dimension.Width - target.Dimension.Width) > tolerance)
                 differenceCount2++;
 
-
+            // Linear comparison only for now. This means there should be only one dimension difference.
             if (differenceCount1 > 1 || differenceCount2 > 1)
                 return false;
 

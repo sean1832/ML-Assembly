@@ -60,6 +60,8 @@ namespace TimberAssembly
             List<Agent> remainTargets = previousRemains.Targets.ToList();
             List<Agent> remainSalvages = previousRemains.Subjects.ToList();
 
+            List<Agent> matchedSubjects = new List<Agent>();
+
             List<MatchPair> pairs = new List<MatchPair>();
             foreach (var target in previousRemains.Targets)
             {
@@ -70,9 +72,13 @@ namespace TimberAssembly
                     if (isMatched) break;
 
                     var salvage1 = previousRemains.Subjects[i];
+                    if (matchedSubjects.Contains(salvage1)) continue;
+
                     for (int j = i + 1; j < previousRemains.Subjects.Count; j++)
                     {
                         var salvage2 = previousRemains.Subjects[j];
+                        if (matchedSubjects.Contains(salvage2)) continue;
+
                         if (Utilities.IsAgentSecondMatched(target, salvage1, salvage2, Tolerance))
                         {
                             isMatched = true;
@@ -84,6 +90,9 @@ namespace TimberAssembly
                             };
 
                             pairs.Add(pair);
+
+                            matchedSubjects.Add(salvage1);
+                            matchedSubjects.Add(salvage2);
 
                             remainTargets.Remove(target);
                             remainSalvages.Remove(salvage1);

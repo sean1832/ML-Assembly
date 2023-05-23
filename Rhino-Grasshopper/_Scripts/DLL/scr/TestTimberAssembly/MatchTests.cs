@@ -176,18 +176,18 @@ namespace TestTimberAssembly
             Remain dummyRemain = new Remain();
             List<Agent> targets = new List<Agent>()
             {
-                new Agent(){Dimension = new Dimension(5, 2, 3)},
-                new Agent(){Dimension = new Dimension(6, 9, 8)},
                 new Agent(){Dimension = new Dimension(7, 8, 9)},
+                new Agent(){Dimension = new Dimension(6, 9, 8)},
+                new Agent(){Dimension = new Dimension(5, 2, 3)},
                 new Agent(){Dimension = new Dimension(8, 9, 10)}
             };
 
             List<Agent> salvages = new List<Agent>()
             {
+                new Agent(){Dimension = new Dimension(5, 8, 9)},
+                new Agent(){Dimension = new Dimension(2, 8, 9)},
                 new Agent(){Dimension = new Dimension(3, 2, 3)},
                 new Agent(){Dimension = new Dimension(2, 2, 3)},
-                new Agent(){Dimension = new Dimension(5, 5, 4)},
-                new Agent(){Dimension = new Dimension(2, 3, 5)},
                 new Agent(){Dimension = new Dimension(9, 10, 15)},
             };
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
@@ -196,8 +196,11 @@ namespace TestTimberAssembly
             List<MatchPair> pairs = _sut.SecondMatchSlow(remain, out dummyRemain);
 
             // Assert
-            Assert.That(dummyRemain.Subjects.Count == 2);
-            Assert.That(dummyRemain.Targets.Count == 1);
+            Assert.That(dummyRemain.Subjects.Count == 1);
+            Assert.That(dummyRemain.Targets.Count == 2);
+            Assert.That(dummyRemain.Subjects[0] == salvages[4]);
+            Assert.That(dummyRemain.Targets[0] == targets[1]);
+            Assert.That(dummyRemain.Targets[1] == targets[3]);
         }
 
         //[Test]
