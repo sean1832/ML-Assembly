@@ -296,5 +296,42 @@ namespace TestTimberAssembly
             Assert.AreEqual(1, result[1].OffcutsAgent.Dimension.Width);
             Assert.AreEqual(2, result[1].OffcutsAgent.Dimension.Height);
         }
+
+        [Test]
+        public void RemainMatch_ReturnMatchPair_WhenSubjectsIsLessThanTarget()
+        {
+            // Arrange
+            List<Agent> targets = new List<Agent>()
+            {
+                new Agent(){Dimension = new Dimension(5, 5, 5)},
+                new Agent(){Dimension = new Dimension(7, 9, 4)},
+                new Agent(){Dimension = new Dimension(10, 4, 7)},
+                new Agent(){Dimension = new Dimension(8, 15, 3)}
+            };
+
+            List<Agent> salvages = new List<Agent>()
+            {
+                new Agent(){Dimension = new Dimension(4, 4, 4)},
+                new Agent(){Dimension = new Dimension(6, 8, 2)},
+                new Agent(){Dimension = new Dimension(10, 4, 7)}
+            };
+            Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
+
+
+            var match = new TimberAssembly.Match(_targetAgents, _salvageAgents, 0.01);
+
+            // Act
+            List<MatchPair> result = match.RemainMatch(previousRemains);
+
+            // Assert
+            Assert.AreEqual(3, result.Count);
+            Assert.AreEqual(1, result[0].OffcutsAgent.Dimension.Length);
+            Assert.AreEqual(1, result[0].OffcutsAgent.Dimension.Width);
+            Assert.AreEqual(1, result[0].OffcutsAgent.Dimension.Height);
+
+            Assert.AreEqual(1, result[1].OffcutsAgent.Dimension.Length);
+            Assert.AreEqual(1, result[1].OffcutsAgent.Dimension.Width);
+            Assert.AreEqual(2, result[1].OffcutsAgent.Dimension.Height);
+        }
     }
 }

@@ -54,39 +54,31 @@ public abstract class Script_Instance_f7dfd : GH_ScriptInstance
   /// they will have a default value.
   /// </summary>
   #region Runscript
-  private void RunScript(List<string> salvageData, List<string> TargetFrameData, double tolerance, bool EnableSecondMatch, ref object pairDatas, ref object D1, ref object D2)
+  private void RunScript(List<string> salvageData, List<string> TargetFrameData, double tolerance, bool EnableSecondMatch, ref object pairDatas, ref object D1, ref object D2, ref object D3)
   {
     List<Agent> salvageAgents = Parser.ParseAgents(salvageData);
     List<Agent> targetAgents = Parser.ParseAgents(TargetFrameData);
 
-    Match matchOperation = new Match(salvageAgents, targetAgents, tolerance);
+    Match matchOperation = new Match(targetAgents, salvageAgents, tolerance);
 
     Remain remainFirst = new Remain();
     Remain remainSecond = new Remain();
 
+
     List<MatchPair> matchedPairs = matchOperation.ExactMatch(out remainFirst);
-    matchedPairs.AddRange(matchOperation.SecondMatch(remainFirst, out remainSecond));
+    matchedPairs.AddRange(matchOperation.SecondMatchSlow(remainFirst, out remainSecond));
+    //matchedPairs.AddRange(matchOperation.RemainMatch(remainSecond));
 
-    List<Point3d> debugDimension1 = new List<Point3d>(); 
 
-    List<Point3d> debugDimension2 = new List<Point3d>();
+    List<Agent> targets = remainSecond.Targets;
+    List<Agent> salvages = remainSecond.Subjects;
 
-    List<Agent> targets = remainFirst.Targets;
-    List<Agent> salvages = remainFirst.Subjects;
+    D1 = targets.Count;
+    D2 = salvages.Count;
 
-    foreach (Agent target in targets)
-    {
-      debugDimension1.Add(new Point3d(target.Dimension.Length, target.Dimension.Width, target.Dimension.Height));
-    }
+    D3 = matchedPairs.Count;
 
-    foreach (Agent salvage in salvages)
-    {
-      debugDimension2.Add(new Point3d(salvage.Dimension.Length, salvage.Dimension.Width, salvage.Dimension.Height));
-    }
-    D1 = debugDimension1;
-    D2 = debugDimension2;
-
-    //matchedPairs.AddRange(matchOperation.RemainMatch(remainFirst));
+    
 
 
 
