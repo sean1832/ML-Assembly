@@ -200,6 +200,8 @@ namespace TimberAssembly
 
             List<MatchPair> pairs = new List<MatchPair>();
 
+            int count = 0;
+
             // Match each target with a suitable subject
             for (var i = 0; i < remainTargets.Count; i++)
             {
@@ -208,6 +210,8 @@ namespace TimberAssembly
 
                 foreach (Agent salvage in remainSalvages)
                 {
+                    if (salvage.Dimension.IsAnyLargerThan(target.Dimension)) continue;
+
                     Dimension difference = Dimension.Subtract(target.Dimension, salvage.Dimension);
                     difference = Dimension.Absolute(difference);
                     potentialMatches.Add(salvage, difference);
@@ -225,6 +229,25 @@ namespace TimberAssembly
                 Agent selectedSalvage = sortedMatches[0].Key;
                 Dimension remainingDimension = sortedMatches[0].Value;
 
+                foreach (var prop in remainingDimension.GetType().GetProperties())
+                {
+                    if ((double)prop.GetValue(remainingDimension) == 0)
+                    {
+                        if (prop.Name == "Length")
+                        {
+                            prop.SetValue(remainingDimension, target.Dimension.Length);
+                        }
+                        else if (prop.Name == "Width")
+                        {
+                            prop.SetValue(remainingDimension, target.Dimension.Width);
+                        }
+                        else if (prop.Name == "Height")
+                        {
+                            prop.SetValue(remainingDimension, target.Dimension.Height);
+                        }
+                    }
+                }
+
                 MatchPair matchPair = new MatchPair   
                 {
                     Target = target,
@@ -233,12 +256,14 @@ namespace TimberAssembly
                         selectedSalvage,
                         new Agent() 
                         {
-                            Name = $"NewTimber{i:D2}",
+                            Name = $"NewTimber{count:D2}",
                             Dimension = remainingDimension
                         }
                     }
                 };
                 pairs.Add(matchPair);
+
+                count++;
 
                 remainSalvages.Remove(selectedSalvage);
             }

@@ -227,6 +227,29 @@ namespace TestTimberAssembly
         #region RemainMatch
 
         [Test]
+        public void RemainMatch_ReturnEmpty_WhenSubjectsLargerThanTargets()
+        {
+            // Arrange
+            List<Agent> targets = new List<Agent>()
+            {
+                new Agent(){Dimension = new Dimension(3, 7, 8)}
+            };
+
+            List<Agent> salvages = new List<Agent>()
+            {
+                new Agent(){Dimension = new Dimension(4, 4, 4)}
+            };
+            Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
+            var match = new Match(_targetAgents, _salvageAgents, 0.01);
+
+            // Act
+            List<MatchPair> result = match.RemainMatch(previousRemains);
+
+            // Assert
+            Assert.IsEmpty(result);
+        }
+
+        [Test]
         public void RemainMatch_ReturnMatchPair_WhenSubjectEqualsTarget()
         {
             // Arrange
