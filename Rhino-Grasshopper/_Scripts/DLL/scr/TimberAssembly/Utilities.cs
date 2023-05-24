@@ -47,24 +47,38 @@ namespace TimberAssembly
             if (differenceCount1 > 1 || differenceCount2 > 1)
                 return false;
 
+            Dimension TargetAgent1Difference = Dimension.Subtract(target.Dimension, agent1.Dimension);
+            Dimension TargetAgent2Difference = Dimension.Subtract(target.Dimension, agent2.Dimension);
 
-            if ((Math.Abs(agent1.Dimension.Length + agent2.Dimension.Length - target.Dimension.Length) < tolerance)
-                && (Math.Abs(agent1.Dimension.Height + agent2.Dimension.Height - target.Dimension.Height) < tolerance)
-                && (Math.Abs(agent1.Dimension.Width + agent2.Dimension.Width - target.Dimension.Width) < tolerance))
-            {
-                return true;
-            }
-
-            else if ((agent1.Dimension.Length + agent2.Dimension.Length >= target.Dimension.Length)
-                     && (agent1.Dimension.Height + agent2.Dimension.Height >= target.Dimension.Height)
-                     && (agent1.Dimension.Width + agent2.Dimension.Width >= target.Dimension.Width))
-            {
-                return true;
-            }
-            else
+            if (TargetAgent1Difference.IsAnySmallerThan(Dimension.Zero())||
+                TargetAgent2Difference.IsAnySmallerThan(Dimension.Zero()))
             {
                 return false;
             }
+
+            // check if two agents dimension (l,h,w) can be combined to match the target agent.
+            int CombDifferentceCount = 0;
+
+            if (Math.Abs(agent1.Dimension.Length + agent2.Dimension.Length - target.Dimension.Length) < tolerance)
+            {
+                CombDifferentceCount++;
+            }
+
+            if (Math.Abs(agent1.Dimension.Height + agent2.Dimension.Height - target.Dimension.Height) < tolerance)
+            {
+                CombDifferentceCount++;
+            }
+
+            if (Math.Abs(agent1.Dimension.Width + agent2.Dimension.Width - target.Dimension.Width) < tolerance)
+            {
+                CombDifferentceCount++;
+            }
+
+            // if any dimension component (l,h,w) is matched, return true.
+            if (CombDifferentceCount >= 1)
+                return true;
+
+            return false;
         }
     }
 }

@@ -82,6 +82,12 @@ namespace TestTimberAssembly
         [Test]
         public void Test_IsAgentSecondMatched_ReturnsTrue_AgentMatchOneDimension()
         {
+            // Arrange
+            _target = new Agent
+            {
+                Dimension = new Dimension(20, 10, 5)
+            };
+
             _agent1 = new Agent
             {
                 Dimension = new Dimension(20, 10, 2)
@@ -95,6 +101,31 @@ namespace TestTimberAssembly
             var result = Utilities.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
 
             Assert.True(result);
+        }
+
+        [Test]
+        public void Test_IsAgentSecondMatched_ReturnsFalse_IfTargetsDimensionSmallerThanSingleSubject()
+        {
+            // Arrange
+            _target = new Agent
+            {
+                Dimension = new Dimension(20, 10, 2)
+            };
+            _agent1 = new Agent
+            {
+                Dimension = new Dimension(20, 10, 3)
+            };
+
+            _agent2 = new Agent
+            {
+                Dimension = new Dimension(20, 10, 8)
+            };
+
+            // Act
+            var result = Utilities.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
+
+            // Assert
+            Assert.False(result);
         }
 
         [Test]
@@ -112,6 +143,31 @@ namespace TestTimberAssembly
 
             var result = Utilities.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
 
+            Assert.False(result);
+        }
+
+        [Test]
+        public void Test_IsAgentSecondMatched_ReturnsFalse_IfBothSubjectsAreEqual()
+        {
+            // Arrange
+            _target = new Agent
+            {
+                Dimension = new Dimension(20, 10, 8)
+            };
+            _agent1 = new Agent
+            {
+                Dimension = new Dimension(20, 10, 7)
+            };
+
+            _agent2 = new Agent
+            {
+                Dimension = new Dimension(20, 10, 7)
+            };
+
+            // Act
+            var result = Utilities.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
+
+            // Assert
             Assert.False(result);
         }
 

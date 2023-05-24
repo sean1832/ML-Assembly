@@ -55,7 +55,7 @@ public abstract class Script_Instance_f7dfd : GH_ScriptInstance
   /// they will have a default value.
   /// </summary>
   #region Runscript
-  private void RunScript(List<string> salvageData, List<string> TargetFrameData, double tolerance, bool EnableSecondMatch, ref object pairDatas, ref object D1, ref object D2, ref object D3)
+  private void RunScript(List<string> salvageData, List<string> TargetFrameData, double tolerance, bool EnableSecondMatch, bool IndentData, ref object pairDatas, ref object D1, ref object D2, ref object D3)
   {
     Assembly assembly = Assembly.GetAssembly(typeof(TimberAssembly.Match));
     string version = assembly.GetName().Version.ToString();
@@ -74,8 +74,8 @@ public abstract class Script_Instance_f7dfd : GH_ScriptInstance
     List<MatchPair> matchedPairs = matchOperation.ExactMatch(out remainFirst);
     matchedPairs.AddRange(matchOperation.SecondMatchSlow(remainFirst, out remainSecond));
     matchedPairs.AddRange(matchOperation.RemainMatch(remainSecond));
-    
-    pairDatas = Parser.SerializeAgentPairs(matchedPairs);
+
+    pairDatas = Parser.SerializeAgentPairs(matchedPairs, indent: IndentData);
   }
   #endregion
   #region Additional

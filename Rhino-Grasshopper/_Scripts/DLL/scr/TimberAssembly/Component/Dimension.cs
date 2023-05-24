@@ -20,6 +20,43 @@ namespace TimberAssembly.Component
             Height = height;
         }
 
+        public bool IsAnyLargerThan(Dimension dimension)
+        {
+            bool larger = Length > dimension.Length ||
+                          Width > dimension.Width ||
+                          Height > dimension.Height;
+            return larger;
+        }
+        public bool IsAnyLargerOrEqualThan(Dimension dimension)
+        {
+            bool largerOrEqual = Length >= dimension.Length ||
+                                 Width >= dimension.Width ||
+                                 Height >= dimension.Height;
+            return largerOrEqual;
+        }
+
+        public bool IsAnySmallerThan(Dimension dimension)
+        {
+            bool smaller = Length < dimension.Length ||
+                           Width < dimension.Width ||
+                           Height < dimension.Height;
+            return smaller;
+        }
+
+        public bool IsAnySmallerOrEqualThan(Dimension dimension)
+        {
+            bool smallerOrEqual = Length <= dimension.Length ||
+                                  Width <= dimension.Width ||
+                                  Height <= dimension.Height;
+            return smallerOrEqual;
+        }
+
+        public static Dimension Zero()
+        {
+            Dimension newDimension = new Dimension(0, 0, 0);
+            return newDimension;
+        }
+
         public static Dimension Addition(Dimension dimension1, Dimension dimension2)
         {
             Dimension newDimension = new Dimension(

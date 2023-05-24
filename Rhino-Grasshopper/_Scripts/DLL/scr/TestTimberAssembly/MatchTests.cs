@@ -50,6 +50,8 @@ namespace TestTimberAssembly
             _sut = new TimberAssembly.Match(_targetAgents, _salvageAgents, 0.1);
         }
 
+        #region ExactMatch
+
         [Test]
         public void ExactMatch_ReturnsMatchedAgents_NoSharedDimension()
         {
@@ -120,6 +122,10 @@ namespace TestTimberAssembly
             Assert.That(dummyRemain.Subjects.Count == 1); // one salvage agent is not matched and remained
             Assert.That(dummyRemain.Subjects[0] == _salvageAgents[0]);
         }
+
+        #endregion
+
+        #region SecondMatch
 
         [Test]
         public void SecondMatch_ReturnMatchedNoPairs_NoShareDimension()
@@ -203,25 +209,11 @@ namespace TestTimberAssembly
             Assert.That(dummyRemain.Targets[1] == targets[3]);
         }
 
-        //[Test]
-        //public void RemainMatch_ShouldReturnEmptyList_WhenPreviousRemainsAreNull()
-        //{
-        //    // Arrange
-        //    Remain previousRemains = null;
-        //    var match = new TimberAssembly.Match(_targetAgents, _salvageAgents, 0.01);
-
-        //    // Act
-        //    List<MatchPair> result = match.RemainMatch(previousRemains);
-
-        //    // Assert
-        //    Assert.Fail();
-        //}
-
         [Test]
         public void RemainMatch_ReturnListOfMatchPairs_WhenPreviousRemainsAreNotNull()
         {
             // Arrange
-            var match = new TimberAssembly.Match(_targetAgents, _salvageAgents, 0.01);
+            var match = new Match(_targetAgents, _salvageAgents, 0.01);
 
             // Act
             List<MatchPair> result = match.RemainMatch(_remain);
@@ -229,6 +221,10 @@ namespace TestTimberAssembly
             // Assert
             Assert.IsInstanceOf<List<MatchPair>>(result);
         }
+
+        #endregion
+
+        #region RemainMatch
 
         [Test]
         public void RemainMatch_ReturnMatchPair_WhenSubjectEqualsTarget()
@@ -246,7 +242,7 @@ namespace TestTimberAssembly
                 new Agent(){Dimension = new Dimension(6, 8, 2)}
             };
             Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
-            var match = new TimberAssembly.Match(_targetAgents, _salvageAgents, 0.01);
+            var match = new Match(_targetAgents, _salvageAgents, 0.01);
 
             // Act
             List<MatchPair> result = match.RemainMatch(previousRemains);
@@ -281,7 +277,7 @@ namespace TestTimberAssembly
             Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
 
 
-            var match = new TimberAssembly.Match(_targetAgents, _salvageAgents, 0.01);
+            var match = new Match(_targetAgents, _salvageAgents, 0.01);
 
             // Act
             List<MatchPair> result = match.RemainMatch(previousRemains);
@@ -318,7 +314,7 @@ namespace TestTimberAssembly
             Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
 
 
-            var match = new TimberAssembly.Match(_targetAgents, _salvageAgents, 0.01);
+            var match = new Match(_targetAgents, _salvageAgents, 0.01);
 
             // Act
             List<MatchPair> result = match.RemainMatch(previousRemains);
@@ -333,5 +329,7 @@ namespace TestTimberAssembly
             Assert.AreEqual(1, result[1].Subjects[1].Dimension.Width);
             Assert.AreEqual(2, result[1].Subjects[1].Dimension.Height);
         }
+
+        #endregion
     }
 }
