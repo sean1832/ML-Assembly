@@ -1,5 +1,6 @@
 
 using Moq;
+using TimberAssembly.Entities;
 
 namespace TestTimberAssembly
 {
@@ -40,7 +41,7 @@ namespace TestTimberAssembly
             var tolerance = 0.1;
 
             // Act
-            var result = Utilities.IsAgentExactMatched(_agent1, _agent2, tolerance);
+            var result = ComputeMatch.IsAgentExactMatched(_agent1, _agent2, tolerance);
 
             // Assert
             Assert.IsTrue(result);
@@ -55,7 +56,7 @@ namespace TestTimberAssembly
             var tolerance = 0.1;
 
             // Act
-            var result = Utilities.IsAgentExactMatched(_agent1, _agent2, tolerance);
+            var result = ComputeMatch.IsAgentExactMatched(_agent1, _agent2, tolerance);
 
             // Assert
             Assert.IsFalse(result);
@@ -74,7 +75,7 @@ namespace TestTimberAssembly
                 Dimension = new Dimension(20, 5, 3)
             };
 
-            var result = Utilities.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
+            var result = ComputeMatch.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
 
             Assert.False(result);
         }
@@ -98,7 +99,7 @@ namespace TestTimberAssembly
                 Dimension = new Dimension(20, 10, 3)
             };
 
-            var result = Utilities.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
+            var result = ComputeMatch.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
 
             Assert.True(result);
         }
@@ -122,7 +123,7 @@ namespace TestTimberAssembly
             };
 
             // Act
-            var result = Utilities.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
+            var result = ComputeMatch.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
 
             // Assert
             Assert.False(result);
@@ -141,7 +142,7 @@ namespace TestTimberAssembly
                 Dimension = new Dimension(12, 6, 6)
             };
 
-            var result = Utilities.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
+            var result = ComputeMatch.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
 
             Assert.False(result);
         }
@@ -165,7 +166,7 @@ namespace TestTimberAssembly
             };
 
             // Act
-            var result = Utilities.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
+            var result = ComputeMatch.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
 
             // Assert
             Assert.False(result);
@@ -184,7 +185,7 @@ namespace TestTimberAssembly
                 Dimension = new Dimension(12, 6, 1)
             };
 
-            var result = Utilities.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
+            var result = ComputeMatch.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
 
             Assert.False(result);
         }

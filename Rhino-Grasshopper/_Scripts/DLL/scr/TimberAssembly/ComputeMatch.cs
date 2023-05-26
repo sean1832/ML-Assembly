@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
-using TimberAssembly.Component;
+using TimberAssembly.Entities;
 
 namespace TimberAssembly
 {
-    public class Utilities
+    public class ComputeMatch
     {
         /// <summary>
         /// Check if two agents are exactly matched.
@@ -50,7 +51,7 @@ namespace TimberAssembly
             Dimension TargetAgent1Difference = Dimension.Subtract(target.Dimension, agent1.Dimension);
             Dimension TargetAgent2Difference = Dimension.Subtract(target.Dimension, agent2.Dimension);
 
-            if (TargetAgent1Difference.IsAnySmallerThan(Dimension.Zero())||
+            if (TargetAgent1Difference.IsAnySmallerThan(Dimension.Zero()) ||
                 TargetAgent2Difference.IsAnySmallerThan(Dimension.Zero()))
             {
                 return false;

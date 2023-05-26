@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace TimberAssembly.Component
+namespace TimberAssembly.Entities
 {
     public class Dimension
     {
@@ -18,6 +15,11 @@ namespace TimberAssembly.Component
             Length = length;
             Width = width;
             Height = height;
+        }
+
+        public List<double> ToList()
+        {
+            return new List<double> { Length, Width, Height };
         }
 
         public bool IsAnyLargerThan(Dimension dimension)
@@ -51,6 +53,62 @@ namespace TimberAssembly.Component
             return smallerOrEqual;
         }
 
+        public bool IsAllLargerThan(Dimension dimension)
+        {
+            bool larger = Length > dimension.Length &&
+                          Width > dimension.Width &&
+                          Height > dimension.Height;
+            return larger;
+        }
+
+        public bool IsAllLargerOrEqualThan(Dimension dimension)
+        {
+            bool largerOrEqual = Length >= dimension.Length &&
+                                 Width >= dimension.Width &&
+                                 Height >= dimension.Height;
+            return largerOrEqual;
+        }
+
+        public bool IsAllSmallerThan(Dimension dimension)
+        {
+            bool smaller = Length < dimension.Length &&
+                           Width < dimension.Width &&
+                           Height < dimension.Height;
+            return smaller;
+        }
+
+        public bool IsAllSmallerOrEqualThan(Dimension dimension)
+        {
+            bool smallerOrEqual = Length <= dimension.Length &&
+                                  Width <= dimension.Width &&
+                                  Height <= dimension.Height;
+            return smallerOrEqual;
+        }
+
+        public Dimension Absolute()
+        {
+            Dimension newDimension = new Dimension(
+                Math.Abs(Length),
+                Math.Abs(Width),
+                Math.Abs(Height)
+            );
+            return newDimension;
+        }
+
+        public double GetVolume()
+        {
+            double volume = Length * Width * Height;
+            return volume;
+        }
+
+        public void Subtract(Dimension dimension)
+        {
+            Length -= dimension.Length;
+            Width -= dimension.Width;
+            Height -= dimension.Height;
+        }
+
+
         public static Dimension Zero()
         {
             Dimension newDimension = new Dimension(0, 0, 0);
@@ -77,15 +135,7 @@ namespace TimberAssembly.Component
             return newDimension;
         }
 
-        public static Dimension Absolute(Dimension dimension)
-        {
-            Dimension newDimension = new Dimension(
-                               Math.Abs(dimension.Length),
-                               Math.Abs(dimension.Width),
-                               Math.Abs(dimension.Height)
-                               );
-            return newDimension;
-        }
+        
 
         public static bool Equality(Dimension dimension1, Dimension dimension2, double tolerance)
         {

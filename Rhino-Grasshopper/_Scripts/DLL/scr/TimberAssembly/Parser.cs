@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TimberAssembly.Component;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using TimberAssembly.Entities;
 
 namespace TimberAssembly
 {
@@ -24,7 +24,7 @@ namespace TimberAssembly
             return agents;
         }
 
-        public static List<string> SerializeAgentPairs(List<MatchPair> pairs, bool indent = false)
+        public static List<string> SerializeAgentPairs(List<Pair> pairs, bool indent = false)
         {
             List<string> jsons = new List<string>();
 

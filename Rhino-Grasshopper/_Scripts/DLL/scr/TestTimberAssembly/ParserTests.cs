@@ -1,5 +1,6 @@
 using Moq;
 using Newtonsoft.Json;
+using TimberAssembly.Entities;
 
 namespace TestTimberAssembly
 {
@@ -68,9 +69,9 @@ namespace TestTimberAssembly
         public void SerializeAgentPairs_JsonString()
         {
             // Arrange
-            List<MatchPair> pairs = new List<MatchPair>()
+            List<Pair> pairs = new List<Pair>()
             {
-                new MatchPair()
+                new Pair()
                 {
                     Target = new Agent()
                     {

@@ -47,12 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Component\Dimension.cs" />
+    <Compile Include="Entities\Dimension.cs" />
+    <Compile Include="Entities\Pair.cs" />
+    <Compile Include="Entities\Remain.cs" />
     <Compile Include="Match.cs" />
-    <Compile Include="Component\Agent.cs" />
+    <Compile Include="Entities\Agent.cs" />
     <Compile Include="Parser.cs" />
+    <Compile Include="Processor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities.cs" />
+    <Compile Include="ComputeMatch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
