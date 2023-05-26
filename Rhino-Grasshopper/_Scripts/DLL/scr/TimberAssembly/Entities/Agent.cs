@@ -11,6 +11,11 @@
             Dimension = dimension;
         }
 
+        public override string ToString()
+        {
+            return $"({Name}, {Dimension.ToString()})";
+        }
+
         public double Volume()
         {
             return Dimension.GetVolume();

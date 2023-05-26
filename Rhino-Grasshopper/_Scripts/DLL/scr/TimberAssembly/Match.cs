@@ -168,60 +168,68 @@ namespace TimberAssembly
 
         public List<Pair> CutToTarget(Remain previousRemains, out Remain remain)
         {
-            // Bin unpacking 
-
-            // initialize
             remain = new Remain();
-            List<Agent> resultOffcuts = new List<Agent>();
-            List<Pair> results = new List<Pair>();
+            var usedSubjects = new HashSet<Agent>();
+            var usedTargets = new HashSet<Agent>();
 
-            HashSet<Agent> usedSubjects = new HashSet<Agent>();
-            HashSet<Agent> usedTargets = new HashSet<Agent>();
+            var (targets, subjects) = CloneAgents(previousRemains);
 
-            List<Agent> targets;
-            List<Agent> subjects;
-            try
-            {
-                targets = previousRemains.Targets.ToList();
-                subjects = previousRemains.Subjects.ToList();
-
-            }
-            catch (NullReferenceException e)
+            if (targets == null || subjects == null)
             {
                 return null;
             }
 
-            // matching...
+            var resultOffcuts = new List<Agent>();
+            var results = new List<Pair>();
+
             foreach (var target in targets)
             {
-                double minDiff = double.MaxValue;
-                Agent matchedSubject = null;
+                var matchedSubject = FindBestMatch(target, subjects, usedSubjects, usedTargets);
 
-                foreach (var subject in subjects)
-                {
-                    if (usedSubjects.Contains(subject) || usedTargets.Contains(target)) continue;
+                if (matchedSubject == null) continue;
 
-                    if (subject.Volume() >= target.Volume() && subject.Volume() - target.Volume() < minDiff)
-                    {
-                        minDiff = subject.Volume() - target.Volume();
-                        matchedSubject = subject;
-                    }
-                }
+                var residuals = ComputeMatch.CalculateResiduals(target, matchedSubject);
+                resultOffcuts.AddRange(residuals);
+                results.Add(new Pair(target, new List<Agent> { matchedSubject }));
 
-                if (matchedSubject != null)
-                {
-                    var residuals = new Pair(target, new List<Agent>(){matchedSubject}).CalculateResiduals();
-                    resultOffcuts.AddRange(residuals);
-                    results.Add(new Pair(target, new List<Agent>(){matchedSubject}));
-
-                    usedSubjects.Add(matchedSubject);
-                    usedTargets.Add(target);
-                }
+                usedSubjects.Add(matchedSubject);
+                usedTargets.Add(target);
             }
 
             remain.Subjects = resultOffcuts;
             return results;
         }
+
+        private (List<Agent>, List<Agent>) CloneAgents(Remain previousRemains)
+        {
+            try
+            {
+                return (previousRemains.Targets.ToList(), previousRemains.Subjects.ToList());
+            }
+            catch (NullReferenceException)
+            {
+                return (null, null);
+            }
+        }
+
+        private Agent FindBestMatch(Agent target, List<Agent> subjects, HashSet<Agent> usedSubjects, HashSet<Agent> usedTargets)
+        {
+            double minDiff = double.MaxValue;
+            Agent matchedSubject = null;
+
+            foreach (var subject in subjects)
+            {
+                if (usedSubjects.Contains(subject) || usedTargets.Contains(target)) continue;
+
+                if (subject.Volume() < target.Volume() || subject.Volume() - target.Volume() >= minDiff) continue;
+
+                minDiff = subject.Volume() - target.Volume();
+                matchedSubject = subject;
+            }
+
+            return matchedSubject;
+        }
+
 
         /// <summary>
         /// Match the rest of the targets with the rest of the subjects.
@@ -256,7 +264,7 @@ namespace TimberAssembly
                 {
                     if (salvage.Dimension.IsAnyLargerThan(target.Dimension)) continue;
 
-                    Dimension difference = Dimension.Subtract(target.Dimension, salvage.Dimension);
+                    Dimension difference = Dimension.GetDifference(target.Dimension, salvage.Dimension);
                     difference.Absolute();
                     potentialMatches.Add(salvage, difference);
                 }

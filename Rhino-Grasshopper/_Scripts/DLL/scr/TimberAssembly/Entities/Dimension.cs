@@ -22,6 +22,11 @@ namespace TimberAssembly.Entities
             return new List<double> { Length, Width, Height };
         }
 
+        public override string ToString()
+        {
+            return $"({Length}, {Width}, {Height})";
+        }
+
         public bool IsAnyLargerThan(Dimension dimension)
         {
             bool larger = Length > dimension.Length ||
@@ -85,6 +90,14 @@ namespace TimberAssembly.Entities
             return smallerOrEqual;
         }
 
+        public bool Equality(Dimension dimension, double tolerance = 0.01)
+        {
+            bool equal = Math.Abs(Length - dimension.Length) < tolerance &&
+                         Math.Abs(Width - dimension.Width) < tolerance &&
+                         Math.Abs(Height - dimension.Height) < tolerance;
+            return equal;
+        }
+
         public Dimension Absolute()
         {
             Dimension newDimension = new Dimension(
@@ -108,6 +121,12 @@ namespace TimberAssembly.Entities
             Height -= dimension.Height;
         }
 
+        public void Add(Dimension dimension)
+        {
+            Length += dimension.Length;
+            Width += dimension.Width;
+            Height += dimension.Height;
+        }
 
         public static Dimension Zero()
         {
@@ -115,7 +134,7 @@ namespace TimberAssembly.Entities
             return newDimension;
         }
 
-        public static Dimension Addition(Dimension dimension1, Dimension dimension2)
+        public static Dimension GetSum(Dimension dimension1, Dimension dimension2)
         {
             Dimension newDimension = new Dimension(
                 dimension1.Length + dimension2.Length,
@@ -125,7 +144,17 @@ namespace TimberAssembly.Entities
             return newDimension;
         }
 
-        public static Dimension Subtract(Dimension dimension1, Dimension dimension2)
+        public static Dimension GetSum(List<Dimension> dimensions)
+        {
+            Dimension newDimension = new Dimension(0, 0, 0);
+            foreach (Dimension dimension in dimensions)
+            {
+                newDimension.Add(dimension);
+            }
+            return newDimension;
+        }
+
+        public static Dimension GetDifference(Dimension dimension1, Dimension dimension2)
         {
             Dimension newDimension = new Dimension(
                 dimension1.Length - dimension2.Length,
@@ -136,13 +165,5 @@ namespace TimberAssembly.Entities
         }
 
         
-
-        public static bool Equality(Dimension dimension1, Dimension dimension2, double tolerance)
-        {
-            bool equal = Math.Abs(dimension1.Length - dimension2.Length) < tolerance &&
-                         Math.Abs(dimension1.Width - dimension2.Width) < tolerance &&
-                         Math.Abs(dimension1.Height - dimension2.Height) < tolerance;
-            return equal;
-        }
     }
 }

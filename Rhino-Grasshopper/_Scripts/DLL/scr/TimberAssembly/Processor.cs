@@ -29,10 +29,5 @@ namespace TimberAssembly
 
             return result;
         }
-
-        internal static List<List<double>> Permutations(Dimension dimension)
-        {
-            return Permutations(new List<double> { dimension.Length, dimension.Width, dimension.Height });
-        }
     }
 }

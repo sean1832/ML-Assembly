@@ -48,8 +48,8 @@ namespace TimberAssembly
             if (differenceCount1 > 1 || differenceCount2 > 1)
                 return false;
 
-            Dimension TargetAgent1Difference = Dimension.Subtract(target.Dimension, agent1.Dimension);
-            Dimension TargetAgent2Difference = Dimension.Subtract(target.Dimension, agent2.Dimension);
+            Dimension TargetAgent1Difference = Dimension.GetDifference(target.Dimension, agent1.Dimension);
+            Dimension TargetAgent2Difference = Dimension.GetDifference(target.Dimension, agent2.Dimension);
 
             if (TargetAgent1Difference.IsAnySmallerThan(Dimension.Zero()) ||
                 TargetAgent2Difference.IsAnySmallerThan(Dimension.Zero()))
@@ -80,6 +80,30 @@ namespace TimberAssembly
                 return true;
 
             return false;
+        }
+
+        public static List<Agent> CalculateResiduals(Agent target, Agent subject)
+        {
+            var residuals = new List<Agent>();
+            var targetBinsPerm = Processor.Permutations(target.Dimension.ToList());
+
+            var targetBinOpt = targetBinsPerm
+                .OrderByDescending(x => x.Min(t => subject.Dimension.ToList()[x.IndexOf(t)] / t))
+                .First();
+
+            var tempBin = subject.Dimension.ToList();
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (tempBin[i] > targetBinOpt[i])
+                {
+                    tempBin[i] -= targetBinOpt[i];
+                    residuals.Add(new Agent($"Offcut{i}", new Dimension(tempBin[0], tempBin[1], tempBin[2])));
+                    tempBin[i] = targetBinOpt[i];
+                }
+            }
+
+            return residuals;
         }
     }
 }

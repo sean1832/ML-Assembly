@@ -22,7 +22,7 @@ namespace TestTimberAssembly
 
             var expected = new Dimension(15, 15, 15);
 
-            var result = Dimension.Addition(dimension1, dimension2);
+            var result = Dimension.GetSum(dimension1, dimension2);
 
             Assert.That(Math.Abs(expected.Height - result.Height) < 0.001);
             Assert.That(Math.Abs(expected.Length - result.Length) < 0.001);
@@ -38,7 +38,7 @@ namespace TestTimberAssembly
 
             var expected = new Dimension(80, 80, 80);
 
-            var result = Dimension.Subtract(dimension1, dimension2);
+            var result = Dimension.GetDifference(dimension1, dimension2);
 
             Assert.That(Math.Abs(expected.Height - result.Height) < 0.001);
             Assert.That(Math.Abs(expected.Length - result.Length) < 0.001);
@@ -52,7 +52,7 @@ namespace TestTimberAssembly
 
             var dimension2 = new Dimension(10, 10, 10);
 
-            var result = Dimension.Equality(dimension1, dimension2, _tolerance);
+            var result = dimension1.Equality(dimension2, _tolerance);
 
             Assert.True(result);
         }
@@ -64,7 +64,7 @@ namespace TestTimberAssembly
 
             var dimension2 = new Dimension(10, 10, 10);
 
-            var result = Dimension.Equality(dimension1, dimension2, _tolerance);
+            var result = dimension1.Equality(dimension2, _tolerance);
 
             Assert.False(result);
         }
