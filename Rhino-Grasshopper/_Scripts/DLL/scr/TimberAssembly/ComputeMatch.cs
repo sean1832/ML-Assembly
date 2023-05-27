@@ -8,7 +8,7 @@ using TimberAssembly.Entities;
 
 namespace TimberAssembly
 {
-    public class ComputeMatch
+    internal class ComputeMatch
     {
         /// <summary>
         /// Check if two agents are exactly matched.
