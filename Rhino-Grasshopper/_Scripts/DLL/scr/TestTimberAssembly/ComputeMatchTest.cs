@@ -6,7 +6,7 @@ using TimberAssembly.Helper;
 namespace TestTimberAssembly
 {
     [TestFixture]
-    public class UtilitiesTest
+    public class ComputeMatchTest
     {
         private Agent _target;
         private Agent _agent1;
