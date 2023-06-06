@@ -80,6 +80,25 @@ namespace TimberAssembly
         }
 
         /// <summary>
+        /// Get total volume of new timbers.
+        /// </summary>
+        public double GetNewSubjectVolume()
+        {
+            double newSubjectVolume = 0;
+            foreach (var pair in _pairs)
+            {
+                foreach (var subject in pair.Subjects)
+                {
+                    if (subject.IsNew)
+                    {
+                        newSubjectVolume += subject.Dimension.GetVolume();
+                    }
+                }
+            }
+            return newSubjectVolume;
+        }
+
+        /// <summary>
         /// Get the percentage of used timbers compare to initial timbers by volume.
         /// (Higher the better)
         /// </summary>

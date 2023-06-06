@@ -55,7 +55,7 @@ public abstract class Script_Instance_7d043 : GH_ScriptInstance
   /// they will have a default value.
   /// </summary>
   #region Runscript
-  private void RunScript(List<object> pairsData, object remainsData, List<string> initSalvageTimber, ref object score, ref object cutCounts, ref object recycleRate, ref object wasteRate, ref object materialEfficiency, ref object laborEfficiency, ref object timeEfficiency)
+  private void RunScript(List<object> pairsData, object remainsData, List<string> initSalvageTimber, ref object score, ref object cutCounts, ref object newSubjectVolume, ref object recycleRate, ref object wasteRate, ref object materialEfficiency, ref object laborEfficiency, ref object timeEfficiency)
   {
     List<Agent> initSalvage = Parser.DeserializeToAgents(initSalvageTimber);
     Remain remain = (Remain)remainsData;
@@ -64,6 +64,13 @@ public abstract class Script_Instance_7d043 : GH_ScriptInstance
     Evaluate evaluate = new Evaluate(pairs, remain, initSalvage);
 
     cutCounts = evaluate.GetCutCount();
+    newSubjectVolume = evaluate.GetNewSubjectVolume();
+    recycleRate = evaluate.GetRecycleRateVolume();
+    wasteRate = evaluate.GetWasteRateByVolume();
+    materialEfficiency = evaluate.EvaluateEfficiencyByVolume();
+    laborEfficiency = evaluate.EvaluateEfficiencyByCutCount();
+    timeEfficiency = evaluate.EvaluateEfficiencyByTime(0.2, 0.05);
+
     score = GetOverallScore(evaluate, 0.2, 0.05);
   }
   #endregion
