@@ -87,7 +87,7 @@ namespace TimberAssembly
                         var salvage2 = previousRemains.Subjects[j];
                         if (matchedSubjects.Contains(salvage2)) continue;
 
-                        if (ComputeMatch.IsAgentSecondMatched(target, salvage1, salvage2, Tolerance))
+                        if (ComputeMatch.IsAgentSecondMatchedLinear(target, salvage1, salvage2, Tolerance))
                         {
                             isMatched = true;
 
@@ -114,6 +114,7 @@ namespace TimberAssembly
 
         /// <summary>
         /// Two subjects from the remainder of ExactMatch are combined to match one target.
+        /// SecondMatch is only able to match one dimension as this makes sense.
         /// </summary>
         /// <param name="previousRemains">Remainder from ExactMatch</param>
         /// <param name="remains">Output remainder</param>
@@ -134,7 +135,7 @@ namespace TimberAssembly
                     for (int j = i + 1; j < remainSalvages.Count; j++)
                     {
                         var salvage2 = remainSalvages[j];
-                        if (ComputeMatch.IsAgentSecondMatched(target, salvage1, salvage2, Tolerance))
+                        if (ComputeMatch.IsAgentSecondMatchedLinear(target, salvage1, salvage2, Tolerance))
                         {
                             pairDict[(target, salvage1)] = salvage2;
                             break;
@@ -165,6 +166,12 @@ namespace TimberAssembly
 
             return pairs;
         }
+        
+        // TODO: ThirdMatch for 2 dimensional matching
+
+        // TODO: ForthMatch for 3 dimensional matching
+
+
 
         public List<Pair> CutToTarget(Remain previousRemains, out Remain remain)
         {

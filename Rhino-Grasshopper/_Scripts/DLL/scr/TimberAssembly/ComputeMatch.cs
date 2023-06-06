@@ -23,7 +23,7 @@ namespace TimberAssembly
 
 
         /// <summary>
-        /// Check if two agents combined are matched with the target agent.
+        /// Linear check if two agents combined are matched with the target agent.
         /// </summary>
         public static bool IsAgentSecondMatched(Agent target, Agent agent1, Agent agent2, double tolerance = 0.1)
         {
@@ -81,6 +81,7 @@ namespace TimberAssembly
 
             return false;
         }
+
 
         public static List<Agent> CalculateResiduals(Agent target, Agent subject)
         {

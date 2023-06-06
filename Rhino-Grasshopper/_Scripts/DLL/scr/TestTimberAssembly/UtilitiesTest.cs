@@ -5,7 +5,7 @@ using TimberAssembly.Entities;
 namespace TestTimberAssembly
 {
     [TestFixture]
-    public class ComputeMatchTest
+    public class UtilitiesTest
     {
         private Agent _target;
         private Agent _agent1;
