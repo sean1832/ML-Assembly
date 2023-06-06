@@ -33,26 +33,48 @@ namespace TimberAssembly
             return cutCount;
         }
 
+        public double GetUsedSubjectVolume()
+        {
+            double usedVolume = 0;
+            foreach (var pair in _pairs)
+            {
+                foreach (var subject in pair.Subjects)
+                {
+                    usedVolume += subject.Dimension.GetVolume();
+                }
+            }
+            return usedVolume;
+        }
+
+        public double GetWasteVolume()
+        {
+            double remainVolume = 0;
+            foreach (var remain in _remains.Subjects)
+            {
+                remainVolume += remain.Dimension.GetVolume();
+            }
+            return remainVolume;
+        }
+
+        public double GetSubjectInitVolume()
+        {
+            double subjectInitialVolume = 0;
+            foreach (var subject in _totalInitialSubjects)
+            {
+                subjectInitialVolume += subject.Dimension.GetVolume();
+            }
+            return subjectInitialVolume;
+        }
+
         /// <summary>
         /// Waste Rate = Waste Volume / Total Volume
         /// (Lower the better)
         /// </summary>
         public double GetWasteRateByVolume()
         {
-            double totalVolume = 0;
-            foreach (var pair in _pairs)
-            {
-                foreach (var subject in pair.Subjects)
-                {
-                    totalVolume += subject.Dimension.GetVolume();
-                }
-            }
+            double totalVolume = GetUsedSubjectVolume();
 
-            double wasteVolume = 0;
-            foreach (var remain in _remains.Subjects)
-            {
-                wasteVolume += remain.Dimension.GetVolume();
-            }
+            double wasteVolume = GetWasteVolume();
 
             return (totalVolume == 0) ? 0 : wasteVolume / totalVolume; // avoid divide by zero
         }
@@ -61,23 +83,12 @@ namespace TimberAssembly
         /// Get the percentage of used timbers compare to initial timbers by volume.
         /// (Higher the better)
         /// </summary>
-        public double GetSubjectUseRateByVolume()
+        public double GetRecycleRateVolume()
         {
-            
-            double totalUsedVolume = 0;
-            foreach (var pair in _pairs)
-            {
-                foreach (var subject in pair.Subjects)
-                {
-                    totalUsedVolume += subject.Dimension.GetVolume();
-                }
-            }
 
-            double subjectInitialVolume = 0;
-            foreach (var subject in _totalInitialSubjects)
-            {
-                subjectInitialVolume += subject.Dimension.GetVolume();
-            }
+            double totalUsedVolume = GetUsedSubjectVolume();
+
+            double subjectInitialVolume = GetSubjectInitVolume();
 
             return (subjectInitialVolume == 0) ? 0 : totalUsedVolume / subjectInitialVolume; // avoid divide by zero
         }

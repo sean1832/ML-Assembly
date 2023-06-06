@@ -11,7 +11,6 @@ using Grasshopper.Kernel.Data;
 using Grasshopper.Kernel.Types;
 
 using System.Linq;
-using System.Reflection;
 using TimberAssembly;
 using TimberAssembly.Entities;
 
@@ -19,7 +18,7 @@ using TimberAssembly.Entities;
 /// <summary>
 /// This class will be instantiated on demand by the Script component.
 /// </summary>
-public abstract class Script_Instance_f7dfd : GH_ScriptInstance
+public abstract class Script_Instance_7d043 : GH_ScriptInstance
 {
   #region Utility functions
   /// <summary>Print a String to the [Out] Parameter of the Script component.</summary>
@@ -56,67 +55,40 @@ public abstract class Script_Instance_f7dfd : GH_ScriptInstance
   /// they will have a default value.
   /// </summary>
   #region Runscript
-  private void RunScript(List<string> salvageData, List<string> TargetFrameData, double tolerance, ref object pairDatas, ref object remains)
+  private void RunScript(List<object> pairsData, object remainsData, List<string> initSalvageTimber, ref object score, ref object cutCounts, ref object RecycleRate, ref object wasteRate, ref object materialEfficiency, ref object laborEfficiency, ref object timeEfficiency)
   {
-    // version display
-    Assembly assembly = Assembly.GetAssembly(typeof(TimberAssembly.Match));
-    string version = assembly.GetName().Version.ToString();
-    Component.Message = "Ver " + version;
+    List<Agent> initSalvage = Parser.DeserializeToAgents(initSalvageTimber);
+    Remain remain = (Remain)remainsData;
+    List<Pair> pairs = pairsData.OfType<Pair>().ToList();
 
-    // deserialize
-    List<Agent> salvageAgents = Parser.DeserializeToAgents(salvageData);
-    List<Agent> targetAgents = Parser.DeserializeToAgents(TargetFrameData);
+    Evaluate evaluate = new Evaluate(pairs, remain, initSalvage);
 
+    cutCounts = evaluate.GetCutCount();
 
-    // tolerance limit
-    if (tolerance > smallestDimension(salvageAgents))
-    {
-      string message = "Tolerance is too large. Tolerance is set to " + smallestDimension(salvageAgents).ToString();
-      Component.AddRuntimeMessage(GH_RuntimeMessageLevel.Warning, message);
-      tolerance = smallestDimension(salvageAgents);
-    }
-
-
-    Match matchOperation = new Match(targetAgents, salvageAgents, tolerance);
-
-    Remain remainFirst = new Remain();
-    Remain remainSecond = new Remain();
-    Remain remainThird = new Remain();
-
-    List<Pair> matchedPairs = matchOperation.ExactMatch(out remainFirst);
-    matchedPairs.AddRange(matchOperation.SecondMatchSlow(remainFirst, out remainSecond));
-    matchedPairs.AddRange(matchOperation.CutToTarget(remainSecond, out remainThird));
-    matchedPairs.AddRange(matchOperation.RemainMatch(remainThird));
-
-    List<Pair> nonTrimmedPairs = new List<Pair>();
-
-    foreach (var pair in matchedPairs)
-    {
-      foreach (var subject in pair.Subjects)
-      {
-        if (subject.Trimmed > 0) continue;
-        nonTrimmedPairs.Add(pair);
-        break;
-      }
-    }
-
-    pairDatas = matchedPairs;
-    remains = remainThird;
   }
   #endregion
   #region Additional
 
-  private double smallestDimension(List<Agent> agents)
+  private double GetOverallScore(Evaluate eval, double timePerSubject, double timePerCut)
   {
-    double smallestDimension = double.MaxValue;
-    foreach (var agent in agents)
-    {
-      if (agent.Dimension.ToList().Min() < smallestDimension)
-      {
-        smallestDimension = agent.Dimension.ToList().Min();
-      }
-    }
-    return smallestDimension;
+    // These weights should add up to 1
+    double wasteRateWeight = 0.2;
+    double recycleRateWeight = 0.25;
+    double materialEfficiencyWeight = 0.25;
+    double laborEfficiencyWeight = 0.15;
+    double timeEfficiencyWeight = 0.15;
+
+    // Calculate each component of the overall score
+    double wasteRateScore = (1 - eval.GetWasteRateByVolume()) * wasteRateWeight;
+    double recycleRateScore = eval.GetRecycleRateVolume() * recycleRateWeight;
+    double materialEfficiencyScore = eval.EvaluateEfficiencyByVolume() * materialEfficiencyWeight;
+    double laborEfficiencyScore = eval.EvaluateEfficiencyByCutCount() * laborEfficiencyWeight;
+    double timeEfficiencyScore = eval.EvaluateEfficiencyByTime(timePerSubject, timePerCut) * timeEfficiencyWeight;
+
+    // Sum up all the components to get the overall score
+    double overallScore = wasteRateScore + recycleRateScore + materialEfficiencyScore + laborEfficiencyScore + timeEfficiencyScore;
+
+    return overallScore;
   }
   #endregion
 }
