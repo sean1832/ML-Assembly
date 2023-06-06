@@ -5,7 +5,7 @@ using TimberAssembly.Entities;
 namespace TestTimberAssembly
 {
     [TestFixture]
-    public class UtilitiesTests
+    public class ComputeMatchTest
     {
         private Agent _target;
         private Agent _agent1;
@@ -65,6 +65,10 @@ namespace TestTimberAssembly
         [Test]
         public void Test_IsAgentSecondMatched_ReturnsFalse_AgentMismatchOneDimension()
         {
+            _target = new Agent
+            {
+                Dimension = new Dimension(20, 10, 5)
+            };
             _agent1 = new Agent
             {
                 Dimension = new Dimension(20, 5, 2)

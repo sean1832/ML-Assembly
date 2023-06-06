@@ -11,7 +11,6 @@ using Grasshopper.Kernel.Data;
 using Grasshopper.Kernel.Types;
 
 using System.Linq;
-using System.Reflection;
 using TimberAssembly;
 using TimberAssembly.Entities;
 
@@ -19,7 +18,7 @@ using TimberAssembly.Entities;
 /// <summary>
 /// This class will be instantiated on demand by the Script component.
 /// </summary>
-public abstract class Script_Instance_f7dfd : GH_ScriptInstance
+public abstract class Script_Instance_e6ad6 : GH_ScriptInstance
 {
   #region Utility functions
   /// <summary>Print a String to the [Out] Parameter of the Script component.</summary>
@@ -56,67 +55,17 @@ public abstract class Script_Instance_f7dfd : GH_ScriptInstance
   /// they will have a default value.
   /// </summary>
   #region Runscript
-  private void RunScript(List<string> salvageData, List<string> TargetFrameData, double tolerance, ref object pairDatas, ref object remains)
+  private void RunScript(List<object> pairDatas, object remains, bool indent, ref object pairJSON, ref object remainJSON)
   {
-    // version display
-    Assembly assembly = Assembly.GetAssembly(typeof(TimberAssembly.Match));
-    string version = assembly.GetName().Version.ToString();
-    Component.Message = "Ver " + version;
+    // cast object to pair
+    List<Pair> pairList = pairDatas.OfType<Pair>().ToList();
+    pairJSON = Parser.SerializeAgentPairs(pairList, indent: indent);
 
-    // deserialize
-    List<Agent> salvageAgents = Parser.DeserializeToAgents(salvageData);
-    List<Agent> targetAgents = Parser.DeserializeToAgents(TargetFrameData);
-
-
-    // tolerance limit
-    if (tolerance > smallestDimension(salvageAgents))
-    {
-      string message = "Tolerance is too large. Tolerance is set to " + smallestDimension(salvageAgents).ToString();
-      Component.AddRuntimeMessage(GH_RuntimeMessageLevel.Warning, message);
-      tolerance = smallestDimension(salvageAgents);
-    }
-
-
-    Match matchOperation = new Match(targetAgents, salvageAgents, tolerance);
-
-    Remain remainFirst = new Remain();
-    Remain remainSecond = new Remain();
-    Remain remainThird = new Remain();
-
-    List<Pair> matchedPairs = matchOperation.ExactMatch(out remainFirst);
-    matchedPairs.AddRange(matchOperation.SecondMatchSlow(remainFirst, out remainSecond));
-    matchedPairs.AddRange(matchOperation.CutToTarget(remainSecond, out remainThird));
-    matchedPairs.AddRange(matchOperation.RemainMatch(remainThird));
-
-    List<Pair> nonTrimmedPairs = new List<Pair>();
-
-    foreach (var pair in matchedPairs)
-    {
-      foreach (var subject in pair.Subjects)
-      {
-        if (subject.Trimmed) continue;
-        nonTrimmedPairs.Add(pair);
-        break;
-      }
-    }
-
-    pairDatas = matchedPairs;
-    remains = remainThird;
+    // cast object to remain
+    remainJSON = Parser.SerializeAgentRemains((Remain)remains, indent: indent);
   }
   #endregion
   #region Additional
 
-  private double smallestDimension(List<Agent> agents)
-  {
-    double smallestDimension = double.MaxValue;
-    foreach (var agent in agents)
-    {
-      if (agent.Dimension.ToList().Min() < smallestDimension)
-      {
-        smallestDimension = agent.Dimension.ToList().Min();
-      }
-    }
-    return smallestDimension;
-  }
   #endregion
 }

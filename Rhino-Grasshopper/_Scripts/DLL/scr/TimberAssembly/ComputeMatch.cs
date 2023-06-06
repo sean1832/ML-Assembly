@@ -8,7 +8,7 @@ using TimberAssembly.Entities;
 
 namespace TimberAssembly
 {
-    internal class ComputeMatch
+    public class ComputeMatch
     {
         /// <summary>
         /// Check if two agents are exactly matched.
@@ -85,20 +85,30 @@ namespace TimberAssembly
         public static List<Agent> CalculateResiduals(Agent target, Agent subject)
         {
             var residuals = new List<Agent>();
+
+            // Calculate all permutations of the target's dimensions.
             var targetBinsPerm = Processor.Permutations(target.Dimension.ToList());
 
+            // Find the permutation of the target's dimensions which maximizes the minimum ratio of 
+            // the subject's dimensions to the target's dimensions. This is to find the orientation 
+            // of the target that will allow the subject to fit inside with the least waste.
             var targetBinOpt = targetBinsPerm
                 .OrderByDescending(x => x.Min(t => subject.Dimension.ToList()[x.IndexOf(t)] / t))
                 .First();
 
+            // Make a temporary copy of the subject's dimensions.
             var tempBin = subject.Dimension.ToList();
 
+            // Iterate over three dimensions (width, height, and depth).
             for (int i = 0; i < 3; i++)
             {
+                // If a dimension of the subject exceeds the corresponding dimension of the optimal
+                // orientation of the target, calculate the residual in that dimension.
                 if (tempBin[i] > targetBinOpt[i])
                 {
+                    // Reduce the dimension of the subject by the size of the target's corresponding dimension.
                     tempBin[i] -= targetBinOpt[i];
-                    residuals.Add(new Agent($"Offcut{i}", new Dimension(tempBin[0], tempBin[1], tempBin[2])));
+                    residuals.Add(new Agent($"Offcut{i} form {subject.Name}", new Dimension(tempBin[0], tempBin[1], tempBin[2]), true));
                     tempBin[i] = targetBinOpt[i];
                 }
             }

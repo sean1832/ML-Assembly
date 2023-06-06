@@ -45,5 +45,21 @@ namespace TimberAssembly
 
             return jsons;
         }
+
+        public static List<string> SerializeAgentRemains(Remain remains, bool indent = false)
+        {
+            List<string> jsons = new List<string>();
+
+            if (indent)
+            {
+                jsons.Add(JsonConvert.SerializeObject(remains, Formatting.Indented));
+            }
+            else
+            {
+                jsons.Add(JsonConvert.SerializeObject(remains));
+            }
+
+            return jsons;
+        }
     }
 }

@@ -178,6 +178,31 @@ namespace TestTimberAssembly
         }
 
         [Test]
+        public void SecondMatch_ReturnMatchedOnePairs_WhenOneOfSubjectEqualsTarget()
+        {
+            // Arrange
+            Remain dummyRemain = new Remain();
+            List<Agent> targets = new List<Agent>()
+            {
+                new Agent(dimension:new Dimension(5, 2, 3))
+            };
+
+            List<Agent> salvages = new List<Agent>()
+            {
+                new Agent(dimension : new Dimension(5, 2, 3)),
+                new Agent(dimension:new Dimension(5, 2, 3))
+            };
+
+            Remain remain = new Remain() { Targets = targets, Subjects = salvages };
+
+            // Act
+            List<Pair> pairs = _sut.SecondMatchFast(remain, out dummyRemain);
+
+            // Assert
+            Assert.AreEqual(0, pairs.Count);
+        }
+
+        [Test]
         public void SecondMatch_RemainAgents()
         {
             // Arrange
@@ -229,7 +254,7 @@ namespace TestTimberAssembly
         #region DePackBin
 
         [Test]
-        public void CutToTarget_ReturnMatchPairAndOffcutsRemain_WhenSubjectIsLargerThanTargets()
+        public void CutToTarget_OffcutsRemain_WhenSubjectIsLargerThanTargets()
         {
             // Arrange
             List<Agent> targets = new List<Agent>()
@@ -252,13 +277,6 @@ namespace TestTimberAssembly
             Assert.That(result.Count == 1);
             Assert.AreEqual(3, outRemains.Subjects.Count);
 
-            double volume = 0;
-            foreach (var subject in outRemains.Subjects)
-            {
-                volume += subject.Dimension.GetVolume();
-            }
-            Assert.AreEqual(subjects[0].Volume() - targets[0].Volume(), volume);
-
             Assert.AreEqual(8, outRemains.Subjects[0].Dimension.Length);
             Assert.AreEqual(4, outRemains.Subjects[0].Dimension.Width);
             Assert.AreEqual(8, outRemains.Subjects[0].Dimension.Height);
@@ -273,7 +291,44 @@ namespace TestTimberAssembly
         }
 
         [Test]
-        public void CutToTarget_ReturnMatchPairAndOffcutsRemain_MultipleSubjectsAndTargets()
+        public void CutToTarget_ReturnMatchedPairs_MultipleSubjectsAndTargets()
+        {
+            // Arrange
+            List<Agent> targets = new List<Agent>()
+            {
+                new Agent(dimension : new Dimension(2, 2, 6)),
+                new Agent(dimension : new Dimension(3, 5, 2))
+            };
+
+            List<Agent> salvages = new List<Agent>()
+            {
+                new Agent(dimension : new Dimension(4, 4, 8)),
+                new Agent(dimension : new Dimension(2, 5, 6)),
+                new Agent(dimension : new Dimension(7, 4, 7))
+            };
+            Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
+            List<double> expectedTargets1 = new List<double>() { 2, 2, 6 };
+            List<double> expectedTargets2 = new List<double>() { 3, 5, 2 };
+
+            List<double> expectedSubjects1 = new List<double>() { 2, 2, 6 };
+            List<double> expectedSubjects2 = new List<double>() { 3, 5, 2 };
+
+            var match = new Match(_targetAgents, _salvageAgents, 0.01);
+
+            // Act
+            List<Pair> result = match.CutToTarget(previousRemains, out var outRemains);
+
+            // Assert
+            Assert.AreEqual(2, result.Count);
+            Assert.AreEqual(expectedTargets1, result[0].Target.Dimension.ToList());
+            Assert.AreEqual(expectedSubjects1, result[0].Subjects[0].Dimension.ToList());
+
+            Assert.AreEqual(expectedTargets2, result[1].Target.Dimension.ToList());
+            Assert.AreEqual(expectedSubjects2, result[1].Subjects[0].Dimension.ToList());
+        }
+
+        [Test]
+        public void CutToTarget_OffcutsRemain_MultipleSubjectsAndTargets()
         {
             // Arrange
             List<Agent> targets = new List<Agent>()

@@ -181,6 +181,8 @@ namespace TimberAssembly
 
             var resultOffcuts = new List<Agent>();
             var results = new List<Pair>();
+            List<Agent> remainTargets = targets.ToList();
+
 
             foreach (var target in targets)
             {
@@ -190,13 +192,21 @@ namespace TimberAssembly
 
                 var residuals = ComputeMatch.CalculateResiduals(target, matchedSubject);
                 resultOffcuts.AddRange(residuals);
+
+                // mutate matched subject
+                matchedSubject.Trimmed = true;
+                matchedSubject.Dimension = target.Dimension;
+
                 results.Add(new Pair(target, new List<Agent> { matchedSubject }));
 
                 usedSubjects.Add(matchedSubject);
                 usedTargets.Add(target);
+                remainTargets.Remove(target);
             }
 
+            remain.Targets = remainTargets;
             remain.Subjects = resultOffcuts;
+
             return results;
         }
 
@@ -247,7 +257,7 @@ namespace TimberAssembly
             }
             catch (NullReferenceException e)
             {
-                return null;
+                return new List<Pair>();
             }
 
             List<Pair> pairs = new List<Pair>();
