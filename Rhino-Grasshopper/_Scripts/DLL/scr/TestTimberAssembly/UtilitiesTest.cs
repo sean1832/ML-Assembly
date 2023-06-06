@@ -1,6 +1,7 @@
 
 using Moq;
 using TimberAssembly.Entities;
+using TimberAssembly.Helper;
 
 namespace TestTimberAssembly
 {

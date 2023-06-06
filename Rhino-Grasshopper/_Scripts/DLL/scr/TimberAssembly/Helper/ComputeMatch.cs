@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using TimberAssembly.Entities;
 
-namespace TimberAssembly
+namespace TimberAssembly.Helper
 {
     public class ComputeMatch
     {

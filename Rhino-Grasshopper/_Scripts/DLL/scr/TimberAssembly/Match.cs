@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using TimberAssembly.Entities;
+using TimberAssembly.Helper;
 
 namespace TimberAssembly
 {
@@ -87,7 +88,7 @@ namespace TimberAssembly
                         var salvage2 = previousRemains.Subjects[j];
                         if (matchedSubjects.Contains(salvage2)) continue;
 
-                        if (ComputeMatch.IsAgentSecondMatchedLinear(target, salvage1, salvage2, Tolerance))
+                        if (ComputeMatch.IsAgentSecondMatched(target, salvage1, salvage2, Tolerance))
                         {
                             isMatched = true;
 
@@ -135,7 +136,7 @@ namespace TimberAssembly
                     for (int j = i + 1; j < remainSalvages.Count; j++)
                     {
                         var salvage2 = remainSalvages[j];
-                        if (ComputeMatch.IsAgentSecondMatchedLinear(target, salvage1, salvage2, Tolerance))
+                        if (ComputeMatch.IsAgentSecondMatched(target, salvage1, salvage2, Tolerance))
                         {
                             pairDict[(target, salvage1)] = salvage2;
                             break;
