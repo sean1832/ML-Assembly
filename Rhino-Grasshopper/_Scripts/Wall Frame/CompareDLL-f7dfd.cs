@@ -87,18 +87,19 @@ public abstract class Script_Instance_f7dfd : GH_ScriptInstance
     matchedPairs.AddRange(matchOperation.SecondMatchSlow(remainFirst, out remainSecond));
     matchedPairs.AddRange(matchOperation.CutToTarget(remainSecond, out remainThird));
     matchedPairs.AddRange(matchOperation.RemainMatch(remainThird));
+    matchedPairs.AddRange(matchOperation.ExtendToTarget(ref remainThird));
 
-    List<Pair> nonTrimmedPairs = new List<Pair>();
+    //List<Pair> nonTrimmedPairs = new List<Pair>();
 
-    foreach (var pair in matchedPairs)
-    {
-      foreach (var subject in pair.Subjects)
-      {
-        if (subject.Trimmed > 0) continue;
-        nonTrimmedPairs.Add(pair);
-        break;
-      }
-    }
+    //foreach (var pair in matchedPairs)
+    //{
+    //  foreach (var subject in pair.Subjects)
+    //  {
+    //    if (subject.Trimmed > 0) continue;
+    //    nonTrimmedPairs.Add(pair);
+    //    break;
+    //  }
+    //}
 
     pairDatas = matchedPairs;
     remains = remainThird;

@@ -10,12 +10,21 @@ namespace TimberAssembly.Entities
         public double Width { get; set; }
         public double Height { get; set; }
 
+        public Dimension() { }
         public Dimension(double length, double width, double height)
         {
             Length = length;
             Width = width;
             Height = height;
         }
+
+        public Dimension(List<double> dimensions)
+        {
+            Length = dimensions[0];
+            Width = dimensions[1];
+            Height = dimensions[2];
+        }
+
 
         public List<double> ToList()
         {

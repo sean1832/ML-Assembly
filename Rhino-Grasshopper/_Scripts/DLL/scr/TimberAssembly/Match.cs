@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Newtonsoft.Json;
 using TimberAssembly.Entities;
 using TimberAssembly.Helper;
@@ -337,6 +338,39 @@ namespace TimberAssembly
 
                 remainSalvages.Remove(selectedSalvage);
             }
+            return pairs;
+        }
+
+        public List<Pair> ExtendToTarget(ref Remain remain)
+        {
+            Remain previousRemains = remain;
+            List<Agent> preRemainTargets = previousRemains.Targets;
+            List<Agent> remainTargets = new List<Agent>(preRemainTargets);
+
+            List<Agent> remainSubjects = previousRemains.Subjects;
+
+            List<Pair> pairs = new List<Pair>();
+
+            for (var i = 0; i < preRemainTargets.Count; i++)
+            {
+                var target = preRemainTargets[i];
+                (Agent closestSubject, Dimension different) = ComputeMatch.GetClosestAgent(target, remainSubjects);
+                if (closestSubject != null)
+                {
+                    remainTargets.Remove(target);
+                    remainSubjects.Remove(closestSubject);
+
+                    Pair pair = new Pair(target, new List<Agent>()
+                    {
+                        closestSubject,
+                        new Agent($"NewTimber{i:D2}", different, 1, true)
+                    });
+                    pairs.Add(pair);
+                }
+            }
+            remain.Targets = remainTargets;
+            remain.Subjects = remainSubjects;
+
             return pairs;
         }
     }

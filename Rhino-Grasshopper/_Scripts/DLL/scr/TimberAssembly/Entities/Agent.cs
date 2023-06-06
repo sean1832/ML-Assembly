@@ -6,13 +6,15 @@ namespace TimberAssembly.Entities
     {
         public string Name { get; set; }
         public int Trimmed { get; set; }
+        public bool IsNew { get; set; }
         public Dimension Dimension { get; set; }
 
-        public Agent(string name = null, Dimension dimension = null, int trimmed = 0)
+        public Agent(string name = null, Dimension dimension = null, int trimmed = 0, bool isNew = false)
         {
             Name = name;
             Dimension = dimension;
             Trimmed = trimmed;
+            IsNew = isNew;
         }
 
         public override string ToString()

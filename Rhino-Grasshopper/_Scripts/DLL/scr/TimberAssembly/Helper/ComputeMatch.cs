@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using TimberAssembly.Entities;
 
 namespace TimberAssembly.Helper
@@ -77,6 +78,68 @@ namespace TimberAssembly.Helper
                 return true;
 
             return false;
+        }
+        /// <summary>
+        /// Get closest Agent dimension from a list of agents.
+        /// Only accept one dimensional difference
+        /// </summary>
+        public static (Agent, Dimension) GetClosestAgent(Agent target, List<Agent> subjects)
+        {
+            double minDistance = double.MaxValue;
+
+            Agent closestAgent = null;
+
+            foreach (Agent subject in subjects)
+            {
+                foreach (var permutation in Processor.Permutations(subject.Dimension.ToList()))// test all orientation
+                {
+                    List<double> targetVal = target.Dimension.ToList();
+                    double distance = Distance(targetVal, permutation);
+                    int differenceCount = DimensionDifferenceCount(targetVal, permutation);
+                    if (differenceCount <= 1 && distance < minDistance) // only accept one dimensional difference
+                    {
+                        minDistance = distance;
+                        closestAgent = subject;
+                    }
+                }
+            }
+            List<double> different = CreateDimensionDifferent(target.Dimension.ToList(), closestAgent.Dimension.ToList(), minDistance);
+            return (closestAgent, new Dimension(different));
+        }
+
+        private static double Distance(List<double> target, List<double> permutation)
+        {
+            double totalDistance = 0;
+            for (int i = 0; i < target.Count; i++)
+            {
+                totalDistance += Math.Abs(target[i] - permutation[i]);
+            }
+            return totalDistance;
+        }
+        private static int DimensionDifferenceCount(List<double> target, List<double> permutation)
+        {
+            int diffCount = 0;
+            for (int i = 0; i < target.Count; i++)
+            {
+                if (target[i] != permutation[i])
+                {
+                    diffCount++;
+                }
+            }
+            return diffCount;
+        }
+        private static List<double> CreateDimensionDifferent(List<double> target, List<double> closestSubject, double minDifference)
+        {
+            List<double> result = new List<double>();
+            for (int i = 0; i < target.Count; i++)
+            {
+                if (target[i] == closestSubject[i])
+                {
+                    result.Add(target[i]);
+                }
+            }
+            result.Add(minDifference);
+            return result;
         }
 
 
