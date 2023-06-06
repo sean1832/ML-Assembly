@@ -52,6 +52,7 @@
     <Compile Include="Entities\Dimension.cs" />
     <Compile Include="Entities\Pair.cs" />
     <Compile Include="Entities\Remain.cs" />
+    <Compile Include="Evaluate.cs" />
     <Compile Include="Match.cs" />
     <Compile Include="Entities\Agent.cs" />
     <Compile Include="Parser.cs" />

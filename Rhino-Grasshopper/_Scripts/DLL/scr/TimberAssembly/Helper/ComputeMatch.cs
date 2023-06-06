@@ -106,7 +106,7 @@ namespace TimberAssembly.Helper
                 {
                     // Reduce the dimension of the subject by the size of the target's corresponding dimension.
                     tempBin[i] -= targetBinOpt[i];
-                    residuals.Add(new Agent($"Offcut{i} form {subject.Name}", new Dimension(tempBin[0], tempBin[1], tempBin[2]), true));
+                    residuals.Add(new Agent($"Offcut{i} form {subject.Name}", new Dimension(tempBin[0], tempBin[1], tempBin[2]), 1));
                     tempBin[i] = targetBinOpt[i];
                 }
             }

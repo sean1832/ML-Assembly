@@ -202,7 +202,7 @@ namespace TimberAssembly
                 resultOffcuts.AddRange(residuals);
 
                 // mutate matched subject
-                matchedSubject.Trimmed = true;
+                matchedSubject.Trimmed = residuals.Count;
                 matchedSubject.Dimension = target.Dimension;
 
                 results.Add(new Pair(target, new List<Agent> { matchedSubject }));

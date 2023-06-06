@@ -1,12 +1,14 @@
-﻿namespace TimberAssembly.Entities
+﻿using System;
+
+namespace TimberAssembly.Entities
 {
     public class Agent
     {
         public string Name { get; set; }
-        public bool Trimmed { get; set; }
+        public int Trimmed { get; set; }
         public Dimension Dimension { get; set; }
 
-        public Agent(string name = null, Dimension dimension = null, bool trimmed = false)
+        public Agent(string name = null, Dimension dimension = null, int trimmed = 0)
         {
             Name = name;
             Dimension = dimension;
