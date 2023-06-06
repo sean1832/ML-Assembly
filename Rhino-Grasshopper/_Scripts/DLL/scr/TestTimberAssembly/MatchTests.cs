@@ -514,5 +514,35 @@ namespace TestTimberAssembly
         }
 
         #endregion
+
+        #region ExtendToTarget
+
+        [Test]
+        public void ExtendToTarget_ReturnOneMatch_WhenSubjectOneDimensionDifferent()
+        {
+            // Arrange
+            List<Agent> targets = new List<Agent>()
+            {
+                new Agent(dimension : new Dimension(3, 7, 8))
+            };
+
+            List<Agent> salvages = new List<Agent>()
+            {
+                new Agent(dimension : new Dimension(3, 5, 8))
+            };
+            Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
+            var match = new Match(_targetAgents, _salvageAgents, 0.01);
+
+            List<double> expected = new List<double>() { 3, 2, 8 };
+
+            // Act
+            List<Pair> result = match.ExtendToTarget(ref previousRemains);
+
+            // Assert
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(expected, result[0].Subjects[1].Dimension.ToList());
+        }
+
+        #endregion
     }
 }

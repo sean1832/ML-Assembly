@@ -80,7 +80,7 @@ namespace TimberAssembly.Helper
             return false;
         }
         /// <summary>
-        /// Get closest Agent dimension from a list of agents.
+        /// Get closest Agent dimension from a list of agents. 
         /// Only accept one dimensional difference
         /// </summary>
         public static (Agent, Dimension) GetClosestAgent(Agent target, List<Agent> subjects)
@@ -137,8 +137,12 @@ namespace TimberAssembly.Helper
                 {
                     result.Add(target[i]);
                 }
+                else
+                {
+                    result.Add(minDifference);
+                }
             }
-            result.Add(minDifference);
+            
             return result;
         }
 
