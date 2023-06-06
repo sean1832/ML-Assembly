@@ -8,6 +8,7 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
+using Unity.VisualScripting;
 using Random = UnityEngine.Random;
 
 
@@ -19,6 +20,8 @@ public class Train : Agent
     [SerializeField] private bool _export = false;
 
     private int _token;
+
+    private float _previousScore;
 
     private float _wallHeight;
     private float _wallWidth;
@@ -52,13 +55,13 @@ public class Train : Agent
     public class GhData
     {
         public float Score;
-        public float TotalOffcutsAmount;
-        public float TotalSalvageLength;
+        public int CutCount;
+        public float NewSubjectVolume;
+        public float RecycleRate;
+        public int WasteRate;
         public float MaterialEfficiency;
-        public int OffcutsCount;
-        public float LaborEfficiency;
-        public int ReuseCount;
-        public int MinCutRatio;
+        public int LaborEfficiency;
+        public int TimeEfficiency;
         public Vector2 WallScale;
         public Vector3[] WindowPos;
         public Vector2[] WindowScale;
@@ -103,6 +106,16 @@ public class Train : Agent
     public override void OnEpisodeBegin()
     {
         _token = 5;
+        try
+        {
+            _previousScore = _ghData.Score;
+        }
+        catch (NullReferenceException e)
+        {
+            _previousScore = 0;
+        }
+       
+
         // randomize wall height & length
         _wallWidth = Random.Range(3f, 10f);
         _wallHeight = Random.Range(2.1f, 3.5f);
@@ -133,14 +146,15 @@ public class Train : Agent
         // only observe until package is received
         if (_dataFromGhIsChanged)
         {
-            // efficiency = 6
-            sensor.AddObservation(_ghData.TotalOffcutsAmount);
-            sensor.AddObservation(_ghData.TotalSalvageLength);
+            print("Observation ON");
+            // efficiency = 7
+            sensor.AddObservation(_ghData.CutCount);
+            sensor.AddObservation(_ghData.NewSubjectVolume);
+            sensor.AddObservation(_ghData.RecycleRate);
+            sensor.AddObservation(_ghData.WasteRate);
             sensor.AddObservation(_ghData.MaterialEfficiency);
-            sensor.AddObservation(_ghData.OffcutsCount);
             sensor.AddObservation(_ghData.LaborEfficiency);
-            sensor.AddObservation(_ghData.ReuseCount);
-            sensor.AddObservation(_ghData.MinCutRatio);
+            sensor.AddObservation(_ghData.TimeEfficiency);
 
             // position & scale = 7
             sensor.AddObservation(_ghData.WallScale.x);
@@ -172,29 +186,14 @@ public class Train : Agent
         // send to grasshopper
         gameObject.GetComponent<Gh_IO>().msgToGh = $"{_windowPosX},{_windowPosY},{_windowSizeX},{_windowSizeY},{_wallHeight},{_wallWidth}";
 
-        //// get from grasshopper
-        //string dataFromGh = gameObject.GetComponent<Gh_IO>().msgFromGh;
+        float reward = _ghData.Score - _previousScore;
 
-        //// check for message changes
-        //_previousDataFromGh = _lastDataFromGh;
-        //_lastDataFromGh = dataFromGh;
-        //if (_lastDataFromGh != _previousDataFromGh)
-        //{
-        //    _dataFromGhIsChanged = true;
-        //}
+        SetReward(reward);
 
-        //// if data not change yet, wait until it changes
-        //if (!_dataFromGhIsChanged)
-        //{
-        //    return;
-        //}
-        //_ghData = JsonUtility.FromJson<GhData>(dataFromGh);
-
-        SetReward(_ghData.Score);
-
-        if (_ghData.Score > 600)
+        // success condition
+        if (reward > 3)
         {
-            AddReward(1000);
+            AddReward(10);
             if (_export && _token > 0)
             {
                 _token--;
@@ -207,27 +206,27 @@ public class Train : Agent
         // if any of the window smaller than 200x200, end episode
         if (_ghData.WindowScale.Any(winScale => winScale.x < 0.2f || winScale.y < 0.2f))
         {
-            AddReward(-500);
+            AddReward(-5);
             ResetWindow();
         }
 
         //if any of the window is touching boundary, end episode
         if (_ghData.IsAtBounds.Any(isAtBound => isAtBound))
         {
-            AddReward(-500);
+            AddReward(-5);
             ResetWindow();
         }
 
-        // success condition
-        if (_ghData.MinCutRatio >= 90)
-        {
-            AddReward(+1000);
-            if (_export)
-            {
-                ExportParam(_ghData.InputParams);
-            }
-            EndEpisode();
-        }
+        //// success condition
+        //if (_ghData.Score >= 3)
+        //{
+        //    AddReward(+1000);
+        //    if (_export)
+        //    {
+        //        ExportParam(_ghData.InputParams);
+        //    }
+        //    EndEpisode();
+        //}
     }
 
     // Create a new method for manual stepping

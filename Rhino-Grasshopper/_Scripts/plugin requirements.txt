@@ -1,4 +1,6 @@
 Telepathy : 
-ScriptParasite : 1.1.1
 gHowl : r50
+ScriptParasite : 1.1.1
 jSwan : 1.2.0
+EleFront : 0.1.0.0
+Heteroptera : 0.4.9.8
