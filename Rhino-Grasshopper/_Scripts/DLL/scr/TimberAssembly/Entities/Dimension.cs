@@ -3,14 +3,35 @@ using System.Collections.Generic;
 
 namespace TimberAssembly.Entities
 {
+    /// <summary>
+    /// Dimension of an agent
+    /// </summary>
     public class Dimension
     {
-
+        /// <summary>
+        /// Length of the agent
+        /// </summary>
         public double Length { get; set; }
+        /// <summary>
+        /// Width of the agent
+        /// </summary>
         public double Width { get; set; }
+        /// <summary>
+        /// Height of the agent
+        /// </summary>
         public double Height { get; set; }
 
+        /// <summary>
+        /// Create a dimension
+        /// </summary>
         public Dimension() { }
+
+        /// <summary>
+        /// Create a dimension from three doubles
+        /// </summary>
+        /// <param name="length">Length of the agent</param>
+        /// <param name="width">Width of the agent</param>
+        /// <param name="height">Height of the agent</param>
         public Dimension(double length, double width, double height)
         {
             Length = length;
@@ -18,19 +39,32 @@ namespace TimberAssembly.Entities
             Height = height;
         }
 
+        /// <summary>
+        /// Create a dimension from a list of doubles. The list must have exactly 3 values.
+        /// </summary>
+        /// <param name="dimensions">(l, w, h)</param>
         public Dimension(List<double> dimensions)
         {
+            if (dimensions.Count != 3)
+                throw new ArgumentException($"Dimension take exactly 3 values, but has {dimensions.Count} values.");
             Length = dimensions[0];
             Width = dimensions[1];
             Height = dimensions[2];
         }
 
-
+        /// <summary>
+        /// Convert dimension to list of doubles.
+        /// </summary>
+        /// <returns>(l, w, h)</returns>
         public List<double> ToList()
         {
             return new List<double> { Length, Width, Height };
         }
 
+        /// <summary>
+        /// Convert dimension to string.
+        /// </summary>
+        /// <returns>(l, w, h)</returns>
         public override string ToString()
         {
             return $"({Length}, {Width}, {Height})";

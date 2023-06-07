@@ -236,18 +236,7 @@ namespace TestTimberAssembly
             Assert.That(dummyRemain.Targets[1] == targets[3]);
         }
 
-        [Test]
-        public void RemainMatch_ReturnListOfMatchPairs_WhenPreviousRemainsAreNotNull()
-        {
-            // Arrange
-            var match = new Match(_targetAgents, _salvageAgents, 0.01);
 
-            // Act
-            List<Pair> result = match.RemainMatch(_remain);
-
-            // Assert
-            Assert.IsInstanceOf<List<Pair>>(result);
-        }
 
         #endregion
 
@@ -266,28 +255,28 @@ namespace TestTimberAssembly
             {
                 new Agent(dimension : new Dimension(10, 4, 8))
             };
-            Remain previousRemains = new Remain() { Targets = targets, Subjects = subjects };
+            Remain remain = new Remain() { Targets = targets, Subjects = subjects };
 
             var match = new Match(_targetAgents, _salvageAgents, 0.01);
 
             // Act
-            List<Pair> result = match.CutToTarget(previousRemains, out var outRemains);
+            List<Pair> result = match.CutToTarget(ref remain);
 
             // Assert
             Assert.That(result.Count == 1);
-            Assert.AreEqual(3, outRemains.Subjects.Count);
+            Assert.AreEqual(3, remain.Subjects.Count);
 
-            Assert.AreEqual(8, outRemains.Subjects[0].Dimension.Length);
-            Assert.AreEqual(4, outRemains.Subjects[0].Dimension.Width);
-            Assert.AreEqual(8, outRemains.Subjects[0].Dimension.Height);
+            Assert.AreEqual(8, remain.Subjects[0].Dimension.Length);
+            Assert.AreEqual(4, remain.Subjects[0].Dimension.Width);
+            Assert.AreEqual(8, remain.Subjects[0].Dimension.Height);
 
-            Assert.AreEqual(2, outRemains.Subjects[1].Dimension.Length);
-            Assert.AreEqual(2, outRemains.Subjects[1].Dimension.Width);
-            Assert.AreEqual(8, outRemains.Subjects[1].Dimension.Height);
+            Assert.AreEqual(2, remain.Subjects[1].Dimension.Length);
+            Assert.AreEqual(2, remain.Subjects[1].Dimension.Width);
+            Assert.AreEqual(8, remain.Subjects[1].Dimension.Height);
 
-            Assert.AreEqual(2, outRemains.Subjects[2].Dimension.Length);
-            Assert.AreEqual(2, outRemains.Subjects[2].Dimension.Width);
-            Assert.AreEqual(4, outRemains.Subjects[2].Dimension.Height);
+            Assert.AreEqual(2, remain.Subjects[2].Dimension.Length);
+            Assert.AreEqual(2, remain.Subjects[2].Dimension.Width);
+            Assert.AreEqual(4, remain.Subjects[2].Dimension.Height);
         }
 
         [Test]
@@ -306,7 +295,7 @@ namespace TestTimberAssembly
                 new Agent(dimension : new Dimension(2, 5, 6)),
                 new Agent(dimension : new Dimension(7, 4, 7))
             };
-            Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
+            Remain remain = new Remain() { Targets = targets, Subjects = salvages };
             List<double> expectedTargets1 = new List<double>() { 2, 2, 6 };
             List<double> expectedTargets2 = new List<double>() { 3, 5, 2 };
 
@@ -316,7 +305,7 @@ namespace TestTimberAssembly
             var match = new Match(_targetAgents, _salvageAgents, 0.01);
 
             // Act
-            List<Pair> result = match.CutToTarget(previousRemains, out var outRemains);
+            List<Pair> result = match.CutToTarget(ref remain);
 
             // Assert
             Assert.AreEqual(2, result.Count);
@@ -343,18 +332,18 @@ namespace TestTimberAssembly
                 new Agent(dimension : new Dimension(2, 5, 6)),
                 new Agent(dimension : new Dimension(7, 4, 7))
             };
-            Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
+            Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
             var match = new Match(_targetAgents, _salvageAgents, 0.01);
 
             // Act
-            List<Pair> result = match.CutToTarget(previousRemains, out var outRemains);
+            List<Pair> result = match.CutToTarget(ref remain);
 
             var test = result;
 
             // Assert
             Assert.AreEqual(2, result.Count);
-            Assert.AreEqual(4, outRemains.Subjects.Count);
+            Assert.AreEqual(4, remain.Subjects.Count);
         }
 
         [Test]
@@ -370,24 +359,24 @@ namespace TestTimberAssembly
             {
                 new Agent(dimension : new Dimension(4, 4, 7))
             };
-            Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
+            Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
             var match = new Match(_targetAgents, _salvageAgents, 0.01);
 
             // Act
-            List<Pair> result = match.CutToTarget(previousRemains, out var outRemains);
+            List<Pair> result = match.CutToTarget(ref remain);
 
             // Assert
             Assert.IsEmpty(result);
         }
 
-        
+
         #endregion
 
-        #region RemainMatch
+        #region ExtendToTarget
 
         [Test]
-        public void RemainMatch_ReturnEmpty_WhenSubjectsLargerThanTargets()
+        public void ExtendToTarget_ReturnEmpty_WhenSubjectsLargerThanTargets()
         {
             // Arrange
             List<Agent> targets = new List<Agent>()
@@ -403,81 +392,40 @@ namespace TestTimberAssembly
             var match = new Match(_targetAgents, _salvageAgents, 0.01);
 
             // Act
-            List<Pair> result = match.RemainMatch(previousRemains);
+            List<Pair> result = match.ExtendToTarget(ref previousRemains);
 
             // Assert
             Assert.IsEmpty(result);
         }
 
         [Test]
-        public void RemainMatch_ReturnMatchPair_WhenSubjectEqualsTarget()
+        public void ExtendToTarget_ReturnMatchPair_WhenSubjectsIsMoreThanTarget()
         {
             // Arrange
             List<Agent> targets = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(5, 5, 5)),
-                new Agent(dimension : new Dimension(7, 9, 4))
-            };
-            
-            List<Agent> salvages = new List<Agent>()
-            {
-                new Agent(dimension : new Dimension(4, 4, 4)),
-                new Agent(dimension : new Dimension(6, 8, 2))
-            };
-            Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
-            var match = new Match(_targetAgents, _salvageAgents, 0.01);
-
-            // Act
-            List<Pair> result = match.RemainMatch(previousRemains);
-
-            // Assert
-            Assert.IsNotNull(result[0].Subjects[1]);
-            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Length);
-            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Width);
-            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Height);
-
-            Assert.AreEqual(1, result[1].Subjects[1].Dimension.Length);
-            Assert.AreEqual(1, result[1].Subjects[1].Dimension.Width);
-            Assert.AreEqual(2, result[1].Subjects[1].Dimension.Height);
-        }
-
-        [Test]
-        public void RemainMatch_ReturnMatchPair_WhenSubjectsIsMoreThanTarget()
-        {
-            // Arrange
-            List<Agent> targets = new List<Agent>()
-            {
-                new Agent(dimension : new Dimension(5, 5, 5)),
                 new Agent(dimension : new Dimension(7, 9, 4))
             };
 
             List<Agent> salvages = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(4, 4, 4)),
-                new Agent(dimension : new Dimension(6, 8, 2)),
                 new Agent(dimension : new Dimension(10, 4, 7))
             };
             Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
-
+            List<double> expected1 = new List<double>() { 7, 1, 4 };
 
             var match = new Match(_targetAgents, _salvageAgents, 0.01);
 
             // Act
-            List<Pair> result = match.RemainMatch(previousRemains);
+            List<Pair> result = match.ExtendToTarget(ref previousRemains);
 
             // Assert
-            Assert.AreEqual(2, result.Count);
-            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Length);
-            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Width);
-            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Height);
-
-            Assert.AreEqual(1, result[1].Subjects[1].Dimension.Length);
-            Assert.AreEqual(1, result[1].Subjects[1].Dimension.Width);
-            Assert.AreEqual(2, result[1].Subjects[1].Dimension.Height);
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(expected1, result[0].Subjects[1].Dimension.ToList());
         }
 
         [Test]
-        public void RemainMatch_ReturnMatchPair_WhenSubjectsIsLessThanTarget()
+        public void ExtendToTarget_ReturnMatchPair_WhenSubjectsIsLessThanTarget()
         {
             // Arrange
             List<Agent> targets = new List<Agent>()
@@ -490,32 +438,37 @@ namespace TestTimberAssembly
 
             List<Agent> salvages = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(4, 4, 4)),
-                new Agent(dimension : new Dimension(6, 8, 2)),
-                new Agent(dimension : new Dimension(10, 4, 7))
+                new Agent(dimension : new Dimension(4, 4, 7)),
+                new Agent(dimension : new Dimension(7, 9, 2)),
+                new Agent(dimension : new Dimension(4, 5, 5))
             };
             Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
-
+            List<double> expected1 = new List<double>() { 5, 5, 1 };
+            List<double> expected2 = new List<double>() { 7, 9, 2 };
 
             var match = new Match(_targetAgents, _salvageAgents, 0.01);
 
             // Act
-            List<Pair> result = match.RemainMatch(previousRemains);
+            List<Pair> result = match.ExtendToTarget(ref previousRemains);
 
             // Assert
             Assert.AreEqual(3, result.Count);
-            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Length);
-            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Width);
-            Assert.AreEqual(1, result[0].Subjects[1].Dimension.Height);
-
-            Assert.AreEqual(1, result[1].Subjects[1].Dimension.Length);
-            Assert.AreEqual(1, result[1].Subjects[1].Dimension.Width);
-            Assert.AreEqual(2, result[1].Subjects[1].Dimension.Height);
+            Assert.AreEqual(expected1, result[0].Subjects[1].Dimension.ToList());
+            Assert.AreEqual(expected2, result[1].Subjects[1].Dimension.ToList());
         }
 
-        #endregion
+        [Test]
+        public void ExtendToTarget_ReturnListOfMatchPairs_WhenPreviousRemainsAreNotNull()
+        {
+            // Arrange
+            var match = new Match(_targetAgents, _salvageAgents, 0.01);
 
-        #region ExtendToTarget
+            // Act
+            List<Pair> result = match.ExtendToTarget(ref _remain);
+
+            // Assert
+            Assert.IsInstanceOf<List<Pair>>(result);
+        }
 
         [Test]
         public void ExtendToTarget_ReturnOneMatch_WhenSubjectOneDimensionDifferent()
@@ -542,7 +495,6 @@ namespace TestTimberAssembly
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual(expected, result[0].Subjects[1].Dimension.ToList());
         }
-
         #endregion
     }
 }

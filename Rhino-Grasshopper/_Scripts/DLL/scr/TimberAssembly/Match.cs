@@ -174,10 +174,13 @@ namespace TimberAssembly
         // TODO: ForthMatch for 3 dimensional matching
 
 
-
-        public List<Pair> CutToTarget(Remain previousRemains, out Remain remain)
+        /// <summary>
+        /// Cut the remainders to the target and create offcuts.
+        /// (when target is smaller than subject)
+        /// </summary>
+        public List<Pair> CutToTarget(ref Remain remain)
         {
-            remain = new Remain();
+            Remain previousRemains = remain;
             var usedSubjects = new HashSet<Agent>();
             var usedTargets = new HashSet<Agent>();
 
@@ -223,7 +226,9 @@ namespace TimberAssembly
         {
             try
             {
-                return (previousRemains.Targets.ToList(), previousRemains.Subjects.ToList());
+                List<Agent> targets = new List<Agent>(previousRemains.Targets);
+                List<Agent> subjects = new List<Agent>(previousRemains.Subjects);
+                return (targets, subjects);
             }
             catch (NullReferenceException)
             {
@@ -251,6 +256,7 @@ namespace TimberAssembly
 
 
         /// <summary>
+        /// (DEPRECATED! Use ExtendToTarget Instead.) 
         /// Match the rest of the targets with the rest of the subjects.
         /// Introduce offcuts if necessary.
         /// </summary>
@@ -341,6 +347,10 @@ namespace TimberAssembly
             return pairs;
         }
 
+        /// <summary>
+        /// Combining remainders with new subjects to match the targets. 
+        /// (when target is larger than target)
+        /// </summary>
         public List<Pair> ExtendToTarget(ref Remain remain)
         {
             Remain previousRemains = remain;

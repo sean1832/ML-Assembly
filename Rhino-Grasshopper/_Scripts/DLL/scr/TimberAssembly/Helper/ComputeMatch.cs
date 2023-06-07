@@ -103,6 +103,11 @@ namespace TimberAssembly.Helper
                     }
                 }
             }
+
+            if (closestAgent == null)
+            {
+                return (null, null);
+            }
             List<double> different = CreateDimensionDifferent(target.Dimension.ToList(), closestAgent.Dimension.ToList(), minDistance);
             return (closestAgent, new Dimension(different));
         }
@@ -131,18 +136,20 @@ namespace TimberAssembly.Helper
         private static List<double> CreateDimensionDifferent(List<double> target, List<double> closestSubject, double minDifference)
         {
             List<double> result = new List<double>();
-            for (int i = 0; i < target.Count; i++)
+
+            foreach (var targetVal in target)
             {
-                if (target[i] == closestSubject[i])
+                if (closestSubject.Contains(targetVal))
                 {
-                    result.Add(target[i]);
+                    result.Add(targetVal);
+                    closestSubject.Remove(targetVal);
                 }
                 else
                 {
                     result.Add(minDifference);
                 }
             }
-            
+
             return result;
         }
 

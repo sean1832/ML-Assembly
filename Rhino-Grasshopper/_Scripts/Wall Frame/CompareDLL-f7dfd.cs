@@ -86,7 +86,7 @@ public abstract class Script_Instance_f7dfd : GH_ScriptInstance
     List<Pair> matchedPairs = matchOperation.ExactMatch(out remainFirst);
     matchedPairs.AddRange(matchOperation.SecondMatchSlow(remainFirst, out remainSecond));
     matchedPairs.AddRange(matchOperation.CutToTarget(remainSecond, out remainThird));
-    matchedPairs.AddRange(matchOperation.RemainMatch(remainThird));
+    //matchedPairs.AddRange(matchOperation.RemainMatch(remainThird));
     matchedPairs.AddRange(matchOperation.ExtendToTarget(ref remainThird));
 
     //List<Pair> nonTrimmedPairs = new List<Pair>();
