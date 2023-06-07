@@ -30,9 +30,8 @@ namespace TimberAssembly
         /// One subject is exactly matched to one target.
         /// </summary>
         /// <param name="remains">Output remainders</param>
-        public List<Pair> ExactMatch(out Remain remains)
+        public List<Pair> ExactMatch(ref Remain remains)
         {
-            remains = new Remain();
             List<Agent> remainTargets = TargetAgents.ToList();
             List<Agent> remainSalvages = SalvageAgents.ToList();
 
@@ -64,11 +63,11 @@ namespace TimberAssembly
         /// </summary>
         /// <param name="previousRemains">Remainders from ExactMatch</param>
         /// <param name="remains">Output remainders</param>
-        public List<Pair> SecondMatchSlow(Remain previousRemains, out Remain remains)
+        public List<Pair> SecondMatchSlow(ref Remain remains)
         {
-            remains = new Remain();
-            List<Agent> remainTargets = previousRemains.Targets.ToList();
-            List<Agent> remainSalvages = previousRemains.Subjects.ToList();
+            Remain previousRemains = remains;
+
+            var (remainTargets, remainSalvages) = CloneAgents(previousRemains);
 
             List<Agent> matchedSubjects = new List<Agent>();
 
@@ -120,11 +119,10 @@ namespace TimberAssembly
         /// </summary>
         /// <param name="previousRemains">Remainder from ExactMatch</param>
         /// <param name="remains">Output remainder</param>
-        public List<Pair> SecondMatchFast(Remain previousRemains, out Remain remains)
+        public List<Pair> SecondMatchFast(ref Remain remains)
         {
-            remains = new Remain();
-            List<Agent> remainTargets = previousRemains.Targets.ToList();
-            List<Agent> remainSalvages = previousRemains.Subjects.ToList();
+            Remain previousRemains = remains;
+            var (remainTargets, remainSalvages) = CloneAgents(previousRemains);
 
             Dictionary<(Agent target, Agent firstAgent), Agent> pairDict = new Dictionary<(Agent target, Agent firstAgent), Agent>();
 
@@ -222,6 +220,11 @@ namespace TimberAssembly
             return results;
         }
 
+        /// <summary>
+        /// Clone the agents from the previousRemains.
+        /// </summary>
+        /// <param name="previousRemains"></param>
+        /// <returns>(Targets, Subjects)</returns>
         private (List<Agent>, List<Agent>) CloneAgents(Remain previousRemains)
         {
             try

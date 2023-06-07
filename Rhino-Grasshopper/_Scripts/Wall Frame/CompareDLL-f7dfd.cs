@@ -76,18 +76,15 @@ public abstract class Script_Instance_f7dfd : GH_ScriptInstance
       tolerance = smallestDimension(salvageAgents);
     }
 
-
+    // Matching operation
     Match matchOperation = new Match(targetAgents, salvageAgents, tolerance);
 
-    Remain remainFirst = new Remain();
-    Remain remainSecond = new Remain();
-    Remain remainThird = new Remain();
+    Remain remain = new Remain();
 
-    List<Pair> matchedPairs = matchOperation.ExactMatch(out remainFirst);
-    matchedPairs.AddRange(matchOperation.SecondMatchSlow(remainFirst, out remainSecond));
-    matchedPairs.AddRange(matchOperation.CutToTarget(remainSecond, out remainThird));
-    //matchedPairs.AddRange(matchOperation.RemainMatch(remainThird));
-    matchedPairs.AddRange(matchOperation.ExtendToTarget(ref remainThird));
+    List<Pair> matchedPairs = matchOperation.ExactMatch(ref remain);
+    matchedPairs.AddRange(matchOperation.SecondMatchSlow(ref remain));
+    matchedPairs.AddRange(matchOperation.CutToTarget(ref remain));
+    matchedPairs.AddRange(matchOperation.ExtendToTarget(ref remain));
 
     //List<Pair> nonTrimmedPairs = new List<Pair>();
 
@@ -101,8 +98,9 @@ public abstract class Script_Instance_f7dfd : GH_ScriptInstance
     //  }
     //}
 
+    // Output data
     pairDatas = matchedPairs;
-    remains = remainThird;
+    remains = remain;
   }
   #endregion
   #region Additional

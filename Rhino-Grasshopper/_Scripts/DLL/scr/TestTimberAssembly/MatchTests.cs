@@ -64,7 +64,7 @@ namespace TestTimberAssembly
             _sut.SalvageAgents = salvages;
 
             // Act
-            List<Pair> pairs = _sut.ExactMatch(out dummyRemain);
+            List<Pair> pairs = _sut.ExactMatch(ref dummyRemain);
 
             // Assert
             Assert.That(pairs.Count == 0); // there should be no matches
@@ -79,7 +79,7 @@ namespace TestTimberAssembly
             _sut.SalvageAgents = salvages;
 
             // Act
-            List<Pair> pairs = _sut.ExactMatch(out dummyRemain);
+            List<Pair> pairs = _sut.ExactMatch(ref dummyRemain);
 
             // Assert
             Assert.That(pairs.Count == 1);
@@ -96,7 +96,7 @@ namespace TestTimberAssembly
             _sut.SalvageAgents = salvages;
 
             // Act
-            List<Pair> pairs = _sut.ExactMatch(out dummyRemain);
+            List<Pair> pairs = _sut.ExactMatch(ref dummyRemain);
 
             // Assert
             Assert.That(pairs.Count == 1);
@@ -114,7 +114,7 @@ namespace TestTimberAssembly
             _sut.SalvageAgents = salvages;
 
             // Act
-            List<Pair> pairs = _sut.ExactMatch(out dummyRemain);
+            List<Pair> pairs = _sut.ExactMatch(ref dummyRemain);
 
             // Assert
             Assert.That(dummyRemain.Targets.Count == 2); // two target agents are not matched and remained
@@ -146,7 +146,7 @@ namespace TestTimberAssembly
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
             // Act
-            List<Pair> pairs = _sut.SecondMatchFast(remain, out dummyRemain);
+            List<Pair> pairs = _sut.SecondMatchFast(ref remain);
 
             // Assert
             Assert.That(pairs.Count == 0); // there should be no matches
@@ -171,7 +171,7 @@ namespace TestTimberAssembly
             Remain remain =  new Remain(){ Targets = targets, Subjects = salvages };
 
             // Act
-            List<Pair> pairs = _sut.SecondMatchFast(remain, out dummyRemain);
+            List<Pair> pairs = _sut.SecondMatchFast(ref remain);
 
             // Assert
             Assert.That(pairs.Count == 1);
@@ -196,7 +196,7 @@ namespace TestTimberAssembly
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
             // Act
-            List<Pair> pairs = _sut.SecondMatchFast(remain, out dummyRemain);
+            List<Pair> pairs = _sut.SecondMatchFast(ref remain);
 
             // Assert
             Assert.AreEqual(0, pairs.Count);
@@ -206,7 +206,6 @@ namespace TestTimberAssembly
         public void SecondMatch_RemainAgents()
         {
             // Arrange
-            Remain dummyRemain = new Remain();
             List<Agent> targets = new List<Agent>()
             {
                 new Agent(dimension : new Dimension(7, 8, 9)),
@@ -226,14 +225,14 @@ namespace TestTimberAssembly
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
             // Act
-            List<Pair> pairs = _sut.SecondMatchFast(remain, out dummyRemain);
+            List<Pair> pairs = _sut.SecondMatchFast(ref remain);
 
             // Assert
-            Assert.That(dummyRemain.Subjects.Count == 1);
-            Assert.That(dummyRemain.Targets.Count == 2);
-            Assert.That(dummyRemain.Subjects[0] == salvages[4]);
-            Assert.That(dummyRemain.Targets[0] == targets[1]);
-            Assert.That(dummyRemain.Targets[1] == targets[3]);
+            Assert.That(remain.Subjects.Count == 1);
+            Assert.That(remain.Targets.Count == 2);
+            Assert.That(remain.Subjects[0] == salvages[4]);
+            Assert.That(remain.Targets[0] == targets[1]);
+            Assert.That(remain.Targets[1] == targets[3]);
         }
 
 
