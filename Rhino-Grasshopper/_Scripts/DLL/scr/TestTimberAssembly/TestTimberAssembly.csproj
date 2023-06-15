@@ -7,8 +7,8 @@
 
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
-    <AssemblyVersion>1.0.91.23234</AssemblyVersion>
-    <FileVersion>1.0.87.23234</FileVersion>
+    <AssemblyVersion>1.0.91.23240</AssemblyVersion>
+    <FileVersion>1.0.87.23240</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

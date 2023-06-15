@@ -58,12 +58,10 @@ namespace TimberAssembly
         }
 
         /// <summary>
-        /// WARNING: This is a slow method!
         /// Two subjects from the remainders of ExactMatch are combined to match one target.
         /// </summary>
-        /// <param name="previousRemains">Remainders from ExactMatch</param>
         /// <param name="remains">Output remainders</param>
-        public List<Pair> DoubleMatchSlow(ref Remain remains)
+        public List<Pair> DoubleMatch(ref Remain remains)
         {
             Remain previousRemains = remains;
 
@@ -87,8 +85,7 @@ namespace TimberAssembly
                     {
                         var salvage2 = previousRemains.Subjects[j];
                         if (matchedSubjects.Contains(salvage2)) continue;
-
-                        if (ComputeMatch.IsAgentSecondMatched(target, salvage1, salvage2, Tolerance))
+                        if (ComputeMatch.IsAgentDoubleMatched(target, salvage1, salvage2, Tolerance))
                         {
                             isMatched = true;
 
@@ -113,60 +110,6 @@ namespace TimberAssembly
             return pairs;
         }
 
-        /// <summary>
-        /// Two subjects from the remainder of ExactMatch are combined to match one target.
-        /// SecondMatch is only able to match one dimension as this makes sense.
-        /// </summary>
-        /// <param name="previousRemains">Remainder from ExactMatch</param>
-        /// <param name="remains">Output remainder</param>
-        public List<Pair> DoubleMatchFast(ref Remain remains)
-        {
-            Remain previousRemains = remains;
-            var (remainTargets, remainSalvages) = CloneAgents(previousRemains);
-
-            Dictionary<(Agent target, Agent firstAgent), Agent> pairDict = new Dictionary<(Agent target, Agent firstAgent), Agent>();
-
-            // Loop over targets and the first agents to find pairs that match the criteria
-            foreach (var target in remainTargets)
-            {
-                for (int i = 0; i < remainSalvages.Count; i++)
-                {
-                    var salvage1 = remainSalvages[i];
-                    for (int j = i + 1; j < remainSalvages.Count; j++)
-                    {
-                        var salvage2 = remainSalvages[j];
-                        if (ComputeMatch.IsAgentSecondMatched(target, salvage1, salvage2, Tolerance))
-                        {
-                            pairDict[(target, salvage1)] = salvage2;
-                            break;
-                        }
-                    }
-                }
-            }
-
-            HashSet<Agent> matchedSubjects = new HashSet<Agent>();
-            List<Pair> pairs = new List<Pair>();
-
-            // Loop over the dictionary to create the pairs and remove the matched agents
-            foreach (var pair in pairDict)
-            {
-                Pair newPair = new Pair(pair.Key.target, new List<Agent> { pair.Key.firstAgent, pair.Value });
-                pairs.Add(newPair);
-
-                matchedSubjects.Add(pair.Key.firstAgent);
-                matchedSubjects.Add(pair.Value);
-
-                remainTargets.Remove(pair.Key.target);
-                remainSalvages.Remove(pair.Key.firstAgent);
-                remainSalvages.Remove(pair.Value);
-            }
-
-            remains.Targets = remainTargets;
-            remains.Subjects = remainSalvages;
-
-            return pairs;
-        }
-        
         // TODO: ThirdMatch for 2 dimensional matching
 
         // TODO: ForthMatch for 3 dimensional matching

@@ -23,7 +23,7 @@ namespace TimberAssembly.Helper
         /// <summary>
         /// Linear check if two agents combined are matched with the target agent.
         /// </summary>
-        public static bool IsAgentSecondMatched(Agent target, Agent agent1, Agent agent2, double tolerance = 0.1)
+        public static bool IsAgentDoubleMatched(Agent target, Agent agent1, Agent agent2, double tolerance = 0.1)
         {
             int differenceCount1 = 0;
             int differenceCount2 = 0;

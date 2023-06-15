@@ -80,7 +80,7 @@ namespace TestTimberAssembly
                 Dimension = new Dimension(20, 5, 3)
             };
 
-            var result = ComputeMatch.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
+            var result = ComputeMatch.IsAgentDoubleMatched(_target, _agent1, _agent2, _tolerance);
 
             Assert.False(result);
         }
@@ -104,7 +104,7 @@ namespace TestTimberAssembly
                 Dimension = new Dimension(20, 10, 3)
             };
 
-            var result = ComputeMatch.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
+            var result = ComputeMatch.IsAgentDoubleMatched(_target, _agent1, _agent2, _tolerance);
 
             Assert.True(result);
         }
@@ -128,7 +128,7 @@ namespace TestTimberAssembly
             };
 
             // Act
-            var result = ComputeMatch.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
+            var result = ComputeMatch.IsAgentDoubleMatched(_target, _agent1, _agent2, _tolerance);
 
             // Assert
             Assert.False(result);
@@ -147,7 +147,7 @@ namespace TestTimberAssembly
                 Dimension = new Dimension(12, 6, 6)
             };
 
-            var result = ComputeMatch.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
+            var result = ComputeMatch.IsAgentDoubleMatched(_target, _agent1, _agent2, _tolerance);
 
             Assert.False(result);
         }
@@ -171,7 +171,7 @@ namespace TestTimberAssembly
             };
 
             // Act
-            var result = ComputeMatch.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
+            var result = ComputeMatch.IsAgentDoubleMatched(_target, _agent1, _agent2, _tolerance);
 
             // Assert
             Assert.False(result);
@@ -190,7 +190,7 @@ namespace TestTimberAssembly
                 Dimension = new Dimension(12, 6, 1)
             };
 
-            var result = ComputeMatch.IsAgentSecondMatched(_target, _agent1, _agent2, _tolerance);
+            var result = ComputeMatch.IsAgentDoubleMatched(_target, _agent1, _agent2, _tolerance);
 
             Assert.False(result);
         }
