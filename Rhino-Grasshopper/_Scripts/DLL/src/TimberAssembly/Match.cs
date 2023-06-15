@@ -58,7 +58,7 @@ namespace TimberAssembly
         }
 
         /// <summary>
-        /// Two subjects from the remainders of ExactMatch are combined to match one target.
+        /// Two subjects from the remainders are combined to match one target. 1 dimensional matching.
         /// </summary>
         /// <param name="remains">Output remainders</param>
         public List<Pair> DoubleMatch(ref Remain remains)
@@ -110,10 +110,36 @@ namespace TimberAssembly
             return pairs;
         }
 
-        // TODO: ThirdMatch for 2 dimensional matching
+        /// <summary>
+        /// Three subjects from the remainders are combined to match one target. 2 dimensional matching.
+        /// </summary>
+        /// <param name="remains">Output remainders</param>
+        public List<Pair> TripleMatch(ref Remain remains)
+        {
+            Remain previousRemains = remains;
+            var (remainTargets, remainSalvages) = CloneAgents(previousRemains);
+            List<Agent> matchedSubjects = new List<Agent>();
+            List<Pair> pairs = new List<Pair>();
 
-        // TODO: ForthMatch for 3 dimensional matching
+            foreach (var target in remainTargets)
+            {
+                foreach (var salvage in remainSalvages)
+                {
+                    List<Agent> residuals = ComputeMatch.CalculateResiduals(target, salvage);
+                }
+            }
+            throw new NotImplementedException();
+        }
 
+
+        /// <summary>
+        /// Four subjects from the remainders are combined to match one target. 3 dimensional matching.
+        /// </summary>
+        /// <param name="remains">Output remainders</param>
+        public List<Pair> QuadrupleMatch(ref Remain remains)
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Cut the remainders to the target and create offcuts.
