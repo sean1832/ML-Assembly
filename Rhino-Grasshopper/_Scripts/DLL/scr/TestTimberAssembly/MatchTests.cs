@@ -237,6 +237,17 @@ namespace TestTimberAssembly
 
         #endregion
 
+        #region TripleMatch
+
+
+        #endregion
+
+        #region QuadrupleMatch
+
+
+
+        #endregion
+
         #region CutToTarget
 
         [Test]

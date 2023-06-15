@@ -187,5 +187,64 @@ namespace TimberAssembly.Helper
 
             return residuals;
         }
+
+        public static List<List<List<Agent>>> CalculateAllAggregation(Agent target, Agent subject)
+        {
+            var allAggregations = new List<List<List<Agent>>>();
+
+            // Calculate all permutations of the subject's dimensions.
+            var subjectBinsPerm = Processor.Permutations(subject.Dimension.ToList());
+            
+            // Calculate all permutations of the target's dimensions.
+            var targetBinsPerm = Processor.Permutations(target.Dimension.ToList());
+
+            // Iterate over all permutations
+            foreach (var subjectBin in subjectBinsPerm)
+            {
+                var aggregations = new List<List<Agent>>();
+
+                foreach (var targetBin in targetBinsPerm)
+                {
+                    bool isOversize = false;
+                    // Make a temporary copy of the target's dimensions.
+                    var tempBin = targetBin;
+                    var combination = new List<Agent>();
+
+                    // Iterate over three dimensions (width, height, and depth).
+                    for (int i = 0; i < 3; i++)
+                    {
+                        // If a dimension of the target exceeds the corresponding dimension of the optimal
+                        // orientation of the target, calculate the residual in that dimension.
+                        if (tempBin[i] > subjectBin[i])
+                        {
+                            // Reduce the dimension of the target by the size of the subject's corresponding dimension.
+                            tempBin[i] -= subjectBin[i];
+                            combination.Add(new Agent(null, new Dimension(tempBin[0], tempBin[1], tempBin[2]), 1));
+                            tempBin[i] = subjectBin[i];
+                        }
+                        else if (tempBin[i] < subjectBin[i])
+                        {
+                            isOversize = true;
+                            break;
+                        }
+                        else
+                        {
+                            // Reduce the dimension of the target by the size of the subject's corresponding dimension.
+                            tempBin[i] = subjectBin[i];
+                            combination.Add(new Agent(null, new Dimension(tempBin[0], tempBin[1], tempBin[2]), 1));
+                        }
+                    }
+
+                    if (isOversize) continue;
+                    aggregations.Add(combination);
+                }
+
+                allAggregations.Add(aggregations);
+            }
+            return allAggregations;
+        }
+
+
+
     }
 }

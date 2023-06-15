@@ -194,5 +194,23 @@ namespace TestTimberAssembly
 
             Assert.False(result);
         }
+
+        [Test]
+        public void CalculateResiduals_ListOfResiduals()
+        {
+            var target = new Agent
+            {
+                Dimension = new Dimension(12, 8, 9)
+            };
+
+            var subject = new Agent
+            {
+                Dimension = new Dimension(10, 5, 6)
+            };
+
+            var result = ComputeMatch.CalculateAllAggregation(target, subject);
+
+            Assert.AreEqual(3, result.Count);
+        }
     }
 }
