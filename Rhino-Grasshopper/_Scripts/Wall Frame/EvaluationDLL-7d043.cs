@@ -11,7 +11,6 @@ using Grasshopper.Kernel.Data;
 using Grasshopper.Kernel.Types;
 
 using System.Linq;
-using System.Reflection;
 using TimberAssembly;
 using TimberAssembly.Entities;
 
@@ -58,19 +57,12 @@ public abstract class Script_Instance_7d043 : GH_ScriptInstance
   #region Runscript
   private void RunScript(List<object> pairsData, object remainsData, List<string> initSalvageTimber, ref object score, ref object cutCounts, ref object newSubjectVolume, ref object recycleRate, ref object wasteRate, ref object materialEfficiency, ref object laborEfficiency, ref object timeEfficiency)
   {
-    // version display
-    Assembly assembly = Assembly.GetAssembly(typeof(TimberAssembly.Match));
-    string version = assembly.GetName().Version.ToString();
-    Component.Message = "Ver " + version;
-
-    // Initialize
     List<Agent> initSalvage = Parser.DeserializeToAgents(initSalvageTimber);
-    Remain remain = (Remain) remainsData;
+    Remain remain = (Remain)remainsData;
     List<Pair> pairs = pairsData.OfType<Pair>().ToList();
 
     Evaluate evaluate = new Evaluate(pairs, remain, initSalvage);
 
-    // Main Evaluation
     cutCounts = evaluate.GetCutCount();
     newSubjectVolume = evaluate.GetNewSubjectVolume();
     recycleRate = evaluate.GetRecycleRateVolume();
@@ -79,7 +71,6 @@ public abstract class Script_Instance_7d043 : GH_ScriptInstance
     laborEfficiency = evaluate.EvaluateEfficiencyByCutCount();
     timeEfficiency = evaluate.EvaluateEfficiencyByTime(0.2, 0.05);
 
-    // Score Calculation
     score = GetOverallScore(evaluate, 0.2, 0.05);
   }
   #endregion

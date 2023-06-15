@@ -63,7 +63,7 @@ namespace TimberAssembly
         /// </summary>
         /// <param name="previousRemains">Remainders from ExactMatch</param>
         /// <param name="remains">Output remainders</param>
-        public List<Pair> SecondMatchSlow(ref Remain remains)
+        public List<Pair> DoubleMatchSlow(ref Remain remains)
         {
             Remain previousRemains = remains;
 
@@ -119,7 +119,7 @@ namespace TimberAssembly
         /// </summary>
         /// <param name="previousRemains">Remainder from ExactMatch</param>
         /// <param name="remains">Output remainder</param>
-        public List<Pair> SecondMatchFast(ref Remain remains)
+        public List<Pair> DoubleMatchFast(ref Remain remains)
         {
             Remain previousRemains = remains;
             var (remainTargets, remainSalvages) = CloneAgents(previousRemains);

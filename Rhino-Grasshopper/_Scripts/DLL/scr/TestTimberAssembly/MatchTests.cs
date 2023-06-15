@@ -130,7 +130,7 @@ namespace TestTimberAssembly
         #region SecondMatch
 
         [Test]
-        public void SecondMatch_ReturnMatchedNoPairs_NoShareDimension()
+        public void DoubleMatchSlow_ReturnMatchedNoPairs_NoShareDimension()
         { 
             // Arrange
             Remain dummyRemain = new Remain();
@@ -146,14 +146,14 @@ namespace TestTimberAssembly
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
             // Act
-            List<Pair> pairs = _sut.SecondMatchFast(ref remain);
+            List<Pair> pairs = _sut.DoubleMatchSlow(ref remain);
 
             // Assert
             Assert.That(pairs.Count == 0); // there should be no matches
         }
 
         [Test]
-        public void SecondMatch_ReturnMatchedOnePairs_1DifferentDimensionMatch()
+        public void DoubleMatchSlow_ReturnMatchedOnePairs_1DifferentDimensionMatch()
         {
             // Arrange
             Remain dummyRemain = new Remain();
@@ -171,14 +171,14 @@ namespace TestTimberAssembly
             Remain remain =  new Remain(){ Targets = targets, Subjects = salvages };
 
             // Act
-            List<Pair> pairs = _sut.SecondMatchFast(ref remain);
+            List<Pair> pairs = _sut.DoubleMatchSlow(ref remain);
 
             // Assert
             Assert.That(pairs.Count == 1);
         }
 
         [Test]
-        public void SecondMatch_ReturnMatchedOnePairs_WhenOneOfSubjectEqualsTarget()
+        public void DoubleMatchSlow_ReturnMatchedOnePairs_WhenOneOfSubjectEqualsTarget()
         {
             // Arrange
             Remain dummyRemain = new Remain();
@@ -196,14 +196,14 @@ namespace TestTimberAssembly
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
             // Act
-            List<Pair> pairs = _sut.SecondMatchFast(ref remain);
+            List<Pair> pairs = _sut.DoubleMatchSlow(ref remain);
 
             // Assert
             Assert.AreEqual(0, pairs.Count);
         }
 
         [Test]
-        public void SecondMatch_RemainAgents()
+        public void DoubleMatchSlow_RemainAgents()
         {
             // Arrange
             List<Agent> targets = new List<Agent>()
@@ -225,7 +225,7 @@ namespace TestTimberAssembly
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
             // Act
-            List<Pair> pairs = _sut.SecondMatchFast(ref remain);
+            List<Pair> pairs = _sut.DoubleMatchSlow(ref remain);
 
             // Assert
             Assert.That(remain.Subjects.Count == 1);
@@ -236,10 +236,116 @@ namespace TestTimberAssembly
         }
 
 
+        [Test]
+        public void DoubleMatchFast_ReturnMatchedNoPairs_NoShareDimension()
+        {
+            // Arrange
+            Remain dummyRemain = new Remain();
+            List<Agent> targets = new List<Agent>()
+            {
+                new Agent(dimension : new Dimension(5, 2, 3))
+            };
+            List<Agent> salvages = new List<Agent>()
+            {
+                new Agent(dimension:new Dimension(3, 2, 3)),
+                new Agent(dimension : new Dimension(2, 2, 4))
+            };
+            Remain remain = new Remain() { Targets = targets, Subjects = salvages };
+
+            // Act
+            List<Pair> pairs = _sut.DoubleMatchFast(ref remain);
+
+            // Assert
+            Assert.That(pairs.Count == 0); // there should be no matches
+        }
+
+        [Test]
+        public void DoubleMatchFast_ReturnMatchedOnePairs_1DifferentDimensionMatch()
+        {
+            // Arrange
+            Remain dummyRemain = new Remain();
+            List<Agent> targets = new List<Agent>()
+            {
+                new Agent(dimension:new Dimension(5, 2, 3))
+            };
+
+            List<Agent> salvages = new List<Agent>()
+            {
+                new Agent(dimension : new Dimension(3, 2, 3)),
+                new Agent(dimension:new Dimension(2, 2, 3))
+            };
+
+            Remain remain = new Remain() { Targets = targets, Subjects = salvages };
+
+            // Act
+            List<Pair> pairs = _sut.DoubleMatchFast(ref remain);
+
+            // Assert
+            Assert.That(pairs.Count == 1);
+        }
+
+        [Test]
+        public void DoubleMatchFast_ReturnMatchedOnePairs_WhenOneOfSubjectEqualsTarget()
+        {
+            // Arrange
+            Remain dummyRemain = new Remain();
+            List<Agent> targets = new List<Agent>()
+            {
+                new Agent(dimension:new Dimension(5, 2, 3))
+            };
+
+            List<Agent> salvages = new List<Agent>()
+            {
+                new Agent(dimension : new Dimension(5, 2, 3)),
+                new Agent(dimension:new Dimension(5, 2, 3))
+            };
+
+            Remain remain = new Remain() { Targets = targets, Subjects = salvages };
+
+            // Act
+            List<Pair> pairs = _sut.DoubleMatchFast(ref remain);
+
+            // Assert
+            Assert.AreEqual(0, pairs.Count);
+        }
+
+        [Test]
+        public void DoubleMatchFast_RemainAgents()
+        {
+            // Arrange
+            List<Agent> targets = new List<Agent>()
+            {
+                new Agent(dimension : new Dimension(7, 8, 9)),
+                new Agent(dimension : new Dimension(6, 9, 8)),
+                new Agent(dimension : new Dimension(5, 2, 3)),
+                new Agent(dimension : new Dimension(8, 9, 10))
+            };
+
+            List<Agent> salvages = new List<Agent>()
+            {
+                new Agent(dimension : new Dimension(5, 8, 9)),
+                new Agent(dimension:new Dimension(2, 8, 9)),
+                new Agent(dimension : new Dimension(3, 2, 3)),
+                new Agent(dimension : new Dimension(2, 2, 3)),
+                new Agent(dimension : new Dimension(9, 10, 15))
+            };
+            Remain remain = new Remain() { Targets = targets, Subjects = salvages };
+
+            // Act
+            List<Pair> pairs = _sut.DoubleMatchFast(ref remain);
+
+            // Assert
+            Assert.That(remain.Subjects.Count == 1);
+            Assert.That(remain.Targets.Count == 2);
+            Assert.That(remain.Subjects[0] == salvages[4]);
+            Assert.That(remain.Targets[0] == targets[1]);
+            Assert.That(remain.Targets[1] == targets[3]);
+        }
+
 
         #endregion
 
-        #region DePackBin
+        #region CutToTarget
 
         [Test]
         public void CutToTarget_OffcutsRemain_WhenSubjectIsLargerThanTargets()
