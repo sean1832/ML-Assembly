@@ -4,7 +4,7 @@ using System.Linq;
 using TimberAssembly.Entities;
 using TimberAssembly.Helper;
 
-namespace TimberAssembly
+namespace TimberAssembly.Operation
 {
     /// <summary>
     /// Matching algorithm for timber assembly.

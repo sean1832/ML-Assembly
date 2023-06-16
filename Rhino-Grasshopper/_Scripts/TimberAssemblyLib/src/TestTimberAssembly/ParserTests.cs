@@ -1,6 +1,7 @@
 using Moq;
 using Newtonsoft.Json;
 using TimberAssembly.Entities;
+using TimberAssembly.Operation;
 
 namespace TestTimberAssembly
 {

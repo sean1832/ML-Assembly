@@ -54,10 +54,10 @@
     <Compile Include="Entities\Dimension.cs" />
     <Compile Include="Entities\Pair.cs" />
     <Compile Include="Entities\Remain.cs" />
-    <Compile Include="Evaluate.cs" />
-    <Compile Include="Match.cs" />
+    <Compile Include="Operation\Evaluate.cs" />
+    <Compile Include="Operation\Match.cs" />
     <Compile Include="Entities\Agent.cs" />
-    <Compile Include="Parser.cs" />
+    <Compile Include="Operation\Parser.cs" />
     <Compile Include="Helper\Processor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helper\ComputeMatch.cs" />

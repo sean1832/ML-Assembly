@@ -1,11 +1,12 @@
 
 using TimberAssembly.Entities;
+using TimberAssembly.Operation;
 
 namespace TestTimberAssembly
 {
     public class MatchTests
     {
-        private TimberAssembly.Match _sut;
+        private Match _sut;
         private List<Agent> _targetAgents;
         private List<Agent> _salvageAgents;
 
@@ -49,7 +50,7 @@ namespace TestTimberAssembly
 
             _remain = new Remain() { Targets = _remainTargetAgents, Subjects = _remainSalvageAgents };
 
-            _sut = new TimberAssembly.Match(_targetAgents, _salvageAgents, 0.1);
+            _sut = new Match(_targetAgents, _salvageAgents, 0.1);
         }
 
         #region ExactMatch
@@ -61,7 +62,7 @@ namespace TestTimberAssembly
             Remain dummyRemain = new Remain();
             // override the default salvage agents
             List<Agent> salvages = new List<Agent>() { _salvageAgents[0] };
-            _sut.SalvageAgents = salvages;
+            _sut.SubjectAgents = salvages;
 
             // Act
             List<Pair> pairs = _sut.ExactMatch(ref dummyRemain);
@@ -76,7 +77,7 @@ namespace TestTimberAssembly
             // Arrange
             Remain dummyRemain = new Remain();
             List<Agent> salvages = new List<Agent>() { _salvageAgents[1] };
-            _sut.SalvageAgents = salvages;
+            _sut.SubjectAgents = salvages;
 
             // Act
             List<Pair> pairs = _sut.ExactMatch(ref dummyRemain);
@@ -93,7 +94,7 @@ namespace TestTimberAssembly
             // Arrange
             Remain dummyRemain = new Remain();
             List<Agent> salvages = new List<Agent>() { _salvageAgents[2] };
-            _sut.SalvageAgents = salvages;
+            _sut.SubjectAgents = salvages;
 
             // Act
             List<Pair> pairs = _sut.ExactMatch(ref dummyRemain);
@@ -111,7 +112,7 @@ namespace TestTimberAssembly
             // Arrange
             Remain dummyRemain = new Remain();
             List<Agent> salvages = new List<Agent>() { _salvageAgents[0], _salvageAgents[1] };
-            _sut.SalvageAgents = salvages;
+            _sut.SubjectAgents = salvages;
 
             // Act
             List<Pair> pairs = _sut.ExactMatch(ref dummyRemain);

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TimberAssembly.Entities;
 
-namespace TimberAssembly
+namespace TimberAssembly.Operation
 {
     /// <summary>
     /// Evaluation of the matched results.
