@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Namespace TimberAssembly.Entities
+      <title>Method GetWasteRateByVolume
  </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Namespace TimberAssembly.Entities
+      <meta name="title" content="Method GetWasteRateByVolume
  ">
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -67,31 +67,48 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="TimberAssembly.Entities">
+            <article class="content wrap" id="_content" data-uid="TimberAssembly.Operation.Evaluate.GetWasteRateByVolume*">
 
-  <h1 id="TimberAssembly_Entities" data-uid="TimberAssembly.Entities" class="text-break">Namespace TimberAssembly.Entities
+
+
+<h1 id="TimberAssembly_Operation_Evaluate_GetWasteRateByVolume_" data-uid="TimberAssembly.Operation.Evaluate.GetWasteRateByVolume*">Method GetWasteRateByVolume
 </h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="classes">
-Classes
-</h3>
-      <h4><a class="xref" href="TimberAssembly.Entities.Agent.html">Agent</a></h4>
-      <section><p>Agent to assemble</p>
-</section>
-      <h4><a class="xref" href="TimberAssembly.Entities.Dimension.html">Dimension</a></h4>
-      <section><p>Dimension of an agent</p>
-</section>
-      <h4><a class="xref" href="TimberAssembly.Entities.Pair.html">Pair</a></h4>
-      <section><p>Pair of target and subjects.</p>
-</section>
-      <h4><a class="xref" href="TimberAssembly.Entities.Remain.html">Remain</a></h4>
-      <section><p>Store remain of targets and subjects.</p>
-<p>These are targets and subjects that's left from the matching operation.</p>
-</section>
+<div class="markdown level0 summary"></div>
+<div class="markdown level0 conceptual"></div>
 
-
+<span class="small pull-right mobile-hide">
+  <span class="divider">|</span>
+  <a href="https://github.com/sean1832/ML-Assembly/new/main/apiSpec/new?filename=TimberAssembly_Operation_Evaluate_GetWasteRateByVolume.md&amp;value=---%0Auid%3A%20TimberAssembly.Operation.Evaluate.GetWasteRateByVolume%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+</span>
+<span class="small pull-right mobile-hide">
+  <a href="https://github.com/sean1832/ML-Assembly/blob/main/Rhino-Grasshopper/_Scripts/TimberAssemblyLib/src/TimberAssembly/Operation/Evaluate.cs/#L95">View Source</a>
+</span>
+<a id="TimberAssembly_Operation_Evaluate_GetWasteRateByVolume_" data-uid="TimberAssembly.Operation.Evaluate.GetWasteRateByVolume*"></a>
+<h4 id="TimberAssembly_Operation_Evaluate_GetWasteRateByVolume" data-uid="TimberAssembly.Operation.Evaluate.GetWasteRateByVolume">GetWasteRateByVolume()</h4>
+<div class="markdown level1 summary"><p>Waste Rate = Waste Volume / Total Volume
+(Lower the better)</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<h5 class="declaration">Declaration</h5>
+<div class="codewrapper">
+  <pre><code class="lang-csharp hljs">public double GetWasteRateByVolume()</code></pre>
+</div>
+<h5 class="returns">Returns</h5>
+<table class="table table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
+      <td><p>Waste Rate</p>
+</td>
+    </tr>
+  </tbody>
+</table>
 </article>
           </div>
 
@@ -99,6 +116,12 @@ Classes
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/sean1832/ML-Assembly/new/main/apiSpec/new?filename=TimberAssembly_Operation_Evaluate_GetWasteRateByVolume_.md&amp;value=---%0Auid%3A%20TimberAssembly.Operation.Evaluate.GetWasteRateByVolume*%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/sean1832/ML-Assembly/blob/main/Rhino-Grasshopper/_Scripts/TimberAssemblyLib/src/TimberAssembly/Operation/Evaluate.cs/#L95" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

@@ -18,7 +18,297 @@
       "source_relative_path": "api/TimberAssembly.Entities.Agent.yml",
       "output": {
         ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Agent.Name.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Agent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Agent.Trimmed.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Agent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Agent.IsNew.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Agent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Agent.Dimension.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Agent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Agent.-ctor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Agent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Agent.ToString.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Agent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Agent.Volume.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Agent.yml",
+      "output": {
+        ".html": {
           "relative_path": "api/TimberAssembly.Entities.Agent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.Length.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.Width.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.Height.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.-ctor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.ToList.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.ToString.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAnyLargerThan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAnySmallerThan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAllLargerThan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAllSmallerThan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.Equality.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.Absolute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.GetVolume.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.Subtract.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.Add.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.Zero.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.GetSum.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Dimension.GetDifference.html"
         }
       },
       "version": ""
@@ -38,7 +328,57 @@
       "source_relative_path": "api/TimberAssembly.Entities.Pair.yml",
       "output": {
         ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Pair.Target.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Pair.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Pair.Subjects.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Pair.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Pair.-ctor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Pair.yml",
+      "output": {
+        ".html": {
           "relative_path": "api/TimberAssembly.Entities.Pair.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Remain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Remain.Targets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Remain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Remain.Subjects.html"
         }
       },
       "version": ""
@@ -65,10 +405,40 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Evaluate.yml",
+      "source_relative_path": "api/TimberAssembly.Helper.ComputeMatch.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TimberAssembly.Evaluate.html"
+          "relative_path": "api/TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Helper.ComputeMatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Helper.ComputeMatch.GetClosestAgent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Helper.ComputeMatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Helper.ComputeMatch.CalculateResiduals.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Helper.ComputeMatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation.html"
         }
       },
       "version": ""
@@ -85,6 +455,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Helper.ComputeMatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/TimberAssembly.Helper.yml",
       "output": {
         ".html": {
@@ -95,30 +475,280 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Match.yml",
+      "source_relative_path": "api/TimberAssembly.Operation.Evaluate.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TimberAssembly.Match.html"
+          "relative_path": "api/TimberAssembly.Operation.Evaluate.-ctor.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Parser.yml",
+      "source_relative_path": "api/TimberAssembly.Operation.Evaluate.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TimberAssembly.Parser.html"
+          "relative_path": "api/TimberAssembly.Operation.Evaluate.GetCutCount.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.yml",
+      "source_relative_path": "api/TimberAssembly.Operation.Evaluate.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TimberAssembly.html"
+          "relative_path": "api/TimberAssembly.Operation.Evaluate.GetUsedSubjectVolume.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Evaluate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Evaluate.GetWasteVolume.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Evaluate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Evaluate.GetSubjectInitVolume.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Evaluate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Evaluate.GetWasteRateByVolume.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Evaluate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Evaluate.GetNewSubjectVolume.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Evaluate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Evaluate.GetRecycleRateVolume.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Evaluate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByVolume.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Evaluate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByCutCount.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Evaluate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByTime.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Evaluate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Evaluate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Match.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Match.TargetAgents.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Match.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Match.SubjectAgents.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Match.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Match.Tolerance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Match.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Match.-ctor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Match.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Match.ExactMatch.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Match.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Match.DoubleMatch.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Match.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Match.UniMatch.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Match.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Match.CutToTarget.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Match.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Match.RemainMatch.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Match.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Match.ExtendToTarget.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Match.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Match.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Parser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Parser.DeserializeToAgents.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Parser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Parser.SerializeAgentPairs.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Parser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Parser.SerializeAgentRemains.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Parser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Parser.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.html"
         }
       },
       "version": ""

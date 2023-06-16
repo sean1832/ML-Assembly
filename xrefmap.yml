@@ -1,12 +1,6 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
-- uid: TimberAssembly
-  name: TimberAssembly
-  href: api/TimberAssembly.html
-  commentId: N:TimberAssembly
-  fullName: TimberAssembly
-  nameWithType: TimberAssembly
 - uid: TimberAssembly.Entities
   name: TimberAssembly.Entities
   href: api/TimberAssembly.Entities.html
@@ -21,7 +15,7 @@ references:
   nameWithType: Agent
 - uid: TimberAssembly.Entities.Agent.#ctor(System.String,TimberAssembly.Entities.Dimension,System.Int32,System.Boolean)
   name: Agent(string, Dimension, int, bool)
-  href: api/TimberAssembly.Entities.Agent.html#TimberAssembly_Entities_Agent__ctor_System_String_TimberAssembly_Entities_Dimension_System_Int32_System_Boolean_
+  href: api/TimberAssembly.Entities.Agent.-ctor.html#TimberAssembly_Entities_Agent__ctor_System_String_TimberAssembly_Entities_Dimension_System_Int32_System_Boolean_
   commentId: M:TimberAssembly.Entities.Agent.#ctor(System.String,TimberAssembly.Entities.Dimension,System.Int32,System.Boolean)
   name.vb: New(String, Dimension, Integer, Boolean)
   fullName: TimberAssembly.Entities.Agent.Agent(string, TimberAssembly.Entities.Dimension, int, bool)
@@ -30,9 +24,8 @@ references:
   nameWithType.vb: Agent.New(String, Dimension, Integer, Boolean)
 - uid: TimberAssembly.Entities.Agent.#ctor*
   name: Agent
-  href: api/TimberAssembly.Entities.Agent.html#TimberAssembly_Entities_Agent__ctor_
+  href: api/TimberAssembly.Entities.Agent.-ctor.html
   commentId: Overload:TimberAssembly.Entities.Agent.#ctor
-  isSpec: "True"
   name.vb: New
   fullName: TimberAssembly.Entities.Agent.Agent
   fullName.vb: TimberAssembly.Entities.Agent.New
@@ -40,80 +33,74 @@ references:
   nameWithType.vb: Agent.New
 - uid: TimberAssembly.Entities.Agent.Dimension
   name: Dimension
-  href: api/TimberAssembly.Entities.Agent.html#TimberAssembly_Entities_Agent_Dimension
+  href: api/TimberAssembly.Entities.Agent.Dimension.html#TimberAssembly_Entities_Agent_Dimension
   commentId: P:TimberAssembly.Entities.Agent.Dimension
   fullName: TimberAssembly.Entities.Agent.Dimension
   nameWithType: Agent.Dimension
 - uid: TimberAssembly.Entities.Agent.Dimension*
   name: Dimension
-  href: api/TimberAssembly.Entities.Agent.html#TimberAssembly_Entities_Agent_Dimension_
+  href: api/TimberAssembly.Entities.Agent.Dimension.html
   commentId: Overload:TimberAssembly.Entities.Agent.Dimension
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Agent.Dimension
   nameWithType: Agent.Dimension
 - uid: TimberAssembly.Entities.Agent.IsNew
   name: IsNew
-  href: api/TimberAssembly.Entities.Agent.html#TimberAssembly_Entities_Agent_IsNew
+  href: api/TimberAssembly.Entities.Agent.IsNew.html#TimberAssembly_Entities_Agent_IsNew
   commentId: P:TimberAssembly.Entities.Agent.IsNew
   fullName: TimberAssembly.Entities.Agent.IsNew
   nameWithType: Agent.IsNew
 - uid: TimberAssembly.Entities.Agent.IsNew*
   name: IsNew
-  href: api/TimberAssembly.Entities.Agent.html#TimberAssembly_Entities_Agent_IsNew_
+  href: api/TimberAssembly.Entities.Agent.IsNew.html
   commentId: Overload:TimberAssembly.Entities.Agent.IsNew
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Agent.IsNew
   nameWithType: Agent.IsNew
 - uid: TimberAssembly.Entities.Agent.Name
   name: Name
-  href: api/TimberAssembly.Entities.Agent.html#TimberAssembly_Entities_Agent_Name
+  href: api/TimberAssembly.Entities.Agent.Name.html#TimberAssembly_Entities_Agent_Name
   commentId: P:TimberAssembly.Entities.Agent.Name
   fullName: TimberAssembly.Entities.Agent.Name
   nameWithType: Agent.Name
 - uid: TimberAssembly.Entities.Agent.Name*
   name: Name
-  href: api/TimberAssembly.Entities.Agent.html#TimberAssembly_Entities_Agent_Name_
+  href: api/TimberAssembly.Entities.Agent.Name.html
   commentId: Overload:TimberAssembly.Entities.Agent.Name
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Agent.Name
   nameWithType: Agent.Name
 - uid: TimberAssembly.Entities.Agent.ToString
   name: ToString()
-  href: api/TimberAssembly.Entities.Agent.html#TimberAssembly_Entities_Agent_ToString
+  href: api/TimberAssembly.Entities.Agent.ToString.html#TimberAssembly_Entities_Agent_ToString
   commentId: M:TimberAssembly.Entities.Agent.ToString
   fullName: TimberAssembly.Entities.Agent.ToString()
   nameWithType: Agent.ToString()
 - uid: TimberAssembly.Entities.Agent.ToString*
   name: ToString
-  href: api/TimberAssembly.Entities.Agent.html#TimberAssembly_Entities_Agent_ToString_
+  href: api/TimberAssembly.Entities.Agent.ToString.html
   commentId: Overload:TimberAssembly.Entities.Agent.ToString
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Agent.ToString
   nameWithType: Agent.ToString
 - uid: TimberAssembly.Entities.Agent.Trimmed
   name: Trimmed
-  href: api/TimberAssembly.Entities.Agent.html#TimberAssembly_Entities_Agent_Trimmed
+  href: api/TimberAssembly.Entities.Agent.Trimmed.html#TimberAssembly_Entities_Agent_Trimmed
   commentId: P:TimberAssembly.Entities.Agent.Trimmed
   fullName: TimberAssembly.Entities.Agent.Trimmed
   nameWithType: Agent.Trimmed
 - uid: TimberAssembly.Entities.Agent.Trimmed*
   name: Trimmed
-  href: api/TimberAssembly.Entities.Agent.html#TimberAssembly_Entities_Agent_Trimmed_
+  href: api/TimberAssembly.Entities.Agent.Trimmed.html
   commentId: Overload:TimberAssembly.Entities.Agent.Trimmed
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Agent.Trimmed
   nameWithType: Agent.Trimmed
 - uid: TimberAssembly.Entities.Agent.Volume
   name: Volume()
-  href: api/TimberAssembly.Entities.Agent.html#TimberAssembly_Entities_Agent_Volume
+  href: api/TimberAssembly.Entities.Agent.Volume.html#TimberAssembly_Entities_Agent_Volume
   commentId: M:TimberAssembly.Entities.Agent.Volume
   fullName: TimberAssembly.Entities.Agent.Volume()
   nameWithType: Agent.Volume()
 - uid: TimberAssembly.Entities.Agent.Volume*
   name: Volume
-  href: api/TimberAssembly.Entities.Agent.html#TimberAssembly_Entities_Agent_Volume_
+  href: api/TimberAssembly.Entities.Agent.Volume.html
   commentId: Overload:TimberAssembly.Entities.Agent.Volume
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Agent.Volume
   nameWithType: Agent.Volume
 - uid: TimberAssembly.Entities.Dimension
@@ -124,7 +111,7 @@ references:
   nameWithType: Dimension
 - uid: TimberAssembly.Entities.Dimension.#ctor
   name: Dimension()
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension__ctor
+  href: api/TimberAssembly.Entities.Dimension.-ctor.html#TimberAssembly_Entities_Dimension__ctor
   commentId: M:TimberAssembly.Entities.Dimension.#ctor
   name.vb: New()
   fullName: TimberAssembly.Entities.Dimension.Dimension()
@@ -133,7 +120,7 @@ references:
   nameWithType.vb: Dimension.New()
 - uid: TimberAssembly.Entities.Dimension.#ctor(System.Collections.Generic.List{System.Double})
   name: Dimension(List<double>)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension__ctor_System_Collections_Generic_List_System_Double__
+  href: api/TimberAssembly.Entities.Dimension.-ctor.html#TimberAssembly_Entities_Dimension__ctor_System_Collections_Generic_List_System_Double__
   commentId: M:TimberAssembly.Entities.Dimension.#ctor(System.Collections.Generic.List{System.Double})
   name.vb: New(List(Of Double))
   fullName: TimberAssembly.Entities.Dimension.Dimension(System.Collections.Generic.List<double>)
@@ -142,7 +129,7 @@ references:
   nameWithType.vb: Dimension.New(List(Of Double))
 - uid: TimberAssembly.Entities.Dimension.#ctor(System.Double,System.Double,System.Double)
   name: Dimension(double, double, double)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension__ctor_System_Double_System_Double_System_Double_
+  href: api/TimberAssembly.Entities.Dimension.-ctor.html#TimberAssembly_Entities_Dimension__ctor_System_Double_System_Double_System_Double_
   commentId: M:TimberAssembly.Entities.Dimension.#ctor(System.Double,System.Double,System.Double)
   name.vb: New(Double, Double, Double)
   fullName: TimberAssembly.Entities.Dimension.Dimension(double, double, double)
@@ -151,9 +138,8 @@ references:
   nameWithType.vb: Dimension.New(Double, Double, Double)
 - uid: TimberAssembly.Entities.Dimension.#ctor*
   name: Dimension
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension__ctor_
+  href: api/TimberAssembly.Entities.Dimension.-ctor.html
   commentId: Overload:TimberAssembly.Entities.Dimension.#ctor
-  isSpec: "True"
   name.vb: New
   fullName: TimberAssembly.Entities.Dimension.Dimension
   fullName.vb: TimberAssembly.Entities.Dimension.New
@@ -161,33 +147,31 @@ references:
   nameWithType.vb: Dimension.New
 - uid: TimberAssembly.Entities.Dimension.Absolute
   name: Absolute()
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Absolute
+  href: api/TimberAssembly.Entities.Dimension.Absolute.html#TimberAssembly_Entities_Dimension_Absolute
   commentId: M:TimberAssembly.Entities.Dimension.Absolute
   fullName: TimberAssembly.Entities.Dimension.Absolute()
   nameWithType: Dimension.Absolute()
 - uid: TimberAssembly.Entities.Dimension.Absolute*
   name: Absolute
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Absolute_
+  href: api/TimberAssembly.Entities.Dimension.Absolute.html
   commentId: Overload:TimberAssembly.Entities.Dimension.Absolute
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.Absolute
   nameWithType: Dimension.Absolute
 - uid: TimberAssembly.Entities.Dimension.Add(TimberAssembly.Entities.Dimension)
   name: Add(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Add_TimberAssembly_Entities_Dimension_
+  href: api/TimberAssembly.Entities.Dimension.Add.html#TimberAssembly_Entities_Dimension_Add_TimberAssembly_Entities_Dimension_
   commentId: M:TimberAssembly.Entities.Dimension.Add(TimberAssembly.Entities.Dimension)
   fullName: TimberAssembly.Entities.Dimension.Add(TimberAssembly.Entities.Dimension)
   nameWithType: Dimension.Add(Dimension)
 - uid: TimberAssembly.Entities.Dimension.Add*
   name: Add
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Add_
+  href: api/TimberAssembly.Entities.Dimension.Add.html
   commentId: Overload:TimberAssembly.Entities.Dimension.Add
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.Add
   nameWithType: Dimension.Add
 - uid: TimberAssembly.Entities.Dimension.Equality(TimberAssembly.Entities.Dimension,System.Double)
   name: Equality(Dimension, double)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Equality_TimberAssembly_Entities_Dimension_System_Double_
+  href: api/TimberAssembly.Entities.Dimension.Equality.html#TimberAssembly_Entities_Dimension_Equality_TimberAssembly_Entities_Dimension_System_Double_
   commentId: M:TimberAssembly.Entities.Dimension.Equality(TimberAssembly.Entities.Dimension,System.Double)
   name.vb: Equality(Dimension, Double)
   fullName: TimberAssembly.Entities.Dimension.Equality(TimberAssembly.Entities.Dimension, double)
@@ -196,27 +180,25 @@ references:
   nameWithType.vb: Dimension.Equality(Dimension, Double)
 - uid: TimberAssembly.Entities.Dimension.Equality*
   name: Equality
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Equality_
+  href: api/TimberAssembly.Entities.Dimension.Equality.html
   commentId: Overload:TimberAssembly.Entities.Dimension.Equality
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.Equality
   nameWithType: Dimension.Equality
 - uid: TimberAssembly.Entities.Dimension.GetDifference(TimberAssembly.Entities.Dimension,TimberAssembly.Entities.Dimension)
   name: GetDifference(Dimension, Dimension)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_GetDifference_TimberAssembly_Entities_Dimension_TimberAssembly_Entities_Dimension_
+  href: api/TimberAssembly.Entities.Dimension.GetDifference.html#TimberAssembly_Entities_Dimension_GetDifference_TimberAssembly_Entities_Dimension_TimberAssembly_Entities_Dimension_
   commentId: M:TimberAssembly.Entities.Dimension.GetDifference(TimberAssembly.Entities.Dimension,TimberAssembly.Entities.Dimension)
   fullName: TimberAssembly.Entities.Dimension.GetDifference(TimberAssembly.Entities.Dimension, TimberAssembly.Entities.Dimension)
   nameWithType: Dimension.GetDifference(Dimension, Dimension)
 - uid: TimberAssembly.Entities.Dimension.GetDifference*
   name: GetDifference
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_GetDifference_
+  href: api/TimberAssembly.Entities.Dimension.GetDifference.html
   commentId: Overload:TimberAssembly.Entities.Dimension.GetDifference
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.GetDifference
   nameWithType: Dimension.GetDifference
 - uid: TimberAssembly.Entities.Dimension.GetSum(System.Collections.Generic.List{TimberAssembly.Entities.Dimension})
   name: GetSum(List<Dimension>)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_GetSum_System_Collections_Generic_List_TimberAssembly_Entities_Dimension__
+  href: api/TimberAssembly.Entities.Dimension.GetSum.html#TimberAssembly_Entities_Dimension_GetSum_System_Collections_Generic_List_TimberAssembly_Entities_Dimension__
   commentId: M:TimberAssembly.Entities.Dimension.GetSum(System.Collections.Generic.List{TimberAssembly.Entities.Dimension})
   name.vb: GetSum(List(Of Dimension))
   fullName: TimberAssembly.Entities.Dimension.GetSum(System.Collections.Generic.List<TimberAssembly.Entities.Dimension>)
@@ -225,223 +207,206 @@ references:
   nameWithType.vb: Dimension.GetSum(List(Of Dimension))
 - uid: TimberAssembly.Entities.Dimension.GetSum(TimberAssembly.Entities.Dimension,TimberAssembly.Entities.Dimension)
   name: GetSum(Dimension, Dimension)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_GetSum_TimberAssembly_Entities_Dimension_TimberAssembly_Entities_Dimension_
+  href: api/TimberAssembly.Entities.Dimension.GetSum.html#TimberAssembly_Entities_Dimension_GetSum_TimberAssembly_Entities_Dimension_TimberAssembly_Entities_Dimension_
   commentId: M:TimberAssembly.Entities.Dimension.GetSum(TimberAssembly.Entities.Dimension,TimberAssembly.Entities.Dimension)
   fullName: TimberAssembly.Entities.Dimension.GetSum(TimberAssembly.Entities.Dimension, TimberAssembly.Entities.Dimension)
   nameWithType: Dimension.GetSum(Dimension, Dimension)
 - uid: TimberAssembly.Entities.Dimension.GetSum*
   name: GetSum
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_GetSum_
+  href: api/TimberAssembly.Entities.Dimension.GetSum.html
   commentId: Overload:TimberAssembly.Entities.Dimension.GetSum
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.GetSum
   nameWithType: Dimension.GetSum
 - uid: TimberAssembly.Entities.Dimension.GetVolume
   name: GetVolume()
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_GetVolume
+  href: api/TimberAssembly.Entities.Dimension.GetVolume.html#TimberAssembly_Entities_Dimension_GetVolume
   commentId: M:TimberAssembly.Entities.Dimension.GetVolume
   fullName: TimberAssembly.Entities.Dimension.GetVolume()
   nameWithType: Dimension.GetVolume()
 - uid: TimberAssembly.Entities.Dimension.GetVolume*
   name: GetVolume
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_GetVolume_
+  href: api/TimberAssembly.Entities.Dimension.GetVolume.html
   commentId: Overload:TimberAssembly.Entities.Dimension.GetVolume
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.GetVolume
   nameWithType: Dimension.GetVolume
 - uid: TimberAssembly.Entities.Dimension.Height
   name: Height
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Height
+  href: api/TimberAssembly.Entities.Dimension.Height.html#TimberAssembly_Entities_Dimension_Height
   commentId: P:TimberAssembly.Entities.Dimension.Height
   fullName: TimberAssembly.Entities.Dimension.Height
   nameWithType: Dimension.Height
 - uid: TimberAssembly.Entities.Dimension.Height*
   name: Height
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Height_
+  href: api/TimberAssembly.Entities.Dimension.Height.html
   commentId: Overload:TimberAssembly.Entities.Dimension.Height
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.Height
   nameWithType: Dimension.Height
 - uid: TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan(TimberAssembly.Entities.Dimension)
   name: IsAllLargerOrEqualThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAllLargerOrEqualThan_TimberAssembly_Entities_Dimension_
+  href: api/TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan.html#TimberAssembly_Entities_Dimension_IsAllLargerOrEqualThan_TimberAssembly_Entities_Dimension_
   commentId: M:TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan(TimberAssembly.Entities.Dimension)
   fullName: TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan(TimberAssembly.Entities.Dimension)
   nameWithType: Dimension.IsAllLargerOrEqualThan(Dimension)
 - uid: TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan*
   name: IsAllLargerOrEqualThan
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAllLargerOrEqualThan_
+  href: api/TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan.html
   commentId: Overload:TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan
   nameWithType: Dimension.IsAllLargerOrEqualThan
 - uid: TimberAssembly.Entities.Dimension.IsAllLargerThan(TimberAssembly.Entities.Dimension)
   name: IsAllLargerThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAllLargerThan_TimberAssembly_Entities_Dimension_
+  href: api/TimberAssembly.Entities.Dimension.IsAllLargerThan.html#TimberAssembly_Entities_Dimension_IsAllLargerThan_TimberAssembly_Entities_Dimension_
   commentId: M:TimberAssembly.Entities.Dimension.IsAllLargerThan(TimberAssembly.Entities.Dimension)
   fullName: TimberAssembly.Entities.Dimension.IsAllLargerThan(TimberAssembly.Entities.Dimension)
   nameWithType: Dimension.IsAllLargerThan(Dimension)
 - uid: TimberAssembly.Entities.Dimension.IsAllLargerThan*
   name: IsAllLargerThan
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAllLargerThan_
+  href: api/TimberAssembly.Entities.Dimension.IsAllLargerThan.html
   commentId: Overload:TimberAssembly.Entities.Dimension.IsAllLargerThan
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.IsAllLargerThan
   nameWithType: Dimension.IsAllLargerThan
 - uid: TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan(TimberAssembly.Entities.Dimension)
   name: IsAllSmallerOrEqualThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAllSmallerOrEqualThan_TimberAssembly_Entities_Dimension_
+  href: api/TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan.html#TimberAssembly_Entities_Dimension_IsAllSmallerOrEqualThan_TimberAssembly_Entities_Dimension_
   commentId: M:TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan(TimberAssembly.Entities.Dimension)
   fullName: TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan(TimberAssembly.Entities.Dimension)
   nameWithType: Dimension.IsAllSmallerOrEqualThan(Dimension)
 - uid: TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan*
   name: IsAllSmallerOrEqualThan
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAllSmallerOrEqualThan_
+  href: api/TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan.html
   commentId: Overload:TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan
   nameWithType: Dimension.IsAllSmallerOrEqualThan
 - uid: TimberAssembly.Entities.Dimension.IsAllSmallerThan(TimberAssembly.Entities.Dimension)
   name: IsAllSmallerThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAllSmallerThan_TimberAssembly_Entities_Dimension_
+  href: api/TimberAssembly.Entities.Dimension.IsAllSmallerThan.html#TimberAssembly_Entities_Dimension_IsAllSmallerThan_TimberAssembly_Entities_Dimension_
   commentId: M:TimberAssembly.Entities.Dimension.IsAllSmallerThan(TimberAssembly.Entities.Dimension)
   fullName: TimberAssembly.Entities.Dimension.IsAllSmallerThan(TimberAssembly.Entities.Dimension)
   nameWithType: Dimension.IsAllSmallerThan(Dimension)
 - uid: TimberAssembly.Entities.Dimension.IsAllSmallerThan*
   name: IsAllSmallerThan
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAllSmallerThan_
+  href: api/TimberAssembly.Entities.Dimension.IsAllSmallerThan.html
   commentId: Overload:TimberAssembly.Entities.Dimension.IsAllSmallerThan
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.IsAllSmallerThan
   nameWithType: Dimension.IsAllSmallerThan
 - uid: TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan(TimberAssembly.Entities.Dimension)
   name: IsAnyLargerOrEqualThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAnyLargerOrEqualThan_TimberAssembly_Entities_Dimension_
+  href: api/TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan.html#TimberAssembly_Entities_Dimension_IsAnyLargerOrEqualThan_TimberAssembly_Entities_Dimension_
   commentId: M:TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan(TimberAssembly.Entities.Dimension)
   fullName: TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan(TimberAssembly.Entities.Dimension)
   nameWithType: Dimension.IsAnyLargerOrEqualThan(Dimension)
 - uid: TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan*
   name: IsAnyLargerOrEqualThan
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAnyLargerOrEqualThan_
+  href: api/TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan.html
   commentId: Overload:TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan
   nameWithType: Dimension.IsAnyLargerOrEqualThan
 - uid: TimberAssembly.Entities.Dimension.IsAnyLargerThan(TimberAssembly.Entities.Dimension)
   name: IsAnyLargerThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAnyLargerThan_TimberAssembly_Entities_Dimension_
+  href: api/TimberAssembly.Entities.Dimension.IsAnyLargerThan.html#TimberAssembly_Entities_Dimension_IsAnyLargerThan_TimberAssembly_Entities_Dimension_
   commentId: M:TimberAssembly.Entities.Dimension.IsAnyLargerThan(TimberAssembly.Entities.Dimension)
   fullName: TimberAssembly.Entities.Dimension.IsAnyLargerThan(TimberAssembly.Entities.Dimension)
   nameWithType: Dimension.IsAnyLargerThan(Dimension)
 - uid: TimberAssembly.Entities.Dimension.IsAnyLargerThan*
   name: IsAnyLargerThan
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAnyLargerThan_
+  href: api/TimberAssembly.Entities.Dimension.IsAnyLargerThan.html
   commentId: Overload:TimberAssembly.Entities.Dimension.IsAnyLargerThan
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.IsAnyLargerThan
   nameWithType: Dimension.IsAnyLargerThan
 - uid: TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan(TimberAssembly.Entities.Dimension)
   name: IsAnySmallerOrEqualThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAnySmallerOrEqualThan_TimberAssembly_Entities_Dimension_
+  href: api/TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan.html#TimberAssembly_Entities_Dimension_IsAnySmallerOrEqualThan_TimberAssembly_Entities_Dimension_
   commentId: M:TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan(TimberAssembly.Entities.Dimension)
   fullName: TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan(TimberAssembly.Entities.Dimension)
   nameWithType: Dimension.IsAnySmallerOrEqualThan(Dimension)
 - uid: TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan*
   name: IsAnySmallerOrEqualThan
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAnySmallerOrEqualThan_
+  href: api/TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan.html
   commentId: Overload:TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan
   nameWithType: Dimension.IsAnySmallerOrEqualThan
 - uid: TimberAssembly.Entities.Dimension.IsAnySmallerThan(TimberAssembly.Entities.Dimension)
   name: IsAnySmallerThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAnySmallerThan_TimberAssembly_Entities_Dimension_
+  href: api/TimberAssembly.Entities.Dimension.IsAnySmallerThan.html#TimberAssembly_Entities_Dimension_IsAnySmallerThan_TimberAssembly_Entities_Dimension_
   commentId: M:TimberAssembly.Entities.Dimension.IsAnySmallerThan(TimberAssembly.Entities.Dimension)
   fullName: TimberAssembly.Entities.Dimension.IsAnySmallerThan(TimberAssembly.Entities.Dimension)
   nameWithType: Dimension.IsAnySmallerThan(Dimension)
 - uid: TimberAssembly.Entities.Dimension.IsAnySmallerThan*
   name: IsAnySmallerThan
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_IsAnySmallerThan_
+  href: api/TimberAssembly.Entities.Dimension.IsAnySmallerThan.html
   commentId: Overload:TimberAssembly.Entities.Dimension.IsAnySmallerThan
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.IsAnySmallerThan
   nameWithType: Dimension.IsAnySmallerThan
 - uid: TimberAssembly.Entities.Dimension.Length
   name: Length
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Length
+  href: api/TimberAssembly.Entities.Dimension.Length.html#TimberAssembly_Entities_Dimension_Length
   commentId: P:TimberAssembly.Entities.Dimension.Length
   fullName: TimberAssembly.Entities.Dimension.Length
   nameWithType: Dimension.Length
 - uid: TimberAssembly.Entities.Dimension.Length*
   name: Length
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Length_
+  href: api/TimberAssembly.Entities.Dimension.Length.html
   commentId: Overload:TimberAssembly.Entities.Dimension.Length
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.Length
   nameWithType: Dimension.Length
 - uid: TimberAssembly.Entities.Dimension.Subtract(TimberAssembly.Entities.Dimension)
   name: Subtract(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Subtract_TimberAssembly_Entities_Dimension_
+  href: api/TimberAssembly.Entities.Dimension.Subtract.html#TimberAssembly_Entities_Dimension_Subtract_TimberAssembly_Entities_Dimension_
   commentId: M:TimberAssembly.Entities.Dimension.Subtract(TimberAssembly.Entities.Dimension)
   fullName: TimberAssembly.Entities.Dimension.Subtract(TimberAssembly.Entities.Dimension)
   nameWithType: Dimension.Subtract(Dimension)
 - uid: TimberAssembly.Entities.Dimension.Subtract*
   name: Subtract
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Subtract_
+  href: api/TimberAssembly.Entities.Dimension.Subtract.html
   commentId: Overload:TimberAssembly.Entities.Dimension.Subtract
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.Subtract
   nameWithType: Dimension.Subtract
 - uid: TimberAssembly.Entities.Dimension.ToList
   name: ToList()
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_ToList
+  href: api/TimberAssembly.Entities.Dimension.ToList.html#TimberAssembly_Entities_Dimension_ToList
   commentId: M:TimberAssembly.Entities.Dimension.ToList
   fullName: TimberAssembly.Entities.Dimension.ToList()
   nameWithType: Dimension.ToList()
 - uid: TimberAssembly.Entities.Dimension.ToList*
   name: ToList
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_ToList_
+  href: api/TimberAssembly.Entities.Dimension.ToList.html
   commentId: Overload:TimberAssembly.Entities.Dimension.ToList
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.ToList
   nameWithType: Dimension.ToList
 - uid: TimberAssembly.Entities.Dimension.ToString
   name: ToString()
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_ToString
+  href: api/TimberAssembly.Entities.Dimension.ToString.html#TimberAssembly_Entities_Dimension_ToString
   commentId: M:TimberAssembly.Entities.Dimension.ToString
   fullName: TimberAssembly.Entities.Dimension.ToString()
   nameWithType: Dimension.ToString()
 - uid: TimberAssembly.Entities.Dimension.ToString*
   name: ToString
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_ToString_
+  href: api/TimberAssembly.Entities.Dimension.ToString.html
   commentId: Overload:TimberAssembly.Entities.Dimension.ToString
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.ToString
   nameWithType: Dimension.ToString
 - uid: TimberAssembly.Entities.Dimension.Width
   name: Width
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Width
+  href: api/TimberAssembly.Entities.Dimension.Width.html#TimberAssembly_Entities_Dimension_Width
   commentId: P:TimberAssembly.Entities.Dimension.Width
   fullName: TimberAssembly.Entities.Dimension.Width
   nameWithType: Dimension.Width
 - uid: TimberAssembly.Entities.Dimension.Width*
   name: Width
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Width_
+  href: api/TimberAssembly.Entities.Dimension.Width.html
   commentId: Overload:TimberAssembly.Entities.Dimension.Width
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.Width
   nameWithType: Dimension.Width
 - uid: TimberAssembly.Entities.Dimension.Zero
   name: Zero()
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Zero
+  href: api/TimberAssembly.Entities.Dimension.Zero.html#TimberAssembly_Entities_Dimension_Zero
   commentId: M:TimberAssembly.Entities.Dimension.Zero
   fullName: TimberAssembly.Entities.Dimension.Zero()
   nameWithType: Dimension.Zero()
 - uid: TimberAssembly.Entities.Dimension.Zero*
   name: Zero
-  href: api/TimberAssembly.Entities.Dimension.html#TimberAssembly_Entities_Dimension_Zero_
+  href: api/TimberAssembly.Entities.Dimension.Zero.html
   commentId: Overload:TimberAssembly.Entities.Dimension.Zero
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Dimension.Zero
   nameWithType: Dimension.Zero
 - uid: TimberAssembly.Entities.Pair
@@ -452,7 +417,7 @@ references:
   nameWithType: Pair
 - uid: TimberAssembly.Entities.Pair.#ctor(TimberAssembly.Entities.Agent,System.Collections.Generic.List{TimberAssembly.Entities.Agent})
   name: Pair(Agent, List<Agent>)
-  href: api/TimberAssembly.Entities.Pair.html#TimberAssembly_Entities_Pair__ctor_TimberAssembly_Entities_Agent_System_Collections_Generic_List_TimberAssembly_Entities_Agent__
+  href: api/TimberAssembly.Entities.Pair.-ctor.html#TimberAssembly_Entities_Pair__ctor_TimberAssembly_Entities_Agent_System_Collections_Generic_List_TimberAssembly_Entities_Agent__
   commentId: M:TimberAssembly.Entities.Pair.#ctor(TimberAssembly.Entities.Agent,System.Collections.Generic.List{TimberAssembly.Entities.Agent})
   name.vb: New(Agent, List(Of Agent))
   fullName: TimberAssembly.Entities.Pair.Pair(TimberAssembly.Entities.Agent, System.Collections.Generic.List<TimberAssembly.Entities.Agent>)
@@ -461,9 +426,8 @@ references:
   nameWithType.vb: Pair.New(Agent, List(Of Agent))
 - uid: TimberAssembly.Entities.Pair.#ctor*
   name: Pair
-  href: api/TimberAssembly.Entities.Pair.html#TimberAssembly_Entities_Pair__ctor_
+  href: api/TimberAssembly.Entities.Pair.-ctor.html
   commentId: Overload:TimberAssembly.Entities.Pair.#ctor
-  isSpec: "True"
   name.vb: New
   fullName: TimberAssembly.Entities.Pair.Pair
   fullName.vb: TimberAssembly.Entities.Pair.New
@@ -471,28 +435,26 @@ references:
   nameWithType.vb: Pair.New
 - uid: TimberAssembly.Entities.Pair.Subjects
   name: Subjects
-  href: api/TimberAssembly.Entities.Pair.html#TimberAssembly_Entities_Pair_Subjects
+  href: api/TimberAssembly.Entities.Pair.Subjects.html#TimberAssembly_Entities_Pair_Subjects
   commentId: P:TimberAssembly.Entities.Pair.Subjects
   fullName: TimberAssembly.Entities.Pair.Subjects
   nameWithType: Pair.Subjects
 - uid: TimberAssembly.Entities.Pair.Subjects*
   name: Subjects
-  href: api/TimberAssembly.Entities.Pair.html#TimberAssembly_Entities_Pair_Subjects_
+  href: api/TimberAssembly.Entities.Pair.Subjects.html
   commentId: Overload:TimberAssembly.Entities.Pair.Subjects
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Pair.Subjects
   nameWithType: Pair.Subjects
 - uid: TimberAssembly.Entities.Pair.Target
   name: Target
-  href: api/TimberAssembly.Entities.Pair.html#TimberAssembly_Entities_Pair_Target
+  href: api/TimberAssembly.Entities.Pair.Target.html#TimberAssembly_Entities_Pair_Target
   commentId: P:TimberAssembly.Entities.Pair.Target
   fullName: TimberAssembly.Entities.Pair.Target
   nameWithType: Pair.Target
 - uid: TimberAssembly.Entities.Pair.Target*
   name: Target
-  href: api/TimberAssembly.Entities.Pair.html#TimberAssembly_Entities_Pair_Target_
+  href: api/TimberAssembly.Entities.Pair.Target.html
   commentId: Overload:TimberAssembly.Entities.Pair.Target
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Pair.Target
   nameWithType: Pair.Target
 - uid: TimberAssembly.Entities.Remain
@@ -503,188 +465,28 @@ references:
   nameWithType: Remain
 - uid: TimberAssembly.Entities.Remain.Subjects
   name: Subjects
-  href: api/TimberAssembly.Entities.Remain.html#TimberAssembly_Entities_Remain_Subjects
+  href: api/TimberAssembly.Entities.Remain.Subjects.html#TimberAssembly_Entities_Remain_Subjects
   commentId: P:TimberAssembly.Entities.Remain.Subjects
   fullName: TimberAssembly.Entities.Remain.Subjects
   nameWithType: Remain.Subjects
 - uid: TimberAssembly.Entities.Remain.Subjects*
   name: Subjects
-  href: api/TimberAssembly.Entities.Remain.html#TimberAssembly_Entities_Remain_Subjects_
+  href: api/TimberAssembly.Entities.Remain.Subjects.html
   commentId: Overload:TimberAssembly.Entities.Remain.Subjects
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Remain.Subjects
   nameWithType: Remain.Subjects
 - uid: TimberAssembly.Entities.Remain.Targets
   name: Targets
-  href: api/TimberAssembly.Entities.Remain.html#TimberAssembly_Entities_Remain_Targets
+  href: api/TimberAssembly.Entities.Remain.Targets.html#TimberAssembly_Entities_Remain_Targets
   commentId: P:TimberAssembly.Entities.Remain.Targets
   fullName: TimberAssembly.Entities.Remain.Targets
   nameWithType: Remain.Targets
 - uid: TimberAssembly.Entities.Remain.Targets*
   name: Targets
-  href: api/TimberAssembly.Entities.Remain.html#TimberAssembly_Entities_Remain_Targets_
+  href: api/TimberAssembly.Entities.Remain.Targets.html
   commentId: Overload:TimberAssembly.Entities.Remain.Targets
-  isSpec: "True"
   fullName: TimberAssembly.Entities.Remain.Targets
   nameWithType: Remain.Targets
-- uid: TimberAssembly.Evaluate
-  name: Evaluate
-  href: api/TimberAssembly.Evaluate.html
-  commentId: T:TimberAssembly.Evaluate
-  fullName: TimberAssembly.Evaluate
-  nameWithType: Evaluate
-- uid: TimberAssembly.Evaluate.#ctor(System.Collections.Generic.List{TimberAssembly.Entities.Pair},TimberAssembly.Entities.Remain,System.Collections.Generic.List{TimberAssembly.Entities.Agent})
-  name: Evaluate(List<Pair>, Remain, List<Agent>)
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate__ctor_System_Collections_Generic_List_TimberAssembly_Entities_Pair__TimberAssembly_Entities_Remain_System_Collections_Generic_List_TimberAssembly_Entities_Agent__
-  commentId: M:TimberAssembly.Evaluate.#ctor(System.Collections.Generic.List{TimberAssembly.Entities.Pair},TimberAssembly.Entities.Remain,System.Collections.Generic.List{TimberAssembly.Entities.Agent})
-  name.vb: New(List(Of Pair), Remain, List(Of Agent))
-  fullName: TimberAssembly.Evaluate.Evaluate(System.Collections.Generic.List<TimberAssembly.Entities.Pair>, TimberAssembly.Entities.Remain, System.Collections.Generic.List<TimberAssembly.Entities.Agent>)
-  fullName.vb: TimberAssembly.Evaluate.New(System.Collections.Generic.List(Of TimberAssembly.Entities.Pair), TimberAssembly.Entities.Remain, System.Collections.Generic.List(Of TimberAssembly.Entities.Agent))
-  nameWithType: Evaluate.Evaluate(List<Pair>, Remain, List<Agent>)
-  nameWithType.vb: Evaluate.New(List(Of Pair), Remain, List(Of Agent))
-- uid: TimberAssembly.Evaluate.#ctor*
-  name: Evaluate
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate__ctor_
-  commentId: Overload:TimberAssembly.Evaluate.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: TimberAssembly.Evaluate.Evaluate
-  fullName.vb: TimberAssembly.Evaluate.New
-  nameWithType: Evaluate.Evaluate
-  nameWithType.vb: Evaluate.New
-- uid: TimberAssembly.Evaluate.EvaluateEfficiencyByCutCount
-  name: EvaluateEfficiencyByCutCount()
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_EvaluateEfficiencyByCutCount
-  commentId: M:TimberAssembly.Evaluate.EvaluateEfficiencyByCutCount
-  fullName: TimberAssembly.Evaluate.EvaluateEfficiencyByCutCount()
-  nameWithType: Evaluate.EvaluateEfficiencyByCutCount()
-- uid: TimberAssembly.Evaluate.EvaluateEfficiencyByCutCount*
-  name: EvaluateEfficiencyByCutCount
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_EvaluateEfficiencyByCutCount_
-  commentId: Overload:TimberAssembly.Evaluate.EvaluateEfficiencyByCutCount
-  isSpec: "True"
-  fullName: TimberAssembly.Evaluate.EvaluateEfficiencyByCutCount
-  nameWithType: Evaluate.EvaluateEfficiencyByCutCount
-- uid: TimberAssembly.Evaluate.EvaluateEfficiencyByTime(System.Double,System.Double)
-  name: EvaluateEfficiencyByTime(double, double)
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_EvaluateEfficiencyByTime_System_Double_System_Double_
-  commentId: M:TimberAssembly.Evaluate.EvaluateEfficiencyByTime(System.Double,System.Double)
-  name.vb: EvaluateEfficiencyByTime(Double, Double)
-  fullName: TimberAssembly.Evaluate.EvaluateEfficiencyByTime(double, double)
-  fullName.vb: TimberAssembly.Evaluate.EvaluateEfficiencyByTime(Double, Double)
-  nameWithType: Evaluate.EvaluateEfficiencyByTime(double, double)
-  nameWithType.vb: Evaluate.EvaluateEfficiencyByTime(Double, Double)
-- uid: TimberAssembly.Evaluate.EvaluateEfficiencyByTime*
-  name: EvaluateEfficiencyByTime
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_EvaluateEfficiencyByTime_
-  commentId: Overload:TimberAssembly.Evaluate.EvaluateEfficiencyByTime
-  isSpec: "True"
-  fullName: TimberAssembly.Evaluate.EvaluateEfficiencyByTime
-  nameWithType: Evaluate.EvaluateEfficiencyByTime
-- uid: TimberAssembly.Evaluate.EvaluateEfficiencyByVolume
-  name: EvaluateEfficiencyByVolume()
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_EvaluateEfficiencyByVolume
-  commentId: M:TimberAssembly.Evaluate.EvaluateEfficiencyByVolume
-  fullName: TimberAssembly.Evaluate.EvaluateEfficiencyByVolume()
-  nameWithType: Evaluate.EvaluateEfficiencyByVolume()
-- uid: TimberAssembly.Evaluate.EvaluateEfficiencyByVolume*
-  name: EvaluateEfficiencyByVolume
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_EvaluateEfficiencyByVolume_
-  commentId: Overload:TimberAssembly.Evaluate.EvaluateEfficiencyByVolume
-  isSpec: "True"
-  fullName: TimberAssembly.Evaluate.EvaluateEfficiencyByVolume
-  nameWithType: Evaluate.EvaluateEfficiencyByVolume
-- uid: TimberAssembly.Evaluate.GetCutCount
-  name: GetCutCount()
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_GetCutCount
-  commentId: M:TimberAssembly.Evaluate.GetCutCount
-  fullName: TimberAssembly.Evaluate.GetCutCount()
-  nameWithType: Evaluate.GetCutCount()
-- uid: TimberAssembly.Evaluate.GetCutCount*
-  name: GetCutCount
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_GetCutCount_
-  commentId: Overload:TimberAssembly.Evaluate.GetCutCount
-  isSpec: "True"
-  fullName: TimberAssembly.Evaluate.GetCutCount
-  nameWithType: Evaluate.GetCutCount
-- uid: TimberAssembly.Evaluate.GetNewSubjectVolume
-  name: GetNewSubjectVolume()
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_GetNewSubjectVolume
-  commentId: M:TimberAssembly.Evaluate.GetNewSubjectVolume
-  fullName: TimberAssembly.Evaluate.GetNewSubjectVolume()
-  nameWithType: Evaluate.GetNewSubjectVolume()
-- uid: TimberAssembly.Evaluate.GetNewSubjectVolume*
-  name: GetNewSubjectVolume
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_GetNewSubjectVolume_
-  commentId: Overload:TimberAssembly.Evaluate.GetNewSubjectVolume
-  isSpec: "True"
-  fullName: TimberAssembly.Evaluate.GetNewSubjectVolume
-  nameWithType: Evaluate.GetNewSubjectVolume
-- uid: TimberAssembly.Evaluate.GetRecycleRateVolume
-  name: GetRecycleRateVolume()
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_GetRecycleRateVolume
-  commentId: M:TimberAssembly.Evaluate.GetRecycleRateVolume
-  fullName: TimberAssembly.Evaluate.GetRecycleRateVolume()
-  nameWithType: Evaluate.GetRecycleRateVolume()
-- uid: TimberAssembly.Evaluate.GetRecycleRateVolume*
-  name: GetRecycleRateVolume
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_GetRecycleRateVolume_
-  commentId: Overload:TimberAssembly.Evaluate.GetRecycleRateVolume
-  isSpec: "True"
-  fullName: TimberAssembly.Evaluate.GetRecycleRateVolume
-  nameWithType: Evaluate.GetRecycleRateVolume
-- uid: TimberAssembly.Evaluate.GetSubjectInitVolume
-  name: GetSubjectInitVolume()
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_GetSubjectInitVolume
-  commentId: M:TimberAssembly.Evaluate.GetSubjectInitVolume
-  fullName: TimberAssembly.Evaluate.GetSubjectInitVolume()
-  nameWithType: Evaluate.GetSubjectInitVolume()
-- uid: TimberAssembly.Evaluate.GetSubjectInitVolume*
-  name: GetSubjectInitVolume
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_GetSubjectInitVolume_
-  commentId: Overload:TimberAssembly.Evaluate.GetSubjectInitVolume
-  isSpec: "True"
-  fullName: TimberAssembly.Evaluate.GetSubjectInitVolume
-  nameWithType: Evaluate.GetSubjectInitVolume
-- uid: TimberAssembly.Evaluate.GetUsedSubjectVolume
-  name: GetUsedSubjectVolume()
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_GetUsedSubjectVolume
-  commentId: M:TimberAssembly.Evaluate.GetUsedSubjectVolume
-  fullName: TimberAssembly.Evaluate.GetUsedSubjectVolume()
-  nameWithType: Evaluate.GetUsedSubjectVolume()
-- uid: TimberAssembly.Evaluate.GetUsedSubjectVolume*
-  name: GetUsedSubjectVolume
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_GetUsedSubjectVolume_
-  commentId: Overload:TimberAssembly.Evaluate.GetUsedSubjectVolume
-  isSpec: "True"
-  fullName: TimberAssembly.Evaluate.GetUsedSubjectVolume
-  nameWithType: Evaluate.GetUsedSubjectVolume
-- uid: TimberAssembly.Evaluate.GetWasteRateByVolume
-  name: GetWasteRateByVolume()
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_GetWasteRateByVolume
-  commentId: M:TimberAssembly.Evaluate.GetWasteRateByVolume
-  fullName: TimberAssembly.Evaluate.GetWasteRateByVolume()
-  nameWithType: Evaluate.GetWasteRateByVolume()
-- uid: TimberAssembly.Evaluate.GetWasteRateByVolume*
-  name: GetWasteRateByVolume
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_GetWasteRateByVolume_
-  commentId: Overload:TimberAssembly.Evaluate.GetWasteRateByVolume
-  isSpec: "True"
-  fullName: TimberAssembly.Evaluate.GetWasteRateByVolume
-  nameWithType: Evaluate.GetWasteRateByVolume
-- uid: TimberAssembly.Evaluate.GetWasteVolume
-  name: GetWasteVolume()
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_GetWasteVolume
-  commentId: M:TimberAssembly.Evaluate.GetWasteVolume
-  fullName: TimberAssembly.Evaluate.GetWasteVolume()
-  nameWithType: Evaluate.GetWasteVolume()
-- uid: TimberAssembly.Evaluate.GetWasteVolume*
-  name: GetWasteVolume
-  href: api/TimberAssembly.Evaluate.html#TimberAssembly_Evaluate_GetWasteVolume_
-  commentId: Overload:TimberAssembly.Evaluate.GetWasteVolume
-  isSpec: "True"
-  fullName: TimberAssembly.Evaluate.GetWasteVolume
-  nameWithType: Evaluate.GetWasteVolume
 - uid: TimberAssembly.Helper
   name: TimberAssembly.Helper
   href: api/TimberAssembly.Helper.html
@@ -699,33 +501,31 @@ references:
   nameWithType: ComputeMatch
 - uid: TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation(TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent)
   name: CalculateAllAggregation(Agent, Agent)
-  href: api/TimberAssembly.Helper.ComputeMatch.html#TimberAssembly_Helper_ComputeMatch_CalculateAllAggregation_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_
+  href: api/TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation.html#TimberAssembly_Helper_ComputeMatch_CalculateAllAggregation_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_
   commentId: M:TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation(TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent)
   fullName: TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation(TimberAssembly.Entities.Agent, TimberAssembly.Entities.Agent)
   nameWithType: ComputeMatch.CalculateAllAggregation(Agent, Agent)
 - uid: TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation*
   name: CalculateAllAggregation
-  href: api/TimberAssembly.Helper.ComputeMatch.html#TimberAssembly_Helper_ComputeMatch_CalculateAllAggregation_
+  href: api/TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation.html
   commentId: Overload:TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation
-  isSpec: "True"
   fullName: TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation
   nameWithType: ComputeMatch.CalculateAllAggregation
 - uid: TimberAssembly.Helper.ComputeMatch.CalculateResiduals(TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent)
   name: CalculateResiduals(Agent, Agent)
-  href: api/TimberAssembly.Helper.ComputeMatch.html#TimberAssembly_Helper_ComputeMatch_CalculateResiduals_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_
+  href: api/TimberAssembly.Helper.ComputeMatch.CalculateResiduals.html#TimberAssembly_Helper_ComputeMatch_CalculateResiduals_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_
   commentId: M:TimberAssembly.Helper.ComputeMatch.CalculateResiduals(TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent)
   fullName: TimberAssembly.Helper.ComputeMatch.CalculateResiduals(TimberAssembly.Entities.Agent, TimberAssembly.Entities.Agent)
   nameWithType: ComputeMatch.CalculateResiduals(Agent, Agent)
 - uid: TimberAssembly.Helper.ComputeMatch.CalculateResiduals*
   name: CalculateResiduals
-  href: api/TimberAssembly.Helper.ComputeMatch.html#TimberAssembly_Helper_ComputeMatch_CalculateResiduals_
+  href: api/TimberAssembly.Helper.ComputeMatch.CalculateResiduals.html
   commentId: Overload:TimberAssembly.Helper.ComputeMatch.CalculateResiduals
-  isSpec: "True"
   fullName: TimberAssembly.Helper.ComputeMatch.CalculateResiduals
   nameWithType: ComputeMatch.CalculateResiduals
 - uid: TimberAssembly.Helper.ComputeMatch.GetClosestAgent(TimberAssembly.Entities.Agent,System.Collections.Generic.List{TimberAssembly.Entities.Agent})
   name: GetClosestAgent(Agent, List<Agent>)
-  href: api/TimberAssembly.Helper.ComputeMatch.html#TimberAssembly_Helper_ComputeMatch_GetClosestAgent_TimberAssembly_Entities_Agent_System_Collections_Generic_List_TimberAssembly_Entities_Agent__
+  href: api/TimberAssembly.Helper.ComputeMatch.GetClosestAgent.html#TimberAssembly_Helper_ComputeMatch_GetClosestAgent_TimberAssembly_Entities_Agent_System_Collections_Generic_List_TimberAssembly_Entities_Agent__
   commentId: M:TimberAssembly.Helper.ComputeMatch.GetClosestAgent(TimberAssembly.Entities.Agent,System.Collections.Generic.List{TimberAssembly.Entities.Agent})
   name.vb: GetClosestAgent(Agent, List(Of Agent))
   fullName: TimberAssembly.Helper.ComputeMatch.GetClosestAgent(TimberAssembly.Entities.Agent, System.Collections.Generic.List<TimberAssembly.Entities.Agent>)
@@ -734,14 +534,13 @@ references:
   nameWithType.vb: ComputeMatch.GetClosestAgent(Agent, List(Of Agent))
 - uid: TimberAssembly.Helper.ComputeMatch.GetClosestAgent*
   name: GetClosestAgent
-  href: api/TimberAssembly.Helper.ComputeMatch.html#TimberAssembly_Helper_ComputeMatch_GetClosestAgent_
+  href: api/TimberAssembly.Helper.ComputeMatch.GetClosestAgent.html
   commentId: Overload:TimberAssembly.Helper.ComputeMatch.GetClosestAgent
-  isSpec: "True"
   fullName: TimberAssembly.Helper.ComputeMatch.GetClosestAgent
   nameWithType: ComputeMatch.GetClosestAgent
 - uid: TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched(TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent,System.Double)
   name: IsAgentDoubleMatched(Agent, Agent, Agent, double)
-  href: api/TimberAssembly.Helper.ComputeMatch.html#TimberAssembly_Helper_ComputeMatch_IsAgentDoubleMatched_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_System_Double_
+  href: api/TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched.html#TimberAssembly_Helper_ComputeMatch_IsAgentDoubleMatched_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_System_Double_
   commentId: M:TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched(TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent,System.Double)
   name.vb: IsAgentDoubleMatched(Agent, Agent, Agent, Double)
   fullName: TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched(TimberAssembly.Entities.Agent, TimberAssembly.Entities.Agent, TimberAssembly.Entities.Agent, double)
@@ -750,14 +549,13 @@ references:
   nameWithType.vb: ComputeMatch.IsAgentDoubleMatched(Agent, Agent, Agent, Double)
 - uid: TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched*
   name: IsAgentDoubleMatched
-  href: api/TimberAssembly.Helper.ComputeMatch.html#TimberAssembly_Helper_ComputeMatch_IsAgentDoubleMatched_
+  href: api/TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched.html
   commentId: Overload:TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched
-  isSpec: "True"
   fullName: TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched
   nameWithType: ComputeMatch.IsAgentDoubleMatched
 - uid: TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched(TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent,System.Double)
   name: IsAgentExactMatched(Agent, Agent, double)
-  href: api/TimberAssembly.Helper.ComputeMatch.html#TimberAssembly_Helper_ComputeMatch_IsAgentExactMatched_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_System_Double_
+  href: api/TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched.html#TimberAssembly_Helper_ComputeMatch_IsAgentExactMatched_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_System_Double_
   commentId: M:TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched(TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent,System.Double)
   name.vb: IsAgentExactMatched(Agent, Agent, Double)
   fullName: TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched(TimberAssembly.Entities.Agent, TimberAssembly.Entities.Agent, double)
@@ -766,235 +564,358 @@ references:
   nameWithType.vb: ComputeMatch.IsAgentExactMatched(Agent, Agent, Double)
 - uid: TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched*
   name: IsAgentExactMatched
-  href: api/TimberAssembly.Helper.ComputeMatch.html#TimberAssembly_Helper_ComputeMatch_IsAgentExactMatched_
+  href: api/TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched.html
   commentId: Overload:TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched
-  isSpec: "True"
   fullName: TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched
   nameWithType: ComputeMatch.IsAgentExactMatched
-- uid: TimberAssembly.Match
+- uid: TimberAssembly.Operation
+  name: TimberAssembly.Operation
+  href: api/TimberAssembly.Operation.html
+  commentId: N:TimberAssembly.Operation
+  fullName: TimberAssembly.Operation
+  nameWithType: TimberAssembly.Operation
+- uid: TimberAssembly.Operation.Evaluate
+  name: Evaluate
+  href: api/TimberAssembly.Operation.Evaluate.html
+  commentId: T:TimberAssembly.Operation.Evaluate
+  fullName: TimberAssembly.Operation.Evaluate
+  nameWithType: Evaluate
+- uid: TimberAssembly.Operation.Evaluate.#ctor(System.Collections.Generic.List{TimberAssembly.Entities.Pair},TimberAssembly.Entities.Remain,System.Collections.Generic.List{TimberAssembly.Entities.Agent})
+  name: Evaluate(List<Pair>, Remain, List<Agent>)
+  href: api/TimberAssembly.Operation.Evaluate.-ctor.html#TimberAssembly_Operation_Evaluate__ctor_System_Collections_Generic_List_TimberAssembly_Entities_Pair__TimberAssembly_Entities_Remain_System_Collections_Generic_List_TimberAssembly_Entities_Agent__
+  commentId: M:TimberAssembly.Operation.Evaluate.#ctor(System.Collections.Generic.List{TimberAssembly.Entities.Pair},TimberAssembly.Entities.Remain,System.Collections.Generic.List{TimberAssembly.Entities.Agent})
+  name.vb: New(List(Of Pair), Remain, List(Of Agent))
+  fullName: TimberAssembly.Operation.Evaluate.Evaluate(System.Collections.Generic.List<TimberAssembly.Entities.Pair>, TimberAssembly.Entities.Remain, System.Collections.Generic.List<TimberAssembly.Entities.Agent>)
+  fullName.vb: TimberAssembly.Operation.Evaluate.New(System.Collections.Generic.List(Of TimberAssembly.Entities.Pair), TimberAssembly.Entities.Remain, System.Collections.Generic.List(Of TimberAssembly.Entities.Agent))
+  nameWithType: Evaluate.Evaluate(List<Pair>, Remain, List<Agent>)
+  nameWithType.vb: Evaluate.New(List(Of Pair), Remain, List(Of Agent))
+- uid: TimberAssembly.Operation.Evaluate.#ctor*
+  name: Evaluate
+  href: api/TimberAssembly.Operation.Evaluate.-ctor.html
+  commentId: Overload:TimberAssembly.Operation.Evaluate.#ctor
+  name.vb: New
+  fullName: TimberAssembly.Operation.Evaluate.Evaluate
+  fullName.vb: TimberAssembly.Operation.Evaluate.New
+  nameWithType: Evaluate.Evaluate
+  nameWithType.vb: Evaluate.New
+- uid: TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByCutCount
+  name: EvaluateEfficiencyByCutCount()
+  href: api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByCutCount.html#TimberAssembly_Operation_Evaluate_EvaluateEfficiencyByCutCount
+  commentId: M:TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByCutCount
+  fullName: TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByCutCount()
+  nameWithType: Evaluate.EvaluateEfficiencyByCutCount()
+- uid: TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByCutCount*
+  name: EvaluateEfficiencyByCutCount
+  href: api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByCutCount.html
+  commentId: Overload:TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByCutCount
+  fullName: TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByCutCount
+  nameWithType: Evaluate.EvaluateEfficiencyByCutCount
+- uid: TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByTime(System.Double,System.Double)
+  name: EvaluateEfficiencyByTime(double, double)
+  href: api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByTime.html#TimberAssembly_Operation_Evaluate_EvaluateEfficiencyByTime_System_Double_System_Double_
+  commentId: M:TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByTime(System.Double,System.Double)
+  name.vb: EvaluateEfficiencyByTime(Double, Double)
+  fullName: TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByTime(double, double)
+  fullName.vb: TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByTime(Double, Double)
+  nameWithType: Evaluate.EvaluateEfficiencyByTime(double, double)
+  nameWithType.vb: Evaluate.EvaluateEfficiencyByTime(Double, Double)
+- uid: TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByTime*
+  name: EvaluateEfficiencyByTime
+  href: api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByTime.html
+  commentId: Overload:TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByTime
+  fullName: TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByTime
+  nameWithType: Evaluate.EvaluateEfficiencyByTime
+- uid: TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByVolume
+  name: EvaluateEfficiencyByVolume()
+  href: api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByVolume.html#TimberAssembly_Operation_Evaluate_EvaluateEfficiencyByVolume
+  commentId: M:TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByVolume
+  fullName: TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByVolume()
+  nameWithType: Evaluate.EvaluateEfficiencyByVolume()
+- uid: TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByVolume*
+  name: EvaluateEfficiencyByVolume
+  href: api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByVolume.html
+  commentId: Overload:TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByVolume
+  fullName: TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByVolume
+  nameWithType: Evaluate.EvaluateEfficiencyByVolume
+- uid: TimberAssembly.Operation.Evaluate.GetCutCount
+  name: GetCutCount()
+  href: api/TimberAssembly.Operation.Evaluate.GetCutCount.html#TimberAssembly_Operation_Evaluate_GetCutCount
+  commentId: M:TimberAssembly.Operation.Evaluate.GetCutCount
+  fullName: TimberAssembly.Operation.Evaluate.GetCutCount()
+  nameWithType: Evaluate.GetCutCount()
+- uid: TimberAssembly.Operation.Evaluate.GetCutCount*
+  name: GetCutCount
+  href: api/TimberAssembly.Operation.Evaluate.GetCutCount.html
+  commentId: Overload:TimberAssembly.Operation.Evaluate.GetCutCount
+  fullName: TimberAssembly.Operation.Evaluate.GetCutCount
+  nameWithType: Evaluate.GetCutCount
+- uid: TimberAssembly.Operation.Evaluate.GetNewSubjectVolume
+  name: GetNewSubjectVolume()
+  href: api/TimberAssembly.Operation.Evaluate.GetNewSubjectVolume.html#TimberAssembly_Operation_Evaluate_GetNewSubjectVolume
+  commentId: M:TimberAssembly.Operation.Evaluate.GetNewSubjectVolume
+  fullName: TimberAssembly.Operation.Evaluate.GetNewSubjectVolume()
+  nameWithType: Evaluate.GetNewSubjectVolume()
+- uid: TimberAssembly.Operation.Evaluate.GetNewSubjectVolume*
+  name: GetNewSubjectVolume
+  href: api/TimberAssembly.Operation.Evaluate.GetNewSubjectVolume.html
+  commentId: Overload:TimberAssembly.Operation.Evaluate.GetNewSubjectVolume
+  fullName: TimberAssembly.Operation.Evaluate.GetNewSubjectVolume
+  nameWithType: Evaluate.GetNewSubjectVolume
+- uid: TimberAssembly.Operation.Evaluate.GetRecycleRateVolume
+  name: GetRecycleRateVolume()
+  href: api/TimberAssembly.Operation.Evaluate.GetRecycleRateVolume.html#TimberAssembly_Operation_Evaluate_GetRecycleRateVolume
+  commentId: M:TimberAssembly.Operation.Evaluate.GetRecycleRateVolume
+  fullName: TimberAssembly.Operation.Evaluate.GetRecycleRateVolume()
+  nameWithType: Evaluate.GetRecycleRateVolume()
+- uid: TimberAssembly.Operation.Evaluate.GetRecycleRateVolume*
+  name: GetRecycleRateVolume
+  href: api/TimberAssembly.Operation.Evaluate.GetRecycleRateVolume.html
+  commentId: Overload:TimberAssembly.Operation.Evaluate.GetRecycleRateVolume
+  fullName: TimberAssembly.Operation.Evaluate.GetRecycleRateVolume
+  nameWithType: Evaluate.GetRecycleRateVolume
+- uid: TimberAssembly.Operation.Evaluate.GetSubjectInitVolume
+  name: GetSubjectInitVolume()
+  href: api/TimberAssembly.Operation.Evaluate.GetSubjectInitVolume.html#TimberAssembly_Operation_Evaluate_GetSubjectInitVolume
+  commentId: M:TimberAssembly.Operation.Evaluate.GetSubjectInitVolume
+  fullName: TimberAssembly.Operation.Evaluate.GetSubjectInitVolume()
+  nameWithType: Evaluate.GetSubjectInitVolume()
+- uid: TimberAssembly.Operation.Evaluate.GetSubjectInitVolume*
+  name: GetSubjectInitVolume
+  href: api/TimberAssembly.Operation.Evaluate.GetSubjectInitVolume.html
+  commentId: Overload:TimberAssembly.Operation.Evaluate.GetSubjectInitVolume
+  fullName: TimberAssembly.Operation.Evaluate.GetSubjectInitVolume
+  nameWithType: Evaluate.GetSubjectInitVolume
+- uid: TimberAssembly.Operation.Evaluate.GetUsedSubjectVolume
+  name: GetUsedSubjectVolume()
+  href: api/TimberAssembly.Operation.Evaluate.GetUsedSubjectVolume.html#TimberAssembly_Operation_Evaluate_GetUsedSubjectVolume
+  commentId: M:TimberAssembly.Operation.Evaluate.GetUsedSubjectVolume
+  fullName: TimberAssembly.Operation.Evaluate.GetUsedSubjectVolume()
+  nameWithType: Evaluate.GetUsedSubjectVolume()
+- uid: TimberAssembly.Operation.Evaluate.GetUsedSubjectVolume*
+  name: GetUsedSubjectVolume
+  href: api/TimberAssembly.Operation.Evaluate.GetUsedSubjectVolume.html
+  commentId: Overload:TimberAssembly.Operation.Evaluate.GetUsedSubjectVolume
+  fullName: TimberAssembly.Operation.Evaluate.GetUsedSubjectVolume
+  nameWithType: Evaluate.GetUsedSubjectVolume
+- uid: TimberAssembly.Operation.Evaluate.GetWasteRateByVolume
+  name: GetWasteRateByVolume()
+  href: api/TimberAssembly.Operation.Evaluate.GetWasteRateByVolume.html#TimberAssembly_Operation_Evaluate_GetWasteRateByVolume
+  commentId: M:TimberAssembly.Operation.Evaluate.GetWasteRateByVolume
+  fullName: TimberAssembly.Operation.Evaluate.GetWasteRateByVolume()
+  nameWithType: Evaluate.GetWasteRateByVolume()
+- uid: TimberAssembly.Operation.Evaluate.GetWasteRateByVolume*
+  name: GetWasteRateByVolume
+  href: api/TimberAssembly.Operation.Evaluate.GetWasteRateByVolume.html
+  commentId: Overload:TimberAssembly.Operation.Evaluate.GetWasteRateByVolume
+  fullName: TimberAssembly.Operation.Evaluate.GetWasteRateByVolume
+  nameWithType: Evaluate.GetWasteRateByVolume
+- uid: TimberAssembly.Operation.Evaluate.GetWasteVolume
+  name: GetWasteVolume()
+  href: api/TimberAssembly.Operation.Evaluate.GetWasteVolume.html#TimberAssembly_Operation_Evaluate_GetWasteVolume
+  commentId: M:TimberAssembly.Operation.Evaluate.GetWasteVolume
+  fullName: TimberAssembly.Operation.Evaluate.GetWasteVolume()
+  nameWithType: Evaluate.GetWasteVolume()
+- uid: TimberAssembly.Operation.Evaluate.GetWasteVolume*
+  name: GetWasteVolume
+  href: api/TimberAssembly.Operation.Evaluate.GetWasteVolume.html
+  commentId: Overload:TimberAssembly.Operation.Evaluate.GetWasteVolume
+  fullName: TimberAssembly.Operation.Evaluate.GetWasteVolume
+  nameWithType: Evaluate.GetWasteVolume
+- uid: TimberAssembly.Operation.Match
   name: Match
-  href: api/TimberAssembly.Match.html
-  commentId: T:TimberAssembly.Match
-  fullName: TimberAssembly.Match
+  href: api/TimberAssembly.Operation.Match.html
+  commentId: T:TimberAssembly.Operation.Match
+  fullName: TimberAssembly.Operation.Match
   nameWithType: Match
-- uid: TimberAssembly.Match.#ctor(System.Collections.Generic.List{TimberAssembly.Entities.Agent},System.Collections.Generic.List{TimberAssembly.Entities.Agent},System.Double)
+- uid: TimberAssembly.Operation.Match.#ctor(System.Collections.Generic.List{TimberAssembly.Entities.Agent},System.Collections.Generic.List{TimberAssembly.Entities.Agent},System.Double)
   name: Match(List<Agent>, List<Agent>, double)
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match__ctor_System_Collections_Generic_List_TimberAssembly_Entities_Agent__System_Collections_Generic_List_TimberAssembly_Entities_Agent__System_Double_
-  commentId: M:TimberAssembly.Match.#ctor(System.Collections.Generic.List{TimberAssembly.Entities.Agent},System.Collections.Generic.List{TimberAssembly.Entities.Agent},System.Double)
+  href: api/TimberAssembly.Operation.Match.-ctor.html#TimberAssembly_Operation_Match__ctor_System_Collections_Generic_List_TimberAssembly_Entities_Agent__System_Collections_Generic_List_TimberAssembly_Entities_Agent__System_Double_
+  commentId: M:TimberAssembly.Operation.Match.#ctor(System.Collections.Generic.List{TimberAssembly.Entities.Agent},System.Collections.Generic.List{TimberAssembly.Entities.Agent},System.Double)
   name.vb: New(List(Of Agent), List(Of Agent), Double)
-  fullName: TimberAssembly.Match.Match(System.Collections.Generic.List<TimberAssembly.Entities.Agent>, System.Collections.Generic.List<TimberAssembly.Entities.Agent>, double)
-  fullName.vb: TimberAssembly.Match.New(System.Collections.Generic.List(Of TimberAssembly.Entities.Agent), System.Collections.Generic.List(Of TimberAssembly.Entities.Agent), Double)
+  fullName: TimberAssembly.Operation.Match.Match(System.Collections.Generic.List<TimberAssembly.Entities.Agent>, System.Collections.Generic.List<TimberAssembly.Entities.Agent>, double)
+  fullName.vb: TimberAssembly.Operation.Match.New(System.Collections.Generic.List(Of TimberAssembly.Entities.Agent), System.Collections.Generic.List(Of TimberAssembly.Entities.Agent), Double)
   nameWithType: Match.Match(List<Agent>, List<Agent>, double)
   nameWithType.vb: Match.New(List(Of Agent), List(Of Agent), Double)
-- uid: TimberAssembly.Match.#ctor*
+- uid: TimberAssembly.Operation.Match.#ctor*
   name: Match
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match__ctor_
-  commentId: Overload:TimberAssembly.Match.#ctor
-  isSpec: "True"
+  href: api/TimberAssembly.Operation.Match.-ctor.html
+  commentId: Overload:TimberAssembly.Operation.Match.#ctor
   name.vb: New
-  fullName: TimberAssembly.Match.Match
-  fullName.vb: TimberAssembly.Match.New
+  fullName: TimberAssembly.Operation.Match.Match
+  fullName.vb: TimberAssembly.Operation.Match.New
   nameWithType: Match.Match
   nameWithType.vb: Match.New
-- uid: TimberAssembly.Match.CutToTarget(TimberAssembly.Entities.Remain@)
+- uid: TimberAssembly.Operation.Match.CutToTarget(TimberAssembly.Entities.Remain@)
   name: CutToTarget(ref Remain)
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_CutToTarget_TimberAssembly_Entities_Remain__
-  commentId: M:TimberAssembly.Match.CutToTarget(TimberAssembly.Entities.Remain@)
+  href: api/TimberAssembly.Operation.Match.CutToTarget.html#TimberAssembly_Operation_Match_CutToTarget_TimberAssembly_Entities_Remain__
+  commentId: M:TimberAssembly.Operation.Match.CutToTarget(TimberAssembly.Entities.Remain@)
   name.vb: CutToTarget(Remain)
-  fullName: TimberAssembly.Match.CutToTarget(ref TimberAssembly.Entities.Remain)
-  fullName.vb: TimberAssembly.Match.CutToTarget(TimberAssembly.Entities.Remain)
+  fullName: TimberAssembly.Operation.Match.CutToTarget(ref TimberAssembly.Entities.Remain)
+  fullName.vb: TimberAssembly.Operation.Match.CutToTarget(TimberAssembly.Entities.Remain)
   nameWithType: Match.CutToTarget(ref Remain)
   nameWithType.vb: Match.CutToTarget(Remain)
-- uid: TimberAssembly.Match.CutToTarget*
+- uid: TimberAssembly.Operation.Match.CutToTarget*
   name: CutToTarget
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_CutToTarget_
-  commentId: Overload:TimberAssembly.Match.CutToTarget
-  isSpec: "True"
-  fullName: TimberAssembly.Match.CutToTarget
+  href: api/TimberAssembly.Operation.Match.CutToTarget.html
+  commentId: Overload:TimberAssembly.Operation.Match.CutToTarget
+  fullName: TimberAssembly.Operation.Match.CutToTarget
   nameWithType: Match.CutToTarget
-- uid: TimberAssembly.Match.DoubleMatch(TimberAssembly.Entities.Remain@)
+- uid: TimberAssembly.Operation.Match.DoubleMatch(TimberAssembly.Entities.Remain@)
   name: DoubleMatch(ref Remain)
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_DoubleMatch_TimberAssembly_Entities_Remain__
-  commentId: M:TimberAssembly.Match.DoubleMatch(TimberAssembly.Entities.Remain@)
+  href: api/TimberAssembly.Operation.Match.DoubleMatch.html#TimberAssembly_Operation_Match_DoubleMatch_TimberAssembly_Entities_Remain__
+  commentId: M:TimberAssembly.Operation.Match.DoubleMatch(TimberAssembly.Entities.Remain@)
   name.vb: DoubleMatch(Remain)
-  fullName: TimberAssembly.Match.DoubleMatch(ref TimberAssembly.Entities.Remain)
-  fullName.vb: TimberAssembly.Match.DoubleMatch(TimberAssembly.Entities.Remain)
+  fullName: TimberAssembly.Operation.Match.DoubleMatch(ref TimberAssembly.Entities.Remain)
+  fullName.vb: TimberAssembly.Operation.Match.DoubleMatch(TimberAssembly.Entities.Remain)
   nameWithType: Match.DoubleMatch(ref Remain)
   nameWithType.vb: Match.DoubleMatch(Remain)
-- uid: TimberAssembly.Match.DoubleMatch*
+- uid: TimberAssembly.Operation.Match.DoubleMatch*
   name: DoubleMatch
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_DoubleMatch_
-  commentId: Overload:TimberAssembly.Match.DoubleMatch
-  isSpec: "True"
-  fullName: TimberAssembly.Match.DoubleMatch
+  href: api/TimberAssembly.Operation.Match.DoubleMatch.html
+  commentId: Overload:TimberAssembly.Operation.Match.DoubleMatch
+  fullName: TimberAssembly.Operation.Match.DoubleMatch
   nameWithType: Match.DoubleMatch
-- uid: TimberAssembly.Match.ExactMatch(TimberAssembly.Entities.Remain@)
+- uid: TimberAssembly.Operation.Match.ExactMatch(TimberAssembly.Entities.Remain@)
   name: ExactMatch(ref Remain)
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_ExactMatch_TimberAssembly_Entities_Remain__
-  commentId: M:TimberAssembly.Match.ExactMatch(TimberAssembly.Entities.Remain@)
+  href: api/TimberAssembly.Operation.Match.ExactMatch.html#TimberAssembly_Operation_Match_ExactMatch_TimberAssembly_Entities_Remain__
+  commentId: M:TimberAssembly.Operation.Match.ExactMatch(TimberAssembly.Entities.Remain@)
   name.vb: ExactMatch(Remain)
-  fullName: TimberAssembly.Match.ExactMatch(ref TimberAssembly.Entities.Remain)
-  fullName.vb: TimberAssembly.Match.ExactMatch(TimberAssembly.Entities.Remain)
+  fullName: TimberAssembly.Operation.Match.ExactMatch(ref TimberAssembly.Entities.Remain)
+  fullName.vb: TimberAssembly.Operation.Match.ExactMatch(TimberAssembly.Entities.Remain)
   nameWithType: Match.ExactMatch(ref Remain)
   nameWithType.vb: Match.ExactMatch(Remain)
-- uid: TimberAssembly.Match.ExactMatch*
+- uid: TimberAssembly.Operation.Match.ExactMatch*
   name: ExactMatch
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_ExactMatch_
-  commentId: Overload:TimberAssembly.Match.ExactMatch
-  isSpec: "True"
-  fullName: TimberAssembly.Match.ExactMatch
+  href: api/TimberAssembly.Operation.Match.ExactMatch.html
+  commentId: Overload:TimberAssembly.Operation.Match.ExactMatch
+  fullName: TimberAssembly.Operation.Match.ExactMatch
   nameWithType: Match.ExactMatch
-- uid: TimberAssembly.Match.ExtendToTarget(TimberAssembly.Entities.Remain@)
+- uid: TimberAssembly.Operation.Match.ExtendToTarget(TimberAssembly.Entities.Remain@)
   name: ExtendToTarget(ref Remain)
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_ExtendToTarget_TimberAssembly_Entities_Remain__
-  commentId: M:TimberAssembly.Match.ExtendToTarget(TimberAssembly.Entities.Remain@)
+  href: api/TimberAssembly.Operation.Match.ExtendToTarget.html#TimberAssembly_Operation_Match_ExtendToTarget_TimberAssembly_Entities_Remain__
+  commentId: M:TimberAssembly.Operation.Match.ExtendToTarget(TimberAssembly.Entities.Remain@)
   name.vb: ExtendToTarget(Remain)
-  fullName: TimberAssembly.Match.ExtendToTarget(ref TimberAssembly.Entities.Remain)
-  fullName.vb: TimberAssembly.Match.ExtendToTarget(TimberAssembly.Entities.Remain)
+  fullName: TimberAssembly.Operation.Match.ExtendToTarget(ref TimberAssembly.Entities.Remain)
+  fullName.vb: TimberAssembly.Operation.Match.ExtendToTarget(TimberAssembly.Entities.Remain)
   nameWithType: Match.ExtendToTarget(ref Remain)
   nameWithType.vb: Match.ExtendToTarget(Remain)
-- uid: TimberAssembly.Match.ExtendToTarget*
+- uid: TimberAssembly.Operation.Match.ExtendToTarget*
   name: ExtendToTarget
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_ExtendToTarget_
-  commentId: Overload:TimberAssembly.Match.ExtendToTarget
-  isSpec: "True"
-  fullName: TimberAssembly.Match.ExtendToTarget
+  href: api/TimberAssembly.Operation.Match.ExtendToTarget.html
+  commentId: Overload:TimberAssembly.Operation.Match.ExtendToTarget
+  fullName: TimberAssembly.Operation.Match.ExtendToTarget
   nameWithType: Match.ExtendToTarget
-- uid: TimberAssembly.Match.QuadrupleMatch(TimberAssembly.Entities.Remain@)
-  name: QuadrupleMatch(ref Remain)
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_QuadrupleMatch_TimberAssembly_Entities_Remain__
-  commentId: M:TimberAssembly.Match.QuadrupleMatch(TimberAssembly.Entities.Remain@)
-  name.vb: QuadrupleMatch(Remain)
-  fullName: TimberAssembly.Match.QuadrupleMatch(ref TimberAssembly.Entities.Remain)
-  fullName.vb: TimberAssembly.Match.QuadrupleMatch(TimberAssembly.Entities.Remain)
-  nameWithType: Match.QuadrupleMatch(ref Remain)
-  nameWithType.vb: Match.QuadrupleMatch(Remain)
-- uid: TimberAssembly.Match.QuadrupleMatch*
-  name: QuadrupleMatch
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_QuadrupleMatch_
-  commentId: Overload:TimberAssembly.Match.QuadrupleMatch
-  isSpec: "True"
-  fullName: TimberAssembly.Match.QuadrupleMatch
-  nameWithType: Match.QuadrupleMatch
-- uid: TimberAssembly.Match.RemainMatch(TimberAssembly.Entities.Remain)
+- uid: TimberAssembly.Operation.Match.RemainMatch(TimberAssembly.Entities.Remain)
   name: RemainMatch(Remain)
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_RemainMatch_TimberAssembly_Entities_Remain_
-  commentId: M:TimberAssembly.Match.RemainMatch(TimberAssembly.Entities.Remain)
-  fullName: TimberAssembly.Match.RemainMatch(TimberAssembly.Entities.Remain)
+  href: api/TimberAssembly.Operation.Match.RemainMatch.html#TimberAssembly_Operation_Match_RemainMatch_TimberAssembly_Entities_Remain_
+  commentId: M:TimberAssembly.Operation.Match.RemainMatch(TimberAssembly.Entities.Remain)
+  fullName: TimberAssembly.Operation.Match.RemainMatch(TimberAssembly.Entities.Remain)
   nameWithType: Match.RemainMatch(Remain)
-- uid: TimberAssembly.Match.RemainMatch*
+- uid: TimberAssembly.Operation.Match.RemainMatch*
   name: RemainMatch
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_RemainMatch_
-  commentId: Overload:TimberAssembly.Match.RemainMatch
-  isSpec: "True"
-  fullName: TimberAssembly.Match.RemainMatch
+  href: api/TimberAssembly.Operation.Match.RemainMatch.html
+  commentId: Overload:TimberAssembly.Operation.Match.RemainMatch
+  fullName: TimberAssembly.Operation.Match.RemainMatch
   nameWithType: Match.RemainMatch
-- uid: TimberAssembly.Match.SalvageAgents
-  name: SalvageAgents
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_SalvageAgents
-  commentId: P:TimberAssembly.Match.SalvageAgents
-  fullName: TimberAssembly.Match.SalvageAgents
-  nameWithType: Match.SalvageAgents
-- uid: TimberAssembly.Match.SalvageAgents*
-  name: SalvageAgents
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_SalvageAgents_
-  commentId: Overload:TimberAssembly.Match.SalvageAgents
-  isSpec: "True"
-  fullName: TimberAssembly.Match.SalvageAgents
-  nameWithType: Match.SalvageAgents
-- uid: TimberAssembly.Match.TargetAgents
+- uid: TimberAssembly.Operation.Match.SubjectAgents
+  name: SubjectAgents
+  href: api/TimberAssembly.Operation.Match.SubjectAgents.html#TimberAssembly_Operation_Match_SubjectAgents
+  commentId: P:TimberAssembly.Operation.Match.SubjectAgents
+  fullName: TimberAssembly.Operation.Match.SubjectAgents
+  nameWithType: Match.SubjectAgents
+- uid: TimberAssembly.Operation.Match.SubjectAgents*
+  name: SubjectAgents
+  href: api/TimberAssembly.Operation.Match.SubjectAgents.html
+  commentId: Overload:TimberAssembly.Operation.Match.SubjectAgents
+  fullName: TimberAssembly.Operation.Match.SubjectAgents
+  nameWithType: Match.SubjectAgents
+- uid: TimberAssembly.Operation.Match.TargetAgents
   name: TargetAgents
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_TargetAgents
-  commentId: P:TimberAssembly.Match.TargetAgents
-  fullName: TimberAssembly.Match.TargetAgents
+  href: api/TimberAssembly.Operation.Match.TargetAgents.html#TimberAssembly_Operation_Match_TargetAgents
+  commentId: P:TimberAssembly.Operation.Match.TargetAgents
+  fullName: TimberAssembly.Operation.Match.TargetAgents
   nameWithType: Match.TargetAgents
-- uid: TimberAssembly.Match.TargetAgents*
+- uid: TimberAssembly.Operation.Match.TargetAgents*
   name: TargetAgents
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_TargetAgents_
-  commentId: Overload:TimberAssembly.Match.TargetAgents
-  isSpec: "True"
-  fullName: TimberAssembly.Match.TargetAgents
+  href: api/TimberAssembly.Operation.Match.TargetAgents.html
+  commentId: Overload:TimberAssembly.Operation.Match.TargetAgents
+  fullName: TimberAssembly.Operation.Match.TargetAgents
   nameWithType: Match.TargetAgents
-- uid: TimberAssembly.Match.Tolerance
+- uid: TimberAssembly.Operation.Match.Tolerance
   name: Tolerance
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_Tolerance
-  commentId: P:TimberAssembly.Match.Tolerance
-  fullName: TimberAssembly.Match.Tolerance
+  href: api/TimberAssembly.Operation.Match.Tolerance.html#TimberAssembly_Operation_Match_Tolerance
+  commentId: P:TimberAssembly.Operation.Match.Tolerance
+  fullName: TimberAssembly.Operation.Match.Tolerance
   nameWithType: Match.Tolerance
-- uid: TimberAssembly.Match.Tolerance*
+- uid: TimberAssembly.Operation.Match.Tolerance*
   name: Tolerance
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_Tolerance_
-  commentId: Overload:TimberAssembly.Match.Tolerance
-  isSpec: "True"
-  fullName: TimberAssembly.Match.Tolerance
+  href: api/TimberAssembly.Operation.Match.Tolerance.html
+  commentId: Overload:TimberAssembly.Operation.Match.Tolerance
+  fullName: TimberAssembly.Operation.Match.Tolerance
   nameWithType: Match.Tolerance
-- uid: TimberAssembly.Match.TripleMatch(TimberAssembly.Entities.Remain@)
-  name: TripleMatch(ref Remain)
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_TripleMatch_TimberAssembly_Entities_Remain__
-  commentId: M:TimberAssembly.Match.TripleMatch(TimberAssembly.Entities.Remain@)
-  name.vb: TripleMatch(Remain)
-  fullName: TimberAssembly.Match.TripleMatch(ref TimberAssembly.Entities.Remain)
-  fullName.vb: TimberAssembly.Match.TripleMatch(TimberAssembly.Entities.Remain)
-  nameWithType: Match.TripleMatch(ref Remain)
-  nameWithType.vb: Match.TripleMatch(Remain)
-- uid: TimberAssembly.Match.TripleMatch*
-  name: TripleMatch
-  href: api/TimberAssembly.Match.html#TimberAssembly_Match_TripleMatch_
-  commentId: Overload:TimberAssembly.Match.TripleMatch
-  isSpec: "True"
-  fullName: TimberAssembly.Match.TripleMatch
-  nameWithType: Match.TripleMatch
-- uid: TimberAssembly.Parser
+- uid: TimberAssembly.Operation.Match.UniMatch(TimberAssembly.Entities.Remain@)
+  name: UniMatch(ref Remain)
+  href: api/TimberAssembly.Operation.Match.UniMatch.html#TimberAssembly_Operation_Match_UniMatch_TimberAssembly_Entities_Remain__
+  commentId: M:TimberAssembly.Operation.Match.UniMatch(TimberAssembly.Entities.Remain@)
+  name.vb: UniMatch(Remain)
+  fullName: TimberAssembly.Operation.Match.UniMatch(ref TimberAssembly.Entities.Remain)
+  fullName.vb: TimberAssembly.Operation.Match.UniMatch(TimberAssembly.Entities.Remain)
+  nameWithType: Match.UniMatch(ref Remain)
+  nameWithType.vb: Match.UniMatch(Remain)
+- uid: TimberAssembly.Operation.Match.UniMatch*
+  name: UniMatch
+  href: api/TimberAssembly.Operation.Match.UniMatch.html
+  commentId: Overload:TimberAssembly.Operation.Match.UniMatch
+  fullName: TimberAssembly.Operation.Match.UniMatch
+  nameWithType: Match.UniMatch
+- uid: TimberAssembly.Operation.Parser
   name: Parser
-  href: api/TimberAssembly.Parser.html
-  commentId: T:TimberAssembly.Parser
-  fullName: TimberAssembly.Parser
+  href: api/TimberAssembly.Operation.Parser.html
+  commentId: T:TimberAssembly.Operation.Parser
+  fullName: TimberAssembly.Operation.Parser
   nameWithType: Parser
-- uid: TimberAssembly.Parser.DeserializeToAgents(System.Collections.Generic.List{System.String})
+- uid: TimberAssembly.Operation.Parser.DeserializeToAgents(System.Collections.Generic.List{System.String})
   name: DeserializeToAgents(List<string>)
-  href: api/TimberAssembly.Parser.html#TimberAssembly_Parser_DeserializeToAgents_System_Collections_Generic_List_System_String__
-  commentId: M:TimberAssembly.Parser.DeserializeToAgents(System.Collections.Generic.List{System.String})
+  href: api/TimberAssembly.Operation.Parser.DeserializeToAgents.html#TimberAssembly_Operation_Parser_DeserializeToAgents_System_Collections_Generic_List_System_String__
+  commentId: M:TimberAssembly.Operation.Parser.DeserializeToAgents(System.Collections.Generic.List{System.String})
   name.vb: DeserializeToAgents(List(Of String))
-  fullName: TimberAssembly.Parser.DeserializeToAgents(System.Collections.Generic.List<string>)
-  fullName.vb: TimberAssembly.Parser.DeserializeToAgents(System.Collections.Generic.List(Of String))
+  fullName: TimberAssembly.Operation.Parser.DeserializeToAgents(System.Collections.Generic.List<string>)
+  fullName.vb: TimberAssembly.Operation.Parser.DeserializeToAgents(System.Collections.Generic.List(Of String))
   nameWithType: Parser.DeserializeToAgents(List<string>)
   nameWithType.vb: Parser.DeserializeToAgents(List(Of String))
-- uid: TimberAssembly.Parser.DeserializeToAgents*
+- uid: TimberAssembly.Operation.Parser.DeserializeToAgents*
   name: DeserializeToAgents
-  href: api/TimberAssembly.Parser.html#TimberAssembly_Parser_DeserializeToAgents_
-  commentId: Overload:TimberAssembly.Parser.DeserializeToAgents
-  isSpec: "True"
-  fullName: TimberAssembly.Parser.DeserializeToAgents
+  href: api/TimberAssembly.Operation.Parser.DeserializeToAgents.html
+  commentId: Overload:TimberAssembly.Operation.Parser.DeserializeToAgents
+  fullName: TimberAssembly.Operation.Parser.DeserializeToAgents
   nameWithType: Parser.DeserializeToAgents
-- uid: TimberAssembly.Parser.SerializeAgentPairs(System.Collections.Generic.List{TimberAssembly.Entities.Pair},System.Boolean)
+- uid: TimberAssembly.Operation.Parser.SerializeAgentPairs(System.Collections.Generic.List{TimberAssembly.Entities.Pair},System.Boolean)
   name: SerializeAgentPairs(List<Pair>, bool)
-  href: api/TimberAssembly.Parser.html#TimberAssembly_Parser_SerializeAgentPairs_System_Collections_Generic_List_TimberAssembly_Entities_Pair__System_Boolean_
-  commentId: M:TimberAssembly.Parser.SerializeAgentPairs(System.Collections.Generic.List{TimberAssembly.Entities.Pair},System.Boolean)
+  href: api/TimberAssembly.Operation.Parser.SerializeAgentPairs.html#TimberAssembly_Operation_Parser_SerializeAgentPairs_System_Collections_Generic_List_TimberAssembly_Entities_Pair__System_Boolean_
+  commentId: M:TimberAssembly.Operation.Parser.SerializeAgentPairs(System.Collections.Generic.List{TimberAssembly.Entities.Pair},System.Boolean)
   name.vb: SerializeAgentPairs(List(Of Pair), Boolean)
-  fullName: TimberAssembly.Parser.SerializeAgentPairs(System.Collections.Generic.List<TimberAssembly.Entities.Pair>, bool)
-  fullName.vb: TimberAssembly.Parser.SerializeAgentPairs(System.Collections.Generic.List(Of TimberAssembly.Entities.Pair), Boolean)
+  fullName: TimberAssembly.Operation.Parser.SerializeAgentPairs(System.Collections.Generic.List<TimberAssembly.Entities.Pair>, bool)
+  fullName.vb: TimberAssembly.Operation.Parser.SerializeAgentPairs(System.Collections.Generic.List(Of TimberAssembly.Entities.Pair), Boolean)
   nameWithType: Parser.SerializeAgentPairs(List<Pair>, bool)
   nameWithType.vb: Parser.SerializeAgentPairs(List(Of Pair), Boolean)
-- uid: TimberAssembly.Parser.SerializeAgentPairs*
+- uid: TimberAssembly.Operation.Parser.SerializeAgentPairs*
   name: SerializeAgentPairs
-  href: api/TimberAssembly.Parser.html#TimberAssembly_Parser_SerializeAgentPairs_
-  commentId: Overload:TimberAssembly.Parser.SerializeAgentPairs
-  isSpec: "True"
-  fullName: TimberAssembly.Parser.SerializeAgentPairs
+  href: api/TimberAssembly.Operation.Parser.SerializeAgentPairs.html
+  commentId: Overload:TimberAssembly.Operation.Parser.SerializeAgentPairs
+  fullName: TimberAssembly.Operation.Parser.SerializeAgentPairs
   nameWithType: Parser.SerializeAgentPairs
-- uid: TimberAssembly.Parser.SerializeAgentRemains(TimberAssembly.Entities.Remain,System.Boolean)
+- uid: TimberAssembly.Operation.Parser.SerializeAgentRemains(TimberAssembly.Entities.Remain,System.Boolean)
   name: SerializeAgentRemains(Remain, bool)
-  href: api/TimberAssembly.Parser.html#TimberAssembly_Parser_SerializeAgentRemains_TimberAssembly_Entities_Remain_System_Boolean_
-  commentId: M:TimberAssembly.Parser.SerializeAgentRemains(TimberAssembly.Entities.Remain,System.Boolean)
+  href: api/TimberAssembly.Operation.Parser.SerializeAgentRemains.html#TimberAssembly_Operation_Parser_SerializeAgentRemains_TimberAssembly_Entities_Remain_System_Boolean_
+  commentId: M:TimberAssembly.Operation.Parser.SerializeAgentRemains(TimberAssembly.Entities.Remain,System.Boolean)
   name.vb: SerializeAgentRemains(Remain, Boolean)
-  fullName: TimberAssembly.Parser.SerializeAgentRemains(TimberAssembly.Entities.Remain, bool)
-  fullName.vb: TimberAssembly.Parser.SerializeAgentRemains(TimberAssembly.Entities.Remain, Boolean)
+  fullName: TimberAssembly.Operation.Parser.SerializeAgentRemains(TimberAssembly.Entities.Remain, bool)
+  fullName.vb: TimberAssembly.Operation.Parser.SerializeAgentRemains(TimberAssembly.Entities.Remain, Boolean)
   nameWithType: Parser.SerializeAgentRemains(Remain, bool)
   nameWithType.vb: Parser.SerializeAgentRemains(Remain, Boolean)
-- uid: TimberAssembly.Parser.SerializeAgentRemains*
+- uid: TimberAssembly.Operation.Parser.SerializeAgentRemains*
   name: SerializeAgentRemains
-  href: api/TimberAssembly.Parser.html#TimberAssembly_Parser_SerializeAgentRemains_
-  commentId: Overload:TimberAssembly.Parser.SerializeAgentRemains
-  isSpec: "True"
-  fullName: TimberAssembly.Parser.SerializeAgentRemains
+  href: api/TimberAssembly.Operation.Parser.SerializeAgentRemains.html
+  commentId: Overload:TimberAssembly.Operation.Parser.SerializeAgentRemains
+  fullName: TimberAssembly.Operation.Parser.SerializeAgentRemains
   nameWithType: Parser.SerializeAgentRemains

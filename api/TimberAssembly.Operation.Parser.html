@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class ComputeMatch
+      <title>Class Parser
  </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class ComputeMatch
+      <meta name="title" content="Class Parser
  ">
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -67,18 +67,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="TimberAssembly.Helper.ComputeMatch">
+            <article class="content wrap" id="_content" data-uid="TimberAssembly.Operation.Parser">
 
 
 
-  <h1 id="TimberAssembly_Helper_ComputeMatch" data-uid="TimberAssembly.Helper.ComputeMatch" class="text-break">Class ComputeMatch
+  <h1 id="TimberAssembly_Operation_Parser" data-uid="TimberAssembly.Operation.Parser" class="text-break">Class Parser
 </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Parse json strings to objects.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">ComputeMatch</span></div>
+    <div class="level1"><span class="xref">Parser</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -104,11 +105,11 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="TimberAssembly.html">TimberAssembly</a>.<a class="xref" href="TimberAssembly.Helper.html">Helper</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="TimberAssembly.html">TimberAssembly</a>.<a class="xref" href="TimberAssembly.Operation.html">Operation</a></h6>
   <h6><strong>Assembly</strong>: TimberAssembly.dll</h6>
-  <h5 id="TimberAssembly_Helper_ComputeMatch_syntax">Syntax</h5>
+  <h5 id="TimberAssembly_Operation_Parser_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ComputeMatch</code></pre>
+    <pre><code class="lang-csharp hljs">public static class Parser</code></pre>
   </div>
   <h3 id="methods">Methods
 </h3>
@@ -121,41 +122,24 @@
     </thead>
     <tbody>
       <tr>
-        <td id="TimberAssembly_Helper_ComputeMatch_CalculateAllAggregation_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_" data-uid="TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation(TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent)">
-          <a class="xref" href="TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation.html#TimberAssembly_Helper_ComputeMatch_CalculateAllAggregation_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_">CalculateAllAggregation(Agent, Agent)</a>
+        <td id="TimberAssembly_Operation_Parser_DeserializeToAgents_System_Collections_Generic_List_System_String__" data-uid="TimberAssembly.Operation.Parser.DeserializeToAgents(System.Collections.Generic.List{System.String})">
+          <a class="xref" href="TimberAssembly.Operation.Parser.DeserializeToAgents.html#TimberAssembly_Operation_Parser_DeserializeToAgents_System_Collections_Generic_List_System_String__">DeserializeToAgents(List&lt;string&gt;)</a>
         </td>
-        <td class="markdown level1 summary"><p>calculate all possible aggregation combination of the subject agent to fit inside the target agent.</p>
-<p>When target is larger than subject.</p>
+        <td class="markdown level1 summary"><p>Convert a list of json strings to a list of agents.</p>
 </td>
       </tr>
       <tr>
-        <td id="TimberAssembly_Helper_ComputeMatch_CalculateResiduals_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_" data-uid="TimberAssembly.Helper.ComputeMatch.CalculateResiduals(TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent)">
-          <a class="xref" href="TimberAssembly.Helper.ComputeMatch.CalculateResiduals.html#TimberAssembly_Helper_ComputeMatch_CalculateResiduals_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_">CalculateResiduals(Agent, Agent)</a>
+        <td id="TimberAssembly_Operation_Parser_SerializeAgentPairs_System_Collections_Generic_List_TimberAssembly_Entities_Pair__System_Boolean_" data-uid="TimberAssembly.Operation.Parser.SerializeAgentPairs(System.Collections.Generic.List{TimberAssembly.Entities.Pair},System.Boolean)">
+          <a class="xref" href="TimberAssembly.Operation.Parser.SerializeAgentPairs.html#TimberAssembly_Operation_Parser_SerializeAgentPairs_System_Collections_Generic_List_TimberAssembly_Entities_Pair__System_Boolean_">SerializeAgentPairs(List&lt;Pair&gt;, bool)</a>
         </td>
-        <td class="markdown level1 summary"><p>Calculate the residuals of the subject agent after fitting it inside the target agent.</p>
-<p>When target is smaller than subject.</p>
+        <td class="markdown level1 summary"><p>Convert a list of pairs to a list of json strings.</p>
 </td>
       </tr>
       <tr>
-        <td id="TimberAssembly_Helper_ComputeMatch_GetClosestAgent_TimberAssembly_Entities_Agent_System_Collections_Generic_List_TimberAssembly_Entities_Agent__" data-uid="TimberAssembly.Helper.ComputeMatch.GetClosestAgent(TimberAssembly.Entities.Agent,System.Collections.Generic.List{TimberAssembly.Entities.Agent})">
-          <a class="xref" href="TimberAssembly.Helper.ComputeMatch.GetClosestAgent.html#TimberAssembly_Helper_ComputeMatch_GetClosestAgent_TimberAssembly_Entities_Agent_System_Collections_Generic_List_TimberAssembly_Entities_Agent__">GetClosestAgent(Agent, List&lt;Agent&gt;)</a>
+        <td id="TimberAssembly_Operation_Parser_SerializeAgentRemains_TimberAssembly_Entities_Remain_System_Boolean_" data-uid="TimberAssembly.Operation.Parser.SerializeAgentRemains(TimberAssembly.Entities.Remain,System.Boolean)">
+          <a class="xref" href="TimberAssembly.Operation.Parser.SerializeAgentRemains.html#TimberAssembly_Operation_Parser_SerializeAgentRemains_TimberAssembly_Entities_Remain_System_Boolean_">SerializeAgentRemains(Remain, bool)</a>
         </td>
-        <td class="markdown level1 summary"><p>Get closest Agent dimension from a list of agents.</p>
-<p>Only accept one dimensional difference.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="TimberAssembly_Helper_ComputeMatch_IsAgentDoubleMatched_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_System_Double_" data-uid="TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched(TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent,System.Double)">
-          <a class="xref" href="TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched.html#TimberAssembly_Helper_ComputeMatch_IsAgentDoubleMatched_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_System_Double_">IsAgentDoubleMatched(Agent, Agent, Agent, double)</a>
-        </td>
-        <td class="markdown level1 summary"><p>Linear check if two agents combined are matched with the target agent.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="TimberAssembly_Helper_ComputeMatch_IsAgentExactMatched_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_System_Double_" data-uid="TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched(TimberAssembly.Entities.Agent,TimberAssembly.Entities.Agent,System.Double)">
-          <a class="xref" href="TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched.html#TimberAssembly_Helper_ComputeMatch_IsAgentExactMatched_TimberAssembly_Entities_Agent_TimberAssembly_Entities_Agent_System_Double_">IsAgentExactMatched(Agent, Agent, double)</a>
-        </td>
-        <td class="markdown level1 summary"><p>Check if two agents are exactly matched.</p>
+        <td class="markdown level1 summary"><p>Convert remain to json string.</p>
 </td>
       </tr>
     </tbody>
@@ -169,10 +153,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/sean1832/ML-Assembly/new/main/apiSpec/new?filename=TimberAssembly_Helper_ComputeMatch.md&amp;value=---%0Auid%3A%20TimberAssembly.Helper.ComputeMatch%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/sean1832/ML-Assembly/new/main/apiSpec/new?filename=TimberAssembly_Operation_Parser.md&amp;value=---%0Auid%3A%20TimberAssembly.Operation.Parser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/sean1832/ML-Assembly/blob/main/Rhino-Grasshopper/_Scripts/TimberAssemblyLib/src/TimberAssembly/Helper/ComputeMatch.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/sean1832/ML-Assembly/blob/main/Rhino-Grasshopper/_Scripts/TimberAssemblyLib/src/TimberAssembly/Operation/Parser.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
