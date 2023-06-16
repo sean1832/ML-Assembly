@@ -53,7 +53,8 @@
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "default"
+      "default",
+	  "template/singulinkfx"
     ],
     "postProcessors": [],
     "keepFileLink": false,
