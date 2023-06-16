@@ -4,8 +4,9 @@
       "src": [
         {
           "files": [
-            "src/TimberAssembly/**.csproj"
+            "Rhino-Grasshopper/_Scripts/TimberAssemblyLib/src/TimberAssembly/**.csproj"
           ],
+		  "src":"../../",
 		  "exclude": [
 			"**/bin/**",
 			"**/obj/**",
@@ -43,8 +44,9 @@
     "resource": [
       {
         "files": [
-          "images/**"
-        ]
+		  "Images/**"
+        ],
+		"src":"../"
       }
     ],
     "output": "_site",
