@@ -9,11 +9,16 @@ using TimberAssembly.Entities;
 
 namespace TimberAssembly
 {
+    /// <summary>
+    /// Parse json strings to objects.
+    /// </summary>
     public static class Parser
     {
         /// <summary>
-        /// Parse a list of json strings to a list of agents.
+        /// Convert a list of json strings to a list of agents.
         /// </summary>
+        /// <param name="jsons">Json strings</param>
+        /// <returns>Converted list of agents</returns>
         public static List<Agent> DeserializeToAgents(List<string> jsons)
         {
             List<Agent> agents = new List<Agent>();
@@ -24,6 +29,12 @@ namespace TimberAssembly
             return agents;
         }
 
+        /// <summary>
+        /// Convert a list of pairs to a list of json strings.
+        /// </summary>
+        /// <param name="pairs">List of pairs</param>
+        /// <param name="indent">Do you want to indent json string?</param>
+        /// <returns>Converted json strings</returns>
         public static List<string> SerializeAgentPairs(List<Pair> pairs, bool indent = false)
         {
             List<string> jsons = new List<string>();
@@ -46,6 +57,12 @@ namespace TimberAssembly
             return jsons;
         }
 
+        /// <summary>
+        /// Convert remain to json string.
+        /// </summary>
+        /// <param name="remains">Input remain object</param>
+        /// <param name="indent"></param>
+        /// <returns></returns>
         public static List<string> SerializeAgentRemains(Remain remains, bool indent = false)
         {
             List<string> jsons = new List<string>();

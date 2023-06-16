@@ -70,6 +70,11 @@ namespace TimberAssembly.Entities
             return $"({Length}, {Width}, {Height})";
         }
 
+        /// <summary>
+        /// Check if ANY dimension is smaller than the given dimension.
+        /// </summary>
+        /// <param name="dimension">Input dimension to compare with</param>
+        /// <returns>Comparison result</returns>
         public bool IsAnyLargerThan(Dimension dimension)
         {
             bool larger = Length > dimension.Length ||
@@ -77,6 +82,12 @@ namespace TimberAssembly.Entities
                           Height > dimension.Height;
             return larger;
         }
+
+        /// <summary>
+        /// Check if ANY dimension is larger or equal to the given dimension.
+        /// </summary>
+        /// <param name="dimension">Input dimension to compare with</param>
+        /// <returns>Comparison result</returns>
         public bool IsAnyLargerOrEqualThan(Dimension dimension)
         {
             bool largerOrEqual = Length >= dimension.Length ||
@@ -85,6 +96,11 @@ namespace TimberAssembly.Entities
             return largerOrEqual;
         }
 
+        /// <summary>
+        /// Check if ANY dimension is smaller than the given dimension
+        /// </summary>
+        /// <param name="dimension">Input dimension to compare with</param>
+        /// <returns>Comparison result</returns>
         public bool IsAnySmallerThan(Dimension dimension)
         {
             bool smaller = Length < dimension.Length ||
@@ -93,6 +109,11 @@ namespace TimberAssembly.Entities
             return smaller;
         }
 
+        /// <summary>
+        /// Check if ANY dimension is smaller or equal to the given dimension
+        /// </summary>
+        /// <param name="dimension">Input dimension to compare with</param>
+        /// <returns>Comparison result</returns>
         public bool IsAnySmallerOrEqualThan(Dimension dimension)
         {
             bool smallerOrEqual = Length <= dimension.Length ||
@@ -101,6 +122,11 @@ namespace TimberAssembly.Entities
             return smallerOrEqual;
         }
 
+        /// <summary>
+        /// Check if ALL dimensions are larger than the given dimension
+        /// </summary>
+        /// <param name="dimension">Input dimension to compare with</param>
+        /// <returns>Comparison result</returns>
         public bool IsAllLargerThan(Dimension dimension)
         {
             bool larger = Length > dimension.Length &&
@@ -109,6 +135,11 @@ namespace TimberAssembly.Entities
             return larger;
         }
 
+        /// <summary>
+        /// Check if ALL dimensions are larger or equal to the given dimension
+        /// </summary>
+        /// <param name="dimension">Input dimension to compare with</param>
+        /// <returns>Comparison result</returns>
         public bool IsAllLargerOrEqualThan(Dimension dimension)
         {
             bool largerOrEqual = Length >= dimension.Length &&
@@ -117,6 +148,11 @@ namespace TimberAssembly.Entities
             return largerOrEqual;
         }
 
+        /// <summary>
+        /// Check if ALL dimensions are smaller than the given dimension
+        /// </summary>
+        /// <param name="dimension">Input dimension to compare with</param>
+        /// <returns>Comparison result</returns>
         public bool IsAllSmallerThan(Dimension dimension)
         {
             bool smaller = Length < dimension.Length &&
@@ -125,6 +161,11 @@ namespace TimberAssembly.Entities
             return smaller;
         }
 
+        /// <summary>
+        /// Check if ALL dimensions are smaller or equal to the given dimension
+        /// </summary>
+        /// <param name="dimension">Input dimension to compare with</param>
+        /// <returns>Comparison result</returns>
         public bool IsAllSmallerOrEqualThan(Dimension dimension)
         {
             bool smallerOrEqual = Length <= dimension.Length &&
@@ -133,14 +174,26 @@ namespace TimberAssembly.Entities
             return smallerOrEqual;
         }
 
+        /// <summary>
+        /// Check if ALL dimensions are equal to the given dimension
+        /// </summary>
+        /// <param name="dimension">Input dimension to compare with</param>
+        /// <param name="tolerance">This number cannot be larger than the smallest dimension out of the two</param>
+        /// <returns>Comparison result</returns>
         public bool Equality(Dimension dimension, double tolerance = 0.01)
         {
+            // todo: add a check for tolerance
+
             bool equal = Math.Abs(Length - dimension.Length) < tolerance &&
                          Math.Abs(Width - dimension.Width) < tolerance &&
                          Math.Abs(Height - dimension.Height) < tolerance;
             return equal;
         }
 
+        /// <summary>
+        /// Get the absolute value of the dimension, that means all values are positive.
+        /// </summary>
+        /// <returns>Resulted absolute dimension</returns>
         public Dimension Absolute()
         {
             Dimension newDimension = new Dimension(
@@ -151,12 +204,20 @@ namespace TimberAssembly.Entities
             return newDimension;
         }
 
+        /// <summary>
+        /// Get the volume of the dimension. (l * w * h)
+        /// </summary>
+        /// <returns>Resulted volume</returns>
         public double GetVolume()
         {
             double volume = Length * Width * Height;
             return volume;
         }
 
+        /// <summary>
+        /// Subtract the given dimension from the current dimension.
+        /// </summary>
+        /// <param name="dimension">Dimension to subtract</param>
         public void Subtract(Dimension dimension)
         {
             Length -= dimension.Length;
@@ -164,6 +225,10 @@ namespace TimberAssembly.Entities
             Height -= dimension.Height;
         }
 
+        /// <summary>
+        /// Addition of the given dimension to the current dimension.
+        /// </summary>
+        /// <param name="dimension">Dimension to add</param>
         public void Add(Dimension dimension)
         {
             Length += dimension.Length;
@@ -171,12 +236,22 @@ namespace TimberAssembly.Entities
             Height += dimension.Height;
         }
 
+        /// <summary>
+        /// Create a new dimension with all values set to zero.
+        /// </summary>
+        /// <returns>Created dimension</returns>
         public static Dimension Zero()
         {
             Dimension newDimension = new Dimension(0, 0, 0);
             return newDimension;
         }
 
+        /// <summary>
+        /// Get the sum of two dimensions.
+        /// </summary>
+        /// <param name="dimension1">Dimension 1 to sum</param>
+        /// <param name="dimension2">Dimension 2 to sum</param>
+        /// <returns>Summed dimension</returns>
         public static Dimension GetSum(Dimension dimension1, Dimension dimension2)
         {
             Dimension newDimension = new Dimension(
@@ -187,6 +262,11 @@ namespace TimberAssembly.Entities
             return newDimension;
         }
 
+        /// <summary>
+        /// Get the sum of multiple dimensions.
+        /// </summary>
+        /// <param name="dimensions">List of dimension to sum</param>
+        /// <returns>Summed dimension</returns>
         public static Dimension GetSum(List<Dimension> dimensions)
         {
             Dimension newDimension = new Dimension(0, 0, 0);
@@ -197,6 +277,12 @@ namespace TimberAssembly.Entities
             return newDimension;
         }
 
+        /// <summary>
+        /// Get the difference between two dimensions.
+        /// </summary>
+        /// <param name="dimension1">Dimension 1 to subtract from</param>
+        /// <param name="dimension2">Dimension 2 to subtract</param>
+        /// <returns>Difference between two dimension</returns>
         public static Dimension GetDifference(Dimension dimension1, Dimension dimension2)
         {
             Dimension newDimension = new Dimension(

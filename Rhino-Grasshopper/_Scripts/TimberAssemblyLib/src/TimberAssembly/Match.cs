@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using Newtonsoft.Json;
 using TimberAssembly.Entities;
 using TimberAssembly.Helper;
 
@@ -15,30 +11,47 @@ namespace TimberAssembly
     /// </summary>
     public class Match
     {
+        /// <summary>
+        /// Target agents to be matched. Subject agent will be matched to target agents.
+        /// </summary>
         public List<Agent> TargetAgents { get; set; }
-        public List<Agent> SalvageAgents { get; set; }
+        /// <summary>
+        /// Subject agents to be matched.
+        /// </summary>
+        public List<Agent> SubjectAgents { get; set; }
+        /// <summary>
+        /// Tolerance for matching. This number cannot be smaller than the smallest dimension of the agents.
+        /// </summary>
         public double Tolerance { get; set; }
 
-        public Match(List<Agent> targetAgents, List<Agent> salvageAgents, double tolerance = 0.01)
+        /// <summary>
+        /// Create a matching algorithm for timber assembly.
+        /// </summary>
+        /// <param name="targetAgents">Target agents to be matched. Subject agent will be matched to target agents.</param>
+        /// <param name="subjectAgents">Subject agents to be matched.</param>
+        /// <param name="tolerance">Tolerance for matching. This number cannot be smaller than the smallest dimension of the agents.</param>
+        public Match(List<Agent> targetAgents, List<Agent> subjectAgents, double tolerance = 0.01)
         {
             TargetAgents = targetAgents;
-            SalvageAgents = salvageAgents;
+            SubjectAgents = subjectAgents;
             Tolerance = tolerance;
         }
 
         /// <summary>
         /// One subject is exactly matched to one target.
         /// </summary>
-        /// <param name="remains">Output remainders</param>
+        /// <param name="remains">Output remainders.
+        /// This contains subject and targets that did not meet the condition of this method.</param>
+        /// <returns>Resulted pairs</returns>
         public List<Pair> ExactMatch(ref Remain remains)
         {
             List<Agent> remainTargets = TargetAgents.ToList();
-            List<Agent> remainSalvages = SalvageAgents.ToList();
+            List<Agent> remainSalvages = SubjectAgents.ToList();
 
             List<Pair> pairs = new List<Pair>();
             foreach (var target in TargetAgents)
             {
-                foreach (var salvage in SalvageAgents)
+                foreach (var salvage in SubjectAgents)
                 {
                     if (!ComputeMatch.IsAgentExactMatched(target, salvage, Tolerance)) continue;
 
@@ -61,6 +74,7 @@ namespace TimberAssembly
         /// Two subjects from the remainders are combined to match one target. 1 dimensional matching.
         /// </summary>
         /// <param name="remains">Output remainders</param>
+        /// <returns>Resulted pairs</returns>
         public List<Pair> DoubleMatch(ref Remain remains)
         {
             Remain previousRemains = remains;
@@ -111,10 +125,12 @@ namespace TimberAssembly
         }
 
         /// <summary>
-        /// Three subjects from the remainders are combined to match one target. 2 dimensional matching.
+        /// Four subjects from the remainders are combined to match one target regardless of orientations.
+        /// <para>WARNING: This method is slow! It is recommended to use after Double Match and Exact Match to reduce timber to match.</para>
         /// </summary>
         /// <param name="remains">Output remainders</param>
-        public List<Pair> TripleMatch(ref Remain remains)
+        /// <returns>Resulted pairs</returns>
+        public List<Pair> UniMatch(ref Remain remains)
         {
             Remain previousRemains = remains;
             var (remainTargets, remainSalvages) = CloneAgents(previousRemains);
@@ -133,18 +149,11 @@ namespace TimberAssembly
 
 
         /// <summary>
-        /// Four subjects from the remainders are combined to match one target. 3 dimensional matching.
-        /// </summary>
-        /// <param name="remains">Output remainders</param>
-        public List<Pair> QuadrupleMatch(ref Remain remains)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
         /// Cut the remainders to the target and create offcuts.
         /// (when target is smaller than subject)
         /// </summary>
+        /// <param name="remain">Remainders</param>
+        /// <returns>Resulted pairs</returns>
         public List<Pair> CutToTarget(ref Remain remain)
         {
             Remain previousRemains = remain;
@@ -228,19 +237,20 @@ namespace TimberAssembly
 
 
         /// <summary>
-        /// (DEPRECATED! Use ExtendToTarget Instead.) 
+        /// <para>(DEPRECATED! Use ExtendToTarget Instead.) </para>
         /// Match the rest of the targets with the rest of the subjects.
         /// Introduce offcuts if necessary.
         /// </summary>
-        /// <param name="previousRemains">Remainder from SecondMatch</param>
-        public List<Pair> RemainMatch(Remain previousRemains)
+        /// <param name="remain">Remainders</param>
+        /// <returns>Resulted pairs</returns>
+        public List<Pair> RemainMatch(Remain remain)
         {
             List<Agent> remainTargets;
             List<Agent> remainSalvages;
             try
             {
-                remainTargets = previousRemains.Targets.ToList();
-                remainSalvages = previousRemains.Subjects.ToList();
+                remainTargets = remain.Targets.ToList();
+                remainSalvages = remain.Subjects.ToList();
             }
             catch (NullReferenceException e)
             {
@@ -323,6 +333,8 @@ namespace TimberAssembly
         /// Combining remainders with new subjects to match the targets. 
         /// (when target is larger than target)
         /// </summary>
+        /// <param name="remain">Remainders</param>
+        /// <returns>Resulted pairs</returns>
         public List<Pair> ExtendToTarget(ref Remain remain)
         {
             Remain previousRemains = remain;

@@ -11,6 +11,10 @@ namespace TimberAssembly.Helper
         /// <summary>
         /// Check if two agents are exactly matched.
         /// </summary>
+        /// <param name="agent1">Agent 1</param>
+        /// <param name="agent2">Agent 2</param>
+        /// <param name="tolerance">Tolerance for comparison</param>
+        /// <returns>True if matched, false if not</returns>
         public static bool IsAgentExactMatched(Agent agent1, Agent agent2, double tolerance = 0.1)
         {
             bool matched = Math.Abs(agent1.Dimension.Length - agent2.Dimension.Length) < tolerance &&
@@ -23,6 +27,11 @@ namespace TimberAssembly.Helper
         /// <summary>
         /// Linear check if two agents combined are matched with the target agent.
         /// </summary>
+        /// <param name="target">Target agent</param>
+        /// <param name="agent1">Agent 1</param>
+        /// <param name="agent2">Agent 2</param>
+        /// <param name="tolerance">Tolerance for comparison</param>
+        /// <returns>True if matched, false if not</returns>
         public static bool IsAgentDoubleMatched(Agent target, Agent agent1, Agent agent2, double tolerance = 0.1)
         {
             int differenceCount1 = 0;
@@ -79,10 +88,14 @@ namespace TimberAssembly.Helper
 
             return false;
         }
+
         /// <summary>
         /// Get closest Agent dimension from a list of agents. 
-        /// Only accept one dimensional difference
+        /// <para>Only accept one dimensional difference.</para>
         /// </summary>
+        /// <param name="target">Target agent</param>
+        /// <param name="subjects">List of subject agent</param>
+        /// <returns>Closest agent and its dimension</returns>
         public static (Agent, Dimension) GetClosestAgent(Agent target, List<Agent> subjects)
         {
             double minDistance = double.MaxValue;
@@ -153,7 +166,13 @@ namespace TimberAssembly.Helper
             return result;
         }
 
-
+        /// <summary>
+        /// Calculate the residuals of the subject agent after fitting it inside the target agent.
+        /// <para>When target is smaller than subject.</para>
+        /// </summary>
+        /// <param name="target">Target agent to fit</param>
+        /// <param name="subject">Subject agent to cut</param>
+        /// <returns></returns>
         public static List<Agent> CalculateResiduals(Agent target, Agent subject)
         {
             var residuals = new List<Agent>();
@@ -188,6 +207,16 @@ namespace TimberAssembly.Helper
             return residuals;
         }
 
+        /// <summary>
+        /// calculate all possible aggregation combination of the subject agent to fit inside the target agent.
+        /// <para>When target is larger than subject.</para>
+        /// </summary>
+        /// <param name="target">Target agent to fit</param>
+        /// <param name="subject">Subject agent to aggregate</param>
+        /// <returns>
+        /// All possible aggregation combination.
+        /// <para>Any one of combination (Agent List) should be able to add up to target agent.</para>
+        /// </returns>
         public static List<List<List<Agent>>> CalculateAllAggregation(Agent target, Agent subject)
         {
             var allAggregations = new List<List<List<Agent>>>();

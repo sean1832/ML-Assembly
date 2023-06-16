@@ -7,6 +7,8 @@ namespace TimberAssembly.Helper
         /// <summary>
         /// Get all permutations of a list of doubles
         /// </summary>
+        /// <param name="list">List of doubles</param>
+        /// <returns>All permutations of the list</returns>
         internal static List<List<double>> Permutations(List<double> list)
         {
             // Base case: If the list has only one item, return a list containing just the original list
