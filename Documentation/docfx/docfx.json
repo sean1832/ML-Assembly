@@ -52,9 +52,22 @@
     "output": "_site",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
+    "globalMetadata": {
+      "_appTitle": "TimberAssembly",
+      "_appName": "TimberAssembly",
+      "_appFaviconPath": "",
+      "_appLogoPath": "",
+      "_appFooter": "<strong>Developed by <a href='https://github.com/sean1832' style='color: lightblue !important;'>Zeke Zhang</a></strong>",
+      "_copyrightFooter": "",
+      "_enableSearch": true,
+      "_disableSideFilter": false,
+      "_enableNewTab": true,
+      "_disableContribution": false,
+      "_disableBreadcrumb": false
+    },
     "template": [
       "default",
-	  "template/singulinkfx"
+	    "template/singulinkfx"
     ],
     "postProcessors": [],
     "keepFileLink": false,
