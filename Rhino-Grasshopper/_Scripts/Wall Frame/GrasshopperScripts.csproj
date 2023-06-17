@@ -19,7 +19,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="TimberAssembly">
-      <HintPath>..\DLL\scr\TimberAssembly\bin\Debug\TimberAssembly.dll</HintPath>
+      <HintPath>..\TimberAssemblyLib\src\TimberAssembly\bin\Debug\TimberAssembly.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

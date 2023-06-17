@@ -82,7 +82,7 @@ public abstract class Script_Instance_f7dfd : GH_ScriptInstance
     Remain remain = new Remain();
 
     List<Pair> matchedPairs = matchOperation.ExactMatch(ref remain); // when subject == target
-    matchedPairs.AddRange(matchOperation.SecondMatchSlow(ref remain)); // when subject 1 + subject 2 == target
+    matchedPairs.AddRange(matchOperation.DoubleMatch(ref remain)); // when subject 1 + subject 2 == target
     matchedPairs.AddRange(matchOperation.CutToTarget(ref remain)); // when subject > target
     matchedPairs.AddRange(matchOperation.ExtendToTarget(ref remain)); // when subject < target
 
