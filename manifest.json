@@ -5,10 +5,48 @@
   "files": [
     {
       "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "../Images/01-CreatePythonVenv.png",
       "output": {
         "resource": {
           "relative_path": "Images/01-CreatePythonVenv.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../Images/grasshopper-compare-eval.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/grasshopper-compare-eval.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../Images/grasshopper-sc-script.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/grasshopper-sc-script.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../Images/grasshopper-sc-target-frame-creation.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/grasshopper-sc-target-frame-creation.png"
         }
       },
       "version": ""
@@ -408,6 +446,16 @@
       "source_relative_path": "api/TimberAssembly.Helper.ComputeMatch.yml",
       "output": {
         ".html": {
+          "relative_path": "api/TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Helper.ComputeMatch.yml",
+      "output": {
+        ".html": {
           "relative_path": "api/TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched.html"
         }
       },
@@ -449,16 +497,6 @@
       "output": {
         ".html": {
           "relative_path": "api/TimberAssembly.Helper.ComputeMatch.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Helper.ComputeMatch.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched.html"
         }
       },
       "version": ""
@@ -775,10 +813,40 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/intro.md",
+      "source_relative_path": "articles/get_started/quick_start.md",
       "output": {
         ".html": {
-          "relative_path": "articles/intro.html"
+          "relative_path": "articles/get_started/quick_start.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/setup/setup_env.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/setup/setup_env.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/setup/setup_grasshopper.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/setup/setup_grasshopper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/setup/setup_unity.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/setup/setup_unity.html"
         }
       },
       "version": ""

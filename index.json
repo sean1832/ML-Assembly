@@ -1,0 +1,402 @@
+{
+  "api/index.html": {
+    "href": "api/index.html",
+    "title": "PLACEHOLDER | TimberAssembly",
+    "keywords": "PLACEHOLDER TODO: Add .NET projects to the src folder and run docfx to generate REAL API Documentation!"
+  },
+  "api/TimberAssembly.Entities.Agent.-ctor.html": {
+    "href": "api/TimberAssembly.Entities.Agent.-ctor.html",
+    "title": "Constructor Agent | TimberAssembly",
+    "keywords": "Constructor Agent | Improve this Doc View Source Agent(string, Dimension, int, bool) Create an agent Declaration public Agent(string name = null, Dimension dimension = null, int trimmed = 0, bool isNew = false) Parameters Type Name Description string name name of the agent Dimension dimension How many times the agent has been trimmed int trimmed Is the agent newly introduced bool isNew Dimension of the agent"
+  },
+  "api/TimberAssembly.Entities.Agent.Dimension.html": {
+    "href": "api/TimberAssembly.Entities.Agent.Dimension.html",
+    "title": "Property Dimension | TimberAssembly",
+    "keywords": "Property Dimension | Improve this Doc View Source Dimension Dimension of the agent Declaration public Dimension Dimension { get; set; } Property Value Type Description Dimension"
+  },
+  "api/TimberAssembly.Entities.Agent.html": {
+    "href": "api/TimberAssembly.Entities.Agent.html",
+    "title": "Class Agent | TimberAssembly",
+    "keywords": "Class Agent Agent to assemble Inheritance object Agent Inherited Members object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Entities Assembly: TimberAssembly.dll Syntax public class Agent Constructors Name Description Agent(string, Dimension, int, bool) Create an agent Properties Name Description Dimension Dimension of the agent IsNew Is the agent newly introduced Name name of the agent Trimmed How many times the agent has been trimmed Methods Name Description ToString() Convert agent to string Volume() Get the volume of the agent"
+  },
+  "api/TimberAssembly.Entities.Agent.IsNew.html": {
+    "href": "api/TimberAssembly.Entities.Agent.IsNew.html",
+    "title": "Property IsNew | TimberAssembly",
+    "keywords": "Property IsNew | Improve this Doc View Source IsNew Is the agent newly introduced Declaration public bool IsNew { get; set; } Property Value Type Description bool"
+  },
+  "api/TimberAssembly.Entities.Agent.Name.html": {
+    "href": "api/TimberAssembly.Entities.Agent.Name.html",
+    "title": "Property Name | TimberAssembly",
+    "keywords": "Property Name | Improve this Doc View Source Name name of the agent Declaration public string Name { get; set; } Property Value Type Description string"
+  },
+  "api/TimberAssembly.Entities.Agent.ToString.html": {
+    "href": "api/TimberAssembly.Entities.Agent.ToString.html",
+    "title": "Method ToString | TimberAssembly",
+    "keywords": "Method ToString | Improve this Doc View Source ToString() Convert agent to string Declaration public override string ToString() Returns Type Description string Overrides object.ToString()"
+  },
+  "api/TimberAssembly.Entities.Agent.Trimmed.html": {
+    "href": "api/TimberAssembly.Entities.Agent.Trimmed.html",
+    "title": "Property Trimmed | TimberAssembly",
+    "keywords": "Property Trimmed | Improve this Doc View Source Trimmed How many times the agent has been trimmed Declaration public int Trimmed { get; set; } Property Value Type Description int"
+  },
+  "api/TimberAssembly.Entities.Agent.Volume.html": {
+    "href": "api/TimberAssembly.Entities.Agent.Volume.html",
+    "title": "Method Volume | TimberAssembly",
+    "keywords": "Method Volume | Improve this Doc View Source Volume() Get the volume of the agent Declaration public double Volume() Returns Type Description double"
+  },
+  "api/TimberAssembly.Entities.Dimension.-ctor.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.-ctor.html",
+    "title": "Constructor Dimension | TimberAssembly",
+    "keywords": "Constructor Dimension | Improve this Doc View Source Dimension() Create a dimension Declaration public Dimension() | Improve this Doc View Source Dimension(double, double, double) Create a dimension from three doubles Declaration public Dimension(double length, double width, double height) Parameters Type Name Description double length Length of the agent double width Width of the agent double height Height of the agent | Improve this Doc View Source Dimension(List<double>) Create a dimension from a list of doubles. The list must have exactly 3 values. Declaration public Dimension(List<double> dimensions) Parameters Type Name Description List<double> dimensions (l, w, h)"
+  },
+  "api/TimberAssembly.Entities.Dimension.Absolute.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.Absolute.html",
+    "title": "Method Absolute | TimberAssembly",
+    "keywords": "Method Absolute | Improve this Doc View Source Absolute() Get the absolute value of the dimension, that means all values are positive. Declaration public Dimension Absolute() Returns Type Description Dimension Resulted absolute dimension"
+  },
+  "api/TimberAssembly.Entities.Dimension.Add.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.Add.html",
+    "title": "Method Add | TimberAssembly",
+    "keywords": "Method Add | Improve this Doc View Source Add(Dimension) Addition of the given dimension to the current dimension. Declaration public void Add(Dimension dimension) Parameters Type Name Description Dimension dimension Dimension to add"
+  },
+  "api/TimberAssembly.Entities.Dimension.Equality.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.Equality.html",
+    "title": "Method Equality | TimberAssembly",
+    "keywords": "Method Equality | Improve this Doc View Source Equality(Dimension, double) Check if ALL dimensions are equal to the given dimension Declaration public bool Equality(Dimension dimension, double tolerance = 0.01) Parameters Type Name Description Dimension dimension Input dimension to compare with double tolerance This number cannot be larger than the smallest dimension out of the two Returns Type Description bool Comparison result"
+  },
+  "api/TimberAssembly.Entities.Dimension.GetDifference.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.GetDifference.html",
+    "title": "Method GetDifference | TimberAssembly",
+    "keywords": "Method GetDifference | Improve this Doc View Source GetDifference(Dimension, Dimension) Get the difference between two dimensions. Declaration public static Dimension GetDifference(Dimension dimension1, Dimension dimension2) Parameters Type Name Description Dimension dimension1 Dimension 1 to subtract from Dimension dimension2 Dimension 2 to subtract Returns Type Description Dimension Difference between two dimension"
+  },
+  "api/TimberAssembly.Entities.Dimension.GetSum.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.GetSum.html",
+    "title": "Method GetSum | TimberAssembly",
+    "keywords": "Method GetSum | Improve this Doc View Source GetSum(Dimension, Dimension) Get the sum of two dimensions. Declaration public static Dimension GetSum(Dimension dimension1, Dimension dimension2) Parameters Type Name Description Dimension dimension1 Dimension 1 to sum Dimension dimension2 Dimension 2 to sum Returns Type Description Dimension Summed dimension | Improve this Doc View Source GetSum(List<Dimension>) Get the sum of multiple dimensions. Declaration public static Dimension GetSum(List<Dimension> dimensions) Parameters Type Name Description List<Dimension> dimensions List of dimension to sum Returns Type Description Dimension Summed dimension"
+  },
+  "api/TimberAssembly.Entities.Dimension.GetVolume.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.GetVolume.html",
+    "title": "Method GetVolume | TimberAssembly",
+    "keywords": "Method GetVolume | Improve this Doc View Source GetVolume() Get the volume of the dimension. (l * w * h) Declaration public double GetVolume() Returns Type Description double Resulted volume"
+  },
+  "api/TimberAssembly.Entities.Dimension.Height.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.Height.html",
+    "title": "Property Height | TimberAssembly",
+    "keywords": "Property Height | Improve this Doc View Source Height Height of the agent Declaration public double Height { get; set; } Property Value Type Description double"
+  },
+  "api/TimberAssembly.Entities.Dimension.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.html",
+    "title": "Class Dimension | TimberAssembly",
+    "keywords": "Class Dimension Dimension of an agent Inheritance object Dimension Inherited Members object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Entities Assembly: TimberAssembly.dll Syntax public class Dimension Constructors Name Description Dimension() Create a dimension Dimension(List<double>) Create a dimension from a list of doubles. The list must have exactly 3 values. Dimension(double, double, double) Create a dimension from three doubles Properties Name Description Height Height of the agent Length Length of the agent Width Width of the agent Methods Name Description Absolute() Get the absolute value of the dimension, that means all values are positive. Add(Dimension) Addition of the given dimension to the current dimension. Equality(Dimension, double) Check if ALL dimensions are equal to the given dimension GetDifference(Dimension, Dimension) Get the difference between two dimensions. GetSum(List<Dimension>) Get the sum of multiple dimensions. GetSum(Dimension, Dimension) Get the sum of two dimensions. GetVolume() Get the volume of the dimension. (l * w * h) IsAllLargerOrEqualThan(Dimension) Check if ALL dimensions are larger or equal to the given dimension IsAllLargerThan(Dimension) Check if ALL dimensions are larger than the given dimension IsAllSmallerOrEqualThan(Dimension) Check if ALL dimensions are smaller or equal to the given dimension IsAllSmallerThan(Dimension) Check if ALL dimensions are smaller than the given dimension IsAnyLargerOrEqualThan(Dimension) Check if ANY dimension is larger or equal to the given dimension. IsAnyLargerThan(Dimension) Check if ANY dimension is smaller than the given dimension. IsAnySmallerOrEqualThan(Dimension) Check if ANY dimension is smaller or equal to the given dimension IsAnySmallerThan(Dimension) Check if ANY dimension is smaller than the given dimension Subtract(Dimension) Subtract the given dimension from the current dimension. ToList() Convert dimension to list of doubles. ToString() Convert dimension to string. Zero() Create a new dimension with all values set to zero."
+  },
+  "api/TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan.html",
+    "title": "Method IsAllLargerOrEqualThan | TimberAssembly",
+    "keywords": "Method IsAllLargerOrEqualThan | Improve this Doc View Source IsAllLargerOrEqualThan(Dimension) Check if ALL dimensions are larger or equal to the given dimension Declaration public bool IsAllLargerOrEqualThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
+  },
+  "api/TimberAssembly.Entities.Dimension.IsAllLargerThan.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.IsAllLargerThan.html",
+    "title": "Method IsAllLargerThan | TimberAssembly",
+    "keywords": "Method IsAllLargerThan | Improve this Doc View Source IsAllLargerThan(Dimension) Check if ALL dimensions are larger than the given dimension Declaration public bool IsAllLargerThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
+  },
+  "api/TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan.html",
+    "title": "Method IsAllSmallerOrEqualThan | TimberAssembly",
+    "keywords": "Method IsAllSmallerOrEqualThan | Improve this Doc View Source IsAllSmallerOrEqualThan(Dimension) Check if ALL dimensions are smaller or equal to the given dimension Declaration public bool IsAllSmallerOrEqualThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
+  },
+  "api/TimberAssembly.Entities.Dimension.IsAllSmallerThan.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.IsAllSmallerThan.html",
+    "title": "Method IsAllSmallerThan | TimberAssembly",
+    "keywords": "Method IsAllSmallerThan | Improve this Doc View Source IsAllSmallerThan(Dimension) Check if ALL dimensions are smaller than the given dimension Declaration public bool IsAllSmallerThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
+  },
+  "api/TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan.html",
+    "title": "Method IsAnyLargerOrEqualThan | TimberAssembly",
+    "keywords": "Method IsAnyLargerOrEqualThan | Improve this Doc View Source IsAnyLargerOrEqualThan(Dimension) Check if ANY dimension is larger or equal to the given dimension. Declaration public bool IsAnyLargerOrEqualThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
+  },
+  "api/TimberAssembly.Entities.Dimension.IsAnyLargerThan.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.IsAnyLargerThan.html",
+    "title": "Method IsAnyLargerThan | TimberAssembly",
+    "keywords": "Method IsAnyLargerThan | Improve this Doc View Source IsAnyLargerThan(Dimension) Check if ANY dimension is smaller than the given dimension. Declaration public bool IsAnyLargerThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
+  },
+  "api/TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan.html",
+    "title": "Method IsAnySmallerOrEqualThan | TimberAssembly",
+    "keywords": "Method IsAnySmallerOrEqualThan | Improve this Doc View Source IsAnySmallerOrEqualThan(Dimension) Check if ANY dimension is smaller or equal to the given dimension Declaration public bool IsAnySmallerOrEqualThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
+  },
+  "api/TimberAssembly.Entities.Dimension.IsAnySmallerThan.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.IsAnySmallerThan.html",
+    "title": "Method IsAnySmallerThan | TimberAssembly",
+    "keywords": "Method IsAnySmallerThan | Improve this Doc View Source IsAnySmallerThan(Dimension) Check if ANY dimension is smaller than the given dimension Declaration public bool IsAnySmallerThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
+  },
+  "api/TimberAssembly.Entities.Dimension.Length.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.Length.html",
+    "title": "Property Length | TimberAssembly",
+    "keywords": "Property Length | Improve this Doc View Source Length Length of the agent Declaration public double Length { get; set; } Property Value Type Description double"
+  },
+  "api/TimberAssembly.Entities.Dimension.Subtract.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.Subtract.html",
+    "title": "Method Subtract | TimberAssembly",
+    "keywords": "Method Subtract | Improve this Doc View Source Subtract(Dimension) Subtract the given dimension from the current dimension. Declaration public void Subtract(Dimension dimension) Parameters Type Name Description Dimension dimension Dimension to subtract"
+  },
+  "api/TimberAssembly.Entities.Dimension.ToList.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.ToList.html",
+    "title": "Method ToList | TimberAssembly",
+    "keywords": "Method ToList | Improve this Doc View Source ToList() Convert dimension to list of doubles. Declaration public List<double> ToList() Returns Type Description List<double> (l, w, h)"
+  },
+  "api/TimberAssembly.Entities.Dimension.ToString.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.ToString.html",
+    "title": "Method ToString | TimberAssembly",
+    "keywords": "Method ToString | Improve this Doc View Source ToString() Convert dimension to string. Declaration public override string ToString() Returns Type Description string (l, w, h) Overrides object.ToString()"
+  },
+  "api/TimberAssembly.Entities.Dimension.Width.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.Width.html",
+    "title": "Property Width | TimberAssembly",
+    "keywords": "Property Width | Improve this Doc View Source Width Width of the agent Declaration public double Width { get; set; } Property Value Type Description double"
+  },
+  "api/TimberAssembly.Entities.Dimension.Zero.html": {
+    "href": "api/TimberAssembly.Entities.Dimension.Zero.html",
+    "title": "Method Zero | TimberAssembly",
+    "keywords": "Method Zero | Improve this Doc View Source Zero() Create a new dimension with all values set to zero. Declaration public static Dimension Zero() Returns Type Description Dimension Created dimension"
+  },
+  "api/TimberAssembly.Entities.html": {
+    "href": "api/TimberAssembly.Entities.html",
+    "title": "Namespace TimberAssembly.Entities | TimberAssembly",
+    "keywords": "Namespace TimberAssembly.Entities Classes Agent Agent to assemble Dimension Dimension of an agent Pair Pair of target and subjects. Remain Store remain of targets and subjects. These are targets and subjects that's left from the matching operation."
+  },
+  "api/TimberAssembly.Entities.Pair.-ctor.html": {
+    "href": "api/TimberAssembly.Entities.Pair.-ctor.html",
+    "title": "Constructor Pair | TimberAssembly",
+    "keywords": "Constructor Pair | Improve this Doc View Source Pair(Agent, List<Agent>) Create a pair of target and subjects. Declaration public Pair(Agent target = null, List<Agent> subjects = null) Parameters Type Name Description Agent target Target agent. List<Agent> subjects Subject agents. Subjects can contain multiple subjects that combined to the size of target"
+  },
+  "api/TimberAssembly.Entities.Pair.html": {
+    "href": "api/TimberAssembly.Entities.Pair.html",
+    "title": "Class Pair | TimberAssembly",
+    "keywords": "Class Pair Pair of target and subjects. Inheritance object Pair Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Entities Assembly: TimberAssembly.dll Syntax public class Pair Constructors Name Description Pair(Agent, List<Agent>) Create a pair of target and subjects. Properties Name Description Subjects Subject agents. Subjects can contain multiple subjects that combined to the size of target Target Target agent."
+  },
+  "api/TimberAssembly.Entities.Pair.Subjects.html": {
+    "href": "api/TimberAssembly.Entities.Pair.Subjects.html",
+    "title": "Property Subjects | TimberAssembly",
+    "keywords": "Property Subjects | Improve this Doc View Source Subjects Subject agents. Subjects can contain multiple subjects that combined to the size of target Declaration public List<Agent> Subjects { get; set; } Property Value Type Description List<Agent>"
+  },
+  "api/TimberAssembly.Entities.Pair.Target.html": {
+    "href": "api/TimberAssembly.Entities.Pair.Target.html",
+    "title": "Property Target | TimberAssembly",
+    "keywords": "Property Target | Improve this Doc View Source Target Target agent. Declaration public Agent Target { get; set; } Property Value Type Description Agent"
+  },
+  "api/TimberAssembly.Entities.Remain.html": {
+    "href": "api/TimberAssembly.Entities.Remain.html",
+    "title": "Class Remain | TimberAssembly",
+    "keywords": "Class Remain Store remain of targets and subjects. These are targets and subjects that's left from the matching operation. Inheritance object Remain Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Entities Assembly: TimberAssembly.dll Syntax public class Remain Properties Name Description Subjects Remaining subjects. Targets Remaining targets."
+  },
+  "api/TimberAssembly.Entities.Remain.Subjects.html": {
+    "href": "api/TimberAssembly.Entities.Remain.Subjects.html",
+    "title": "Property Subjects | TimberAssembly",
+    "keywords": "Property Subjects | Improve this Doc View Source Subjects Remaining subjects. Declaration public List<Agent> Subjects { get; set; } Property Value Type Description List<Agent>"
+  },
+  "api/TimberAssembly.Entities.Remain.Targets.html": {
+    "href": "api/TimberAssembly.Entities.Remain.Targets.html",
+    "title": "Property Targets | TimberAssembly",
+    "keywords": "Property Targets | Improve this Doc View Source Targets Remaining targets. Declaration public List<Agent> Targets { get; set; } Property Value Type Description List<Agent>"
+  },
+  "api/TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation.html": {
+    "href": "api/TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation.html",
+    "title": "Method CalculateAllAggregation | TimberAssembly",
+    "keywords": "Method CalculateAllAggregation | Improve this Doc View Source CalculateAllAggregation(Agent, Agent) calculate all possible aggregation combination of the subject agent to fit inside the target agent. When target is larger than subject. Declaration public static List<List<List<Agent>>> CalculateAllAggregation(Agent target, Agent subject) Parameters Type Name Description Agent target Target agent to fit Agent subject Subject agent to aggregate Returns Type Description List<List<List<Agent>>> All possible aggregation combination. Any one of combination (Agent List) should be able to add up to target agent."
+  },
+  "api/TimberAssembly.Helper.ComputeMatch.CalculateResiduals.html": {
+    "href": "api/TimberAssembly.Helper.ComputeMatch.CalculateResiduals.html",
+    "title": "Method CalculateResiduals | TimberAssembly",
+    "keywords": "Method CalculateResiduals | Improve this Doc View Source CalculateResiduals(Agent, Agent) Calculate the residuals of the subject agent after fitting it inside the target agent. When target is smaller than subject. Declaration public static List<Agent> CalculateResiduals(Agent target, Agent subject) Parameters Type Name Description Agent target Target agent to fit Agent subject Subject agent to cut Returns Type Description List<Agent>"
+  },
+  "api/TimberAssembly.Helper.ComputeMatch.GetClosestAgent.html": {
+    "href": "api/TimberAssembly.Helper.ComputeMatch.GetClosestAgent.html",
+    "title": "Method GetClosestAgent | TimberAssembly",
+    "keywords": "Method GetClosestAgent | Improve this Doc View Source GetClosestAgent(Agent, List<Agent>) Get closest Agent dimension from a list of agents. Only accept one dimensional difference. Declaration public static (Agent, Dimension) GetClosestAgent(Agent target, List<Agent> subjects) Parameters Type Name Description Agent target Target agent List<Agent> subjects List of subject agent Returns Type Description (Agent, Dimension) Closest agent and its dimension"
+  },
+  "api/TimberAssembly.Helper.ComputeMatch.html": {
+    "href": "api/TimberAssembly.Helper.ComputeMatch.html",
+    "title": "Class ComputeMatch | TimberAssembly",
+    "keywords": "Class ComputeMatch Inheritance object ComputeMatch Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Helper Assembly: TimberAssembly.dll Syntax public class ComputeMatch Methods Name Description CalculateAllAggregation(Agent, Agent) calculate all possible aggregation combination of the subject agent to fit inside the target agent. When target is larger than subject. CalculateResiduals(Agent, Agent) Calculate the residuals of the subject agent after fitting it inside the target agent. When target is smaller than subject. GetClosestAgent(Agent, List<Agent>) Get closest Agent dimension from a list of agents. Only accept one dimensional difference. IsAgentDoubleMatched(Agent, Agent, Agent, double) Linear check if two agents combined are matched with the target agent. IsAgentExactMatched(Agent, Agent, double) Check if two agents are exactly matched."
+  },
+  "api/TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched.html": {
+    "href": "api/TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched.html",
+    "title": "Method IsAgentDoubleMatched | TimberAssembly",
+    "keywords": "Method IsAgentDoubleMatched | Improve this Doc View Source IsAgentDoubleMatched(Agent, Agent, Agent, double) Linear check if two agents combined are matched with the target agent. Declaration public static bool IsAgentDoubleMatched(Agent target, Agent agent1, Agent agent2, double tolerance = 0.1) Parameters Type Name Description Agent target Target agent Agent agent1 Agent 1 Agent agent2 Agent 2 double tolerance Tolerance for comparison Returns Type Description bool True if matched, false if not"
+  },
+  "api/TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched.html": {
+    "href": "api/TimberAssembly.Helper.ComputeMatch.IsAgentExactMatched.html",
+    "title": "Method IsAgentExactMatched | TimberAssembly",
+    "keywords": "Method IsAgentExactMatched | Improve this Doc View Source IsAgentExactMatched(Agent, Agent, double) Check if two agents are exactly matched. Declaration public static bool IsAgentExactMatched(Agent agent1, Agent agent2, double tolerance = 0.1) Parameters Type Name Description Agent agent1 Agent 1 Agent agent2 Agent 2 double tolerance Tolerance for comparison Returns Type Description bool True if matched, false if not"
+  },
+  "api/TimberAssembly.Helper.html": {
+    "href": "api/TimberAssembly.Helper.html",
+    "title": "Namespace TimberAssembly.Helper | TimberAssembly",
+    "keywords": "Namespace TimberAssembly.Helper Classes ComputeMatch"
+  },
+  "api/TimberAssembly.Operation.Evaluate.-ctor.html": {
+    "href": "api/TimberAssembly.Operation.Evaluate.-ctor.html",
+    "title": "Constructor Evaluate | TimberAssembly",
+    "keywords": "Constructor Evaluate | Improve this Doc View Source Evaluate(List<Pair>, Remain, List<Agent>) Evaluation of the matched results. Declaration public Evaluate(List<Pair> pairs, Remain remains, List<Agent> totalInitialSubjects) Parameters Type Name Description List<Pair> pairs Resulted pairs Remain remains Resulted remains List<Agent> totalInitialSubjects Initial subjects before matching"
+  },
+  "api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByCutCount.html": {
+    "href": "api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByCutCount.html",
+    "title": "Method EvaluateEfficiencyByCutCount | TimberAssembly",
+    "keywords": "Method EvaluateEfficiencyByCutCount | Improve this Doc View Source EvaluateEfficiencyByCutCount() Labor Efficiency = (Number of timbers - Number of cuts) / Number of timbers (Higher the better) Declaration public double EvaluateEfficiencyByCutCount() Returns Type Description double Labor Efficiency"
+  },
+  "api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByTime.html": {
+    "href": "api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByTime.html",
+    "title": "Method EvaluateEfficiencyByTime | TimberAssembly",
+    "keywords": "Method EvaluateEfficiencyByTime | Improve this Doc View Source EvaluateEfficiencyByTime(double, double) Time Efficiency = Perfect Time / Actual Time (Higher the better) Declaration public double EvaluateEfficiencyByTime(double timePerSubject, double timePerCut) Parameters Type Name Description double timePerSubject Time taken for each timber to be install double timePerCut Time taken for each timber to be cut Returns Type Description double Time Efficiency"
+  },
+  "api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByVolume.html": {
+    "href": "api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByVolume.html",
+    "title": "Method EvaluateEfficiencyByVolume | TimberAssembly",
+    "keywords": "Method EvaluateEfficiencyByVolume | Improve this Doc View Source EvaluateEfficiencyByVolume() MaterialEfficiency = 1 - Waste Rate (Higher the better) Declaration public double EvaluateEfficiencyByVolume() Returns Type Description double Material Efficiency"
+  },
+  "api/TimberAssembly.Operation.Evaluate.GetCutCount.html": {
+    "href": "api/TimberAssembly.Operation.Evaluate.GetCutCount.html",
+    "title": "Method GetCutCount | TimberAssembly",
+    "keywords": "Method GetCutCount | Improve this Doc View Source GetCutCount() Get the total number of cuts. Declaration public int GetCutCount() Returns Type Description int Number of cuts"
+  },
+  "api/TimberAssembly.Operation.Evaluate.GetNewSubjectVolume.html": {
+    "href": "api/TimberAssembly.Operation.Evaluate.GetNewSubjectVolume.html",
+    "title": "Method GetNewSubjectVolume | TimberAssembly",
+    "keywords": "Method GetNewSubjectVolume | Improve this Doc View Source GetNewSubjectVolume() Get total volume of new timbers. Declaration public double GetNewSubjectVolume() Returns Type Description double Volume of new timbers"
+  },
+  "api/TimberAssembly.Operation.Evaluate.GetRecycleRateVolume.html": {
+    "href": "api/TimberAssembly.Operation.Evaluate.GetRecycleRateVolume.html",
+    "title": "Method GetRecycleRateVolume | TimberAssembly",
+    "keywords": "Method GetRecycleRateVolume | Improve this Doc View Source GetRecycleRateVolume() Get the percentage of used timbers compare to initial timbers by volume. (Higher the better) Declaration public double GetRecycleRateVolume() Returns Type Description double Percentage of used timbers"
+  },
+  "api/TimberAssembly.Operation.Evaluate.GetSubjectInitVolume.html": {
+    "href": "api/TimberAssembly.Operation.Evaluate.GetSubjectInitVolume.html",
+    "title": "Method GetSubjectInitVolume | TimberAssembly",
+    "keywords": "Method GetSubjectInitVolume | Improve this Doc View Source GetSubjectInitVolume() Get the total volume of initial subjects. Declaration public double GetSubjectInitVolume() Returns Type Description double Volume of initial subjects"
+  },
+  "api/TimberAssembly.Operation.Evaluate.GetUsedSubjectVolume.html": {
+    "href": "api/TimberAssembly.Operation.Evaluate.GetUsedSubjectVolume.html",
+    "title": "Method GetUsedSubjectVolume | TimberAssembly",
+    "keywords": "Method GetUsedSubjectVolume | Improve this Doc View Source GetUsedSubjectVolume() Get the total volume of used subjects. Declaration public double GetUsedSubjectVolume() Returns Type Description double Volume of used subjects"
+  },
+  "api/TimberAssembly.Operation.Evaluate.GetWasteRateByVolume.html": {
+    "href": "api/TimberAssembly.Operation.Evaluate.GetWasteRateByVolume.html",
+    "title": "Method GetWasteRateByVolume | TimberAssembly",
+    "keywords": "Method GetWasteRateByVolume | Improve this Doc View Source GetWasteRateByVolume() Waste Rate = Waste Volume / Total Volume (Lower the better) Declaration public double GetWasteRateByVolume() Returns Type Description double Waste Rate"
+  },
+  "api/TimberAssembly.Operation.Evaluate.GetWasteVolume.html": {
+    "href": "api/TimberAssembly.Operation.Evaluate.GetWasteVolume.html",
+    "title": "Method GetWasteVolume | TimberAssembly",
+    "keywords": "Method GetWasteVolume | Improve this Doc View Source GetWasteVolume() Get the total volume that is wasted (not used in the matching process). Declaration public double GetWasteVolume() Returns Type Description double Total volume of remained subjects"
+  },
+  "api/TimberAssembly.Operation.Evaluate.html": {
+    "href": "api/TimberAssembly.Operation.Evaluate.html",
+    "title": "Class Evaluate | TimberAssembly",
+    "keywords": "Class Evaluate Evaluation of the matched results. Inheritance object Evaluate Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Operation Assembly: TimberAssembly.dll Syntax public class Evaluate Constructors Name Description Evaluate(List<Pair>, Remain, List<Agent>) Evaluation of the matched results. Methods Name Description EvaluateEfficiencyByCutCount() Labor Efficiency = (Number of timbers - Number of cuts) / Number of timbers (Higher the better) EvaluateEfficiencyByTime(double, double) Time Efficiency = Perfect Time / Actual Time (Higher the better) EvaluateEfficiencyByVolume() MaterialEfficiency = 1 - Waste Rate (Higher the better) GetCutCount() Get the total number of cuts. GetNewSubjectVolume() Get total volume of new timbers. GetRecycleRateVolume() Get the percentage of used timbers compare to initial timbers by volume. (Higher the better) GetSubjectInitVolume() Get the total volume of initial subjects. GetUsedSubjectVolume() Get the total volume of used subjects. GetWasteRateByVolume() Waste Rate = Waste Volume / Total Volume (Lower the better) GetWasteVolume() Get the total volume that is wasted (not used in the matching process)."
+  },
+  "api/TimberAssembly.Operation.html": {
+    "href": "api/TimberAssembly.Operation.html",
+    "title": "Namespace TimberAssembly.Operation | TimberAssembly",
+    "keywords": "Namespace TimberAssembly.Operation Classes Evaluate Evaluation of the matched results. Match Matching algorithm for timber assembly. Parser Parse json strings to objects."
+  },
+  "api/TimberAssembly.Operation.Match.-ctor.html": {
+    "href": "api/TimberAssembly.Operation.Match.-ctor.html",
+    "title": "Constructor Match | TimberAssembly",
+    "keywords": "Constructor Match | Improve this Doc View Source Match(List<Agent>, List<Agent>, double) Create a matching algorithm for timber assembly. Declaration public Match(List<Agent> targetAgents, List<Agent> subjectAgents, double tolerance = 0.01) Parameters Type Name Description List<Agent> targetAgents Target agents to be matched. Subject agent will be matched to target agents. List<Agent> subjectAgents Subject agents to be matched. double tolerance Tolerance for matching. This number cannot be smaller than the smallest dimension of the agents."
+  },
+  "api/TimberAssembly.Operation.Match.CutToTarget.html": {
+    "href": "api/TimberAssembly.Operation.Match.CutToTarget.html",
+    "title": "Method CutToTarget | TimberAssembly",
+    "keywords": "Method CutToTarget | Improve this Doc View Source CutToTarget(ref Remain) Cut the remainders to the target and create offcuts. (when target is smaller than subject) Declaration public List<Pair> CutToTarget(ref Remain remain) Parameters Type Name Description Remain remain Remainders Returns Type Description List<Pair> Resulted pairs"
+  },
+  "api/TimberAssembly.Operation.Match.DoubleMatch.html": {
+    "href": "api/TimberAssembly.Operation.Match.DoubleMatch.html",
+    "title": "Method DoubleMatch | TimberAssembly",
+    "keywords": "Method DoubleMatch | Improve this Doc View Source DoubleMatch(ref Remain) Two subjects from the remainders are combined to match one target. 1 dimensional matching. Declaration public List<Pair> DoubleMatch(ref Remain remains) Parameters Type Name Description Remain remains Output remainders Returns Type Description List<Pair> Resulted pairs"
+  },
+  "api/TimberAssembly.Operation.Match.ExactMatch.html": {
+    "href": "api/TimberAssembly.Operation.Match.ExactMatch.html",
+    "title": "Method ExactMatch | TimberAssembly",
+    "keywords": "Method ExactMatch | Improve this Doc View Source ExactMatch(ref Remain) One subject is exactly matched to one target. Declaration public List<Pair> ExactMatch(ref Remain remains) Parameters Type Name Description Remain remains Output remainders. This contains subject and targets that did not meet the condition of this method. Returns Type Description List<Pair> Resulted pairs"
+  },
+  "api/TimberAssembly.Operation.Match.ExtendToTarget.html": {
+    "href": "api/TimberAssembly.Operation.Match.ExtendToTarget.html",
+    "title": "Method ExtendToTarget | TimberAssembly",
+    "keywords": "Method ExtendToTarget | Improve this Doc View Source ExtendToTarget(ref Remain) Combining remainders with new subjects to match the targets. (when target is larger than target) Declaration public List<Pair> ExtendToTarget(ref Remain remain) Parameters Type Name Description Remain remain Remainders Returns Type Description List<Pair> Resulted pairs"
+  },
+  "api/TimberAssembly.Operation.Match.html": {
+    "href": "api/TimberAssembly.Operation.Match.html",
+    "title": "Class Match | TimberAssembly",
+    "keywords": "Class Match Matching algorithm for timber assembly. Inheritance object Match Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Operation Assembly: TimberAssembly.dll Syntax public class Match Constructors Name Description Match(List<Agent>, List<Agent>, double) Create a matching algorithm for timber assembly. Properties Name Description SubjectAgents Subject agents to be matched. TargetAgents Target agents to be matched. Subject agent will be matched to target agents. Tolerance Tolerance for matching. This number cannot be smaller than the smallest dimension of the agents. Methods Name Description CutToTarget(ref Remain) Cut the remainders to the target and create offcuts. (when target is smaller than subject) DoubleMatch(ref Remain) Two subjects from the remainders are combined to match one target. 1 dimensional matching. ExactMatch(ref Remain) One subject is exactly matched to one target. ExtendToTarget(ref Remain) Combining remainders with new subjects to match the targets. (when target is larger than target) RemainMatch(Remain) (DEPRECATED! Use ExtendToTarget Instead.) Match the rest of the targets with the rest of the subjects. Introduce offcuts if necessary. UniMatch(ref Remain) Four subjects from the remainders are combined to match one target regardless of orientations. WARNING: This method is slow! It is recommended to use after Double Match and Exact Match to reduce timber to match."
+  },
+  "api/TimberAssembly.Operation.Match.RemainMatch.html": {
+    "href": "api/TimberAssembly.Operation.Match.RemainMatch.html",
+    "title": "Method RemainMatch | TimberAssembly",
+    "keywords": "Method RemainMatch | Improve this Doc View Source RemainMatch(Remain) (DEPRECATED! Use ExtendToTarget Instead.) Match the rest of the targets with the rest of the subjects. Introduce offcuts if necessary. Declaration public List<Pair> RemainMatch(Remain remain) Parameters Type Name Description Remain remain Remainders Returns Type Description List<Pair> Resulted pairs"
+  },
+  "api/TimberAssembly.Operation.Match.SubjectAgents.html": {
+    "href": "api/TimberAssembly.Operation.Match.SubjectAgents.html",
+    "title": "Property SubjectAgents | TimberAssembly",
+    "keywords": "Property SubjectAgents | Improve this Doc View Source SubjectAgents Subject agents to be matched. Declaration public List<Agent> SubjectAgents { get; set; } Property Value Type Description List<Agent>"
+  },
+  "api/TimberAssembly.Operation.Match.TargetAgents.html": {
+    "href": "api/TimberAssembly.Operation.Match.TargetAgents.html",
+    "title": "Property TargetAgents | TimberAssembly",
+    "keywords": "Property TargetAgents | Improve this Doc View Source TargetAgents Target agents to be matched. Subject agent will be matched to target agents. Declaration public List<Agent> TargetAgents { get; set; } Property Value Type Description List<Agent>"
+  },
+  "api/TimberAssembly.Operation.Match.Tolerance.html": {
+    "href": "api/TimberAssembly.Operation.Match.Tolerance.html",
+    "title": "Property Tolerance | TimberAssembly",
+    "keywords": "Property Tolerance | Improve this Doc View Source Tolerance Tolerance for matching. This number cannot be smaller than the smallest dimension of the agents. Declaration public double Tolerance { get; set; } Property Value Type Description double"
+  },
+  "api/TimberAssembly.Operation.Match.UniMatch.html": {
+    "href": "api/TimberAssembly.Operation.Match.UniMatch.html",
+    "title": "Method UniMatch | TimberAssembly",
+    "keywords": "Method UniMatch | Improve this Doc View Source UniMatch(ref Remain) Four subjects from the remainders are combined to match one target regardless of orientations. WARNING: This method is slow! It is recommended to use after Double Match and Exact Match to reduce timber to match. Declaration public List<Pair> UniMatch(ref Remain remains) Parameters Type Name Description Remain remains Output remainders Returns Type Description List<Pair> Resulted pairs"
+  },
+  "api/TimberAssembly.Operation.Parser.DeserializeToAgents.html": {
+    "href": "api/TimberAssembly.Operation.Parser.DeserializeToAgents.html",
+    "title": "Method DeserializeToAgents | TimberAssembly",
+    "keywords": "Method DeserializeToAgents | Improve this Doc View Source DeserializeToAgents(List<string>) Convert a list of json strings to a list of agents. Declaration public static List<Agent> DeserializeToAgents(List<string> jsons) Parameters Type Name Description List<string> jsons Json strings Returns Type Description List<Agent> Converted list of agents"
+  },
+  "api/TimberAssembly.Operation.Parser.html": {
+    "href": "api/TimberAssembly.Operation.Parser.html",
+    "title": "Class Parser | TimberAssembly",
+    "keywords": "Class Parser Parse json strings to objects. Inheritance object Parser Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Operation Assembly: TimberAssembly.dll Syntax public static class Parser Methods Name Description DeserializeToAgents(List<string>) Convert a list of json strings to a list of agents. SerializeAgentPairs(List<Pair>, bool) Convert a list of pairs to a list of json strings. SerializeAgentRemains(Remain, bool) Convert remain to json string."
+  },
+  "api/TimberAssembly.Operation.Parser.SerializeAgentPairs.html": {
+    "href": "api/TimberAssembly.Operation.Parser.SerializeAgentPairs.html",
+    "title": "Method SerializeAgentPairs | TimberAssembly",
+    "keywords": "Method SerializeAgentPairs | Improve this Doc View Source SerializeAgentPairs(List<Pair>, bool) Convert a list of pairs to a list of json strings. Declaration public static List<string> SerializeAgentPairs(List<Pair> pairs, bool indent = false) Parameters Type Name Description List<Pair> pairs List of pairs bool indent Do you want to indent json string? Returns Type Description List<string> Converted json strings"
+  },
+  "api/TimberAssembly.Operation.Parser.SerializeAgentRemains.html": {
+    "href": "api/TimberAssembly.Operation.Parser.SerializeAgentRemains.html",
+    "title": "Method SerializeAgentRemains | TimberAssembly",
+    "keywords": "Method SerializeAgentRemains | Improve this Doc View Source SerializeAgentRemains(Remain, bool) Convert remain to json string. Declaration public static List<string> SerializeAgentRemains(Remain remains, bool indent = false) Parameters Type Name Description Remain remains Input remain object bool indent Returns Type Description List<string>"
+  },
+  "articles/get_started/quick_start.html": {
+    "href": "articles/get_started/quick_start.html",
+    "title": "Quick Start | TimberAssembly",
+    "keywords": "Quick Start Welcome to our quick start guide for constructing a basic, self-assembling timber frame structure using recycled timber with tools including ML-Agents and Rhino Grasshopper. This project demonstrates how to optimally utilize salvaged timber, reducing waste and promoting sustainability while employing advanced tools for architectural innovation. Setup Before we begin, please make sure you have completed the following steps: Setup Environment Setup Unity Setup Grasshopper Step 1: Collect, prepare and measure salvaged timbers Collect salvaged timber from a demolition site or warehouse. we recommend using timber with a rectangular cross-section. The timber should be measure to the nearest millimeter and labeled with a unique ID, this data should be recorded in .csv format. Step 2: Create a target structure Create a target structure in Grasshopper by using the Wall Frame.gh script located at ML-Assembly\\Rhino-Grasshopper\\_Scripts\\Wall Frame.gh. The script will generate a target structure (timber wall frame) with a given width, height. The script will also generate a window opening with a given width and height. The script will first output as a list of curve (length), it will then append height and width dimension for each timber and output as a list of timber IDs with their corresponding dimensions. Note you can also create your own target structure in Grasshopper by replacing the Target Frame Creation section in the Wall Frame.gh script with your own design. The output must be a list of curve (length)."
+  },
+  "articles/setup/setup_env.html": {
+    "href": "articles/setup/setup_env.html",
+    "title": "Setup Environment | TimberAssembly",
+    "keywords": "Setup Environment Pre-requisite To successfully run the project, you MUST to install the following: Windows OS python 3.9 Important: You have to install Python 3.9, any newer version or older version will not be compatable. CUDA Toolkit 11.8 .NET Framework 4.8 Rhino 7 Unity 2021.3.6f1+ Optional (for development): Visual Studio 2022 Github Desktop Note that the project only supports Windows OS. Clone the repository Clone the repository to your local machine by running following command in your terminal: git clone https://github.com/sean1832/ML-Assembly.git You can also use Github Desktop to clone the repository. Otherwise you can download the repository as a zip file and extract it to your local machine. (Note that you will need to download the zip file again if you want to update the repository.) Update the repository To update the repository, run the following command in your terminal: git pull You can also use Github Desktop to update the repository. Otherwise you can download the repository as a zip file. (Note that you will need to download the zip file again if you want to update the repository.) Next step Setup Unity Setup Grasshopper"
+  },
+  "articles/setup/setup_grasshopper.html": {
+    "href": "articles/setup/setup_grasshopper.html",
+    "title": "Setup Grasshopper | TimberAssembly",
+    "keywords": "Setup Grasshopper Pre-requisites grasshopper plugins Telepathy gHowl ScriptParasite jSwan Elefront Heteroptera Install TimberAssembly.dll Download the latest release of TimberAssembly.dll from here. It should be a .zip file containing TimberAssembly.dll and its dependencies. (Note that you will need to download the .dll again if you want to update it.) Extract the .zip file to a folder on your local machine. Open Rhino 7 and Grasshopper. In Grasshopper, open the grasshopper script Wall Frame.gh located at ML-Assembly\\Rhino-Grasshopper\\_Scripts\\Wall Frame.gh. Navigate to CompareDLL and EvaluationDLL components which both should be red. Right click on them. Select Manage Assemblies.... In the Manage Assemblies window, click on Add... and navigate to the folder where you extracted the .zip file. Select TimberAssembly.dll and click Open. Repeat step 6 for CompareDLL and EvaluationDLL components. At this point, the CompareDLL and EvaluationDLL components should be gray. If not, try restarting Rhino 7 and Grasshopper. Otherwise, please submit an issue here. Next steps Quick start"
+  },
+  "articles/setup/setup_unity.html": {
+    "href": "articles/setup/setup_unity.html",
+    "title": "Setup Unity | TimberAssembly",
+    "keywords": "Setup Unity Automatic install relevant python packages (Recommended) Navigate to ML-Assembly\\Timber-Assembly. Run setup.bat by double clicking on it. This will automatically install all the relevant python packages and their dependencies. It will also create a virtual environment called venv in the Timber-Assembly folder. If automatic installation fails, please try manual installation below and submit an issue here. Manual install relevant python packages Open a terminal and navigate to ML-Assembly\\Timber-Assembly. Create a virtual environment by running the following command: py -3.9 -m venv venv Activate the virtual environment by running the following command: venv\\Scripts\\activate Upgrade pip by running the following command: python -m pip install --upgrade pip Install pytorch by running the following command: pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117 Install ML Agent python package by running the following command: pip install mlagents Install onnx python package by running the following command: pip3 install onnx Downgrade protobuf to version 3.20 for stability by running the following command: pip install protobuf==3.20 Setup Unity project Open Unity Hub. Under Projects, click on Open. Navigate to ML-Assembly\\Timber-Assembly and click Select Folder. Unity will take a while to load the project for the first time. Next steps Setup Grasshopper"
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "TimberAssembly | TimberAssembly",
+    "keywords": "TimberAssembly Summary TimberAssembly is an innovative project that marries the power of Grasshopper and Unity to facilitate the generation of timber frame assemblies using reclaimed timber. This undertaking leans heavily on the capabilities of Unity's ML-Agent toolkit, employing a reinforcement learning agent to intelligently manipulate and modify a timber frame structure. The ultimate goal is to discover the optimal form that maximize the use of salvaged timber. The backbone of this project is a Grasshopper script, which serves a dual role. First, it is used to generate a target structure (timber frame) that the agent then learns from and interacts with. Second, it compares and evaluates the extent to which the generated structure utilizes salvaged timber in relation to the target structure. A set of metrics are implemented to gauge the success of each iteration - time efficiency, labour efficiency, material efficiency, the total volume of salvage timber used, and the volume of salvage timber left unused. These values are calculated into a final score that is fed back into Unity. The ML-Agent utilizes this feedback to observe, learn and adapt, receiving rewards or penalties based on the score value. TimberAssembly is developed by Zeke Zhang as part of his Casual Research Assistantship at RMIT University. Please note that the project is currently in its developmental stages and is not yet ready for production use. Roadmap Create documentation for end users and developers Create a universal match function, improve the quality of the match function Optimization Visualization of resulted timber frame assembly with salvaged timber. Visualization of the agent's learning process"
+  }
+}

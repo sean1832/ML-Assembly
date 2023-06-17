@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Setup Grasshopper | TimberAssembly </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Setup Grasshopper | TimberAssembly ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../../styles/config.css">
+      <link rel="stylesheet" href="../../styles/discord.css">
+      <link rel="stylesheet" href="../../styles/singulink.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+  
+  <meta property="docfx:rel" content="../../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../../index.html">
+              <img src="../../logo.svg" alt="TimberAssembly" class="logomark">
+              <span class="brand-title">TimberAssembly</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../../index.html">
+                          <img src="../../logo.svg" alt="TimberAssembly" class="logomark">
+                          <span class="brand-title">TimberAssembly</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  <strong>Developed by <a href='https://github.com/sean1832' style='color: lightblue !important;'>Zeke Zhang</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/sean1832/ML-Assembly/blob/main/Documentation/docfx/articles/setup/setup_grasshopper.md/#L1" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="">
+<h1 id="setup-grasshopper">Setup Grasshopper</h1>
+
+<h2 id="pre-requisites-grasshopper-plugins">Pre-requisites grasshopper plugins</h2>
+<ul>
+<li><a href="https://www.food4rhino.com/app/telepathy">Telepathy</a></li>
+<li><a href="https://www.food4rhino.com/app/ghowl">gHowl</a></li>
+<li><a href="https://www.food4rhino.com/app/scriptparasite">ScriptParasite</a></li>
+<li><a href="https://www.food4rhino.com/app/jswan">jSwan</a></li>
+<li><a href="https://www.food4rhino.com/app/elefront">Elefront</a></li>
+<li><a href="https://www.food4rhino.com/app/heteroptera">Heteroptera</a></li>
+</ul>
+<h2 id="install-timberassemblydll">Install <code>TimberAssembly.dll</code></h2>
+<ol>
+<li>Download the latest release of <code>TimberAssembly.dll</code> from <a href="https://github.com/sean1832/ML-Assembly/releases/latest">here</a>. It should be a .zip file containing <code>TimberAssembly.dll</code> and its dependencies. <em>(Note that you will need to download the .dll again if you want to update it.)</em></li>
+<li>Extract the .zip file to a folder on your local machine.</li>
+<li>Open Rhino 7 and Grasshopper.</li>
+<li>In Grasshopper, open the grasshopper script <code>Wall Frame.gh</code> located at <code>ML-Assembly\Rhino-Grasshopper\_Scripts\Wall Frame.gh</code>.</li>
+<li>Navigate to <code>CompareDLL</code> and <code>EvaluationDLL</code> components which both should be red. Right click on them. Select <code>Manage Assemblies...</code>.</li>
+</ol>
+<p><img src="../../Images/grasshopper-compare-eval.png" alt="image"></p>
+<ol>
+<li>In the <code>Manage Assemblies</code> window, click on <code>Add...</code> and navigate to the folder where you extracted the .zip file. Select <code>TimberAssembly.dll</code> and click <code>Open</code>.</li>
+<li>Repeat step 6 for <code>CompareDLL</code> and <code>EvaluationDLL</code> components.</li>
+</ol>
+<blockquote>
+<p>At this point, the <code>CompareDLL</code> and <code>EvaluationDLL</code> components should be gray. If not, try restarting Rhino 7 and Grasshopper. Otherwise, please submit an issue <a href="https://github.com/sean1832/ML-Assembly/issues">here</a>.</p>
+</blockquote>
+<h2 id="next-steps">Next steps</h2>
+<ul>
+<li><a href="../get_started/quick_start.html"><strong>Quick start</strong></a></li>
+</ul>
+</article>
+                </div>
+
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../../styles/docfx.js"></script>
+        <script type="text/javascript" src="../../styles/main.js"></script>
+        <script type="text/javascript" src="../../styles/singulink.js"></script>    </body>
+</html>
