@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Dimension.cs" />
+    <Compile Include="Entities\Vector3D.cs" />
     <Compile Include="Entities\Pair.cs" />
     <Compile Include="Entities\Remain.cs" />
     <Compile Include="Operation\Evaluate.cs" />

@@ -6,6 +6,9 @@ using TimberAssembly.Entities;
 
 namespace TimberAssembly.Helper
 {
+    /// <summary>
+    /// Calculate if agents are matched.
+    /// </summary>
     public class ComputeMatch
     {
         /// <summary>
@@ -17,9 +20,9 @@ namespace TimberAssembly.Helper
         /// <returns>True if matched, false if not</returns>
         public static bool IsAgentExactMatched(Agent agent1, Agent agent2, double tolerance = 0.1)
         {
-            bool matched = Math.Abs(agent1.Dimension.Length - agent2.Dimension.Length) < tolerance &&
-                           Math.Abs(agent1.Dimension.Width - agent2.Dimension.Width) < tolerance &&
-                           Math.Abs(agent1.Dimension.Height - agent2.Dimension.Height) < tolerance;
+            bool matched = Math.Abs(agent1.Dimension.X - agent2.Dimension.X) < tolerance &&
+                           Math.Abs(agent1.Dimension.Y - agent2.Dimension.Y) < tolerance &&
+                           Math.Abs(agent1.Dimension.Z - agent2.Dimension.Z) < tolerance;
             return matched;
         }
 
@@ -37,29 +40,29 @@ namespace TimberAssembly.Helper
             int differenceCount1 = 0;
             int differenceCount2 = 0;
 
-            if (Math.Abs(agent1.Dimension.Length - target.Dimension.Length) > tolerance)
+            if (Math.Abs(agent1.Dimension.X - target.Dimension.X) > tolerance)
                 differenceCount1++;
-            if (Math.Abs(agent1.Dimension.Height - target.Dimension.Height) > tolerance)
+            if (Math.Abs(agent1.Dimension.Z - target.Dimension.Z) > tolerance)
                 differenceCount1++;
-            if (Math.Abs(agent1.Dimension.Width - target.Dimension.Width) > tolerance)
+            if (Math.Abs(agent1.Dimension.Y - target.Dimension.Y) > tolerance)
                 differenceCount1++;
 
-            if (Math.Abs(agent2.Dimension.Length - target.Dimension.Length) > tolerance)
+            if (Math.Abs(agent2.Dimension.X - target.Dimension.X) > tolerance)
                 differenceCount2++;
-            if (Math.Abs(agent2.Dimension.Height - target.Dimension.Height) > tolerance)
+            if (Math.Abs(agent2.Dimension.Z - target.Dimension.Z) > tolerance)
                 differenceCount2++;
-            if (Math.Abs(agent2.Dimension.Width - target.Dimension.Width) > tolerance)
+            if (Math.Abs(agent2.Dimension.Y - target.Dimension.Y) > tolerance)
                 differenceCount2++;
 
             // Linear comparison only for now. This means there should be only one dimension difference.
             if (differenceCount1 > 1 || differenceCount2 > 1)
                 return false;
 
-            Dimension TargetAgent1Difference = Dimension.GetDifference(target.Dimension, agent1.Dimension);
-            Dimension TargetAgent2Difference = Dimension.GetDifference(target.Dimension, agent2.Dimension);
+            Vector3D TargetAgent1Difference = target.Dimension - agent1.Dimension;
+            Vector3D TargetAgent2Difference = target.Dimension - agent2.Dimension;
 
-            if (TargetAgent1Difference.IsAnySmallerThan(Dimension.Zero()) ||
-                TargetAgent2Difference.IsAnySmallerThan(Dimension.Zero()))
+            if (TargetAgent1Difference.IsAnySmaller(Vector3D.Zero()) ||
+                TargetAgent2Difference.IsAnySmaller(Vector3D.Zero()))
             {
                 return false;
             }
@@ -67,17 +70,17 @@ namespace TimberAssembly.Helper
             // check if two agents dimension (l,h,w) can be combined to match the target agent.
             int CombDifferentceCount = 0;
 
-            if (Math.Abs(agent1.Dimension.Length + agent2.Dimension.Length - target.Dimension.Length) < tolerance)
+            if (Math.Abs(agent1.Dimension.X + agent2.Dimension.X - target.Dimension.X) < tolerance)
             {
                 CombDifferentceCount++;
             }
 
-            if (Math.Abs(agent1.Dimension.Height + agent2.Dimension.Height - target.Dimension.Height) < tolerance)
+            if (Math.Abs(agent1.Dimension.Z + agent2.Dimension.Z - target.Dimension.Z) < tolerance)
             {
                 CombDifferentceCount++;
             }
 
-            if (Math.Abs(agent1.Dimension.Width + agent2.Dimension.Width - target.Dimension.Width) < tolerance)
+            if (Math.Abs(agent1.Dimension.Y + agent2.Dimension.Y - target.Dimension.Y) < tolerance)
             {
                 CombDifferentceCount++;
             }
@@ -96,7 +99,7 @@ namespace TimberAssembly.Helper
         /// <param name="target">Target agent</param>
         /// <param name="subjects">List of subject agent</param>
         /// <returns>Closest agent and its dimension</returns>
-        public static (Agent, Dimension) GetClosestAgent(Agent target, List<Agent> subjects)
+        public static (Agent, Vector3D) GetClosestAgent(Agent target, List<Agent> subjects)
         {
             double minDistance = double.MaxValue;
 
@@ -122,7 +125,7 @@ namespace TimberAssembly.Helper
                 return (null, null);
             }
             List<double> different = CreateDimensionDifferent(target.Dimension.ToList(), closestAgent.Dimension.ToList(), minDistance);
-            return (closestAgent, new Dimension(different));
+            return (closestAgent, new Vector3D(different));
         }
 
         private static double Distance(List<double> target, List<double> permutation)
@@ -199,7 +202,7 @@ namespace TimberAssembly.Helper
                 {
                     // Reduce the dimension of the subject by the size of the target's corresponding dimension.
                     tempBin[i] -= targetBinOpt[i];
-                    residuals.Add(new Agent($"Offcut{i} form {subject.Name}", new Dimension(tempBin[0], tempBin[1], tempBin[2]), 1));
+                    residuals.Add(new Agent($"Offcut{i} form {subject.Name}", new Vector3D(tempBin[0], tempBin[1], tempBin[2]), 1));
                     tempBin[i] = targetBinOpt[i];
                 }
             }
@@ -248,7 +251,7 @@ namespace TimberAssembly.Helper
                         {
                             // Reduce the dimension of the target by the size of the subject's corresponding dimension.
                             tempBin[i] -= subjectBin[i];
-                            combination.Add(new Agent(null, new Dimension(tempBin[0], tempBin[1], tempBin[2]), 1));
+                            combination.Add(new Agent(null, new Vector3D(tempBin[0], tempBin[1], tempBin[2]), 1));
                             tempBin[i] = subjectBin[i];
                         }
                         else if (tempBin[i] < subjectBin[i])
@@ -260,7 +263,7 @@ namespace TimberAssembly.Helper
                         {
                             // Reduce the dimension of the target by the size of the subject's corresponding dimension.
                             tempBin[i] = subjectBin[i];
-                            combination.Add(new Agent(null, new Dimension(tempBin[0], tempBin[1], tempBin[2]), 1));
+                            combination.Add(new Agent(null, new Vector3D(tempBin[0], tempBin[1], tempBin[2]), 1));
                         }
                     }
 
@@ -272,8 +275,5 @@ namespace TimberAssembly.Helper
             }
             return allAggregations;
         }
-
-
-
     }
 }

@@ -265,18 +265,18 @@ namespace TimberAssembly.Operation
             for (var i = 0; i < remainTargets.Count; i++)
             {
                 var target = remainTargets[i];
-                Dictionary<Agent, Dimension> potentialMatches = new Dictionary<Agent, Dimension>();
+                Dictionary<Agent, Vector3D> potentialMatches = new Dictionary<Agent, Vector3D>();
 
                 foreach (Agent salvage in remainSalvages)
                 {
-                    if (salvage.Dimension.IsAnyLargerThan(target.Dimension)) continue;
+                    if (salvage.Dimension.IsAnyGreater(target.Dimension)) continue;
 
-                    Dimension difference = Dimension.GetDifference(target.Dimension, salvage.Dimension);
+                    Vector3D difference = target.Dimension - salvage.Dimension;
                     difference.Absolute();
                     potentialMatches.Add(salvage, difference);
                 }
 
-                var sortedMatches = potentialMatches.OrderBy(x => x.Value.Length + x.Value.Width + x.Value.Height)
+                var sortedMatches = potentialMatches.OrderBy(x => x.Value.X + x.Value.Y + x.Value.Z)
                     .ToList();
 
                 // check if sortedMatches is empty
@@ -286,24 +286,24 @@ namespace TimberAssembly.Operation
                 }
 
                 Agent selectedSalvage = sortedMatches[0].Key;
-                Dimension remainingDimension = sortedMatches[0].Value;
+                Vector3D remainingVector3D = sortedMatches[0].Value;
 
                 // check if all dimensions have value, if not, assign the value from target
-                foreach (var prop in remainingDimension.GetType().GetProperties())
+                foreach (var prop in remainingVector3D.GetType().GetProperties())
                 {
-                    if ((double)prop.GetValue(remainingDimension) != 0) continue;
+                    if ((double)prop.GetValue(remainingVector3D) != 0) continue;
 
                     if (prop.Name == "Length")
                     {
-                        prop.SetValue(remainingDimension, target.Dimension.Length);
+                        prop.SetValue(remainingVector3D, target.Dimension.X);
                     }
                     else if (prop.Name == "Width")
                     {
-                        prop.SetValue(remainingDimension, target.Dimension.Width);
+                        prop.SetValue(remainingVector3D, target.Dimension.Y);
                     }
                     else if (prop.Name == "Height")
                     {
-                        prop.SetValue(remainingDimension, target.Dimension.Height);
+                        prop.SetValue(remainingVector3D, target.Dimension.Z);
                     }
                 }
 
@@ -316,7 +316,7 @@ namespace TimberAssembly.Operation
                         new Agent() 
                         {
                             Name = $"NewTimber{count:D2}",
-                            Dimension = remainingDimension
+                            Dimension = remainingVector3D
                         }
                     }
                 };
@@ -348,7 +348,7 @@ namespace TimberAssembly.Operation
             for (var i = 0; i < preRemainTargets.Count; i++)
             {
                 var target = preRemainTargets[i];
-                (Agent closestSubject, Dimension different) = ComputeMatch.GetClosestAgent(target, remainSubjects);
+                (Agent closestSubject, Vector3D different) = ComputeMatch.GetClosestAgent(target, remainSubjects);
                 if (closestSubject != null)
                 {
                     remainTargets.Remove(target);

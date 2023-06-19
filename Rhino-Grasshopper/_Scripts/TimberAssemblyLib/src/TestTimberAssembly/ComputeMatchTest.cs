@@ -19,17 +19,17 @@ namespace TestTimberAssembly
             _tolerance = 0.1;
             _target = new Agent
             {
-                Dimension = new Dimension(20, 10, 5)
+                Dimension = new Vector3D(20, 10, 5)
             };
 
             _agent1 = new Agent
             {
-                Dimension = new Dimension(20, 10, 2)
+                Dimension = new Vector3D(20, 10, 2)
             };
 
             _agent2 = new Agent
             {
-                Dimension = new Dimension(20, 10, 3)
+                Dimension = new Vector3D(20, 10, 3)
             };
         }
 
@@ -37,8 +37,8 @@ namespace TestTimberAssembly
         public void IsAgentExactMatched_ReturnsTrue_WhenDimensionsMatchWithinTolerance()
         {
             // Arrange
-            _agent1 = new Agent { Dimension = new Dimension(10, 10, 10)};
-            _agent2 = new Agent { Dimension = new Dimension(10.05, 9.95, 10)};
+            _agent1 = new Agent { Dimension = new Vector3D(10, 10, 10)};
+            _agent2 = new Agent { Dimension = new Vector3D(10.05, 9.95, 10)};
             var tolerance = 0.1;
 
             // Act
@@ -52,8 +52,8 @@ namespace TestTimberAssembly
         public void IsAgentExactMatched_ReturnsFalse_WhenDimensionsDoNotMatchWithinTolerance()
         {
             // Arrange
-            _agent1 = new Agent { Dimension = new Dimension(10, 10, 10)};
-            _agent2 = new Agent { Dimension = new Dimension(10.2, 9.8, 10)};
+            _agent1 = new Agent { Dimension = new Vector3D(10, 10, 10)};
+            _agent2 = new Agent { Dimension = new Vector3D(10.2, 9.8, 10)};
             var tolerance = 0.1;
 
             // Act
@@ -68,16 +68,16 @@ namespace TestTimberAssembly
         {
             _target = new Agent
             {
-                Dimension = new Dimension(20, 10, 5)
+                Dimension = new Vector3D(20, 10, 5)
             };
             _agent1 = new Agent
             {
-                Dimension = new Dimension(20, 5, 2)
+                Dimension = new Vector3D(20, 5, 2)
             };
 
             _agent2 = new Agent
             {
-                Dimension = new Dimension(20, 5, 3)
+                Dimension = new Vector3D(20, 5, 3)
             };
 
             var result = ComputeMatch.IsAgentDoubleMatched(_target, _agent1, _agent2, _tolerance);
@@ -91,17 +91,17 @@ namespace TestTimberAssembly
             // Arrange
             _target = new Agent
             {
-                Dimension = new Dimension(20, 10, 5)
+                Dimension = new Vector3D(20, 10, 5)
             };
 
             _agent1 = new Agent
             {
-                Dimension = new Dimension(20, 10, 2)
+                Dimension = new Vector3D(20, 10, 2)
             };
 
             _agent2 = new Agent
             {
-                Dimension = new Dimension(20, 10, 3)
+                Dimension = new Vector3D(20, 10, 3)
             };
 
             var result = ComputeMatch.IsAgentDoubleMatched(_target, _agent1, _agent2, _tolerance);
@@ -115,16 +115,16 @@ namespace TestTimberAssembly
             // Arrange
             _target = new Agent
             {
-                Dimension = new Dimension(20, 10, 2)
+                Dimension = new Vector3D(20, 10, 2)
             };
             _agent1 = new Agent
             {
-                Dimension = new Dimension(20, 10, 3)
+                Dimension = new Vector3D(20, 10, 3)
             };
 
             _agent2 = new Agent
             {
-                Dimension = new Dimension(20, 10, 8)
+                Dimension = new Vector3D(20, 10, 8)
             };
 
             // Act
@@ -139,12 +139,12 @@ namespace TestTimberAssembly
         {
             _agent1 = new Agent
             {
-                Dimension = new Dimension(15, 4, 4)
+                Dimension = new Vector3D(15, 4, 4)
             };
 
             _agent2 = new Agent
             {
-                Dimension = new Dimension(12, 6, 6)
+                Dimension = new Vector3D(12, 6, 6)
             };
 
             var result = ComputeMatch.IsAgentDoubleMatched(_target, _agent1, _agent2, _tolerance);
@@ -158,16 +158,16 @@ namespace TestTimberAssembly
             // Arrange
             _target = new Agent
             {
-                Dimension = new Dimension(20, 10, 8)
+                Dimension = new Vector3D(20, 10, 8)
             };
             _agent1 = new Agent
             {
-                Dimension = new Dimension(20, 10, 7)
+                Dimension = new Vector3D(20, 10, 7)
             };
 
             _agent2 = new Agent
             {
-                Dimension = new Dimension(20, 10, 7)
+                Dimension = new Vector3D(20, 10, 7)
             };
 
             // Act
@@ -182,12 +182,12 @@ namespace TestTimberAssembly
         {
             _agent1 = new Agent
             {
-                Dimension = new Dimension(20, 10, 4)
+                Dimension = new Vector3D(20, 10, 4)
             };
 
             _agent2 = new Agent
             {
-                Dimension = new Dimension(12, 6, 1)
+                Dimension = new Vector3D(12, 6, 1)
             };
 
             var result = ComputeMatch.IsAgentDoubleMatched(_target, _agent1, _agent2, _tolerance);
@@ -200,17 +200,17 @@ namespace TestTimberAssembly
         {
             var target = new Agent
             {
-                Dimension = new Dimension(12, 8, 9)
+                Dimension = new Vector3D(12, 8, 9)
             };
 
             var subject = new Agent
             {
-                Dimension = new Dimension(10, 5, 6)
+                Dimension = new Vector3D(10, 5, 6)
             };
 
             var result = ComputeMatch.CalculateAllAggregation(target, subject);
 
-            Assert.AreEqual(3, result.Count);
+            Assert.AreEqual(6, result.Count);
         }
     }
 }

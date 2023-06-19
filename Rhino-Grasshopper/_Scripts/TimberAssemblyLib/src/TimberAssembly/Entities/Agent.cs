@@ -22,16 +22,16 @@ namespace TimberAssembly.Entities
         /// <summary>
         /// Dimension of the agent
         /// </summary>
-        public Dimension Dimension { get; set; }
+        public Vector3D Dimension { get; set; }
 
         /// <summary>
         /// Create an agent
         /// </summary>
-        /// <param name="name">name of the agent</param>
-        /// <param name="dimension">How many times the agent has been trimmed</param>
-        /// <param name="trimmed">Is the agent newly introduced</param>
-        /// <param name="isNew">Dimension of the agent</param>
-        public Agent(string name = null, Dimension dimension = null, int trimmed = 0, bool isNew = false)
+        /// <param name="name">Name of the agent</param>
+        /// <param name="dimension">Dimension of the agent</param>
+        /// <param name="trimmed">How many times the agent has been trimmed</param>
+        /// <param name="isNew">Is the agent newly introduced</param>
+        public Agent(string name = null, Vector3D dimension = null, int trimmed = 0, bool isNew = false)
         {
             Name = name;
             Dimension = dimension;
@@ -40,7 +40,7 @@ namespace TimberAssembly.Entities
         }
 
         /// <summary>
-        /// Convert agent to string
+        /// Convert agent to string.
         /// </summary>
         public override string ToString()
         {
@@ -48,8 +48,9 @@ namespace TimberAssembly.Entities
         }
 
         /// <summary>
-        /// Get the volume of the agent
+        /// Get the volume of the agent.
         /// </summary>
+        /// <returns>Volume of the agent dimension</returns>
         public double Volume()
         {
             return Dimension.GetVolume();

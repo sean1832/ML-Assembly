@@ -20,32 +20,32 @@ namespace TestTimberAssembly
         {
             _targetAgents = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(1, 2, 3)),
-                new Agent(dimension : new Dimension(4, 5, 6)),
-                new Agent(dimension : new Dimension(7, 8, 9))
+                new Agent(dimension : new Vector3D(1, 2, 3)),
+                new Agent(dimension : new Vector3D(4, 5, 6)),
+                new Agent(dimension : new Vector3D(7, 8, 9))
             };
 
             _salvageAgents = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(3, 2, 1)),
-                new Agent(dimension : new Dimension(4.01, 5.05, 6)),
-                new Agent(dimension : new Dimension(7, 8, 9))
+                new Agent(dimension : new Vector3D(3, 2, 1)),
+                new Agent(dimension : new Vector3D(4.01, 5.05, 6)),
+                new Agent(dimension : new Vector3D(7, 8, 9))
             };
 
             
             // for second match
             _remainTargetAgents = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(5, 2, 3)),
-                new Agent(dimension : new Dimension(4, 5, 6)),
+                new Agent(dimension : new Vector3D(5, 2, 3)),
+                new Agent(dimension : new Vector3D(4, 5, 6)),
             };
 
             _remainSalvageAgents = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(3, 2, 3)),
-                new Agent(dimension : new Dimension(2, 2, 3)),
-                new Agent(dimension : new Dimension(2, 2, 4)),
-                new Agent(dimension : new Dimension(2, 3, 2))
+                new Agent(dimension : new Vector3D(3, 2, 3)),
+                new Agent(dimension : new Vector3D(2, 2, 3)),
+                new Agent(dimension : new Vector3D(2, 2, 4)),
+                new Agent(dimension : new Vector3D(2, 3, 2))
             };
 
             _remain = new Remain() { Targets = _remainTargetAgents, Subjects = _remainSalvageAgents };
@@ -137,12 +137,12 @@ namespace TestTimberAssembly
             Remain dummyRemain = new Remain();
             List<Agent> targets = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(5, 2, 3))
+                new Agent(dimension : new Vector3D(5, 2, 3))
             };
             List<Agent> salvages = new List<Agent>()
             {
-                new Agent(dimension:new Dimension(3, 2, 3)), 
-                new Agent(dimension : new Dimension(2, 2, 4))
+                new Agent(dimension:new Vector3D(3, 2, 3)), 
+                new Agent(dimension : new Vector3D(2, 2, 4))
             };
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
@@ -160,13 +160,13 @@ namespace TestTimberAssembly
             Remain dummyRemain = new Remain();
             List<Agent> targets = new List<Agent>()
             {
-                new Agent(dimension:new Dimension(5, 2, 3))
+                new Agent(dimension:new Vector3D(5, 2, 3))
             };
 
             List<Agent> salvages = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(3, 2, 3)),
-                new Agent(dimension:new Dimension(2, 2, 3))
+                new Agent(dimension : new Vector3D(3, 2, 3)),
+                new Agent(dimension:new Vector3D(2, 2, 3))
             };
             
             Remain remain =  new Remain(){ Targets = targets, Subjects = salvages };
@@ -185,13 +185,13 @@ namespace TestTimberAssembly
             Remain dummyRemain = new Remain();
             List<Agent> targets = new List<Agent>()
             {
-                new Agent(dimension:new Dimension(5, 2, 3))
+                new Agent(dimension:new Vector3D(5, 2, 3))
             };
 
             List<Agent> salvages = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(5, 2, 3)),
-                new Agent(dimension:new Dimension(5, 2, 3))
+                new Agent(dimension : new Vector3D(5, 2, 3)),
+                new Agent(dimension:new Vector3D(5, 2, 3))
             };
 
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
@@ -209,19 +209,19 @@ namespace TestTimberAssembly
             // Arrange
             List<Agent> targets = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(7, 8, 9)),
-                new Agent(dimension : new Dimension(6, 9, 8)),
-                new Agent(dimension : new Dimension(5, 2, 3)),
-                new Agent(dimension : new Dimension(8, 9, 10))
+                new Agent(dimension : new Vector3D(7, 8, 9)),
+                new Agent(dimension : new Vector3D(6, 9, 8)),
+                new Agent(dimension : new Vector3D(5, 2, 3)),
+                new Agent(dimension : new Vector3D(8, 9, 10))
             };
 
             List<Agent> salvages = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(5, 8, 9)),
-                new Agent(dimension:new Dimension(2, 8, 9)),
-                new Agent(dimension : new Dimension(3, 2, 3)),
-                new Agent(dimension : new Dimension(2, 2, 3)),
-                new Agent(dimension : new Dimension(9, 10, 15))
+                new Agent(dimension : new Vector3D(5, 8, 9)),
+                new Agent(dimension:new Vector3D(2, 8, 9)),
+                new Agent(dimension : new Vector3D(3, 2, 3)),
+                new Agent(dimension : new Vector3D(2, 2, 3)),
+                new Agent(dimension : new Vector3D(9, 10, 15))
             };
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
@@ -257,12 +257,12 @@ namespace TestTimberAssembly
             // Arrange
             List<Agent> targets = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(2, 2, 4))
+                new Agent(dimension : new Vector3D(2, 2, 4))
             };
 
             List<Agent> subjects = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(10, 4, 8))
+                new Agent(dimension : new Vector3D(10, 4, 8))
             };
             Remain remain = new Remain() { Targets = targets, Subjects = subjects };
 
@@ -275,17 +275,17 @@ namespace TestTimberAssembly
             Assert.That(result.Count == 1);
             Assert.AreEqual(3, remain.Subjects.Count);
 
-            Assert.AreEqual(8, remain.Subjects[0].Dimension.Length);
-            Assert.AreEqual(4, remain.Subjects[0].Dimension.Width);
-            Assert.AreEqual(8, remain.Subjects[0].Dimension.Height);
+            Assert.AreEqual(8, remain.Subjects[0].Dimension.X);
+            Assert.AreEqual(4, remain.Subjects[0].Dimension.Y);
+            Assert.AreEqual(8, remain.Subjects[0].Dimension.Z);
 
-            Assert.AreEqual(2, remain.Subjects[1].Dimension.Length);
-            Assert.AreEqual(2, remain.Subjects[1].Dimension.Width);
-            Assert.AreEqual(8, remain.Subjects[1].Dimension.Height);
+            Assert.AreEqual(2, remain.Subjects[1].Dimension.X);
+            Assert.AreEqual(2, remain.Subjects[1].Dimension.Y);
+            Assert.AreEqual(8, remain.Subjects[1].Dimension.Z);
 
-            Assert.AreEqual(2, remain.Subjects[2].Dimension.Length);
-            Assert.AreEqual(2, remain.Subjects[2].Dimension.Width);
-            Assert.AreEqual(4, remain.Subjects[2].Dimension.Height);
+            Assert.AreEqual(2, remain.Subjects[2].Dimension.X);
+            Assert.AreEqual(2, remain.Subjects[2].Dimension.Y);
+            Assert.AreEqual(4, remain.Subjects[2].Dimension.Z);
         }
 
         [Test]
@@ -294,15 +294,15 @@ namespace TestTimberAssembly
             // Arrange
             List<Agent> targets = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(2, 2, 6)),
-                new Agent(dimension : new Dimension(3, 5, 2))
+                new Agent(dimension : new Vector3D(2, 2, 6)),
+                new Agent(dimension : new Vector3D(3, 5, 2))
             };
 
             List<Agent> salvages = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(4, 4, 8)),
-                new Agent(dimension : new Dimension(2, 5, 6)),
-                new Agent(dimension : new Dimension(7, 4, 7))
+                new Agent(dimension : new Vector3D(4, 4, 8)),
+                new Agent(dimension : new Vector3D(2, 5, 6)),
+                new Agent(dimension : new Vector3D(7, 4, 7))
             };
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
             List<double> expectedTargets1 = new List<double>() { 2, 2, 6 };
@@ -331,15 +331,15 @@ namespace TestTimberAssembly
             // Arrange
             List<Agent> targets = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(2, 2, 6)),
-                new Agent(dimension : new Dimension(3, 5, 2))
+                new Agent(dimension : new Vector3D(2, 2, 6)),
+                new Agent(dimension : new Vector3D(3, 5, 2))
             };
 
             List<Agent> salvages = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(4, 4, 8)),
-                new Agent(dimension : new Dimension(2, 5, 6)),
-                new Agent(dimension : new Dimension(7, 4, 7))
+                new Agent(dimension : new Vector3D(4, 4, 8)),
+                new Agent(dimension : new Vector3D(2, 5, 6)),
+                new Agent(dimension : new Vector3D(7, 4, 7))
             };
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
@@ -361,12 +361,12 @@ namespace TestTimberAssembly
             // Arrange
             List<Agent> targets = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(8, 8, 9))
+                new Agent(dimension : new Vector3D(8, 8, 9))
             };
 
             List<Agent> salvages = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(4, 4, 7))
+                new Agent(dimension : new Vector3D(4, 4, 7))
             };
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
@@ -390,12 +390,12 @@ namespace TestTimberAssembly
             // Arrange
             List<Agent> targets = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(3, 7, 8))
+                new Agent(dimension : new Vector3D(3, 7, 8))
             };
 
             List<Agent> salvages = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(4, 4, 4))
+                new Agent(dimension : new Vector3D(4, 4, 4))
             };
             Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
             var match = new Match(_targetAgents, _salvageAgents, 0.01);
@@ -413,12 +413,12 @@ namespace TestTimberAssembly
             // Arrange
             List<Agent> targets = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(7, 9, 4))
+                new Agent(dimension : new Vector3D(7, 9, 4))
             };
 
             List<Agent> salvages = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(10, 4, 7))
+                new Agent(dimension : new Vector3D(10, 4, 7))
             };
             Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
             List<double> expected1 = new List<double>() { 7, 1, 4 };
@@ -439,17 +439,17 @@ namespace TestTimberAssembly
             // Arrange
             List<Agent> targets = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(5, 5, 5)),
-                new Agent(dimension : new Dimension(7, 9, 4)),
-                new Agent(dimension : new Dimension(10, 4, 7)),
-                new Agent(dimension : new Dimension(8, 15, 3))
+                new Agent(dimension : new Vector3D(5, 5, 5)),
+                new Agent(dimension : new Vector3D(7, 9, 4)),
+                new Agent(dimension : new Vector3D(10, 4, 7)),
+                new Agent(dimension : new Vector3D(8, 15, 3))
             };
 
             List<Agent> salvages = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(4, 4, 7)),
-                new Agent(dimension : new Dimension(7, 9, 2)),
-                new Agent(dimension : new Dimension(4, 5, 5))
+                new Agent(dimension : new Vector3D(4, 4, 7)),
+                new Agent(dimension : new Vector3D(7, 9, 2)),
+                new Agent(dimension : new Vector3D(4, 5, 5))
             };
             Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
             List<double> expected1 = new List<double>() { 5, 5, 1 };
@@ -485,12 +485,12 @@ namespace TestTimberAssembly
             // Arrange
             List<Agent> targets = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(3, 7, 8))
+                new Agent(dimension : new Vector3D(3, 7, 8))
             };
 
             List<Agent> salvages = new List<Agent>()
             {
-                new Agent(dimension : new Dimension(3, 5, 8))
+                new Agent(dimension : new Vector3D(3, 5, 8))
             };
             Remain previousRemains = new Remain() { Targets = targets, Subjects = salvages };
             var match = new Match(_targetAgents, _salvageAgents, 0.01);
