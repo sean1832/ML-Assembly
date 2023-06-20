@@ -239,7 +239,8 @@ namespace TimberAssembly.Helper
                 {
                     bool isOversize = false;
                     // Make a temporary copy of the target's dimensions.
-                    var tempBin = targetBin;
+                    var tempTargetBin = new List<double>(targetBin);
+                    var tempSubjectBin = new List<double>(subjectBin);
                     var combination = new List<Agent>();
 
                     // Iterate over three dimensions (width, height, and depth).
@@ -247,14 +248,14 @@ namespace TimberAssembly.Helper
                     {
                         // If a dimension of the target exceeds the corresponding dimension of the optimal
                         // orientation of the target, calculate the residual in that dimension.
-                        if (tempBin[i] > subjectBin[i])
+                        if (tempTargetBin[i] > tempSubjectBin[i])
                         {
                             // Reduce the dimension of the target by the size of the subject's corresponding dimension.
-                            tempBin[i] -= subjectBin[i];
-                            combination.Add(new Agent(null, new Vector3D(tempBin[0], tempBin[1], tempBin[2]), 1));
-                            tempBin[i] = subjectBin[i];
+                            tempTargetBin[i] -= tempSubjectBin[i];
+                            combination.Add(new Agent(null, new Vector3D(tempTargetBin[0], tempTargetBin[1], tempTargetBin[2]), 1));
+                            tempTargetBin[i] = tempSubjectBin[i];
                         }
-                        else if (tempBin[i] < subjectBin[i])
+                        else if (tempTargetBin[i] < tempSubjectBin[i])
                         {
                             isOversize = true;
                             break;
@@ -262,15 +263,17 @@ namespace TimberAssembly.Helper
                         else
                         {
                             // Reduce the dimension of the target by the size of the subject's corresponding dimension.
-                            tempBin[i] = subjectBin[i];
-                            combination.Add(new Agent(null, new Vector3D(tempBin[0], tempBin[1], tempBin[2]), 1));
+                            tempTargetBin[i] = tempSubjectBin[i];
+                            combination.Add(new Agent(null, new Vector3D(tempTargetBin[0], tempTargetBin[1], tempTargetBin[2]), 1));
                         }
                     }
 
                     if (isOversize) continue;
+                    // valid combination
                     aggregations.Add(combination);
                 }
 
+                if (aggregations.Count == 0) continue;
                 allAggregations.Add(aggregations);
             }
             return allAggregations;

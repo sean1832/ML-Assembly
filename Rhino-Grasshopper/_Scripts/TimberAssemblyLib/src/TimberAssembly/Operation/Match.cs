@@ -141,7 +141,12 @@ namespace TimberAssembly.Operation
             {
                 foreach (var salvage in remainSalvages)
                 {
-                    List<Agent> residuals = ComputeMatch.CalculateResiduals(target, salvage);
+                    var salvagePerm = Processor.Permutations(salvage.Dimension.ToList());
+
+                    // permutation of all aggregation orientation and trimmed order
+                    // to see if any of these matches subjects.
+                    List<List<List<Agent>>> allAggregations = ComputeMatch.CalculateAllAggregation(target, salvage);
+                    
                 }
             }
             throw new NotImplementedException();
