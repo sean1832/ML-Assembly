@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Vector3D
+ | TimberAssembly </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Vector3D
+ | TimberAssembly ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/discord.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../logo.svg" alt="TimberAssembly" class="logomark">
+              <span class="brand-title">TimberAssembly</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../logo.svg" alt="TimberAssembly" class="logomark">
+                          <span class="brand-title">TimberAssembly</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  <strong>Developed by <a href='https://github.com/sean1832' style='color: lightblue !important;'>Zeke Zhang</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/sean1832/ML-Assembly/new/main/apiSpec/new?filename=TimberAssembly_Entities_Vector3D.md&amp;value=---%0Auid%3A%20TimberAssembly.Entities.Vector3D%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="TimberAssembly.Entities.Vector3D">
+
+
+
+  <h1 id="TimberAssembly_Entities_Vector3D" data-uid="TimberAssembly.Entities.Vector3D" class="text-break">Class Vector3D
+</h1>
+  <div class="markdown level0 summary"><p>Representation of a 3D Vector.</p>
+<p>This structure is used throughout TimberAssembly to pass 3D Position, Dimension, Rotation and Scale around.</p>
+<p>It also contains functions for doing common vector operations.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">Vector3D</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="TimberAssembly.html">TimberAssembly</a>.<a class="xref" href="TimberAssembly.Entities.html">Entities</a></h6>
+  <h6><strong>Assembly</strong>: TimberAssembly.dll</h6>
+  <h5 id="TimberAssembly_Entities_Vector3D_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Vector3D</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D__ctor" data-uid="TimberAssembly.Entities.Vector3D.#ctor">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.-ctor.html#TimberAssembly_Entities_Vector3D__ctor">Vector3D()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Create a Vector3D</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D__ctor_System_Collections_Generic_List_System_Double__" data-uid="TimberAssembly.Entities.Vector3D.#ctor(System.Collections.Generic.List{System.Double})">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.-ctor.html#TimberAssembly_Entities_Vector3D__ctor_System_Collections_Generic_List_System_Double__">Vector3D(List&lt;double&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Create a Vector3D from a list of doubles. The list must have exactly 3 values.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D__ctor_System_Double_System_Double_System_Double_" data-uid="TimberAssembly.Entities.Vector3D.#ctor(System.Double,System.Double,System.Double)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.-ctor.html#TimberAssembly_Entities_Vector3D__ctor_System_Double_System_Double_System_Double_">Vector3D(double, double, double)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Create a Vector3D from it's x, y and z components.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_X" data-uid="TimberAssembly.Entities.Vector3D.X">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.X.html#TimberAssembly_Entities_Vector3D_X">X</a>
+        </td>
+        <td class="markdown level1 summary"><p>X component of the vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_Y" data-uid="TimberAssembly.Entities.Vector3D.Y">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.Y.html#TimberAssembly_Entities_Vector3D_Y">Y</a>
+        </td>
+        <td class="markdown level1 summary"><p>Y component of the vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_Z" data-uid="TimberAssembly.Entities.Vector3D.Z">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.Z.html#TimberAssembly_Entities_Vector3D_Z">Z</a>
+        </td>
+        <td class="markdown level1 summary"><p>Z component of the vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_Absolute" data-uid="TimberAssembly.Entities.Vector3D.Absolute">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.Absolute.html#TimberAssembly_Entities_Vector3D_Absolute">Absolute()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Get the absolute value of the Vectors, that means all values are positive.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_Equals_System_Object_" data-uid="TimberAssembly.Entities.Vector3D.Equals(System.Object)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.Equals.html#TimberAssembly_Entities_Vector3D_Equals_System_Object_">Equals(object)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Returns true if two vectors are approximately equal with tolerance of <code>1e-5</code>.</p>
+<p>Recommending using operator `==`.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_GetHashCode" data-uid="TimberAssembly.Entities.Vector3D.GetHashCode">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.GetHashCode.html#TimberAssembly_Entities_Vector3D_GetHashCode">GetHashCode()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Return a hash code of the Vector3D.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_GetSum_System_Collections_Generic_List_TimberAssembly_Entities_Vector3D__" data-uid="TimberAssembly.Entities.Vector3D.GetSum(System.Collections.Generic.List{TimberAssembly.Entities.Vector3D})">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.GetSum.html#TimberAssembly_Entities_Vector3D_GetSum_System_Collections_Generic_List_TimberAssembly_Entities_Vector3D__">GetSum(List&lt;Vector3D&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Get the sum of multiple Vector3D.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_GetVolume" data-uid="TimberAssembly.Entities.Vector3D.GetVolume">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.GetVolume.html#TimberAssembly_Entities_Vector3D_GetVolume">GetVolume()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Get the volume of the Vector3D. (x * y * z)</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_IsAnyGreater_System_Double_" data-uid="TimberAssembly.Entities.Vector3D.IsAnyGreater(System.Double)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.IsAnyGreater.html#TimberAssembly_Entities_Vector3D_IsAnyGreater_System_Double_">IsAnyGreater(double)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Check if ANY Vector is smaller than the given value.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_IsAnyGreater_TimberAssembly_Entities_Vector3D_" data-uid="TimberAssembly.Entities.Vector3D.IsAnyGreater(TimberAssembly.Entities.Vector3D)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.IsAnyGreater.html#TimberAssembly_Entities_Vector3D_IsAnyGreater_TimberAssembly_Entities_Vector3D_">IsAnyGreater(Vector3D)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Check if ANY Vector is smaller than the given Vector3D.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_IsAnyGreaterOrEqual_System_Double_" data-uid="TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual(System.Double)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual.html#TimberAssembly_Entities_Vector3D_IsAnyGreaterOrEqual_System_Double_">IsAnyGreaterOrEqual(double)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Check if ANY Vector is larger or equal to the given value.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_IsAnyGreaterOrEqual_TimberAssembly_Entities_Vector3D_" data-uid="TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual(TimberAssembly.Entities.Vector3D)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual.html#TimberAssembly_Entities_Vector3D_IsAnyGreaterOrEqual_TimberAssembly_Entities_Vector3D_">IsAnyGreaterOrEqual(Vector3D)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Check if ANY Vector is larger or equal to the given Vector3D.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_IsAnySmaller_System_Double_" data-uid="TimberAssembly.Entities.Vector3D.IsAnySmaller(System.Double)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.IsAnySmaller.html#TimberAssembly_Entities_Vector3D_IsAnySmaller_System_Double_">IsAnySmaller(double)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Check if ANY Vector is smaller than the given value.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_IsAnySmaller_TimberAssembly_Entities_Vector3D_" data-uid="TimberAssembly.Entities.Vector3D.IsAnySmaller(TimberAssembly.Entities.Vector3D)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.IsAnySmaller.html#TimberAssembly_Entities_Vector3D_IsAnySmaller_TimberAssembly_Entities_Vector3D_">IsAnySmaller(Vector3D)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Check if ANY Vector is smaller than the given Vector3D.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_IsAnySmallerOrEqual_System_Double_" data-uid="TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual(System.Double)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual.html#TimberAssembly_Entities_Vector3D_IsAnySmallerOrEqual_System_Double_">IsAnySmallerOrEqual(double)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Check if ANY Vector is smaller or equal to the given value.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_IsAnySmallerOrEqual_TimberAssembly_Entities_Vector3D_" data-uid="TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual(TimberAssembly.Entities.Vector3D)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual.html#TimberAssembly_Entities_Vector3D_IsAnySmallerOrEqual_TimberAssembly_Entities_Vector3D_">IsAnySmallerOrEqual(Vector3D)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Check if ANY Vector is smaller or equal to the given Vector3D</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_Max_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_" data-uid="TimberAssembly.Entities.Vector3D.Max(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.Max.html#TimberAssembly_Entities_Vector3D_Max_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_">Max(Vector3D, Vector3D)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Returns a vector that is made from the largest components of two vectors.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_Min_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_" data-uid="TimberAssembly.Entities.Vector3D.Min(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.Min.html#TimberAssembly_Entities_Vector3D_Min_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_">Min(Vector3D, Vector3D)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Returns a vector that is made from the smallest components of two vectors.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_ToArray" data-uid="TimberAssembly.Entities.Vector3D.ToArray">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.ToArray.html#TimberAssembly_Entities_Vector3D_ToArray">ToArray()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Convert Vector3D to array of doubles.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_ToList" data-uid="TimberAssembly.Entities.Vector3D.ToList">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.ToList.html#TimberAssembly_Entities_Vector3D_ToList">ToList()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Convert Vector3D to list of doubles.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_ToString" data-uid="TimberAssembly.Entities.Vector3D.ToString">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.ToString.html#TimberAssembly_Entities_Vector3D_ToString">ToString()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Convert Vector3D to string.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_Zero" data-uid="TimberAssembly.Entities.Vector3D.Zero">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.Zero.html#TimberAssembly_Entities_Vector3D_Zero">Zero()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Create a new Vector3D with all values set to zero.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_op_Addition_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_" data-uid="TimberAssembly.Entities.Vector3D.op_Addition(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.op_Addition.html#TimberAssembly_Entities_Vector3D_op_Addition_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_">operator +(Vector3D, Vector3D)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Adds two vectors.</p>
+<p>Adds each component of `a` to the corresponding component of `b`.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_op_Division_TimberAssembly_Entities_Vector3D_System_Double_" data-uid="TimberAssembly.Entities.Vector3D.op_Division(TimberAssembly.Entities.Vector3D,System.Double)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.op_Division.html#TimberAssembly_Entities_Vector3D_op_Division_TimberAssembly_Entities_Vector3D_System_Double_">operator /(Vector3D, double)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Divides a vector by a number.</p>
+<p>Divides each component of a by `a` number `b`.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_op_Equality_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_" data-uid="TimberAssembly.Entities.Vector3D.op_Equality(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.op_Equality.html#TimberAssembly_Entities_Vector3D_op_Equality_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_">operator ==(Vector3D, Vector3D)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Returns true if two vectors are approximately equal.</p>
+<p>To allow for double point inaccuracies, the two vectors are considered equal if the magnitude of their difference is less than `1e-5`.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_op_GreaterThan_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_" data-uid="TimberAssembly.Entities.Vector3D.op_GreaterThan(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.op_GreaterThan.html#TimberAssembly_Entities_Vector3D_op_GreaterThan_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_">operator &gt;(Vector3D, Vector3D)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Return true if the ALL component of vector <code>a</code> is greater than vector <code>b</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_op_GreaterThanOrEqual_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_" data-uid="TimberAssembly.Entities.Vector3D.op_GreaterThanOrEqual(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.op_GreaterThanOrEqual.html#TimberAssembly_Entities_Vector3D_op_GreaterThanOrEqual_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_">operator &gt;=(Vector3D, Vector3D)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Return true if the ALL component of vector <code>a</code> is greater than or equal to vector <code>b</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_op_Inequality_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_" data-uid="TimberAssembly.Entities.Vector3D.op_Inequality(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.op_Inequality.html#TimberAssembly_Entities_Vector3D_op_Inequality_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_">operator !=(Vector3D, Vector3D)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Returns true if two vectors are not approximately equal.</p>
+<p>To allow for double point inaccuracies, the two vectors are considered equal if the magnitude of their difference is less than 1e-5.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_op_LessThan_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_" data-uid="TimberAssembly.Entities.Vector3D.op_LessThan(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.op_LessThan.html#TimberAssembly_Entities_Vector3D_op_LessThan_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_">operator &lt;(Vector3D, Vector3D)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Return true if the ALL component of vector <code>a</code> is less than vector <code>b</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_op_LessThanOrEqual_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_" data-uid="TimberAssembly.Entities.Vector3D.op_LessThanOrEqual(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.op_LessThanOrEqual.html#TimberAssembly_Entities_Vector3D_op_LessThanOrEqual_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_">operator &lt;=(Vector3D, Vector3D)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Return true if the ALL component of vector <code>a</code> is less than or equal to vector <code>b</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_op_Multiply_TimberAssembly_Entities_Vector3D_System_Double_" data-uid="TimberAssembly.Entities.Vector3D.op_Multiply(TimberAssembly.Entities.Vector3D,System.Double)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.op_Multiply.html#TimberAssembly_Entities_Vector3D_op_Multiply_TimberAssembly_Entities_Vector3D_System_Double_">operator *(Vector3D, double)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Multiplies a vector by a number.</p>
+<p>Multiplies each component of a by `a` number `b`.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="TimberAssembly_Entities_Vector3D_op_Subtraction_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_" data-uid="TimberAssembly.Entities.Vector3D.op_Subtraction(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)">
+          <a class="xref" href="TimberAssembly.Entities.Vector3D.op_Subtraction.html#TimberAssembly_Entities_Vector3D_op_Subtraction_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_">operator -(Vector3D, Vector3D)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Subtracts a vector from another vector.</p>
+<p>Subtracts each component of `b` from each component of `a`.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+                </div>
+
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

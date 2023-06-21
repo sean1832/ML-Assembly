@@ -13,15 +13,15 @@ references:
   commentId: T:TimberAssembly.Entities.Agent
   fullName: TimberAssembly.Entities.Agent
   nameWithType: Agent
-- uid: TimberAssembly.Entities.Agent.#ctor(System.String,TimberAssembly.Entities.Dimension,System.Int32,System.Boolean)
-  name: Agent(string, Dimension, int, bool)
-  href: api/TimberAssembly.Entities.Agent.-ctor.html#TimberAssembly_Entities_Agent__ctor_System_String_TimberAssembly_Entities_Dimension_System_Int32_System_Boolean_
-  commentId: M:TimberAssembly.Entities.Agent.#ctor(System.String,TimberAssembly.Entities.Dimension,System.Int32,System.Boolean)
-  name.vb: New(String, Dimension, Integer, Boolean)
-  fullName: TimberAssembly.Entities.Agent.Agent(string, TimberAssembly.Entities.Dimension, int, bool)
-  fullName.vb: TimberAssembly.Entities.Agent.New(String, TimberAssembly.Entities.Dimension, Integer, Boolean)
-  nameWithType: Agent.Agent(string, Dimension, int, bool)
-  nameWithType.vb: Agent.New(String, Dimension, Integer, Boolean)
+- uid: TimberAssembly.Entities.Agent.#ctor(System.String,TimberAssembly.Entities.Vector3D,System.Int32,System.Boolean)
+  name: Agent(string, Vector3D, int, bool)
+  href: api/TimberAssembly.Entities.Agent.-ctor.html#TimberAssembly_Entities_Agent__ctor_System_String_TimberAssembly_Entities_Vector3D_System_Int32_System_Boolean_
+  commentId: M:TimberAssembly.Entities.Agent.#ctor(System.String,TimberAssembly.Entities.Vector3D,System.Int32,System.Boolean)
+  name.vb: New(String, Vector3D, Integer, Boolean)
+  fullName: TimberAssembly.Entities.Agent.Agent(string, TimberAssembly.Entities.Vector3D, int, bool)
+  fullName.vb: TimberAssembly.Entities.Agent.New(String, TimberAssembly.Entities.Vector3D, Integer, Boolean)
+  nameWithType: Agent.Agent(string, Vector3D, int, bool)
+  nameWithType.vb: Agent.New(String, Vector3D, Integer, Boolean)
 - uid: TimberAssembly.Entities.Agent.#ctor*
   name: Agent
   href: api/TimberAssembly.Entities.Agent.-ctor.html
@@ -103,312 +103,6 @@ references:
   commentId: Overload:TimberAssembly.Entities.Agent.Volume
   fullName: TimberAssembly.Entities.Agent.Volume
   nameWithType: Agent.Volume
-- uid: TimberAssembly.Entities.Dimension
-  name: Dimension
-  href: api/TimberAssembly.Entities.Dimension.html
-  commentId: T:TimberAssembly.Entities.Dimension
-  fullName: TimberAssembly.Entities.Dimension
-  nameWithType: Dimension
-- uid: TimberAssembly.Entities.Dimension.#ctor
-  name: Dimension()
-  href: api/TimberAssembly.Entities.Dimension.-ctor.html#TimberAssembly_Entities_Dimension__ctor
-  commentId: M:TimberAssembly.Entities.Dimension.#ctor
-  name.vb: New()
-  fullName: TimberAssembly.Entities.Dimension.Dimension()
-  fullName.vb: TimberAssembly.Entities.Dimension.New()
-  nameWithType: Dimension.Dimension()
-  nameWithType.vb: Dimension.New()
-- uid: TimberAssembly.Entities.Dimension.#ctor(System.Collections.Generic.List{System.Double})
-  name: Dimension(List<double>)
-  href: api/TimberAssembly.Entities.Dimension.-ctor.html#TimberAssembly_Entities_Dimension__ctor_System_Collections_Generic_List_System_Double__
-  commentId: M:TimberAssembly.Entities.Dimension.#ctor(System.Collections.Generic.List{System.Double})
-  name.vb: New(List(Of Double))
-  fullName: TimberAssembly.Entities.Dimension.Dimension(System.Collections.Generic.List<double>)
-  fullName.vb: TimberAssembly.Entities.Dimension.New(System.Collections.Generic.List(Of Double))
-  nameWithType: Dimension.Dimension(List<double>)
-  nameWithType.vb: Dimension.New(List(Of Double))
-- uid: TimberAssembly.Entities.Dimension.#ctor(System.Double,System.Double,System.Double)
-  name: Dimension(double, double, double)
-  href: api/TimberAssembly.Entities.Dimension.-ctor.html#TimberAssembly_Entities_Dimension__ctor_System_Double_System_Double_System_Double_
-  commentId: M:TimberAssembly.Entities.Dimension.#ctor(System.Double,System.Double,System.Double)
-  name.vb: New(Double, Double, Double)
-  fullName: TimberAssembly.Entities.Dimension.Dimension(double, double, double)
-  fullName.vb: TimberAssembly.Entities.Dimension.New(Double, Double, Double)
-  nameWithType: Dimension.Dimension(double, double, double)
-  nameWithType.vb: Dimension.New(Double, Double, Double)
-- uid: TimberAssembly.Entities.Dimension.#ctor*
-  name: Dimension
-  href: api/TimberAssembly.Entities.Dimension.-ctor.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.#ctor
-  name.vb: New
-  fullName: TimberAssembly.Entities.Dimension.Dimension
-  fullName.vb: TimberAssembly.Entities.Dimension.New
-  nameWithType: Dimension.Dimension
-  nameWithType.vb: Dimension.New
-- uid: TimberAssembly.Entities.Dimension.Absolute
-  name: Absolute()
-  href: api/TimberAssembly.Entities.Dimension.Absolute.html#TimberAssembly_Entities_Dimension_Absolute
-  commentId: M:TimberAssembly.Entities.Dimension.Absolute
-  fullName: TimberAssembly.Entities.Dimension.Absolute()
-  nameWithType: Dimension.Absolute()
-- uid: TimberAssembly.Entities.Dimension.Absolute*
-  name: Absolute
-  href: api/TimberAssembly.Entities.Dimension.Absolute.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.Absolute
-  fullName: TimberAssembly.Entities.Dimension.Absolute
-  nameWithType: Dimension.Absolute
-- uid: TimberAssembly.Entities.Dimension.Add(TimberAssembly.Entities.Dimension)
-  name: Add(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.Add.html#TimberAssembly_Entities_Dimension_Add_TimberAssembly_Entities_Dimension_
-  commentId: M:TimberAssembly.Entities.Dimension.Add(TimberAssembly.Entities.Dimension)
-  fullName: TimberAssembly.Entities.Dimension.Add(TimberAssembly.Entities.Dimension)
-  nameWithType: Dimension.Add(Dimension)
-- uid: TimberAssembly.Entities.Dimension.Add*
-  name: Add
-  href: api/TimberAssembly.Entities.Dimension.Add.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.Add
-  fullName: TimberAssembly.Entities.Dimension.Add
-  nameWithType: Dimension.Add
-- uid: TimberAssembly.Entities.Dimension.Equality(TimberAssembly.Entities.Dimension,System.Double)
-  name: Equality(Dimension, double)
-  href: api/TimberAssembly.Entities.Dimension.Equality.html#TimberAssembly_Entities_Dimension_Equality_TimberAssembly_Entities_Dimension_System_Double_
-  commentId: M:TimberAssembly.Entities.Dimension.Equality(TimberAssembly.Entities.Dimension,System.Double)
-  name.vb: Equality(Dimension, Double)
-  fullName: TimberAssembly.Entities.Dimension.Equality(TimberAssembly.Entities.Dimension, double)
-  fullName.vb: TimberAssembly.Entities.Dimension.Equality(TimberAssembly.Entities.Dimension, Double)
-  nameWithType: Dimension.Equality(Dimension, double)
-  nameWithType.vb: Dimension.Equality(Dimension, Double)
-- uid: TimberAssembly.Entities.Dimension.Equality*
-  name: Equality
-  href: api/TimberAssembly.Entities.Dimension.Equality.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.Equality
-  fullName: TimberAssembly.Entities.Dimension.Equality
-  nameWithType: Dimension.Equality
-- uid: TimberAssembly.Entities.Dimension.GetDifference(TimberAssembly.Entities.Dimension,TimberAssembly.Entities.Dimension)
-  name: GetDifference(Dimension, Dimension)
-  href: api/TimberAssembly.Entities.Dimension.GetDifference.html#TimberAssembly_Entities_Dimension_GetDifference_TimberAssembly_Entities_Dimension_TimberAssembly_Entities_Dimension_
-  commentId: M:TimberAssembly.Entities.Dimension.GetDifference(TimberAssembly.Entities.Dimension,TimberAssembly.Entities.Dimension)
-  fullName: TimberAssembly.Entities.Dimension.GetDifference(TimberAssembly.Entities.Dimension, TimberAssembly.Entities.Dimension)
-  nameWithType: Dimension.GetDifference(Dimension, Dimension)
-- uid: TimberAssembly.Entities.Dimension.GetDifference*
-  name: GetDifference
-  href: api/TimberAssembly.Entities.Dimension.GetDifference.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.GetDifference
-  fullName: TimberAssembly.Entities.Dimension.GetDifference
-  nameWithType: Dimension.GetDifference
-- uid: TimberAssembly.Entities.Dimension.GetSum(System.Collections.Generic.List{TimberAssembly.Entities.Dimension})
-  name: GetSum(List<Dimension>)
-  href: api/TimberAssembly.Entities.Dimension.GetSum.html#TimberAssembly_Entities_Dimension_GetSum_System_Collections_Generic_List_TimberAssembly_Entities_Dimension__
-  commentId: M:TimberAssembly.Entities.Dimension.GetSum(System.Collections.Generic.List{TimberAssembly.Entities.Dimension})
-  name.vb: GetSum(List(Of Dimension))
-  fullName: TimberAssembly.Entities.Dimension.GetSum(System.Collections.Generic.List<TimberAssembly.Entities.Dimension>)
-  fullName.vb: TimberAssembly.Entities.Dimension.GetSum(System.Collections.Generic.List(Of TimberAssembly.Entities.Dimension))
-  nameWithType: Dimension.GetSum(List<Dimension>)
-  nameWithType.vb: Dimension.GetSum(List(Of Dimension))
-- uid: TimberAssembly.Entities.Dimension.GetSum(TimberAssembly.Entities.Dimension,TimberAssembly.Entities.Dimension)
-  name: GetSum(Dimension, Dimension)
-  href: api/TimberAssembly.Entities.Dimension.GetSum.html#TimberAssembly_Entities_Dimension_GetSum_TimberAssembly_Entities_Dimension_TimberAssembly_Entities_Dimension_
-  commentId: M:TimberAssembly.Entities.Dimension.GetSum(TimberAssembly.Entities.Dimension,TimberAssembly.Entities.Dimension)
-  fullName: TimberAssembly.Entities.Dimension.GetSum(TimberAssembly.Entities.Dimension, TimberAssembly.Entities.Dimension)
-  nameWithType: Dimension.GetSum(Dimension, Dimension)
-- uid: TimberAssembly.Entities.Dimension.GetSum*
-  name: GetSum
-  href: api/TimberAssembly.Entities.Dimension.GetSum.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.GetSum
-  fullName: TimberAssembly.Entities.Dimension.GetSum
-  nameWithType: Dimension.GetSum
-- uid: TimberAssembly.Entities.Dimension.GetVolume
-  name: GetVolume()
-  href: api/TimberAssembly.Entities.Dimension.GetVolume.html#TimberAssembly_Entities_Dimension_GetVolume
-  commentId: M:TimberAssembly.Entities.Dimension.GetVolume
-  fullName: TimberAssembly.Entities.Dimension.GetVolume()
-  nameWithType: Dimension.GetVolume()
-- uid: TimberAssembly.Entities.Dimension.GetVolume*
-  name: GetVolume
-  href: api/TimberAssembly.Entities.Dimension.GetVolume.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.GetVolume
-  fullName: TimberAssembly.Entities.Dimension.GetVolume
-  nameWithType: Dimension.GetVolume
-- uid: TimberAssembly.Entities.Dimension.Height
-  name: Height
-  href: api/TimberAssembly.Entities.Dimension.Height.html#TimberAssembly_Entities_Dimension_Height
-  commentId: P:TimberAssembly.Entities.Dimension.Height
-  fullName: TimberAssembly.Entities.Dimension.Height
-  nameWithType: Dimension.Height
-- uid: TimberAssembly.Entities.Dimension.Height*
-  name: Height
-  href: api/TimberAssembly.Entities.Dimension.Height.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.Height
-  fullName: TimberAssembly.Entities.Dimension.Height
-  nameWithType: Dimension.Height
-- uid: TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan(TimberAssembly.Entities.Dimension)
-  name: IsAllLargerOrEqualThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan.html#TimberAssembly_Entities_Dimension_IsAllLargerOrEqualThan_TimberAssembly_Entities_Dimension_
-  commentId: M:TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan(TimberAssembly.Entities.Dimension)
-  fullName: TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan(TimberAssembly.Entities.Dimension)
-  nameWithType: Dimension.IsAllLargerOrEqualThan(Dimension)
-- uid: TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan*
-  name: IsAllLargerOrEqualThan
-  href: api/TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan
-  fullName: TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan
-  nameWithType: Dimension.IsAllLargerOrEqualThan
-- uid: TimberAssembly.Entities.Dimension.IsAllLargerThan(TimberAssembly.Entities.Dimension)
-  name: IsAllLargerThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.IsAllLargerThan.html#TimberAssembly_Entities_Dimension_IsAllLargerThan_TimberAssembly_Entities_Dimension_
-  commentId: M:TimberAssembly.Entities.Dimension.IsAllLargerThan(TimberAssembly.Entities.Dimension)
-  fullName: TimberAssembly.Entities.Dimension.IsAllLargerThan(TimberAssembly.Entities.Dimension)
-  nameWithType: Dimension.IsAllLargerThan(Dimension)
-- uid: TimberAssembly.Entities.Dimension.IsAllLargerThan*
-  name: IsAllLargerThan
-  href: api/TimberAssembly.Entities.Dimension.IsAllLargerThan.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.IsAllLargerThan
-  fullName: TimberAssembly.Entities.Dimension.IsAllLargerThan
-  nameWithType: Dimension.IsAllLargerThan
-- uid: TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan(TimberAssembly.Entities.Dimension)
-  name: IsAllSmallerOrEqualThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan.html#TimberAssembly_Entities_Dimension_IsAllSmallerOrEqualThan_TimberAssembly_Entities_Dimension_
-  commentId: M:TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan(TimberAssembly.Entities.Dimension)
-  fullName: TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan(TimberAssembly.Entities.Dimension)
-  nameWithType: Dimension.IsAllSmallerOrEqualThan(Dimension)
-- uid: TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan*
-  name: IsAllSmallerOrEqualThan
-  href: api/TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan
-  fullName: TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan
-  nameWithType: Dimension.IsAllSmallerOrEqualThan
-- uid: TimberAssembly.Entities.Dimension.IsAllSmallerThan(TimberAssembly.Entities.Dimension)
-  name: IsAllSmallerThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.IsAllSmallerThan.html#TimberAssembly_Entities_Dimension_IsAllSmallerThan_TimberAssembly_Entities_Dimension_
-  commentId: M:TimberAssembly.Entities.Dimension.IsAllSmallerThan(TimberAssembly.Entities.Dimension)
-  fullName: TimberAssembly.Entities.Dimension.IsAllSmallerThan(TimberAssembly.Entities.Dimension)
-  nameWithType: Dimension.IsAllSmallerThan(Dimension)
-- uid: TimberAssembly.Entities.Dimension.IsAllSmallerThan*
-  name: IsAllSmallerThan
-  href: api/TimberAssembly.Entities.Dimension.IsAllSmallerThan.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.IsAllSmallerThan
-  fullName: TimberAssembly.Entities.Dimension.IsAllSmallerThan
-  nameWithType: Dimension.IsAllSmallerThan
-- uid: TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan(TimberAssembly.Entities.Dimension)
-  name: IsAnyLargerOrEqualThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan.html#TimberAssembly_Entities_Dimension_IsAnyLargerOrEqualThan_TimberAssembly_Entities_Dimension_
-  commentId: M:TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan(TimberAssembly.Entities.Dimension)
-  fullName: TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan(TimberAssembly.Entities.Dimension)
-  nameWithType: Dimension.IsAnyLargerOrEqualThan(Dimension)
-- uid: TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan*
-  name: IsAnyLargerOrEqualThan
-  href: api/TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan
-  fullName: TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan
-  nameWithType: Dimension.IsAnyLargerOrEqualThan
-- uid: TimberAssembly.Entities.Dimension.IsAnyLargerThan(TimberAssembly.Entities.Dimension)
-  name: IsAnyLargerThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.IsAnyLargerThan.html#TimberAssembly_Entities_Dimension_IsAnyLargerThan_TimberAssembly_Entities_Dimension_
-  commentId: M:TimberAssembly.Entities.Dimension.IsAnyLargerThan(TimberAssembly.Entities.Dimension)
-  fullName: TimberAssembly.Entities.Dimension.IsAnyLargerThan(TimberAssembly.Entities.Dimension)
-  nameWithType: Dimension.IsAnyLargerThan(Dimension)
-- uid: TimberAssembly.Entities.Dimension.IsAnyLargerThan*
-  name: IsAnyLargerThan
-  href: api/TimberAssembly.Entities.Dimension.IsAnyLargerThan.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.IsAnyLargerThan
-  fullName: TimberAssembly.Entities.Dimension.IsAnyLargerThan
-  nameWithType: Dimension.IsAnyLargerThan
-- uid: TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan(TimberAssembly.Entities.Dimension)
-  name: IsAnySmallerOrEqualThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan.html#TimberAssembly_Entities_Dimension_IsAnySmallerOrEqualThan_TimberAssembly_Entities_Dimension_
-  commentId: M:TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan(TimberAssembly.Entities.Dimension)
-  fullName: TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan(TimberAssembly.Entities.Dimension)
-  nameWithType: Dimension.IsAnySmallerOrEqualThan(Dimension)
-- uid: TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan*
-  name: IsAnySmallerOrEqualThan
-  href: api/TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan
-  fullName: TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan
-  nameWithType: Dimension.IsAnySmallerOrEqualThan
-- uid: TimberAssembly.Entities.Dimension.IsAnySmallerThan(TimberAssembly.Entities.Dimension)
-  name: IsAnySmallerThan(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.IsAnySmallerThan.html#TimberAssembly_Entities_Dimension_IsAnySmallerThan_TimberAssembly_Entities_Dimension_
-  commentId: M:TimberAssembly.Entities.Dimension.IsAnySmallerThan(TimberAssembly.Entities.Dimension)
-  fullName: TimberAssembly.Entities.Dimension.IsAnySmallerThan(TimberAssembly.Entities.Dimension)
-  nameWithType: Dimension.IsAnySmallerThan(Dimension)
-- uid: TimberAssembly.Entities.Dimension.IsAnySmallerThan*
-  name: IsAnySmallerThan
-  href: api/TimberAssembly.Entities.Dimension.IsAnySmallerThan.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.IsAnySmallerThan
-  fullName: TimberAssembly.Entities.Dimension.IsAnySmallerThan
-  nameWithType: Dimension.IsAnySmallerThan
-- uid: TimberAssembly.Entities.Dimension.Length
-  name: Length
-  href: api/TimberAssembly.Entities.Dimension.Length.html#TimberAssembly_Entities_Dimension_Length
-  commentId: P:TimberAssembly.Entities.Dimension.Length
-  fullName: TimberAssembly.Entities.Dimension.Length
-  nameWithType: Dimension.Length
-- uid: TimberAssembly.Entities.Dimension.Length*
-  name: Length
-  href: api/TimberAssembly.Entities.Dimension.Length.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.Length
-  fullName: TimberAssembly.Entities.Dimension.Length
-  nameWithType: Dimension.Length
-- uid: TimberAssembly.Entities.Dimension.Subtract(TimberAssembly.Entities.Dimension)
-  name: Subtract(Dimension)
-  href: api/TimberAssembly.Entities.Dimension.Subtract.html#TimberAssembly_Entities_Dimension_Subtract_TimberAssembly_Entities_Dimension_
-  commentId: M:TimberAssembly.Entities.Dimension.Subtract(TimberAssembly.Entities.Dimension)
-  fullName: TimberAssembly.Entities.Dimension.Subtract(TimberAssembly.Entities.Dimension)
-  nameWithType: Dimension.Subtract(Dimension)
-- uid: TimberAssembly.Entities.Dimension.Subtract*
-  name: Subtract
-  href: api/TimberAssembly.Entities.Dimension.Subtract.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.Subtract
-  fullName: TimberAssembly.Entities.Dimension.Subtract
-  nameWithType: Dimension.Subtract
-- uid: TimberAssembly.Entities.Dimension.ToList
-  name: ToList()
-  href: api/TimberAssembly.Entities.Dimension.ToList.html#TimberAssembly_Entities_Dimension_ToList
-  commentId: M:TimberAssembly.Entities.Dimension.ToList
-  fullName: TimberAssembly.Entities.Dimension.ToList()
-  nameWithType: Dimension.ToList()
-- uid: TimberAssembly.Entities.Dimension.ToList*
-  name: ToList
-  href: api/TimberAssembly.Entities.Dimension.ToList.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.ToList
-  fullName: TimberAssembly.Entities.Dimension.ToList
-  nameWithType: Dimension.ToList
-- uid: TimberAssembly.Entities.Dimension.ToString
-  name: ToString()
-  href: api/TimberAssembly.Entities.Dimension.ToString.html#TimberAssembly_Entities_Dimension_ToString
-  commentId: M:TimberAssembly.Entities.Dimension.ToString
-  fullName: TimberAssembly.Entities.Dimension.ToString()
-  nameWithType: Dimension.ToString()
-- uid: TimberAssembly.Entities.Dimension.ToString*
-  name: ToString
-  href: api/TimberAssembly.Entities.Dimension.ToString.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.ToString
-  fullName: TimberAssembly.Entities.Dimension.ToString
-  nameWithType: Dimension.ToString
-- uid: TimberAssembly.Entities.Dimension.Width
-  name: Width
-  href: api/TimberAssembly.Entities.Dimension.Width.html#TimberAssembly_Entities_Dimension_Width
-  commentId: P:TimberAssembly.Entities.Dimension.Width
-  fullName: TimberAssembly.Entities.Dimension.Width
-  nameWithType: Dimension.Width
-- uid: TimberAssembly.Entities.Dimension.Width*
-  name: Width
-  href: api/TimberAssembly.Entities.Dimension.Width.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.Width
-  fullName: TimberAssembly.Entities.Dimension.Width
-  nameWithType: Dimension.Width
-- uid: TimberAssembly.Entities.Dimension.Zero
-  name: Zero()
-  href: api/TimberAssembly.Entities.Dimension.Zero.html#TimberAssembly_Entities_Dimension_Zero
-  commentId: M:TimberAssembly.Entities.Dimension.Zero
-  fullName: TimberAssembly.Entities.Dimension.Zero()
-  nameWithType: Dimension.Zero()
-- uid: TimberAssembly.Entities.Dimension.Zero*
-  name: Zero
-  href: api/TimberAssembly.Entities.Dimension.Zero.html
-  commentId: Overload:TimberAssembly.Entities.Dimension.Zero
-  fullName: TimberAssembly.Entities.Dimension.Zero
-  nameWithType: Dimension.Zero
 - uid: TimberAssembly.Entities.Pair
   name: Pair
   href: api/TimberAssembly.Entities.Pair.html
@@ -487,6 +181,486 @@ references:
   commentId: Overload:TimberAssembly.Entities.Remain.Targets
   fullName: TimberAssembly.Entities.Remain.Targets
   nameWithType: Remain.Targets
+- uid: TimberAssembly.Entities.Vector3D
+  name: Vector3D
+  href: api/TimberAssembly.Entities.Vector3D.html
+  commentId: T:TimberAssembly.Entities.Vector3D
+  fullName: TimberAssembly.Entities.Vector3D
+  nameWithType: Vector3D
+- uid: TimberAssembly.Entities.Vector3D.#ctor
+  name: Vector3D()
+  href: api/TimberAssembly.Entities.Vector3D.-ctor.html#TimberAssembly_Entities_Vector3D__ctor
+  commentId: M:TimberAssembly.Entities.Vector3D.#ctor
+  name.vb: New()
+  fullName: TimberAssembly.Entities.Vector3D.Vector3D()
+  fullName.vb: TimberAssembly.Entities.Vector3D.New()
+  nameWithType: Vector3D.Vector3D()
+  nameWithType.vb: Vector3D.New()
+- uid: TimberAssembly.Entities.Vector3D.#ctor(System.Collections.Generic.List{System.Double})
+  name: Vector3D(List<double>)
+  href: api/TimberAssembly.Entities.Vector3D.-ctor.html#TimberAssembly_Entities_Vector3D__ctor_System_Collections_Generic_List_System_Double__
+  commentId: M:TimberAssembly.Entities.Vector3D.#ctor(System.Collections.Generic.List{System.Double})
+  name.vb: New(List(Of Double))
+  fullName: TimberAssembly.Entities.Vector3D.Vector3D(System.Collections.Generic.List<double>)
+  fullName.vb: TimberAssembly.Entities.Vector3D.New(System.Collections.Generic.List(Of Double))
+  nameWithType: Vector3D.Vector3D(List<double>)
+  nameWithType.vb: Vector3D.New(List(Of Double))
+- uid: TimberAssembly.Entities.Vector3D.#ctor(System.Double,System.Double,System.Double)
+  name: Vector3D(double, double, double)
+  href: api/TimberAssembly.Entities.Vector3D.-ctor.html#TimberAssembly_Entities_Vector3D__ctor_System_Double_System_Double_System_Double_
+  commentId: M:TimberAssembly.Entities.Vector3D.#ctor(System.Double,System.Double,System.Double)
+  name.vb: New(Double, Double, Double)
+  fullName: TimberAssembly.Entities.Vector3D.Vector3D(double, double, double)
+  fullName.vb: TimberAssembly.Entities.Vector3D.New(Double, Double, Double)
+  nameWithType: Vector3D.Vector3D(double, double, double)
+  nameWithType.vb: Vector3D.New(Double, Double, Double)
+- uid: TimberAssembly.Entities.Vector3D.#ctor*
+  name: Vector3D
+  href: api/TimberAssembly.Entities.Vector3D.-ctor.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.#ctor
+  name.vb: New
+  fullName: TimberAssembly.Entities.Vector3D.Vector3D
+  fullName.vb: TimberAssembly.Entities.Vector3D.New
+  nameWithType: Vector3D.Vector3D
+  nameWithType.vb: Vector3D.New
+- uid: TimberAssembly.Entities.Vector3D.Absolute
+  name: Absolute()
+  href: api/TimberAssembly.Entities.Vector3D.Absolute.html#TimberAssembly_Entities_Vector3D_Absolute
+  commentId: M:TimberAssembly.Entities.Vector3D.Absolute
+  fullName: TimberAssembly.Entities.Vector3D.Absolute()
+  nameWithType: Vector3D.Absolute()
+- uid: TimberAssembly.Entities.Vector3D.Absolute*
+  name: Absolute
+  href: api/TimberAssembly.Entities.Vector3D.Absolute.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.Absolute
+  fullName: TimberAssembly.Entities.Vector3D.Absolute
+  nameWithType: Vector3D.Absolute
+- uid: TimberAssembly.Entities.Vector3D.Equals(System.Object)
+  name: Equals(object)
+  href: api/TimberAssembly.Entities.Vector3D.Equals.html#TimberAssembly_Entities_Vector3D_Equals_System_Object_
+  commentId: M:TimberAssembly.Entities.Vector3D.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: TimberAssembly.Entities.Vector3D.Equals(object)
+  fullName.vb: TimberAssembly.Entities.Vector3D.Equals(Object)
+  nameWithType: Vector3D.Equals(object)
+  nameWithType.vb: Vector3D.Equals(Object)
+- uid: TimberAssembly.Entities.Vector3D.Equals*
+  name: Equals
+  href: api/TimberAssembly.Entities.Vector3D.Equals.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.Equals
+  fullName: TimberAssembly.Entities.Vector3D.Equals
+  nameWithType: Vector3D.Equals
+- uid: TimberAssembly.Entities.Vector3D.GetHashCode
+  name: GetHashCode()
+  href: api/TimberAssembly.Entities.Vector3D.GetHashCode.html#TimberAssembly_Entities_Vector3D_GetHashCode
+  commentId: M:TimberAssembly.Entities.Vector3D.GetHashCode
+  fullName: TimberAssembly.Entities.Vector3D.GetHashCode()
+  nameWithType: Vector3D.GetHashCode()
+- uid: TimberAssembly.Entities.Vector3D.GetHashCode*
+  name: GetHashCode
+  href: api/TimberAssembly.Entities.Vector3D.GetHashCode.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.GetHashCode
+  fullName: TimberAssembly.Entities.Vector3D.GetHashCode
+  nameWithType: Vector3D.GetHashCode
+- uid: TimberAssembly.Entities.Vector3D.GetSum(System.Collections.Generic.List{TimberAssembly.Entities.Vector3D})
+  name: GetSum(List<Vector3D>)
+  href: api/TimberAssembly.Entities.Vector3D.GetSum.html#TimberAssembly_Entities_Vector3D_GetSum_System_Collections_Generic_List_TimberAssembly_Entities_Vector3D__
+  commentId: M:TimberAssembly.Entities.Vector3D.GetSum(System.Collections.Generic.List{TimberAssembly.Entities.Vector3D})
+  name.vb: GetSum(List(Of Vector3D))
+  fullName: TimberAssembly.Entities.Vector3D.GetSum(System.Collections.Generic.List<TimberAssembly.Entities.Vector3D>)
+  fullName.vb: TimberAssembly.Entities.Vector3D.GetSum(System.Collections.Generic.List(Of TimberAssembly.Entities.Vector3D))
+  nameWithType: Vector3D.GetSum(List<Vector3D>)
+  nameWithType.vb: Vector3D.GetSum(List(Of Vector3D))
+- uid: TimberAssembly.Entities.Vector3D.GetSum*
+  name: GetSum
+  href: api/TimberAssembly.Entities.Vector3D.GetSum.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.GetSum
+  fullName: TimberAssembly.Entities.Vector3D.GetSum
+  nameWithType: Vector3D.GetSum
+- uid: TimberAssembly.Entities.Vector3D.GetVolume
+  name: GetVolume()
+  href: api/TimberAssembly.Entities.Vector3D.GetVolume.html#TimberAssembly_Entities_Vector3D_GetVolume
+  commentId: M:TimberAssembly.Entities.Vector3D.GetVolume
+  fullName: TimberAssembly.Entities.Vector3D.GetVolume()
+  nameWithType: Vector3D.GetVolume()
+- uid: TimberAssembly.Entities.Vector3D.GetVolume*
+  name: GetVolume
+  href: api/TimberAssembly.Entities.Vector3D.GetVolume.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.GetVolume
+  fullName: TimberAssembly.Entities.Vector3D.GetVolume
+  nameWithType: Vector3D.GetVolume
+- uid: TimberAssembly.Entities.Vector3D.IsAnyGreater(System.Double)
+  name: IsAnyGreater(double)
+  href: api/TimberAssembly.Entities.Vector3D.IsAnyGreater.html#TimberAssembly_Entities_Vector3D_IsAnyGreater_System_Double_
+  commentId: M:TimberAssembly.Entities.Vector3D.IsAnyGreater(System.Double)
+  name.vb: IsAnyGreater(Double)
+  fullName: TimberAssembly.Entities.Vector3D.IsAnyGreater(double)
+  fullName.vb: TimberAssembly.Entities.Vector3D.IsAnyGreater(Double)
+  nameWithType: Vector3D.IsAnyGreater(double)
+  nameWithType.vb: Vector3D.IsAnyGreater(Double)
+- uid: TimberAssembly.Entities.Vector3D.IsAnyGreater(TimberAssembly.Entities.Vector3D)
+  name: IsAnyGreater(Vector3D)
+  href: api/TimberAssembly.Entities.Vector3D.IsAnyGreater.html#TimberAssembly_Entities_Vector3D_IsAnyGreater_TimberAssembly_Entities_Vector3D_
+  commentId: M:TimberAssembly.Entities.Vector3D.IsAnyGreater(TimberAssembly.Entities.Vector3D)
+  fullName: TimberAssembly.Entities.Vector3D.IsAnyGreater(TimberAssembly.Entities.Vector3D)
+  nameWithType: Vector3D.IsAnyGreater(Vector3D)
+- uid: TimberAssembly.Entities.Vector3D.IsAnyGreater*
+  name: IsAnyGreater
+  href: api/TimberAssembly.Entities.Vector3D.IsAnyGreater.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.IsAnyGreater
+  fullName: TimberAssembly.Entities.Vector3D.IsAnyGreater
+  nameWithType: Vector3D.IsAnyGreater
+- uid: TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual(System.Double)
+  name: IsAnyGreaterOrEqual(double)
+  href: api/TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual.html#TimberAssembly_Entities_Vector3D_IsAnyGreaterOrEqual_System_Double_
+  commentId: M:TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual(System.Double)
+  name.vb: IsAnyGreaterOrEqual(Double)
+  fullName: TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual(double)
+  fullName.vb: TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual(Double)
+  nameWithType: Vector3D.IsAnyGreaterOrEqual(double)
+  nameWithType.vb: Vector3D.IsAnyGreaterOrEqual(Double)
+- uid: TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual(TimberAssembly.Entities.Vector3D)
+  name: IsAnyGreaterOrEqual(Vector3D)
+  href: api/TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual.html#TimberAssembly_Entities_Vector3D_IsAnyGreaterOrEqual_TimberAssembly_Entities_Vector3D_
+  commentId: M:TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual(TimberAssembly.Entities.Vector3D)
+  fullName: TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual(TimberAssembly.Entities.Vector3D)
+  nameWithType: Vector3D.IsAnyGreaterOrEqual(Vector3D)
+- uid: TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual*
+  name: IsAnyGreaterOrEqual
+  href: api/TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual
+  fullName: TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual
+  nameWithType: Vector3D.IsAnyGreaterOrEqual
+- uid: TimberAssembly.Entities.Vector3D.IsAnySmaller(System.Double)
+  name: IsAnySmaller(double)
+  href: api/TimberAssembly.Entities.Vector3D.IsAnySmaller.html#TimberAssembly_Entities_Vector3D_IsAnySmaller_System_Double_
+  commentId: M:TimberAssembly.Entities.Vector3D.IsAnySmaller(System.Double)
+  name.vb: IsAnySmaller(Double)
+  fullName: TimberAssembly.Entities.Vector3D.IsAnySmaller(double)
+  fullName.vb: TimberAssembly.Entities.Vector3D.IsAnySmaller(Double)
+  nameWithType: Vector3D.IsAnySmaller(double)
+  nameWithType.vb: Vector3D.IsAnySmaller(Double)
+- uid: TimberAssembly.Entities.Vector3D.IsAnySmaller(TimberAssembly.Entities.Vector3D)
+  name: IsAnySmaller(Vector3D)
+  href: api/TimberAssembly.Entities.Vector3D.IsAnySmaller.html#TimberAssembly_Entities_Vector3D_IsAnySmaller_TimberAssembly_Entities_Vector3D_
+  commentId: M:TimberAssembly.Entities.Vector3D.IsAnySmaller(TimberAssembly.Entities.Vector3D)
+  fullName: TimberAssembly.Entities.Vector3D.IsAnySmaller(TimberAssembly.Entities.Vector3D)
+  nameWithType: Vector3D.IsAnySmaller(Vector3D)
+- uid: TimberAssembly.Entities.Vector3D.IsAnySmaller*
+  name: IsAnySmaller
+  href: api/TimberAssembly.Entities.Vector3D.IsAnySmaller.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.IsAnySmaller
+  fullName: TimberAssembly.Entities.Vector3D.IsAnySmaller
+  nameWithType: Vector3D.IsAnySmaller
+- uid: TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual(System.Double)
+  name: IsAnySmallerOrEqual(double)
+  href: api/TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual.html#TimberAssembly_Entities_Vector3D_IsAnySmallerOrEqual_System_Double_
+  commentId: M:TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual(System.Double)
+  name.vb: IsAnySmallerOrEqual(Double)
+  fullName: TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual(double)
+  fullName.vb: TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual(Double)
+  nameWithType: Vector3D.IsAnySmallerOrEqual(double)
+  nameWithType.vb: Vector3D.IsAnySmallerOrEqual(Double)
+- uid: TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual(TimberAssembly.Entities.Vector3D)
+  name: IsAnySmallerOrEqual(Vector3D)
+  href: api/TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual.html#TimberAssembly_Entities_Vector3D_IsAnySmallerOrEqual_TimberAssembly_Entities_Vector3D_
+  commentId: M:TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual(TimberAssembly.Entities.Vector3D)
+  fullName: TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual(TimberAssembly.Entities.Vector3D)
+  nameWithType: Vector3D.IsAnySmallerOrEqual(Vector3D)
+- uid: TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual*
+  name: IsAnySmallerOrEqual
+  href: api/TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual
+  fullName: TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual
+  nameWithType: Vector3D.IsAnySmallerOrEqual
+- uid: TimberAssembly.Entities.Vector3D.Max(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name: Max(Vector3D, Vector3D)
+  href: api/TimberAssembly.Entities.Vector3D.Max.html#TimberAssembly_Entities_Vector3D_Max_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_
+  commentId: M:TimberAssembly.Entities.Vector3D.Max(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  fullName: TimberAssembly.Entities.Vector3D.Max(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  nameWithType: Vector3D.Max(Vector3D, Vector3D)
+- uid: TimberAssembly.Entities.Vector3D.Max*
+  name: Max
+  href: api/TimberAssembly.Entities.Vector3D.Max.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.Max
+  fullName: TimberAssembly.Entities.Vector3D.Max
+  nameWithType: Vector3D.Max
+- uid: TimberAssembly.Entities.Vector3D.Min(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name: Min(Vector3D, Vector3D)
+  href: api/TimberAssembly.Entities.Vector3D.Min.html#TimberAssembly_Entities_Vector3D_Min_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_
+  commentId: M:TimberAssembly.Entities.Vector3D.Min(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  fullName: TimberAssembly.Entities.Vector3D.Min(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  nameWithType: Vector3D.Min(Vector3D, Vector3D)
+- uid: TimberAssembly.Entities.Vector3D.Min*
+  name: Min
+  href: api/TimberAssembly.Entities.Vector3D.Min.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.Min
+  fullName: TimberAssembly.Entities.Vector3D.Min
+  nameWithType: Vector3D.Min
+- uid: TimberAssembly.Entities.Vector3D.op_Addition(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name: operator +(Vector3D, Vector3D)
+  href: api/TimberAssembly.Entities.Vector3D.op_Addition.html#TimberAssembly_Entities_Vector3D_op_Addition_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_
+  commentId: M:TimberAssembly.Entities.Vector3D.op_Addition(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name.vb: +(Vector3D, Vector3D)
+  fullName: TimberAssembly.Entities.Vector3D.operator +(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  fullName.vb: TimberAssembly.Entities.Vector3D.+(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  nameWithType: Vector3D.operator +(Vector3D, Vector3D)
+  nameWithType.vb: Vector3D.+(Vector3D, Vector3D)
+- uid: TimberAssembly.Entities.Vector3D.op_Addition*
+  name: operator +
+  href: api/TimberAssembly.Entities.Vector3D.op_Addition.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.op_Addition
+  name.vb: +
+  fullName: TimberAssembly.Entities.Vector3D.operator +
+  fullName.vb: TimberAssembly.Entities.Vector3D.+
+  nameWithType: Vector3D.operator +
+  nameWithType.vb: Vector3D.+
+- uid: TimberAssembly.Entities.Vector3D.op_Division(TimberAssembly.Entities.Vector3D,System.Double)
+  name: operator /(Vector3D, double)
+  href: api/TimberAssembly.Entities.Vector3D.op_Division.html#TimberAssembly_Entities_Vector3D_op_Division_TimberAssembly_Entities_Vector3D_System_Double_
+  commentId: M:TimberAssembly.Entities.Vector3D.op_Division(TimberAssembly.Entities.Vector3D,System.Double)
+  name.vb: /(Vector3D, Double)
+  fullName: TimberAssembly.Entities.Vector3D.operator /(TimberAssembly.Entities.Vector3D, double)
+  fullName.vb: TimberAssembly.Entities.Vector3D./(TimberAssembly.Entities.Vector3D, Double)
+  nameWithType: Vector3D.operator /(Vector3D, double)
+  nameWithType.vb: Vector3D./(Vector3D, Double)
+- uid: TimberAssembly.Entities.Vector3D.op_Division*
+  name: operator /
+  href: api/TimberAssembly.Entities.Vector3D.op_Division.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.op_Division
+  name.vb: /
+  fullName: TimberAssembly.Entities.Vector3D.operator /
+  fullName.vb: TimberAssembly.Entities.Vector3D./
+  nameWithType: Vector3D.operator /
+  nameWithType.vb: Vector3D./
+- uid: TimberAssembly.Entities.Vector3D.op_Equality(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name: operator ==(Vector3D, Vector3D)
+  href: api/TimberAssembly.Entities.Vector3D.op_Equality.html#TimberAssembly_Entities_Vector3D_op_Equality_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_
+  commentId: M:TimberAssembly.Entities.Vector3D.op_Equality(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name.vb: =(Vector3D, Vector3D)
+  fullName: TimberAssembly.Entities.Vector3D.operator ==(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  fullName.vb: TimberAssembly.Entities.Vector3D.=(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  nameWithType: Vector3D.operator ==(Vector3D, Vector3D)
+  nameWithType.vb: Vector3D.=(Vector3D, Vector3D)
+- uid: TimberAssembly.Entities.Vector3D.op_Equality*
+  name: operator ==
+  href: api/TimberAssembly.Entities.Vector3D.op_Equality.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.op_Equality
+  name.vb: =
+  fullName: TimberAssembly.Entities.Vector3D.operator ==
+  fullName.vb: TimberAssembly.Entities.Vector3D.=
+  nameWithType: Vector3D.operator ==
+  nameWithType.vb: Vector3D.=
+- uid: TimberAssembly.Entities.Vector3D.op_GreaterThan(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name: operator >(Vector3D, Vector3D)
+  href: api/TimberAssembly.Entities.Vector3D.op_GreaterThan.html#TimberAssembly_Entities_Vector3D_op_GreaterThan_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_
+  commentId: M:TimberAssembly.Entities.Vector3D.op_GreaterThan(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name.vb: '>(Vector3D, Vector3D)'
+  fullName: TimberAssembly.Entities.Vector3D.operator >(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  fullName.vb: TimberAssembly.Entities.Vector3D.>(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  nameWithType: Vector3D.operator >(Vector3D, Vector3D)
+  nameWithType.vb: Vector3D.>(Vector3D, Vector3D)
+- uid: TimberAssembly.Entities.Vector3D.op_GreaterThan*
+  name: operator >
+  href: api/TimberAssembly.Entities.Vector3D.op_GreaterThan.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.op_GreaterThan
+  name.vb: '>'
+  fullName: TimberAssembly.Entities.Vector3D.operator >
+  fullName.vb: TimberAssembly.Entities.Vector3D.>
+  nameWithType: Vector3D.operator >
+  nameWithType.vb: Vector3D.>
+- uid: TimberAssembly.Entities.Vector3D.op_GreaterThanOrEqual(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name: operator >=(Vector3D, Vector3D)
+  href: api/TimberAssembly.Entities.Vector3D.op_GreaterThanOrEqual.html#TimberAssembly_Entities_Vector3D_op_GreaterThanOrEqual_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_
+  commentId: M:TimberAssembly.Entities.Vector3D.op_GreaterThanOrEqual(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name.vb: '>=(Vector3D, Vector3D)'
+  fullName: TimberAssembly.Entities.Vector3D.operator >=(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  fullName.vb: TimberAssembly.Entities.Vector3D.>=(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  nameWithType: Vector3D.operator >=(Vector3D, Vector3D)
+  nameWithType.vb: Vector3D.>=(Vector3D, Vector3D)
+- uid: TimberAssembly.Entities.Vector3D.op_GreaterThanOrEqual*
+  name: operator >=
+  href: api/TimberAssembly.Entities.Vector3D.op_GreaterThanOrEqual.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.op_GreaterThanOrEqual
+  name.vb: '>='
+  fullName: TimberAssembly.Entities.Vector3D.operator >=
+  fullName.vb: TimberAssembly.Entities.Vector3D.>=
+  nameWithType: Vector3D.operator >=
+  nameWithType.vb: Vector3D.>=
+- uid: TimberAssembly.Entities.Vector3D.op_Inequality(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name: operator !=(Vector3D, Vector3D)
+  href: api/TimberAssembly.Entities.Vector3D.op_Inequality.html#TimberAssembly_Entities_Vector3D_op_Inequality_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_
+  commentId: M:TimberAssembly.Entities.Vector3D.op_Inequality(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name.vb: <>(Vector3D, Vector3D)
+  fullName: TimberAssembly.Entities.Vector3D.operator !=(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  fullName.vb: TimberAssembly.Entities.Vector3D.<>(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  nameWithType: Vector3D.operator !=(Vector3D, Vector3D)
+  nameWithType.vb: Vector3D.<>(Vector3D, Vector3D)
+- uid: TimberAssembly.Entities.Vector3D.op_Inequality*
+  name: operator !=
+  href: api/TimberAssembly.Entities.Vector3D.op_Inequality.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.op_Inequality
+  name.vb: <>
+  fullName: TimberAssembly.Entities.Vector3D.operator !=
+  fullName.vb: TimberAssembly.Entities.Vector3D.<>
+  nameWithType: Vector3D.operator !=
+  nameWithType.vb: Vector3D.<>
+- uid: TimberAssembly.Entities.Vector3D.op_LessThan(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name: operator <(Vector3D, Vector3D)
+  href: api/TimberAssembly.Entities.Vector3D.op_LessThan.html#TimberAssembly_Entities_Vector3D_op_LessThan_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_
+  commentId: M:TimberAssembly.Entities.Vector3D.op_LessThan(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name.vb: <(Vector3D, Vector3D)
+  fullName: TimberAssembly.Entities.Vector3D.operator <(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  fullName.vb: TimberAssembly.Entities.Vector3D.<(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  nameWithType: Vector3D.operator <(Vector3D, Vector3D)
+  nameWithType.vb: Vector3D.<(Vector3D, Vector3D)
+- uid: TimberAssembly.Entities.Vector3D.op_LessThan*
+  name: operator <
+  href: api/TimberAssembly.Entities.Vector3D.op_LessThan.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.op_LessThan
+  name.vb: <
+  fullName: TimberAssembly.Entities.Vector3D.operator <
+  fullName.vb: TimberAssembly.Entities.Vector3D.<
+  nameWithType: Vector3D.operator <
+  nameWithType.vb: Vector3D.<
+- uid: TimberAssembly.Entities.Vector3D.op_LessThanOrEqual(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name: operator <=(Vector3D, Vector3D)
+  href: api/TimberAssembly.Entities.Vector3D.op_LessThanOrEqual.html#TimberAssembly_Entities_Vector3D_op_LessThanOrEqual_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_
+  commentId: M:TimberAssembly.Entities.Vector3D.op_LessThanOrEqual(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name.vb: <=(Vector3D, Vector3D)
+  fullName: TimberAssembly.Entities.Vector3D.operator <=(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  fullName.vb: TimberAssembly.Entities.Vector3D.<=(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  nameWithType: Vector3D.operator <=(Vector3D, Vector3D)
+  nameWithType.vb: Vector3D.<=(Vector3D, Vector3D)
+- uid: TimberAssembly.Entities.Vector3D.op_LessThanOrEqual*
+  name: operator <=
+  href: api/TimberAssembly.Entities.Vector3D.op_LessThanOrEqual.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.op_LessThanOrEqual
+  name.vb: <=
+  fullName: TimberAssembly.Entities.Vector3D.operator <=
+  fullName.vb: TimberAssembly.Entities.Vector3D.<=
+  nameWithType: Vector3D.operator <=
+  nameWithType.vb: Vector3D.<=
+- uid: TimberAssembly.Entities.Vector3D.op_Multiply(TimberAssembly.Entities.Vector3D,System.Double)
+  name: operator *(Vector3D, double)
+  href: api/TimberAssembly.Entities.Vector3D.op_Multiply.html#TimberAssembly_Entities_Vector3D_op_Multiply_TimberAssembly_Entities_Vector3D_System_Double_
+  commentId: M:TimberAssembly.Entities.Vector3D.op_Multiply(TimberAssembly.Entities.Vector3D,System.Double)
+  name.vb: '*(Vector3D, Double)'
+  fullName: TimberAssembly.Entities.Vector3D.operator *(TimberAssembly.Entities.Vector3D, double)
+  fullName.vb: TimberAssembly.Entities.Vector3D.*(TimberAssembly.Entities.Vector3D, Double)
+  nameWithType: Vector3D.operator *(Vector3D, double)
+  nameWithType.vb: Vector3D.*(Vector3D, Double)
+- uid: TimberAssembly.Entities.Vector3D.op_Multiply*
+  name: operator *
+  href: api/TimberAssembly.Entities.Vector3D.op_Multiply.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.op_Multiply
+  name.vb: '*'
+  fullName: TimberAssembly.Entities.Vector3D.operator *
+  fullName.vb: TimberAssembly.Entities.Vector3D.*
+  nameWithType: Vector3D.operator *
+  nameWithType.vb: Vector3D.*
+- uid: TimberAssembly.Entities.Vector3D.op_Subtraction(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name: operator -(Vector3D, Vector3D)
+  href: api/TimberAssembly.Entities.Vector3D.op_Subtraction.html#TimberAssembly_Entities_Vector3D_op_Subtraction_TimberAssembly_Entities_Vector3D_TimberAssembly_Entities_Vector3D_
+  commentId: M:TimberAssembly.Entities.Vector3D.op_Subtraction(TimberAssembly.Entities.Vector3D,TimberAssembly.Entities.Vector3D)
+  name.vb: -(Vector3D, Vector3D)
+  fullName: TimberAssembly.Entities.Vector3D.operator -(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  fullName.vb: TimberAssembly.Entities.Vector3D.-(TimberAssembly.Entities.Vector3D, TimberAssembly.Entities.Vector3D)
+  nameWithType: Vector3D.operator -(Vector3D, Vector3D)
+  nameWithType.vb: Vector3D.-(Vector3D, Vector3D)
+- uid: TimberAssembly.Entities.Vector3D.op_Subtraction*
+  name: operator -
+  href: api/TimberAssembly.Entities.Vector3D.op_Subtraction.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.op_Subtraction
+  name.vb: '-'
+  fullName: TimberAssembly.Entities.Vector3D.operator -
+  fullName.vb: TimberAssembly.Entities.Vector3D.-
+  nameWithType: Vector3D.operator -
+  nameWithType.vb: Vector3D.-
+- uid: TimberAssembly.Entities.Vector3D.ToArray
+  name: ToArray()
+  href: api/TimberAssembly.Entities.Vector3D.ToArray.html#TimberAssembly_Entities_Vector3D_ToArray
+  commentId: M:TimberAssembly.Entities.Vector3D.ToArray
+  fullName: TimberAssembly.Entities.Vector3D.ToArray()
+  nameWithType: Vector3D.ToArray()
+- uid: TimberAssembly.Entities.Vector3D.ToArray*
+  name: ToArray
+  href: api/TimberAssembly.Entities.Vector3D.ToArray.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.ToArray
+  fullName: TimberAssembly.Entities.Vector3D.ToArray
+  nameWithType: Vector3D.ToArray
+- uid: TimberAssembly.Entities.Vector3D.ToList
+  name: ToList()
+  href: api/TimberAssembly.Entities.Vector3D.ToList.html#TimberAssembly_Entities_Vector3D_ToList
+  commentId: M:TimberAssembly.Entities.Vector3D.ToList
+  fullName: TimberAssembly.Entities.Vector3D.ToList()
+  nameWithType: Vector3D.ToList()
+- uid: TimberAssembly.Entities.Vector3D.ToList*
+  name: ToList
+  href: api/TimberAssembly.Entities.Vector3D.ToList.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.ToList
+  fullName: TimberAssembly.Entities.Vector3D.ToList
+  nameWithType: Vector3D.ToList
+- uid: TimberAssembly.Entities.Vector3D.ToString
+  name: ToString()
+  href: api/TimberAssembly.Entities.Vector3D.ToString.html#TimberAssembly_Entities_Vector3D_ToString
+  commentId: M:TimberAssembly.Entities.Vector3D.ToString
+  fullName: TimberAssembly.Entities.Vector3D.ToString()
+  nameWithType: Vector3D.ToString()
+- uid: TimberAssembly.Entities.Vector3D.ToString*
+  name: ToString
+  href: api/TimberAssembly.Entities.Vector3D.ToString.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.ToString
+  fullName: TimberAssembly.Entities.Vector3D.ToString
+  nameWithType: Vector3D.ToString
+- uid: TimberAssembly.Entities.Vector3D.X
+  name: X
+  href: api/TimberAssembly.Entities.Vector3D.X.html#TimberAssembly_Entities_Vector3D_X
+  commentId: P:TimberAssembly.Entities.Vector3D.X
+  fullName: TimberAssembly.Entities.Vector3D.X
+  nameWithType: Vector3D.X
+- uid: TimberAssembly.Entities.Vector3D.X*
+  name: X
+  href: api/TimberAssembly.Entities.Vector3D.X.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.X
+  fullName: TimberAssembly.Entities.Vector3D.X
+  nameWithType: Vector3D.X
+- uid: TimberAssembly.Entities.Vector3D.Y
+  name: Y
+  href: api/TimberAssembly.Entities.Vector3D.Y.html#TimberAssembly_Entities_Vector3D_Y
+  commentId: P:TimberAssembly.Entities.Vector3D.Y
+  fullName: TimberAssembly.Entities.Vector3D.Y
+  nameWithType: Vector3D.Y
+- uid: TimberAssembly.Entities.Vector3D.Y*
+  name: Y
+  href: api/TimberAssembly.Entities.Vector3D.Y.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.Y
+  fullName: TimberAssembly.Entities.Vector3D.Y
+  nameWithType: Vector3D.Y
+- uid: TimberAssembly.Entities.Vector3D.Z
+  name: Z
+  href: api/TimberAssembly.Entities.Vector3D.Z.html#TimberAssembly_Entities_Vector3D_Z
+  commentId: P:TimberAssembly.Entities.Vector3D.Z
+  fullName: TimberAssembly.Entities.Vector3D.Z
+  nameWithType: Vector3D.Z
+- uid: TimberAssembly.Entities.Vector3D.Z*
+  name: Z
+  href: api/TimberAssembly.Entities.Vector3D.Z.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.Z
+  fullName: TimberAssembly.Entities.Vector3D.Z
+  nameWithType: Vector3D.Z
+- uid: TimberAssembly.Entities.Vector3D.Zero
+  name: Zero()
+  href: api/TimberAssembly.Entities.Vector3D.Zero.html#TimberAssembly_Entities_Vector3D_Zero
+  commentId: M:TimberAssembly.Entities.Vector3D.Zero
+  fullName: TimberAssembly.Entities.Vector3D.Zero()
+  nameWithType: Vector3D.Zero()
+- uid: TimberAssembly.Entities.Vector3D.Zero*
+  name: Zero
+  href: api/TimberAssembly.Entities.Vector3D.Zero.html
+  commentId: Overload:TimberAssembly.Entities.Vector3D.Zero
+  fullName: TimberAssembly.Entities.Vector3D.Zero
+  nameWithType: Vector3D.Zero
 - uid: TimberAssembly.Helper
   name: TimberAssembly.Helper
   href: api/TimberAssembly.Helper.html

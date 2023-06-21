@@ -5,10 +5,10 @@
     <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Method Equality
+      <title>Method Equals
  | TimberAssembly </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Method Equality
+      <meta name="title" content="Method Equals
  | TimberAssembly ">
       <meta name="generator" content="docfx ">
   
@@ -94,33 +94,34 @@
                         </div>
 
                          <div id="contribution">
-                               <a href="https://github.com/sean1832/ML-Assembly/new/main/apiSpec/new?filename=TimberAssembly_Entities_Dimension_Equality_.md&amp;value=---%0Auid%3A%20TimberAssembly.Entities.Dimension.Equality*%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                               <a href="https://github.com/sean1832/ML-Assembly/new/main/apiSpec/new?filename=TimberAssembly_Entities_Vector3D_Equals_.md&amp;value=---%0Auid%3A%20TimberAssembly.Entities.Vector3D.Equals*%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                          </div>
 
-                    <article class="content wrap" id="_content" data-uid="TimberAssembly.Entities.Dimension.Equality*">
+                    <article class="content wrap" id="_content" data-uid="TimberAssembly.Entities.Vector3D.Equals*">
 
 
 
-<h1 id="TimberAssembly_Entities_Dimension_Equality_" data-uid="TimberAssembly.Entities.Dimension.Equality*">Method Equality
+<h1 id="TimberAssembly_Entities_Vector3D_Equals_" data-uid="TimberAssembly.Entities.Vector3D.Equals*">Method Equals
 </h1>
 <div class="markdown level0 summary"></div>
 <div class="markdown level0 conceptual"></div>
 
 <span class="small pull-right mobile-hide">
   <span class="divider">|</span>
-  <a href="https://github.com/sean1832/ML-Assembly/new/main/apiSpec/new?filename=TimberAssembly_Entities_Dimension_Equality_TimberAssembly_Entities_Dimension_System_Double_.md&amp;value=---%0Auid%3A%20TimberAssembly.Entities.Dimension.Equality(TimberAssembly.Entities.Dimension%2CSystem.Double)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  <a href="https://github.com/sean1832/ML-Assembly/new/main/apiSpec/new?filename=TimberAssembly_Entities_Vector3D_Equals_System_Object_.md&amp;value=---%0Auid%3A%20TimberAssembly.Entities.Vector3D.Equals(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
 </span>
 <span class="small pull-right mobile-hide">
-  <a href="https://github.com/sean1832/ML-Assembly/blob/main/Rhino-Grasshopper/_Scripts/TimberAssemblyLib/src/TimberAssembly/Entities/Dimension.cs/#L183">View Source</a>
+  <a href="https://github.com/sean1832/ML-Assembly/blob/main/Rhino-Grasshopper/_Scripts/TimberAssemblyLib/src/TimberAssembly/Entities/Vector3D.cs/#L219">View Source</a>
 </span>
-<a id="TimberAssembly_Entities_Dimension_Equality_" data-uid="TimberAssembly.Entities.Dimension.Equality*"></a>
-<h4 id="TimberAssembly_Entities_Dimension_Equality_TimberAssembly_Entities_Dimension_System_Double_" data-uid="TimberAssembly.Entities.Dimension.Equality(TimberAssembly.Entities.Dimension,System.Double)">Equality(Dimension, double)</h4>
-<div class="markdown level1 summary"><p>Check if ALL dimensions are equal to the given dimension</p>
+<a id="TimberAssembly_Entities_Vector3D_Equals_" data-uid="TimberAssembly.Entities.Vector3D.Equals*"></a>
+<h4 id="TimberAssembly_Entities_Vector3D_Equals_System_Object_" data-uid="TimberAssembly.Entities.Vector3D.Equals(System.Object)">Equals(object)</h4>
+<div class="markdown level1 summary"><p>Returns true if two vectors are approximately equal with tolerance of <code>1e-5</code>.</p>
+<p>Recommending using operator `==`.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <h5 class="declaration">Declaration</h5>
 <div class="codewrapper">
-  <pre><code class="lang-csharp hljs">public bool Equality(Dimension dimension, double tolerance = 0.01)</code></pre>
+  <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
 <table class="table table-bordered table-condensed">
@@ -133,16 +134,9 @@
   </thead>
   <tbody>
     <tr>
-      <td><a class="xref" href="TimberAssembly.Entities.Dimension.html">Dimension</a></td>
-      <td><span class="parametername">dimension</span></td>
-      <td><p>Input dimension to compare with</p>
-</td>
-    </tr>
-    <tr>
-      <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
-      <td><span class="parametername">tolerance</span></td>
-      <td><p>This number cannot be larger than the smallest dimension out of the two</p>
-</td>
+      <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+      <td><span class="parametername">obj</span></td>
+      <td></td>
     </tr>
   </tbody>
 </table>
@@ -157,11 +151,12 @@
   <tbody>
     <tr>
       <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-      <td><p>Comparison result</p>
-</td>
+      <td></td>
     </tr>
   </tbody>
 </table>
+<h5 class="overrides">Overrides</h5>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a></div>
 </article>
                 </div>
 

@@ -133,236 +133,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.Length.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.Width.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.Height.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.-ctor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.ToList.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.ToString.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAnyLargerThan.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAnySmallerThan.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAllLargerThan.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAllSmallerThan.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.Equality.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.Absolute.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.GetVolume.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.Subtract.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.Add.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.Zero.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.GetSum.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.GetDifference.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Dimension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Dimension.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/TimberAssembly.Entities.Pair.yml",
       "output": {
         ".html": {
@@ -427,6 +197,306 @@
       "output": {
         ".html": {
           "relative_path": "api/TimberAssembly.Entities.Remain.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.X.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.Y.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.Z.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.-ctor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.ToList.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.ToArray.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.ToString.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.IsAnyGreater.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.IsAnySmaller.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.Absolute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.GetVolume.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.Equals.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.GetHashCode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.Zero.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.GetSum.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.Min.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.Max.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.op_Addition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.op_Subtraction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.op_Multiply.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.op_Division.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.op_Equality.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.op_Inequality.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.op_GreaterThan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.op_LessThan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.op_GreaterThanOrEqual.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.op_LessThanOrEqual.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.html"
         }
       },
       "version": ""

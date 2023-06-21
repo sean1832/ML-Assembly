@@ -215,14 +215,21 @@
         <td id="TimberAssembly_Operation_Match_DoubleMatch_TimberAssembly_Entities_Remain__" data-uid="TimberAssembly.Operation.Match.DoubleMatch(TimberAssembly.Entities.Remain@)">
           <a class="xref" href="TimberAssembly.Operation.Match.DoubleMatch.html#TimberAssembly_Operation_Match_DoubleMatch_TimberAssembly_Entities_Remain__">DoubleMatch(ref Remain)</a>
         </td>
-        <td class="markdown level1 summary"><p>Two subjects from the remainders are combined to match one target. 1 dimensional matching.</p>
+        <td class="markdown level1 summary"><p>Pairs a target with two subjects from the remaining items, based on a one-dimensional match.
+The method attempts to find two subjects that, when combined, match a target,
+thereby reducing the set of remaining items.</p>
+<p>NOTE: Matches are determined using a set tolerance level.
+Items already matched will not be considered in subsequent iterations.</p>
 </td>
       </tr>
       <tr>
         <td id="TimberAssembly_Operation_Match_ExactMatch_TimberAssembly_Entities_Remain__" data-uid="TimberAssembly.Operation.Match.ExactMatch(TimberAssembly.Entities.Remain@)">
           <a class="xref" href="TimberAssembly.Operation.Match.ExactMatch.html#TimberAssembly_Operation_Match_ExactMatch_TimberAssembly_Entities_Remain__">ExactMatch(ref Remain)</a>
         </td>
-        <td class="markdown level1 summary"><p>One subject is exactly matched to one target.</p>
+        <td class="markdown level1 summary"><p>Attempts to match each target to a single subject from the remainder based on exact one-to-one matching.</p>
+<p>NOTE: 'ExactMatch' is the fastest method, but may not identify all possible matches. If there are complex combinations,
+consider using
+<a class="xref" href="TimberAssembly.Operation.Match.DoubleMatch.html#TimberAssembly_Operation_Match_DoubleMatch_TimberAssembly_Entities_Remain__">DoubleMatch(ref Remain)</a> or <a class="xref" href="TimberAssembly.Operation.Match.UniMatch.html#TimberAssembly_Operation_Match_UniMatch_TimberAssembly_Entities_Remain__">UniMatch(ref Remain)</a> methods after this.</p>
 </td>
       </tr>
       <tr>
@@ -237,7 +244,7 @@
         <td id="TimberAssembly_Operation_Match_RemainMatch_TimberAssembly_Entities_Remain_" data-uid="TimberAssembly.Operation.Match.RemainMatch(TimberAssembly.Entities.Remain)">
           <a class="xref" href="TimberAssembly.Operation.Match.RemainMatch.html#TimberAssembly_Operation_Match_RemainMatch_TimberAssembly_Entities_Remain_">RemainMatch(Remain)</a>
         </td>
-        <td class="markdown level1 summary"><p>(DEPRECATED! Use ExtendToTarget Instead.) </p>
+        <td class="markdown level1 summary"><p>(DEPRECATED! Use <a class="xref" href="TimberAssembly.Operation.Match.ExtendToTarget.html#TimberAssembly_Operation_Match_ExtendToTarget_TimberAssembly_Entities_Remain__">ExtendToTarget(ref Remain)</a> Instead.) </p>
 Match the rest of the targets with the rest of the subjects.
 Introduce offcuts if necessary.
 </td>
@@ -246,8 +253,10 @@ Introduce offcuts if necessary.
         <td id="TimberAssembly_Operation_Match_UniMatch_TimberAssembly_Entities_Remain__" data-uid="TimberAssembly.Operation.Match.UniMatch(TimberAssembly.Entities.Remain@)">
           <a class="xref" href="TimberAssembly.Operation.Match.UniMatch.html#TimberAssembly_Operation_Match_UniMatch_TimberAssembly_Entities_Remain__">UniMatch(ref Remain)</a>
         </td>
-        <td class="markdown level1 summary"><p>Four subjects from the remainders are combined to match one target regardless of orientations.</p>
-<p>WARNING: This method is slow! It is recommended to use after Double Match and Exact Match to reduce timber to match.</p>
+        <td class="markdown level1 summary"><p>Matches targets and subjects from the remainders, combining up to four subjects to match a single target, regardless of orientations.
+This method provides comprehensive results but it may be slow due to its exhaustive nature.</p>
+<p>NOTE: This method can be computationally intensive! It is recommended to use it after
+<a class="xref" href="TimberAssembly.Operation.Match.DoubleMatch.html#TimberAssembly_Operation_Match_DoubleMatch_TimberAssembly_Entities_Remain__">DoubleMatch(ref Remain)</a> and <a class="xref" href="TimberAssembly.Operation.Match.ExactMatch.html#TimberAssembly_Operation_Match_ExactMatch_TimberAssembly_Entities_Remain__">ExactMatch(ref Remain)</a> methods have been used, to reduce the remaining unprocessed items.</p>
 </td>
       </tr>
     </tbody>

@@ -7,17 +7,17 @@
   "api/TimberAssembly.Entities.Agent.-ctor.html": {
     "href": "api/TimberAssembly.Entities.Agent.-ctor.html",
     "title": "Constructor Agent | TimberAssembly",
-    "keywords": "Constructor Agent | Improve this Doc View Source Agent(string, Dimension, int, bool) Create an agent Declaration public Agent(string name = null, Dimension dimension = null, int trimmed = 0, bool isNew = false) Parameters Type Name Description string name name of the agent Dimension dimension How many times the agent has been trimmed int trimmed Is the agent newly introduced bool isNew Dimension of the agent"
+    "keywords": "Constructor Agent | Improve this Doc View Source Agent(string, Vector3D, int, bool) Create an agent Declaration public Agent(string name = null, Vector3D dimension = null, int trimmed = 0, bool isNew = false) Parameters Type Name Description string name Name of the agent Vector3D dimension Dimension of the agent int trimmed How many times the agent has been trimmed bool isNew Is the agent newly introduced"
   },
   "api/TimberAssembly.Entities.Agent.Dimension.html": {
     "href": "api/TimberAssembly.Entities.Agent.Dimension.html",
     "title": "Property Dimension | TimberAssembly",
-    "keywords": "Property Dimension | Improve this Doc View Source Dimension Dimension of the agent Declaration public Dimension Dimension { get; set; } Property Value Type Description Dimension"
+    "keywords": "Property Dimension | Improve this Doc View Source Dimension Dimension of the agent Declaration public Vector3D Dimension { get; set; } Property Value Type Description Vector3D"
   },
   "api/TimberAssembly.Entities.Agent.html": {
     "href": "api/TimberAssembly.Entities.Agent.html",
     "title": "Class Agent | TimberAssembly",
-    "keywords": "Class Agent Agent to assemble Inheritance object Agent Inherited Members object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Entities Assembly: TimberAssembly.dll Syntax public class Agent Constructors Name Description Agent(string, Dimension, int, bool) Create an agent Properties Name Description Dimension Dimension of the agent IsNew Is the agent newly introduced Name name of the agent Trimmed How many times the agent has been trimmed Methods Name Description ToString() Convert agent to string Volume() Get the volume of the agent"
+    "keywords": "Class Agent Agent to assemble Inheritance object Agent Inherited Members object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Entities Assembly: TimberAssembly.dll Syntax public class Agent Constructors Name Description Agent(string, Vector3D, int, bool) Create an agent Properties Name Description Dimension Dimension of the agent IsNew Is the agent newly introduced Name name of the agent Trimmed How many times the agent has been trimmed Methods Name Description ToString() Convert agent to string. Volume() Get the volume of the agent."
   },
   "api/TimberAssembly.Entities.Agent.IsNew.html": {
     "href": "api/TimberAssembly.Entities.Agent.IsNew.html",
@@ -32,7 +32,7 @@
   "api/TimberAssembly.Entities.Agent.ToString.html": {
     "href": "api/TimberAssembly.Entities.Agent.ToString.html",
     "title": "Method ToString | TimberAssembly",
-    "keywords": "Method ToString | Improve this Doc View Source ToString() Convert agent to string Declaration public override string ToString() Returns Type Description string Overrides object.ToString()"
+    "keywords": "Method ToString | Improve this Doc View Source ToString() Convert agent to string. Declaration public override string ToString() Returns Type Description string Overrides object.ToString()"
   },
   "api/TimberAssembly.Entities.Agent.Trimmed.html": {
     "href": "api/TimberAssembly.Entities.Agent.Trimmed.html",
@@ -42,127 +42,12 @@
   "api/TimberAssembly.Entities.Agent.Volume.html": {
     "href": "api/TimberAssembly.Entities.Agent.Volume.html",
     "title": "Method Volume | TimberAssembly",
-    "keywords": "Method Volume | Improve this Doc View Source Volume() Get the volume of the agent Declaration public double Volume() Returns Type Description double"
-  },
-  "api/TimberAssembly.Entities.Dimension.-ctor.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.-ctor.html",
-    "title": "Constructor Dimension | TimberAssembly",
-    "keywords": "Constructor Dimension | Improve this Doc View Source Dimension() Create a dimension Declaration public Dimension() | Improve this Doc View Source Dimension(double, double, double) Create a dimension from three doubles Declaration public Dimension(double length, double width, double height) Parameters Type Name Description double length Length of the agent double width Width of the agent double height Height of the agent | Improve this Doc View Source Dimension(List<double>) Create a dimension from a list of doubles. The list must have exactly 3 values. Declaration public Dimension(List<double> dimensions) Parameters Type Name Description List<double> dimensions (l, w, h)"
-  },
-  "api/TimberAssembly.Entities.Dimension.Absolute.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.Absolute.html",
-    "title": "Method Absolute | TimberAssembly",
-    "keywords": "Method Absolute | Improve this Doc View Source Absolute() Get the absolute value of the dimension, that means all values are positive. Declaration public Dimension Absolute() Returns Type Description Dimension Resulted absolute dimension"
-  },
-  "api/TimberAssembly.Entities.Dimension.Add.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.Add.html",
-    "title": "Method Add | TimberAssembly",
-    "keywords": "Method Add | Improve this Doc View Source Add(Dimension) Addition of the given dimension to the current dimension. Declaration public void Add(Dimension dimension) Parameters Type Name Description Dimension dimension Dimension to add"
-  },
-  "api/TimberAssembly.Entities.Dimension.Equality.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.Equality.html",
-    "title": "Method Equality | TimberAssembly",
-    "keywords": "Method Equality | Improve this Doc View Source Equality(Dimension, double) Check if ALL dimensions are equal to the given dimension Declaration public bool Equality(Dimension dimension, double tolerance = 0.01) Parameters Type Name Description Dimension dimension Input dimension to compare with double tolerance This number cannot be larger than the smallest dimension out of the two Returns Type Description bool Comparison result"
-  },
-  "api/TimberAssembly.Entities.Dimension.GetDifference.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.GetDifference.html",
-    "title": "Method GetDifference | TimberAssembly",
-    "keywords": "Method GetDifference | Improve this Doc View Source GetDifference(Dimension, Dimension) Get the difference between two dimensions. Declaration public static Dimension GetDifference(Dimension dimension1, Dimension dimension2) Parameters Type Name Description Dimension dimension1 Dimension 1 to subtract from Dimension dimension2 Dimension 2 to subtract Returns Type Description Dimension Difference between two dimension"
-  },
-  "api/TimberAssembly.Entities.Dimension.GetSum.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.GetSum.html",
-    "title": "Method GetSum | TimberAssembly",
-    "keywords": "Method GetSum | Improve this Doc View Source GetSum(Dimension, Dimension) Get the sum of two dimensions. Declaration public static Dimension GetSum(Dimension dimension1, Dimension dimension2) Parameters Type Name Description Dimension dimension1 Dimension 1 to sum Dimension dimension2 Dimension 2 to sum Returns Type Description Dimension Summed dimension | Improve this Doc View Source GetSum(List<Dimension>) Get the sum of multiple dimensions. Declaration public static Dimension GetSum(List<Dimension> dimensions) Parameters Type Name Description List<Dimension> dimensions List of dimension to sum Returns Type Description Dimension Summed dimension"
-  },
-  "api/TimberAssembly.Entities.Dimension.GetVolume.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.GetVolume.html",
-    "title": "Method GetVolume | TimberAssembly",
-    "keywords": "Method GetVolume | Improve this Doc View Source GetVolume() Get the volume of the dimension. (l * w * h) Declaration public double GetVolume() Returns Type Description double Resulted volume"
-  },
-  "api/TimberAssembly.Entities.Dimension.Height.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.Height.html",
-    "title": "Property Height | TimberAssembly",
-    "keywords": "Property Height | Improve this Doc View Source Height Height of the agent Declaration public double Height { get; set; } Property Value Type Description double"
-  },
-  "api/TimberAssembly.Entities.Dimension.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.html",
-    "title": "Class Dimension | TimberAssembly",
-    "keywords": "Class Dimension Dimension of an agent Inheritance object Dimension Inherited Members object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Entities Assembly: TimberAssembly.dll Syntax public class Dimension Constructors Name Description Dimension() Create a dimension Dimension(List<double>) Create a dimension from a list of doubles. The list must have exactly 3 values. Dimension(double, double, double) Create a dimension from three doubles Properties Name Description Height Height of the agent Length Length of the agent Width Width of the agent Methods Name Description Absolute() Get the absolute value of the dimension, that means all values are positive. Add(Dimension) Addition of the given dimension to the current dimension. Equality(Dimension, double) Check if ALL dimensions are equal to the given dimension GetDifference(Dimension, Dimension) Get the difference between two dimensions. GetSum(List<Dimension>) Get the sum of multiple dimensions. GetSum(Dimension, Dimension) Get the sum of two dimensions. GetVolume() Get the volume of the dimension. (l * w * h) IsAllLargerOrEqualThan(Dimension) Check if ALL dimensions are larger or equal to the given dimension IsAllLargerThan(Dimension) Check if ALL dimensions are larger than the given dimension IsAllSmallerOrEqualThan(Dimension) Check if ALL dimensions are smaller or equal to the given dimension IsAllSmallerThan(Dimension) Check if ALL dimensions are smaller than the given dimension IsAnyLargerOrEqualThan(Dimension) Check if ANY dimension is larger or equal to the given dimension. IsAnyLargerThan(Dimension) Check if ANY dimension is smaller than the given dimension. IsAnySmallerOrEqualThan(Dimension) Check if ANY dimension is smaller or equal to the given dimension IsAnySmallerThan(Dimension) Check if ANY dimension is smaller than the given dimension Subtract(Dimension) Subtract the given dimension from the current dimension. ToList() Convert dimension to list of doubles. ToString() Convert dimension to string. Zero() Create a new dimension with all values set to zero."
-  },
-  "api/TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.IsAllLargerOrEqualThan.html",
-    "title": "Method IsAllLargerOrEqualThan | TimberAssembly",
-    "keywords": "Method IsAllLargerOrEqualThan | Improve this Doc View Source IsAllLargerOrEqualThan(Dimension) Check if ALL dimensions are larger or equal to the given dimension Declaration public bool IsAllLargerOrEqualThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
-  },
-  "api/TimberAssembly.Entities.Dimension.IsAllLargerThan.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.IsAllLargerThan.html",
-    "title": "Method IsAllLargerThan | TimberAssembly",
-    "keywords": "Method IsAllLargerThan | Improve this Doc View Source IsAllLargerThan(Dimension) Check if ALL dimensions are larger than the given dimension Declaration public bool IsAllLargerThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
-  },
-  "api/TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.IsAllSmallerOrEqualThan.html",
-    "title": "Method IsAllSmallerOrEqualThan | TimberAssembly",
-    "keywords": "Method IsAllSmallerOrEqualThan | Improve this Doc View Source IsAllSmallerOrEqualThan(Dimension) Check if ALL dimensions are smaller or equal to the given dimension Declaration public bool IsAllSmallerOrEqualThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
-  },
-  "api/TimberAssembly.Entities.Dimension.IsAllSmallerThan.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.IsAllSmallerThan.html",
-    "title": "Method IsAllSmallerThan | TimberAssembly",
-    "keywords": "Method IsAllSmallerThan | Improve this Doc View Source IsAllSmallerThan(Dimension) Check if ALL dimensions are smaller than the given dimension Declaration public bool IsAllSmallerThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
-  },
-  "api/TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.IsAnyLargerOrEqualThan.html",
-    "title": "Method IsAnyLargerOrEqualThan | TimberAssembly",
-    "keywords": "Method IsAnyLargerOrEqualThan | Improve this Doc View Source IsAnyLargerOrEqualThan(Dimension) Check if ANY dimension is larger or equal to the given dimension. Declaration public bool IsAnyLargerOrEqualThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
-  },
-  "api/TimberAssembly.Entities.Dimension.IsAnyLargerThan.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.IsAnyLargerThan.html",
-    "title": "Method IsAnyLargerThan | TimberAssembly",
-    "keywords": "Method IsAnyLargerThan | Improve this Doc View Source IsAnyLargerThan(Dimension) Check if ANY dimension is smaller than the given dimension. Declaration public bool IsAnyLargerThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
-  },
-  "api/TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.IsAnySmallerOrEqualThan.html",
-    "title": "Method IsAnySmallerOrEqualThan | TimberAssembly",
-    "keywords": "Method IsAnySmallerOrEqualThan | Improve this Doc View Source IsAnySmallerOrEqualThan(Dimension) Check if ANY dimension is smaller or equal to the given dimension Declaration public bool IsAnySmallerOrEqualThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
-  },
-  "api/TimberAssembly.Entities.Dimension.IsAnySmallerThan.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.IsAnySmallerThan.html",
-    "title": "Method IsAnySmallerThan | TimberAssembly",
-    "keywords": "Method IsAnySmallerThan | Improve this Doc View Source IsAnySmallerThan(Dimension) Check if ANY dimension is smaller than the given dimension Declaration public bool IsAnySmallerThan(Dimension dimension) Parameters Type Name Description Dimension dimension Input dimension to compare with Returns Type Description bool Comparison result"
-  },
-  "api/TimberAssembly.Entities.Dimension.Length.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.Length.html",
-    "title": "Property Length | TimberAssembly",
-    "keywords": "Property Length | Improve this Doc View Source Length Length of the agent Declaration public double Length { get; set; } Property Value Type Description double"
-  },
-  "api/TimberAssembly.Entities.Dimension.Subtract.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.Subtract.html",
-    "title": "Method Subtract | TimberAssembly",
-    "keywords": "Method Subtract | Improve this Doc View Source Subtract(Dimension) Subtract the given dimension from the current dimension. Declaration public void Subtract(Dimension dimension) Parameters Type Name Description Dimension dimension Dimension to subtract"
-  },
-  "api/TimberAssembly.Entities.Dimension.ToList.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.ToList.html",
-    "title": "Method ToList | TimberAssembly",
-    "keywords": "Method ToList | Improve this Doc View Source ToList() Convert dimension to list of doubles. Declaration public List<double> ToList() Returns Type Description List<double> (l, w, h)"
-  },
-  "api/TimberAssembly.Entities.Dimension.ToString.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.ToString.html",
-    "title": "Method ToString | TimberAssembly",
-    "keywords": "Method ToString | Improve this Doc View Source ToString() Convert dimension to string. Declaration public override string ToString() Returns Type Description string (l, w, h) Overrides object.ToString()"
-  },
-  "api/TimberAssembly.Entities.Dimension.Width.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.Width.html",
-    "title": "Property Width | TimberAssembly",
-    "keywords": "Property Width | Improve this Doc View Source Width Width of the agent Declaration public double Width { get; set; } Property Value Type Description double"
-  },
-  "api/TimberAssembly.Entities.Dimension.Zero.html": {
-    "href": "api/TimberAssembly.Entities.Dimension.Zero.html",
-    "title": "Method Zero | TimberAssembly",
-    "keywords": "Method Zero | Improve this Doc View Source Zero() Create a new dimension with all values set to zero. Declaration public static Dimension Zero() Returns Type Description Dimension Created dimension"
+    "keywords": "Method Volume | Improve this Doc View Source Volume() Get the volume of the agent. Declaration public double Volume() Returns Type Description double Volume of the agent dimension"
   },
   "api/TimberAssembly.Entities.html": {
     "href": "api/TimberAssembly.Entities.html",
     "title": "Namespace TimberAssembly.Entities | TimberAssembly",
-    "keywords": "Namespace TimberAssembly.Entities Classes Agent Agent to assemble Dimension Dimension of an agent Pair Pair of target and subjects. Remain Store remain of targets and subjects. These are targets and subjects that's left from the matching operation."
+    "keywords": "Namespace TimberAssembly.Entities Classes Agent Agent to assemble Pair Pair of target and subjects. Remain Store remain of targets and subjects. These are targets and subjects that's left from the matching operation. Vector3D Representation of a 3D Vector. This structure is used throughout TimberAssembly to pass 3D Position, Dimension, Rotation and Scale around. It also contains functions for doing common vector operations."
   },
   "api/TimberAssembly.Entities.Pair.-ctor.html": {
     "href": "api/TimberAssembly.Entities.Pair.-ctor.html",
@@ -199,6 +84,156 @@
     "title": "Property Targets | TimberAssembly",
     "keywords": "Property Targets | Improve this Doc View Source Targets Remaining targets. Declaration public List<Agent> Targets { get; set; } Property Value Type Description List<Agent>"
   },
+  "api/TimberAssembly.Entities.Vector3D.-ctor.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.-ctor.html",
+    "title": "Constructor Vector3D | TimberAssembly",
+    "keywords": "Constructor Vector3D | Improve this Doc View Source Vector3D() Create a Vector3D Declaration public Vector3D() | Improve this Doc View Source Vector3D(double, double, double) Create a Vector3D from it's x, y and z components. Declaration public Vector3D(double x, double y, double z) Parameters Type Name Description double x X Dimension double y Y Dimension double z Z Dimension | Improve this Doc View Source Vector3D(List<double>) Create a Vector3D from a list of doubles. The list must have exactly 3 values. Declaration public Vector3D(List<double> vectors) Parameters Type Name Description List<double> vectors (x, y, z)"
+  },
+  "api/TimberAssembly.Entities.Vector3D.Absolute.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.Absolute.html",
+    "title": "Method Absolute | TimberAssembly",
+    "keywords": "Method Absolute | Improve this Doc View Source Absolute() Get the absolute value of the Vectors, that means all values are positive. Declaration public Vector3D Absolute() Returns Type Description Vector3D Resulted absolute Vector3D"
+  },
+  "api/TimberAssembly.Entities.Vector3D.Equals.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.Equals.html",
+    "title": "Method Equals | TimberAssembly",
+    "keywords": "Method Equals | Improve this Doc View Source Equals(object) Returns true if two vectors are approximately equal with tolerance of 1e-5. Recommending using operator `==`. Declaration public override bool Equals(object obj) Parameters Type Name Description object obj Returns Type Description bool Overrides object.Equals(object)"
+  },
+  "api/TimberAssembly.Entities.Vector3D.GetHashCode.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.GetHashCode.html",
+    "title": "Method GetHashCode | TimberAssembly",
+    "keywords": "Method GetHashCode | Improve this Doc View Source GetHashCode() Return a hash code of the Vector3D. Declaration public override int GetHashCode() Returns Type Description int Hashcode of Vector3D Overrides object.GetHashCode()"
+  },
+  "api/TimberAssembly.Entities.Vector3D.GetSum.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.GetSum.html",
+    "title": "Method GetSum | TimberAssembly",
+    "keywords": "Method GetSum | Improve this Doc View Source GetSum(List<Vector3D>) Get the sum of multiple Vector3D. Declaration public static Vector3D GetSum(List<Vector3D> vector3Ds) Parameters Type Name Description List<Vector3D> vector3Ds List of Vector3D to sum Returns Type Description Vector3D Summed Vector3D"
+  },
+  "api/TimberAssembly.Entities.Vector3D.GetVolume.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.GetVolume.html",
+    "title": "Method GetVolume | TimberAssembly",
+    "keywords": "Method GetVolume | Improve this Doc View Source GetVolume() Get the volume of the Vector3D. (x * y * z) Declaration public double GetVolume() Returns Type Description double Resulted volume"
+  },
+  "api/TimberAssembly.Entities.Vector3D.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.html",
+    "title": "Class Vector3D | TimberAssembly",
+    "keywords": "Class Vector3D Representation of a 3D Vector. This structure is used throughout TimberAssembly to pass 3D Position, Dimension, Rotation and Scale around. It also contains functions for doing common vector operations. Inheritance object Vector3D Inherited Members object.Equals(object, object) object.ReferenceEquals(object, object) object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Entities Assembly: TimberAssembly.dll Syntax public class Vector3D Constructors Name Description Vector3D() Create a Vector3D Vector3D(List<double>) Create a Vector3D from a list of doubles. The list must have exactly 3 values. Vector3D(double, double, double) Create a Vector3D from it's x, y and z components. Properties Name Description X X component of the vector. Y Y component of the vector. Z Z component of the vector. Methods Name Description Absolute() Get the absolute value of the Vectors, that means all values are positive. Equals(object) Returns true if two vectors are approximately equal with tolerance of 1e-5. Recommending using operator `==`. GetHashCode() Return a hash code of the Vector3D. GetSum(List<Vector3D>) Get the sum of multiple Vector3D. GetVolume() Get the volume of the Vector3D. (x * y * z) IsAnyGreater(double) Check if ANY Vector is smaller than the given value. IsAnyGreater(Vector3D) Check if ANY Vector is smaller than the given Vector3D. IsAnyGreaterOrEqual(double) Check if ANY Vector is larger or equal to the given value. IsAnyGreaterOrEqual(Vector3D) Check if ANY Vector is larger or equal to the given Vector3D. IsAnySmaller(double) Check if ANY Vector is smaller than the given value. IsAnySmaller(Vector3D) Check if ANY Vector is smaller than the given Vector3D. IsAnySmallerOrEqual(double) Check if ANY Vector is smaller or equal to the given value. IsAnySmallerOrEqual(Vector3D) Check if ANY Vector is smaller or equal to the given Vector3D Max(Vector3D, Vector3D) Returns a vector that is made from the largest components of two vectors. Min(Vector3D, Vector3D) Returns a vector that is made from the smallest components of two vectors. ToArray() Convert Vector3D to array of doubles. ToList() Convert Vector3D to list of doubles. ToString() Convert Vector3D to string. Zero() Create a new Vector3D with all values set to zero. Operators Name Description operator +(Vector3D, Vector3D) Adds two vectors. Adds each component of `a` to the corresponding component of `b`. operator /(Vector3D, double) Divides a vector by a number. Divides each component of a by `a` number `b`. operator ==(Vector3D, Vector3D) Returns true if two vectors are approximately equal. To allow for double point inaccuracies, the two vectors are considered equal if the magnitude of their difference is less than `1e-5`. operator >(Vector3D, Vector3D) Return true if the ALL component of vector a is greater than vector b. operator >=(Vector3D, Vector3D) Return true if the ALL component of vector a is greater than or equal to vector b. operator !=(Vector3D, Vector3D) Returns true if two vectors are not approximately equal. To allow for double point inaccuracies, the two vectors are considered equal if the magnitude of their difference is less than 1e-5. operator <(Vector3D, Vector3D) Return true if the ALL component of vector a is less than vector b. operator <=(Vector3D, Vector3D) Return true if the ALL component of vector a is less than or equal to vector b. operator *(Vector3D, double) Multiplies a vector by a number. Multiplies each component of a by `a` number `b`. operator -(Vector3D, Vector3D) Subtracts a vector from another vector. Subtracts each component of `b` from each component of `a`."
+  },
+  "api/TimberAssembly.Entities.Vector3D.IsAnyGreater.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.IsAnyGreater.html",
+    "title": "Method IsAnyGreater | TimberAssembly",
+    "keywords": "Method IsAnyGreater | Improve this Doc View Source IsAnyGreater(Vector3D) Check if ANY Vector is smaller than the given Vector3D. Declaration public bool IsAnyGreater(Vector3D vector3D) Parameters Type Name Description Vector3D vector3D Input Vector3D to compare with Returns Type Description bool Comparison result | Improve this Doc View Source IsAnyGreater(double) Check if ANY Vector is smaller than the given value. Declaration public bool IsAnyGreater(double value) Parameters Type Name Description double value Value to compare with Returns Type Description bool Comparison result"
+  },
+  "api/TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.IsAnyGreaterOrEqual.html",
+    "title": "Method IsAnyGreaterOrEqual | TimberAssembly",
+    "keywords": "Method IsAnyGreaterOrEqual | Improve this Doc View Source IsAnyGreaterOrEqual(Vector3D) Check if ANY Vector is larger or equal to the given Vector3D. Declaration public bool IsAnyGreaterOrEqual(Vector3D vector3D) Parameters Type Name Description Vector3D vector3D Input Vector3D to compare with Returns Type Description bool Comparison result | Improve this Doc View Source IsAnyGreaterOrEqual(double) Check if ANY Vector is larger or equal to the given value. Declaration public bool IsAnyGreaterOrEqual(double value) Parameters Type Name Description double value Value to compare with Returns Type Description bool Comparison result"
+  },
+  "api/TimberAssembly.Entities.Vector3D.IsAnySmaller.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.IsAnySmaller.html",
+    "title": "Method IsAnySmaller | TimberAssembly",
+    "keywords": "Method IsAnySmaller | Improve this Doc View Source IsAnySmaller(Vector3D) Check if ANY Vector is smaller than the given Vector3D. Declaration public bool IsAnySmaller(Vector3D vector3D) Parameters Type Name Description Vector3D vector3D Input Vector3D to compare with Returns Type Description bool Comparison result | Improve this Doc View Source IsAnySmaller(double) Check if ANY Vector is smaller than the given value. Declaration public bool IsAnySmaller(double value) Parameters Type Name Description double value Value to compare with Returns Type Description bool"
+  },
+  "api/TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.IsAnySmallerOrEqual.html",
+    "title": "Method IsAnySmallerOrEqual | TimberAssembly",
+    "keywords": "Method IsAnySmallerOrEqual | Improve this Doc View Source IsAnySmallerOrEqual(Vector3D) Check if ANY Vector is smaller or equal to the given Vector3D Declaration public bool IsAnySmallerOrEqual(Vector3D vector3D) Parameters Type Name Description Vector3D vector3D Input Vector3D to compare with Returns Type Description bool Comparison result | Improve this Doc View Source IsAnySmallerOrEqual(double) Check if ANY Vector is smaller or equal to the given value. Declaration public bool IsAnySmallerOrEqual(double value) Parameters Type Name Description double value Value to compare with Returns Type Description bool Comparison result"
+  },
+  "api/TimberAssembly.Entities.Vector3D.Max.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.Max.html",
+    "title": "Method Max | TimberAssembly",
+    "keywords": "Method Max | Improve this Doc View Source Max(Vector3D, Vector3D) Returns a vector that is made from the largest components of two vectors. Declaration public static Vector3D Max(Vector3D a, Vector3D b) Parameters Type Name Description Vector3D a Vector a Vector3D b Vector b Returns Type Description Vector3D Max vector"
+  },
+  "api/TimberAssembly.Entities.Vector3D.Min.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.Min.html",
+    "title": "Method Min | TimberAssembly",
+    "keywords": "Method Min | Improve this Doc View Source Min(Vector3D, Vector3D) Returns a vector that is made from the smallest components of two vectors. Declaration public static Vector3D Min(Vector3D a, Vector3D b) Parameters Type Name Description Vector3D a Vector a Vector3D b Vector b Returns Type Description Vector3D Min vector"
+  },
+  "api/TimberAssembly.Entities.Vector3D.op_Addition.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.op_Addition.html",
+    "title": "Operator operator + | TimberAssembly",
+    "keywords": "Operator operator + | Improve this Doc View Source operator +(Vector3D, Vector3D) Adds two vectors. Adds each component of `a` to the corresponding component of `b`. Declaration public static Vector3D operator +(Vector3D a, Vector3D b) Parameters Type Name Description Vector3D a Vector a Vector3D b Vector b Returns Type Description Vector3D Added"
+  },
+  "api/TimberAssembly.Entities.Vector3D.op_Division.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.op_Division.html",
+    "title": "Operator operator / | TimberAssembly",
+    "keywords": "Operator operator / | Improve this Doc View Source operator /(Vector3D, double) Divides a vector by a number. Divides each component of a by `a` number `b`. Declaration public static Vector3D operator /(Vector3D a, double b) Parameters Type Name Description Vector3D a Vector to be divide double b Number too divide Returns Type Description Vector3D Divided"
+  },
+  "api/TimberAssembly.Entities.Vector3D.op_Equality.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.op_Equality.html",
+    "title": "Operator operator == | TimberAssembly",
+    "keywords": "Operator operator == | Improve this Doc View Source operator ==(Vector3D, Vector3D) Returns true if two vectors are approximately equal. To allow for double point inaccuracies, the two vectors are considered equal if the magnitude of their difference is less than `1e-5`. Declaration public static bool operator ==(Vector3D a, Vector3D b) Parameters Type Name Description Vector3D a Vector a Vector3D b Vector b Returns Type Description bool Equality"
+  },
+  "api/TimberAssembly.Entities.Vector3D.op_GreaterThan.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.op_GreaterThan.html",
+    "title": "Operator operator > | TimberAssembly",
+    "keywords": "Operator operator > | Improve this Doc View Source operator >(Vector3D, Vector3D) Return true if the ALL component of vector a is greater than vector b. Declaration public static bool operator >(Vector3D a, Vector3D b) Parameters Type Name Description Vector3D a Vector a Vector3D b Vector b Returns Type Description bool Is greater than"
+  },
+  "api/TimberAssembly.Entities.Vector3D.op_GreaterThanOrEqual.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.op_GreaterThanOrEqual.html",
+    "title": "Operator operator >= | TimberAssembly",
+    "keywords": "Operator operator >= | Improve this Doc View Source operator >=(Vector3D, Vector3D) Return true if the ALL component of vector a is greater than or equal to vector b. Declaration public static bool operator >=(Vector3D a, Vector3D b) Parameters Type Name Description Vector3D a Vector a Vector3D b Vector b Returns Type Description bool Is greater or equal"
+  },
+  "api/TimberAssembly.Entities.Vector3D.op_Inequality.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.op_Inequality.html",
+    "title": "Operator operator != | TimberAssembly",
+    "keywords": "Operator operator != | Improve this Doc View Source operator !=(Vector3D, Vector3D) Returns true if two vectors are not approximately equal. To allow for double point inaccuracies, the two vectors are considered equal if the magnitude of their difference is less than 1e-5. Declaration public static bool operator !=(Vector3D a, Vector3D b) Parameters Type Name Description Vector3D a Vector a Vector3D b Vector b Returns Type Description bool Inequality"
+  },
+  "api/TimberAssembly.Entities.Vector3D.op_LessThan.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.op_LessThan.html",
+    "title": "Operator operator < | TimberAssembly",
+    "keywords": "Operator operator < | Improve this Doc View Source operator <(Vector3D, Vector3D) Return true if the ALL component of vector a is less than vector b. Declaration public static bool operator <(Vector3D a, Vector3D b) Parameters Type Name Description Vector3D a Vector a Vector3D b Vector b Returns Type Description bool Is less than"
+  },
+  "api/TimberAssembly.Entities.Vector3D.op_LessThanOrEqual.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.op_LessThanOrEqual.html",
+    "title": "Operator operator <= | TimberAssembly",
+    "keywords": "Operator operator <= | Improve this Doc View Source operator <=(Vector3D, Vector3D) Return true if the ALL component of vector a is less than or equal to vector b. Declaration public static bool operator <=(Vector3D a, Vector3D b) Parameters Type Name Description Vector3D a Vector a Vector3D b Vector b Returns Type Description bool Is less than or equal to"
+  },
+  "api/TimberAssembly.Entities.Vector3D.op_Multiply.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.op_Multiply.html",
+    "title": "Operator operator * | TimberAssembly",
+    "keywords": "Operator operator * | Improve this Doc View Source operator *(Vector3D, double) Multiplies a vector by a number. Multiplies each component of a by `a` number `b`. Declaration public static Vector3D operator *(Vector3D a, double b) Parameters Type Name Description Vector3D a Vector to be multiply double b Number to multiply Returns Type Description Vector3D Multiplied"
+  },
+  "api/TimberAssembly.Entities.Vector3D.op_Subtraction.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.op_Subtraction.html",
+    "title": "Operator operator - | TimberAssembly",
+    "keywords": "Operator operator - | Improve this Doc View Source operator -(Vector3D, Vector3D) Subtracts a vector from another vector. Subtracts each component of `b` from each component of `a`. Declaration public static Vector3D operator -(Vector3D a, Vector3D b) Parameters Type Name Description Vector3D a Vector a Vector3D b Vector b Returns Type Description Vector3D Subtracted"
+  },
+  "api/TimberAssembly.Entities.Vector3D.ToArray.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.ToArray.html",
+    "title": "Method ToArray | TimberAssembly",
+    "keywords": "Method ToArray | Improve this Doc View Source ToArray() Convert Vector3D to array of doubles. Declaration public double[] ToArray() Returns Type Description double[] (x, y, z)>"
+  },
+  "api/TimberAssembly.Entities.Vector3D.ToList.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.ToList.html",
+    "title": "Method ToList | TimberAssembly",
+    "keywords": "Method ToList | Improve this Doc View Source ToList() Convert Vector3D to list of doubles. Declaration public List<double> ToList() Returns Type Description List<double> (x, y, z)"
+  },
+  "api/TimberAssembly.Entities.Vector3D.ToString.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.ToString.html",
+    "title": "Method ToString | TimberAssembly",
+    "keywords": "Method ToString | Improve this Doc View Source ToString() Convert Vector3D to string. Declaration public override string ToString() Returns Type Description string (x, y, z) Overrides object.ToString()"
+  },
+  "api/TimberAssembly.Entities.Vector3D.X.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.X.html",
+    "title": "Property X | TimberAssembly",
+    "keywords": "Property X | Improve this Doc View Source X X component of the vector. Declaration public double X { get; set; } Property Value Type Description double"
+  },
+  "api/TimberAssembly.Entities.Vector3D.Y.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.Y.html",
+    "title": "Property Y | TimberAssembly",
+    "keywords": "Property Y | Improve this Doc View Source Y Y component of the vector. Declaration public double Y { get; set; } Property Value Type Description double"
+  },
+  "api/TimberAssembly.Entities.Vector3D.Z.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.Z.html",
+    "title": "Property Z | TimberAssembly",
+    "keywords": "Property Z | Improve this Doc View Source Z Z component of the vector. Declaration public double Z { get; set; } Property Value Type Description double"
+  },
+  "api/TimberAssembly.Entities.Vector3D.Zero.html": {
+    "href": "api/TimberAssembly.Entities.Vector3D.Zero.html",
+    "title": "Method Zero | TimberAssembly",
+    "keywords": "Method Zero | Improve this Doc View Source Zero() Create a new Vector3D with all values set to zero. Declaration public static Vector3D Zero() Returns Type Description Vector3D Created Vector3D"
+  },
   "api/TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation.html": {
     "href": "api/TimberAssembly.Helper.ComputeMatch.CalculateAllAggregation.html",
     "title": "Method CalculateAllAggregation | TimberAssembly",
@@ -212,12 +247,12 @@
   "api/TimberAssembly.Helper.ComputeMatch.GetClosestAgent.html": {
     "href": "api/TimberAssembly.Helper.ComputeMatch.GetClosestAgent.html",
     "title": "Method GetClosestAgent | TimberAssembly",
-    "keywords": "Method GetClosestAgent | Improve this Doc View Source GetClosestAgent(Agent, List<Agent>) Get closest Agent dimension from a list of agents. Only accept one dimensional difference. Declaration public static (Agent, Dimension) GetClosestAgent(Agent target, List<Agent> subjects) Parameters Type Name Description Agent target Target agent List<Agent> subjects List of subject agent Returns Type Description (Agent, Dimension) Closest agent and its dimension"
+    "keywords": "Method GetClosestAgent | Improve this Doc View Source GetClosestAgent(Agent, List<Agent>) Get closest Agent dimension from a list of agents. Only accept one dimensional difference. Declaration public static (Agent, Vector3D) GetClosestAgent(Agent target, List<Agent> subjects) Parameters Type Name Description Agent target Target agent List<Agent> subjects List of subject agent Returns Type Description (Agent, Vector3D) Closest agent and its dimension"
   },
   "api/TimberAssembly.Helper.ComputeMatch.html": {
     "href": "api/TimberAssembly.Helper.ComputeMatch.html",
     "title": "Class ComputeMatch | TimberAssembly",
-    "keywords": "Class ComputeMatch Inheritance object ComputeMatch Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Helper Assembly: TimberAssembly.dll Syntax public class ComputeMatch Methods Name Description CalculateAllAggregation(Agent, Agent) calculate all possible aggregation combination of the subject agent to fit inside the target agent. When target is larger than subject. CalculateResiduals(Agent, Agent) Calculate the residuals of the subject agent after fitting it inside the target agent. When target is smaller than subject. GetClosestAgent(Agent, List<Agent>) Get closest Agent dimension from a list of agents. Only accept one dimensional difference. IsAgentDoubleMatched(Agent, Agent, Agent, double) Linear check if two agents combined are matched with the target agent. IsAgentExactMatched(Agent, Agent, double) Check if two agents are exactly matched."
+    "keywords": "Class ComputeMatch Calculate if agents are matched. Inheritance object ComputeMatch Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Helper Assembly: TimberAssembly.dll Syntax public class ComputeMatch Methods Name Description CalculateAllAggregation(Agent, Agent) calculate all possible aggregation combination of the subject agent to fit inside the target agent. When target is larger than subject. CalculateResiduals(Agent, Agent) Calculate the residuals of the subject agent after fitting it inside the target agent. When target is smaller than subject. GetClosestAgent(Agent, List<Agent>) Get closest Agent dimension from a list of agents. Only accept one dimensional difference. IsAgentDoubleMatched(Agent, Agent, Agent, double) Linear check if two agents combined are matched with the target agent. IsAgentExactMatched(Agent, Agent, double) Check if two agents are exactly matched."
   },
   "api/TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched.html": {
     "href": "api/TimberAssembly.Helper.ComputeMatch.IsAgentDoubleMatched.html",
@@ -232,7 +267,7 @@
   "api/TimberAssembly.Helper.html": {
     "href": "api/TimberAssembly.Helper.html",
     "title": "Namespace TimberAssembly.Helper | TimberAssembly",
-    "keywords": "Namespace TimberAssembly.Helper Classes ComputeMatch"
+    "keywords": "Namespace TimberAssembly.Helper Classes ComputeMatch Calculate if agents are matched."
   },
   "api/TimberAssembly.Operation.Evaluate.-ctor.html": {
     "href": "api/TimberAssembly.Operation.Evaluate.-ctor.html",
@@ -307,32 +342,32 @@
   "api/TimberAssembly.Operation.Match.CutToTarget.html": {
     "href": "api/TimberAssembly.Operation.Match.CutToTarget.html",
     "title": "Method CutToTarget | TimberAssembly",
-    "keywords": "Method CutToTarget | Improve this Doc View Source CutToTarget(ref Remain) Cut the remainders to the target and create offcuts. (when target is smaller than subject) Declaration public List<Pair> CutToTarget(ref Remain remain) Parameters Type Name Description Remain remain Remainders Returns Type Description List<Pair> Resulted pairs"
+    "keywords": "Method CutToTarget | Improve this Doc View Source CutToTarget(ref Remain) Cut the remainders to the target and create offcuts. (when target is smaller than subject) Declaration public List<Pair> CutToTarget(ref Remain remain) Parameters Type Name Description Remain remain The remaining items to be processed. The method updates this parameter with any unmatched items after processing. Returns Type Description List<Pair> A list of matched pairs, where each pair consists of a target and its matching subjects."
   },
   "api/TimberAssembly.Operation.Match.DoubleMatch.html": {
     "href": "api/TimberAssembly.Operation.Match.DoubleMatch.html",
     "title": "Method DoubleMatch | TimberAssembly",
-    "keywords": "Method DoubleMatch | Improve this Doc View Source DoubleMatch(ref Remain) Two subjects from the remainders are combined to match one target. 1 dimensional matching. Declaration public List<Pair> DoubleMatch(ref Remain remains) Parameters Type Name Description Remain remains Output remainders Returns Type Description List<Pair> Resulted pairs"
+    "keywords": "Method DoubleMatch | Improve this Doc View Source DoubleMatch(ref Remain) Pairs a target with two subjects from the remaining items, based on a one-dimensional match. The method attempts to find two subjects that, when combined, match a target, thereby reducing the set of remaining items. NOTE: Matches are determined using a set tolerance level. Items already matched will not be considered in subsequent iterations. Declaration public List<Pair> DoubleMatch(ref Remain remains) Parameters Type Name Description Remain remains The remaining items to be processed. The method modifies this parameter, removing matched items after processing. Returns Type Description List<Pair> A list of matched pairs, each consisting of a target and a list of two matching subjects. If no matches are found, an empty list is returned."
   },
   "api/TimberAssembly.Operation.Match.ExactMatch.html": {
     "href": "api/TimberAssembly.Operation.Match.ExactMatch.html",
     "title": "Method ExactMatch | TimberAssembly",
-    "keywords": "Method ExactMatch | Improve this Doc View Source ExactMatch(ref Remain) One subject is exactly matched to one target. Declaration public List<Pair> ExactMatch(ref Remain remains) Parameters Type Name Description Remain remains Output remainders. This contains subject and targets that did not meet the condition of this method. Returns Type Description List<Pair> Resulted pairs"
+    "keywords": "Method ExactMatch | Improve this Doc View Source ExactMatch(ref Remain) Attempts to match each target to a single subject from the remainder based on exact one-to-one matching. NOTE: 'ExactMatch' is the fastest method, but may not identify all possible matches. If there are complex combinations, consider using DoubleMatch(ref Remain) or UniMatch(ref Remain) methods after this. Declaration public List<Pair> ExactMatch(ref Remain remains) Parameters Type Name Description Remain remains The remaining items to be processed. The method updates this parameter with any unmatched items after processing. Returns Type Description List<Pair> A list of matched pairs, where each pair consists of a target and a single matching subject."
   },
   "api/TimberAssembly.Operation.Match.ExtendToTarget.html": {
     "href": "api/TimberAssembly.Operation.Match.ExtendToTarget.html",
     "title": "Method ExtendToTarget | TimberAssembly",
-    "keywords": "Method ExtendToTarget | Improve this Doc View Source ExtendToTarget(ref Remain) Combining remainders with new subjects to match the targets. (when target is larger than target) Declaration public List<Pair> ExtendToTarget(ref Remain remain) Parameters Type Name Description Remain remain Remainders Returns Type Description List<Pair> Resulted pairs"
+    "keywords": "Method ExtendToTarget | Improve this Doc View Source ExtendToTarget(ref Remain) Combining remainders with new subjects to match the targets. (when target is larger than target) Declaration public List<Pair> ExtendToTarget(ref Remain remain) Parameters Type Name Description Remain remain The remaining items to be processed. The method updates this parameter with any unmatched items after processing. Returns Type Description List<Pair> A list of matched pairs, where each pair consists of a target and its matching subjects."
   },
   "api/TimberAssembly.Operation.Match.html": {
     "href": "api/TimberAssembly.Operation.Match.html",
     "title": "Class Match | TimberAssembly",
-    "keywords": "Class Match Matching algorithm for timber assembly. Inheritance object Match Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Operation Assembly: TimberAssembly.dll Syntax public class Match Constructors Name Description Match(List<Agent>, List<Agent>, double) Create a matching algorithm for timber assembly. Properties Name Description SubjectAgents Subject agents to be matched. TargetAgents Target agents to be matched. Subject agent will be matched to target agents. Tolerance Tolerance for matching. This number cannot be smaller than the smallest dimension of the agents. Methods Name Description CutToTarget(ref Remain) Cut the remainders to the target and create offcuts. (when target is smaller than subject) DoubleMatch(ref Remain) Two subjects from the remainders are combined to match one target. 1 dimensional matching. ExactMatch(ref Remain) One subject is exactly matched to one target. ExtendToTarget(ref Remain) Combining remainders with new subjects to match the targets. (when target is larger than target) RemainMatch(Remain) (DEPRECATED! Use ExtendToTarget Instead.) Match the rest of the targets with the rest of the subjects. Introduce offcuts if necessary. UniMatch(ref Remain) Four subjects from the remainders are combined to match one target regardless of orientations. WARNING: This method is slow! It is recommended to use after Double Match and Exact Match to reduce timber to match."
+    "keywords": "Class Match Matching algorithm for timber assembly. Inheritance object Match Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Namespace: TimberAssembly.Operation Assembly: TimberAssembly.dll Syntax public class Match Constructors Name Description Match(List<Agent>, List<Agent>, double) Create a matching algorithm for timber assembly. Properties Name Description SubjectAgents Subject agents to be matched. TargetAgents Target agents to be matched. Subject agent will be matched to target agents. Tolerance Tolerance for matching. This number cannot be smaller than the smallest dimension of the agents. Methods Name Description CutToTarget(ref Remain) Cut the remainders to the target and create offcuts. (when target is smaller than subject) DoubleMatch(ref Remain) Pairs a target with two subjects from the remaining items, based on a one-dimensional match. The method attempts to find two subjects that, when combined, match a target, thereby reducing the set of remaining items. NOTE: Matches are determined using a set tolerance level. Items already matched will not be considered in subsequent iterations. ExactMatch(ref Remain) Attempts to match each target to a single subject from the remainder based on exact one-to-one matching. NOTE: 'ExactMatch' is the fastest method, but may not identify all possible matches. If there are complex combinations, consider using DoubleMatch(ref Remain) or UniMatch(ref Remain) methods after this. ExtendToTarget(ref Remain) Combining remainders with new subjects to match the targets. (when target is larger than target) RemainMatch(Remain) (DEPRECATED! Use ExtendToTarget(ref Remain) Instead.) Match the rest of the targets with the rest of the subjects. Introduce offcuts if necessary. UniMatch(ref Remain) Matches targets and subjects from the remainders, combining up to four subjects to match a single target, regardless of orientations. This method provides comprehensive results but it may be slow due to its exhaustive nature. NOTE: This method can be computationally intensive! It is recommended to use it after DoubleMatch(ref Remain) and ExactMatch(ref Remain) methods have been used, to reduce the remaining unprocessed items."
   },
   "api/TimberAssembly.Operation.Match.RemainMatch.html": {
     "href": "api/TimberAssembly.Operation.Match.RemainMatch.html",
     "title": "Method RemainMatch | TimberAssembly",
-    "keywords": "Method RemainMatch | Improve this Doc View Source RemainMatch(Remain) (DEPRECATED! Use ExtendToTarget Instead.) Match the rest of the targets with the rest of the subjects. Introduce offcuts if necessary. Declaration public List<Pair> RemainMatch(Remain remain) Parameters Type Name Description Remain remain Remainders Returns Type Description List<Pair> Resulted pairs"
+    "keywords": "Method RemainMatch | Improve this Doc View Source RemainMatch(Remain) (DEPRECATED! Use ExtendToTarget(ref Remain) Instead.) Match the rest of the targets with the rest of the subjects. Introduce offcuts if necessary. Declaration public List<Pair> RemainMatch(Remain remain) Parameters Type Name Description Remain remain The remaining items to be processed. The method updates this parameter with any unmatched items after processing. Returns Type Description List<Pair> A list of matched pairs, where each pair consists of a target and its matching subjects."
   },
   "api/TimberAssembly.Operation.Match.SubjectAgents.html": {
     "href": "api/TimberAssembly.Operation.Match.SubjectAgents.html",
@@ -352,7 +387,7 @@
   "api/TimberAssembly.Operation.Match.UniMatch.html": {
     "href": "api/TimberAssembly.Operation.Match.UniMatch.html",
     "title": "Method UniMatch | TimberAssembly",
-    "keywords": "Method UniMatch | Improve this Doc View Source UniMatch(ref Remain) Four subjects from the remainders are combined to match one target regardless of orientations. WARNING: This method is slow! It is recommended to use after Double Match and Exact Match to reduce timber to match. Declaration public List<Pair> UniMatch(ref Remain remains) Parameters Type Name Description Remain remains Output remainders Returns Type Description List<Pair> Resulted pairs"
+    "keywords": "Method UniMatch | Improve this Doc View Source UniMatch(ref Remain) Matches targets and subjects from the remainders, combining up to four subjects to match a single target, regardless of orientations. This method provides comprehensive results but it may be slow due to its exhaustive nature. NOTE: This method can be computationally intensive! It is recommended to use it after DoubleMatch(ref Remain) and ExactMatch(ref Remain) methods have been used, to reduce the remaining unprocessed items. Declaration public List<Pair> UniMatch(ref Remain remains) Parameters Type Name Description Remain remains The remaining items to be processed. The method updates this parameter with any unmatched items after processing. Returns Type Description List<Pair> A list of matched pairs, where each pair consists of a target and its matching subjects."
   },
   "api/TimberAssembly.Operation.Parser.DeserializeToAgents.html": {
     "href": "api/TimberAssembly.Operation.Parser.DeserializeToAgents.html",
