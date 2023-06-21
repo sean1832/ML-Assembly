@@ -134,22 +134,70 @@ namespace TimberAssembly.Operation
         {
             Remain previousRemains = remains;
             var (remainTargets, remainSalvages) = CloneAgents(previousRemains);
+            var (remainTargetsTemp, remainSalvagesTemp) = CloneAgents(previousRemains);
             List<Agent> matchedSubjects = new List<Agent>();
             List<Pair> pairs = new List<Pair>();
 
-            foreach (var target in remainTargets)
+            foreach (var target in remainTargetsTemp)
             {
-                foreach (var salvage in remainSalvages)
+                bool found = false;
+                for (var i = 0; i < remainSalvagesTemp.Count; i++)
                 {
-                    var salvagePerm = Processor.Permutations(salvage.Dimension.ToList());
-
+                    var salvage = remainSalvagesTemp[i];
+                    if (matchedSubjects.Contains(salvage)) continue;
+                    
                     // permutation of all aggregation orientation and trimmed order
                     // to see if any of these matches subjects.
                     List<List<List<Agent>>> allAggregations = ComputeMatch.CalculateAllAggregation(target, salvage);
-                    
+
+                    foreach (var orientations in allAggregations)
+                    {
+                        foreach (var combination in orientations)
+                        {
+                            var count = 0;
+                            List<Agent> matchedAggSubjects = new List<Agent>();
+                            foreach (var item in combination)
+                            {
+                                // check if any of the aggregation matches subjects
+                                for (int j = i + 1; j < remainSalvagesTemp.Count; j++)
+                                {
+                                    var aggregateSubject = remainSalvagesTemp[j];
+                                    if (matchedAggSubjects.Contains(aggregateSubject)) continue;
+                                    if (matchedSubjects.Contains(aggregateSubject)) continue;
+                                    var aggregatePerm = Processor.Permutations(aggregateSubject.Dimension.ToList());
+
+                                    if (aggregatePerm.Any(perm => perm.SequenceEqual(item.Dimension.ToList())))
+                                    {
+                                        count++;
+                                        matchedAggSubjects.Add(aggregateSubject);
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (count == combination.Count)
+                            {
+                                found = true;
+                                matchedAggSubjects.Add(salvage);
+                                Pair pair = new Pair(target, matchedAggSubjects);
+                                pairs.Add(pair);
+
+                                remainTargets.Remove(target);
+                                foreach (var item in matchedAggSubjects)
+                                {
+                                    remainSalvages.Remove(item);
+                                }
+                                matchedSubjects.AddRange(matchedAggSubjects);
+                                break;
+                            }
+                        }
+                        if (found) break;
+                    }
+                    if (found) break;
                 }
             }
-            throw new NotImplementedException();
+
+            return pairs;
         }
 
 

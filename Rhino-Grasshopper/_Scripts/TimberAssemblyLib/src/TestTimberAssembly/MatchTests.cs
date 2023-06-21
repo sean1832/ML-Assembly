@@ -238,8 +238,37 @@ namespace TestTimberAssembly
 
         #endregion
 
-        #region TripleMatch
+        #region UniMatch
 
+        [Test]
+        public void UniMatch_OffcutsRemain_TargetLargerThanSubject()
+        {
+            // Arrange
+            List<Agent> targets = new List<Agent>()
+            {
+                new Agent(dimension : new Vector3D(6, 7, 10))
+            };
+
+            List<Agent> salvages = new List<Agent>()
+            {
+                new Agent(dimension : new Vector3D(2, 3, 4)),
+                new Agent(dimension : new Vector3D(7, 4, 10)),
+                new Agent(dimension : new Vector3D(2, 4, 10)),
+                new Agent(dimension : new Vector3D(2, 3, 6))
+            };
+            Remain remain = new Remain() { Targets = targets, Subjects = salvages };
+
+            var match = new Match(_targetAgents, _salvageAgents, 0.01);
+
+            // Act
+            List<Pair> result = match.UniMatch(ref remain);
+
+            var test = result;
+
+            // Assert
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(4, remain.Subjects.Count);
+        }
 
         #endregion
 
