@@ -11,7 +11,7 @@ using Grasshopper.Kernel.Data;
 using Grasshopper.Kernel.Types;
 
 using System.Linq;
-using TimberAssembly;
+using TimberAssembly.Operation;
 using TimberAssembly.Entities;
 
 
@@ -58,7 +58,7 @@ public abstract class Script_Instance_7d043 : GH_ScriptInstance
   private void RunScript(List<object> pairsData, object remainsData, List<string> initSalvageTimber, ref object score, ref object cutCounts, ref object newSubjectVolume, ref object recycleRate, ref object wasteRate, ref object materialEfficiency, ref object laborEfficiency, ref object timeEfficiency)
   {
     List<Agent> initSalvage = Parser.DeserializeToAgents(initSalvageTimber);
-    Remain remain = (Remain)remainsData;
+    Remain remain = (Remain) remainsData;
     List<Pair> pairs = pairsData.OfType<Pair>().ToList();
 
     Evaluate evaluate = new Evaluate(pairs, remain, initSalvage);

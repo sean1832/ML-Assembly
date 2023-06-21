@@ -14,6 +14,7 @@ using System.Linq;
 using System.Reflection;
 using TimberAssembly;
 using TimberAssembly.Entities;
+using TimberAssembly.Operation;
 
 
 /// <summary>
@@ -59,7 +60,7 @@ public abstract class Script_Instance_f7dfd : GH_ScriptInstance
   private void RunScript(List<string> salvageData, List<string> TargetFrameData, double tolerance, ref object pairDatas, ref object remains)
   {
     // version display
-    Assembly assembly = Assembly.GetAssembly(typeof(TimberAssembly.Match));
+    Assembly assembly = Assembly.GetAssembly(typeof(TimberAssembly.Operation.Match));
     string version = assembly.GetName().Version.ToString();
     Component.Message = "Ver " + version;
 
@@ -71,32 +72,22 @@ public abstract class Script_Instance_f7dfd : GH_ScriptInstance
     // tolerance limit
     if (tolerance > smallestDimension(salvageAgents))
     {
-      string message = "Tolerance is too large. Tolerance is set to " + smallestDimension(salvageAgents).ToString();
+      string message = "Tolerance is too large. Tolerance is set to " + smallestDimension(salvageAgents);
       Component.AddRuntimeMessage(GH_RuntimeMessageLevel.Warning, message);
       tolerance = smallestDimension(salvageAgents);
     }
 
     // Matching operation
-    Match matchOperation = new Match(targetAgents, salvageAgents, tolerance);
+    Match matchOp = new Match(targetAgents, salvageAgents, tolerance);
 
     Remain remain = new Remain();
 
-    List<Pair> matchedPairs = matchOperation.ExactMatch(ref remain); // when subject == target
-    matchedPairs.AddRange(matchOperation.DoubleMatch(ref remain)); // when subject 1 + subject 2 == target
-    matchedPairs.AddRange(matchOperation.CutToTarget(ref remain)); // when subject > target
-    matchedPairs.AddRange(matchOperation.ExtendToTarget(ref remain)); // when subject < target
+    List<Pair> matchedPairs = matchOp.ExactMatch(ref remain); // when subject == target
+    matchedPairs.AddRange(matchOp.DoubleMatch(ref remain)); // when subject 1 + subject 2 == target
+    matchedPairs.AddRange(matchOp.UniMatch(ref remain)); // when s1 + s2 + s3 + s4 == target
+    matchedPairs.AddRange(matchOp.CutToTarget(ref remain)); // when subject > target
+    matchedPairs.AddRange(matchOp.ExtendToTarget(ref remain)); // when subject < target
 
-    //List<Pair> nonTrimmedPairs = new List<Pair>();
-
-    //foreach (var pair in matchedPairs)
-    //{
-    //  foreach (var subject in pair.Subjects)
-    //  {
-    //    if (subject.Trimmed > 0) continue;
-    //    nonTrimmedPairs.Add(pair);
-    //    break;
-    //  }
-    //}
 
     // Output data
     pairDatas = matchedPairs;
