@@ -38,11 +38,13 @@ namespace TimberAssembly.Operation
         }
 
         /// <summary>
-        /// One subject is exactly matched to one target.
+        /// Attempts to match each target to a single subject from the remainder based on exact one-to-one matching.
+        /// <para>NOTE: 'ExactMatch' is the fastest method, but may not identify all possible matches. If there are complex combinations,
+        /// consider using
+        /// <see cref="DoubleMatch"/> or <see cref="UniMatch"/> methods after this.</para>
         /// </summary>
-        /// <param name="remains">Output remainders.
-        /// This contains subject and targets that did not meet the condition of this method.</param>
-        /// <returns>Resulted pairs</returns>
+        /// <param name="remains">The remaining items to be processed. The method updates this parameter with any unmatched items after processing.</param>
+        /// <returns>A list of matched pairs, where each pair consists of a target and a single matching subject.</returns>
         public List<Pair> ExactMatch(ref Remain remains)
         {
             List<Agent> remainTargets = TargetAgents.ToList();
@@ -71,10 +73,14 @@ namespace TimberAssembly.Operation
         }
 
         /// <summary>
-        /// Two subjects from the remainders are combined to match one target. 1 dimensional matching.
+        /// Pairs a target with two subjects from the remaining items, based on a one-dimensional match.
+        /// The method attempts to find two subjects that, when combined, match a target,
+        /// thereby reducing the set of remaining items.
+        /// <para>NOTE: Matches are determined using a set tolerance level.
+        /// Items already matched will not be considered in subsequent iterations.</para>
         /// </summary>
-        /// <param name="remains">Output remainders</param>
-        /// <returns>Resulted pairs</returns>
+        /// <param name="remains">The remaining items to be processed. The method modifies this parameter, removing matched items after processing.</param>
+        /// <returns>A list of matched pairs, each consisting of a target and a list of two matching subjects. If no matches are found, an empty list is returned.</returns>
         public List<Pair> DoubleMatch(ref Remain remains)
         {
             Remain previousRemains = remains;
@@ -125,49 +131,59 @@ namespace TimberAssembly.Operation
         }
 
         /// <summary>
-        /// Max four subjects from the remainders are combined to match one target regardless of orientations.
-        /// This method is the most robust but also the slowest.
-        /// <para>WARNING: This method can be very slow! It is recommended to use after Double Match and Exact Match to reduce timber to match.</para>
+        /// Matches targets and subjects from the remainders, combining up to four subjects to match a single target, regardless of orientations. 
+        /// This method provides comprehensive results but it may be slow due to its exhaustive nature.
+        /// <para>NOTE: This method can be computationally intensive! It is recommended to use it after
+        /// <see cref="DoubleMatch"/> and <see cref="ExactMatch"/> methods have been used, to reduce the remaining unprocessed items.</para>
         /// </summary>
-        /// <param name="remains">Output remainders</param>
-        /// <returns>Resulted pairs</returns>
+        /// <param name="remains">The remaining items to be processed. The method updates this parameter with any unmatched items after processing.</param>
+        /// <returns>A list of matched pairs, where each pair consists of a target and its matching subjects.</returns>
         public List<Pair> UniMatch(ref Remain remains)
         {
+            // Clone previous remains into two new collections for targets and salvages.
             Remain previousRemains = remains;
             var (remainTargets, remainSalvages) = CloneAgents(previousRemains);
             var (remainTargetsTemp, remainSalvagesTemp) = CloneAgents(previousRemains);
+
+            // Initialize a list to store matched subjects and pairs.
             List<Agent> matchedSubjects = new List<Agent>();
             List<Pair> pairs = new List<Pair>();
 
+            // Iterate over the targets.
             foreach (var target in remainTargetsTemp)
             {
                 bool found = false;
+                // Iterate over the salvages.
                 for (var i = 0; i < remainSalvagesTemp.Count; i++)
                 {
                     var salvage = remainSalvagesTemp[i];
                     if (matchedSubjects.Contains(salvage)) continue;
-                    
-                    // permutation of all aggregation orientation and trimmed order
-                    // to see if any of these matches subjects.
+
+                    // Calculate all possible combinations of target and salvage aggregations.
                     List<List<List<Agent>>> allAggregations = ComputeMatch.CalculateAllAggregation(target, salvage);
 
+                    // Iterate over all aggregations.
                     foreach (var orientations in allAggregations)
                     {
+                        // Iterate over each combination in the current aggregation.
                         foreach (var combination in orientations)
                         {
                             var count = 0;
                             List<Agent> matchedAggSubjects = new List<Agent>();
+                            // Iterate over each item in the current combination.
                             foreach (var item in combination)
                             {
-                                // check if any of the aggregation matches subjects
+                                // Check if any of the aggregation matches with other subjects.
                                 for (int j = i + 1; j < remainSalvagesTemp.Count; j++)
                                 {
                                     var aggregateSubject = remainSalvagesTemp[j];
                                     if (matchedAggSubjects.Contains(aggregateSubject)) continue;
                                     if (matchedSubjects.Contains(aggregateSubject)) continue;
+
+                                    // Generate all permutations of the current aggregate subject dimensions.
                                     var aggregatePerm = Processor.Permutations(aggregateSubject.Dimension.ToList());
 
-                                    // check if any of the permutation matches the aggregation
+                                    // Check if any permutation matches the item's dimension.
                                     if (aggregatePerm.Any(perm => perm.SequenceEqual(item.Dimension.ToList())))
                                     {
                                         count++;
@@ -177,19 +193,23 @@ namespace TimberAssembly.Operation
                                 }
                             }
 
-                            // if count equals to the combination element count, it means the subjects are a match.
+                            // If the count equals to the combination element count, it means the subjects are a match.
                             if (count == combination.Count)
                             {
                                 found = true;
                                 matchedAggSubjects.Add(salvage);
+
+                                // Create a pair with the current target and matched subjects, add it to the pairs list.
                                 Pair pair = new Pair(target, matchedAggSubjects);
                                 pairs.Add(pair);
 
+                                // Remove the matched elements from the remaining targets and salvages.
                                 remainTargets.Remove(target);
                                 foreach (var item in matchedAggSubjects)
                                 {
                                     remainSalvages.Remove(item);
                                 }
+                                // Add the matched subjects to the overall matched subjects list.
                                 matchedSubjects.AddRange(matchedAggSubjects);
                                 break;
                             }
@@ -199,18 +219,22 @@ namespace TimberAssembly.Operation
                     if (found) break;
                 }
             }
+
+            // Update the remains with the current remainTargets and remainSalvages.
             remains.Targets = remainTargets;
             remains.Subjects = remainSalvages;
+            // Return the list of pairs that have been matched.
             return pairs;
         }
+
 
 
         /// <summary>
         /// Cut the remainders to the target and create offcuts.
         /// (when target is smaller than subject)
         /// </summary>
-        /// <param name="remain">Remainders</param>
-        /// <returns>Resulted pairs</returns>
+        /// <param name="remain">The remaining items to be processed. The method updates this parameter with any unmatched items after processing.</param>
+        /// <returns>A list of matched pairs, where each pair consists of a target and its matching subjects.</returns>
         public List<Pair> CutToTarget(ref Remain remain)
         {
             Remain previousRemains = remain;
@@ -294,12 +318,12 @@ namespace TimberAssembly.Operation
 
 
         /// <summary>
-        /// <para>(DEPRECATED! Use ExtendToTarget Instead.) </para>
+        /// <para>(DEPRECATED! Use <see cref="ExtendToTarget"/> Instead.) </para>
         /// Match the rest of the targets with the rest of the subjects.
         /// Introduce offcuts if necessary.
         /// </summary>
-        /// <param name="remain">Remainders</param>
-        /// <returns>Resulted pairs</returns>
+        /// <param name="remain">The remaining items to be processed. The method updates this parameter with any unmatched items after processing.</param>
+        /// <returns>A list of matched pairs, where each pair consists of a target and its matching subjects.</returns>
         public List<Pair> RemainMatch(Remain remain)
         {
             List<Agent> remainTargets;
@@ -390,8 +414,8 @@ namespace TimberAssembly.Operation
         /// Combining remainders with new subjects to match the targets. 
         /// (when target is larger than target)
         /// </summary>
-        /// <param name="remain">Remainders</param>
-        /// <returns>Resulted pairs</returns>
+        /// <param name="remain">The remaining items to be processed. The method updates this parameter with any unmatched items after processing.</param>
+        /// <returns>A list of matched pairs, where each pair consists of a target and its matching subjects.</returns>
         public List<Pair> ExtendToTarget(ref Remain remain)
         {
             Remain previousRemains = remain;
