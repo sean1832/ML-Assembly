@@ -196,7 +196,8 @@ namespace TimberAssembly.Operation
                     if (found) break;
                 }
             }
-
+            remains.Targets = remainTargets;
+            remains.Subjects = remainSalvages;
             return pairs;
         }
 

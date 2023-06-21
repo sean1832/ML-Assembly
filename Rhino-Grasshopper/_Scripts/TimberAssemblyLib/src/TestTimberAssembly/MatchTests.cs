@@ -241,7 +241,7 @@ namespace TestTimberAssembly
         #region UniMatch
 
         [Test]
-        public void UniMatch_OffcutsRemain_TargetLargerThanSubject()
+        public void UniMatch_OneResultOneRemain_TargetLargerThanSubject()
         {
             // Arrange
             List<Agent> targets = new List<Agent>()
@@ -254,7 +254,8 @@ namespace TestTimberAssembly
                 new Agent(dimension : new Vector3D(2, 3, 4)),
                 new Agent(dimension : new Vector3D(7, 4, 10)),
                 new Agent(dimension : new Vector3D(2, 4, 10)),
-                new Agent(dimension : new Vector3D(2, 3, 6))
+                new Agent(dimension : new Vector3D(2, 3, 6)),
+                new Agent(dimension : new Vector3D(7, 8, 9)) // this will be remain
             };
             Remain remain = new Remain() { Targets = targets, Subjects = salvages };
 
@@ -266,8 +267,9 @@ namespace TestTimberAssembly
             var test = result;
 
             // Assert
+            Assert.AreEqual(1, remain.Subjects.Count);
             Assert.AreEqual(1, result.Count);
-            Assert.AreEqual(4, remain.Subjects.Count);
+            Assert.AreEqual(4, result[0].Subjects.Count);
         }
 
         #endregion
