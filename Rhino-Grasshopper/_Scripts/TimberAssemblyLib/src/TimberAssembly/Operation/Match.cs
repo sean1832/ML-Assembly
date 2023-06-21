@@ -125,8 +125,9 @@ namespace TimberAssembly.Operation
         }
 
         /// <summary>
-        /// Four subjects from the remainders are combined to match one target regardless of orientations.
-        /// <para>WARNING: This method is slow! It is recommended to use after Double Match and Exact Match to reduce timber to match.</para>
+        /// Max four subjects from the remainders are combined to match one target regardless of orientations.
+        /// This method is the most robust but also the slowest.
+        /// <para>WARNING: This method can be very slow! It is recommended to use after Double Match and Exact Match to reduce timber to match.</para>
         /// </summary>
         /// <param name="remains">Output remainders</param>
         /// <returns>Resulted pairs</returns>
@@ -166,6 +167,7 @@ namespace TimberAssembly.Operation
                                     if (matchedSubjects.Contains(aggregateSubject)) continue;
                                     var aggregatePerm = Processor.Permutations(aggregateSubject.Dimension.ToList());
 
+                                    // check if any of the permutation matches the aggregation
                                     if (aggregatePerm.Any(perm => perm.SequenceEqual(item.Dimension.ToList())))
                                     {
                                         count++;
@@ -175,6 +177,7 @@ namespace TimberAssembly.Operation
                                 }
                             }
 
+                            // if count equals to the combination element count, it means the subjects are a match.
                             if (count == combination.Count)
                             {
                                 found = true;
