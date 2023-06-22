@@ -241,7 +241,7 @@ namespace TestTimberAssembly
         #region UniMatch
 
         [Test]
-        public void UniMatch_OneResultOneRemain_TargetLargerThanSubject()
+        public void UniMatch_FourSubjectOneRemain_TargetLargerThanSubject()
         {
             // Arrange
             List<Agent> targets = new List<Agent>()
@@ -272,6 +272,69 @@ namespace TestTimberAssembly
             Assert.AreEqual(4, result[0].Subjects.Count);
         }
 
+        [Test]
+        public void UniMatch_ThreeSubjectThreeRemain_TwoSubjectFit()
+        {
+            // Arrange
+            List<Agent> targets = new List<Agent>()
+            {
+                new Agent(dimension : new Vector3D(7, 5, 4))
+            };
+
+            List<Agent> salvages = new List<Agent>()
+            {
+                new Agent(dimension : new Vector3D(2.5, 7, 4)),
+                new Agent(dimension : new Vector3D(2.5, 7, 2)),
+                new Agent(dimension : new Vector3D(2.5, 7, 2)),
+                new Agent(dimension : new Vector3D(2, 3, 6)), // this will be remain
+                new Agent(dimension : new Vector3D(7, 8, 9)) // this will be remain
+            };
+            Remain remain = new Remain() { Targets = targets, Subjects = salvages };
+
+            var match = new Match(_targetAgents, _salvageAgents, 0.01);
+
+            // Act
+            List<Pair> result = match.UniMatch(ref remain);
+
+            var test = result;
+
+            // Assert
+            Assert.AreEqual(2, remain.Subjects.Count);
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(3, result[0].Subjects.Count);
+        }
+
+        [Test]
+        public void UniMatch_TwoSubjectThreeRemain_TwoSubjectFit()
+        {
+            // Arrange
+            List<Agent> targets = new List<Agent>()
+            {
+                new Agent(dimension : new Vector3D(7, 5, 4))
+            };
+
+            List<Agent> salvages = new List<Agent>()
+            {
+                new Agent(dimension : new Vector3D(2, 5, 4)),
+                new Agent(dimension : new Vector3D(5, 5, 4)),
+                new Agent(dimension : new Vector3D(2, 4, 10)),
+                new Agent(dimension : new Vector3D(2, 3, 6)),
+                new Agent(dimension : new Vector3D(7, 8, 9)) // this will be remain
+            };
+            Remain remain = new Remain() { Targets = targets, Subjects = salvages };
+
+            var match = new Match(_targetAgents, _salvageAgents, 0.01);
+
+            // Act
+            List<Pair> result = match.UniMatch(ref remain);
+
+            var test = result;
+
+            // Assert
+            Assert.AreEqual(3, remain.Subjects.Count);
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(2, result[0].Subjects.Count);
+        }
         #endregion
 
         #region QuadrupleMatch

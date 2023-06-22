@@ -246,6 +246,21 @@ namespace TimberAssembly.Helper
                     // Iterate over three dimensions (width, height, and depth).
                     for (int i = 0; i < 3; i++)
                     {
+                        if (tempTargetBin[i] < tempSubjectBin[i])
+                        {
+                            isOversize = true;
+                            break;
+                        }
+                        // If a the subject's combination volume is equal to the target volume, break.
+                        double totalVolume = subject.Volume();
+                        foreach (var combAgent in combination)
+                        {
+                            totalVolume += combAgent.Volume();
+                        }
+                        if (Math.Abs(totalVolume - target.Volume()) < 0.00001)
+                        {
+                            break;
+                        }
                         // If a dimension of the target exceeds the corresponding dimension of the optimal
                         // orientation of the target, calculate the residual in that dimension.
                         if (tempTargetBin[i] > tempSubjectBin[i])
@@ -254,11 +269,6 @@ namespace TimberAssembly.Helper
                             tempTargetBin[i] -= tempSubjectBin[i];
                             combination.Add(new Agent(null, new Vector3D(tempTargetBin[0], tempTargetBin[1], tempTargetBin[2]), 1));
                             tempTargetBin[i] = tempSubjectBin[i];
-                        }
-                        else if (tempTargetBin[i] < tempSubjectBin[i])
-                        {
-                            isOversize = true;
-                            break;
                         }
                         else
                         {
