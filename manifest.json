@@ -476,16 +476,6 @@
       "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TimberAssembly.Entities.Vector3D.op_GreaterThan.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
-      "output": {
-        ".html": {
           "relative_path": "api/TimberAssembly.Entities.Vector3D.op_LessThan.html"
         }
       },
@@ -517,6 +507,16 @@
       "output": {
         ".html": {
           "relative_path": "api/TimberAssembly.Entities.Vector3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Entities.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Entities.Vector3D.op_GreaterThan.html"
         }
       },
       "version": ""
