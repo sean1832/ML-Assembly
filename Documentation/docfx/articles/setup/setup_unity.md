@@ -8,32 +8,32 @@
 ## Manual install relevant python packages
 1. Open a terminal and navigate to `ML-Assembly\Timber-Assembly`.
 2. Create a virtual environment by running the following command:
-```powershell
+```bash
 py -3.9 -m venv venv
 ```
 3. Activate the virtual environment by running the following command:
-```powershell
+```bash
 venv\Scripts\activate
 ```
 4. Upgrade pip by running the following command:
-```powershell
+```bash
 python -m pip install --upgrade pip
 ```
 5. Install pytorch by running the following command:
-```powershell
+```bash
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
 ```
 
 6. Install **ML Agent** python package by running the following command:
-```powershell
+```bash
 pip install mlagents
 ```
 7. Install **onnx** python package by running the following command:
-```powershell
+```bash
 pip3 install onnx
 ```
 8. Downgrade **protobuf** to version 3.20 for stability by running the following command:
-```powershell
+```bash
 pip install protobuf==3.20
 ```
 
