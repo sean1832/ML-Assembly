@@ -8,6 +8,10 @@ Before we begin, please make sure you have completed the following steps:
 - [Setup Unity](../setup/setup_unity.md)
 - [Setup Grasshopper](../setup/setup_grasshopper.md)
 
+## Update
+---
+If you have already completed the setup steps, but need to update the repository, please see [Update Repository](update.md).
+
 ## **Step 1:** Collect, prepare and measure salvaged timbers
 ---
 Collect salvaged timber from a demolition site or warehouse. we recommend using timber with a rectangular cross-section. The timber should be measure to the nearest millimeter and labeled with a unique ID, this data should be recorded in `.csv` format.

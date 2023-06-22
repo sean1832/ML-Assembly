@@ -8,15 +8,15 @@ The backbone of this project is a Grasshopper script, which serves a dual role. 
 
 A set of metrics are implemented to gauge the success of each iteration - time efficiency, labour efficiency, material efficiency, the total volume of salvage timber used, and the volume of salvage timber left unused. These values are calculated into a final score that is fed back into Unity. The ML-Agent utilizes this feedback to observe, learn and adapt, receiving rewards or penalties based on the score value.
 
-*Please note that the project is currently in its developmental stages and is not yet ready for production use.*
+> Please note that the project is currently in its developmental stages and is not yet ready for production use.
+> This project is constantly evolving and will be updated frequently. Please check back often for the [latest release](https://github.com/sean1832/ML-Assembly/releases/latest).
 
 ## Getting Started
-[Quick Start](articles/get_started/quick_start.md)
+- [Quick Start](articles/get_started/quick_start.md)
 
-## Getting Latest Release
-`TimberAssembly.dll` [Latest Release](https://github.com/sean1832/ML-Assembly/releases/latest).
+- Download `TimberAssembly.dll` [Latest Release](https://github.com/sean1832/ML-Assembly/releases/latest).
 
-See [Update](articles/get_started/update.md) for more information on how to update the project to the latest release.
+- See [Update](articles/get_started/update.md) for more information on how to update the project to the latest release.
 
 ## Roadmap
 - Create documentation for end users and developers
