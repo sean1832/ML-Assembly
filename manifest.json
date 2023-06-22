@@ -836,16 +836,6 @@
       "source_relative_path": "api/TimberAssembly.Operation.Parser.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TimberAssembly.Operation.Parser.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Operation.Parser.yml",
-      "output": {
-        ".html": {
           "relative_path": "api/TimberAssembly.Operation.Parser.DeserializeToAgents.html"
         }
       },
@@ -867,6 +857,16 @@
       "output": {
         ".html": {
           "relative_path": "api/TimberAssembly.Operation.Parser.SerializeAgentRemains.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Parser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Parser.html"
         }
       },
       "version": ""
