@@ -33,6 +33,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "../Images/grasshopper-sc-script-CompareEvaluate.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/grasshopper-sc-script-CompareEvaluate.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "../Images/grasshopper-sc-script.png",
       "output": {
         "resource": {
@@ -47,6 +57,16 @@
       "output": {
         "resource": {
           "relative_path": "Images/grasshopper-sc-target-frame-creation.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../Images/ml-agent-console-play.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/ml-agent-console-play.png"
         }
       },
       "version": ""
@@ -816,6 +836,16 @@
       "source_relative_path": "api/TimberAssembly.Operation.Parser.yml",
       "output": {
         ".html": {
+          "relative_path": "api/TimberAssembly.Operation.Parser.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TimberAssembly.Operation.Parser.yml",
+      "output": {
+        ".html": {
           "relative_path": "api/TimberAssembly.Operation.Parser.DeserializeToAgents.html"
         }
       },
@@ -837,16 +867,6 @@
       "output": {
         ".html": {
           "relative_path": "api/TimberAssembly.Operation.Parser.SerializeAgentRemains.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/TimberAssembly.Operation.Parser.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/TimberAssembly.Operation.Parser.html"
         }
       },
       "version": ""
@@ -887,6 +907,16 @@
       "output": {
         ".html": {
           "relative_path": "articles/get_started/quick_start.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/get_started/update.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/get_started/update.html"
         }
       },
       "version": ""

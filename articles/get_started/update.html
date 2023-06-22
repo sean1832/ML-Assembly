@@ -5,23 +5,23 @@
     <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>TimberAssembly | TimberAssembly </title>
+      <title>Update the project to the latest release | TimberAssembly </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="TimberAssembly | TimberAssembly ">
+      <meta name="title" content="Update the project to the latest release | TimberAssembly ">
       <meta name="generator" content="docfx ">
   
-      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="shortcut icon" href="../../favicon.ico">
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
-      <link rel="stylesheet" href="styles/config.css">
-      <link rel="stylesheet" href="styles/discord.css">
-      <link rel="stylesheet" href="styles/singulink.css">
-      <link rel="stylesheet" href="styles/main.css">
-      <meta property="docfx:navrel" content="toc.html">
-      <meta property="docfx:tocrel" content="toc.html">
+      <link rel="stylesheet" href="../../styles/config.css">
+      <link rel="stylesheet" href="../../styles/discord.css">
+      <link rel="stylesheet" href="../../styles/singulink.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
   
-  <meta property="docfx:rel" content="">
+  <meta property="docfx:rel" content="../../">
   <meta property="docfx:newtab" content="true">
     </head>
     <body>
@@ -31,8 +31,8 @@
             </a>
 
 
-            <a class="brand" href="index.html">
-              <img src="logo.svg" alt="TimberAssembly" class="logomark">
+            <a class="brand" href="../../index.html">
+              <img src="../../logo.svg" alt="TimberAssembly" class="logomark">
               <span class="brand-title">TimberAssembly</span>
             </a>        </div>
 
@@ -45,8 +45,8 @@
                     <div>
                       <div class="mobile-hide">
 
-                        <a class="brand" href="index.html">
-                          <img src="logo.svg" alt="TimberAssembly" class="logomark">
+                        <a class="brand" href="../../index.html">
+                          <img src="../../logo.svg" alt="TimberAssembly" class="logomark">
                           <span class="brand-title">TimberAssembly</span>
                         </a>                      </div>
 
@@ -60,6 +60,10 @@
                       <div id="navbar">
                       </div>
                     </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
                 </div>
                 <div class="footer">
   <strong>Developed by <a href='https://github.com/sean1832' style='color: lightblue !important;'>Zeke Zhang</a></strong>
@@ -88,36 +92,40 @@
                         </div>
 
                          <div id="contribution">
-                               <a href="https://github.com/sean1832/ML-Assembly/blob/main/Documentation/docfx/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                               <a href="https://github.com/sean1832/ML-Assembly/blob/main/Documentation/docfx/articles/get_started/update.md/#L1" class="contribution-link">Improve this Doc</a>
                          </div>
 
                     <article class="content wrap" id="_content" data-uid="">
-<h1 id="timberassembly">TimberAssembly</h1>
+<h1 id="update-the-project-to-the-latest-release">Update the project to the latest release</h1>
 
-<h2 id="summary">Summary</h2>
-<p>TimberAssembly is an innovative project that marries the power of Grasshopper and Unity to facilitate the generation of timber frame assemblies using reclaimed timber. This undertaking leans heavily on the capabilities of Unity's ML-Agent toolkit, employing a reinforcement learning agent to intelligently manipulate and modify a timber frame structure. The ultimate goal is to discover the optimal form that maximize the use of salvaged timber.</p>
-<p>The backbone of this project is a Grasshopper script, which serves a dual role. First, it is used to generate a target structure (timber frame) that the agent then learns from and interacts with. Second, it compares and evaluates the extent to which the generated structure utilizes salvaged timber in relation to the target structure.</p>
-<p>A set of metrics are implemented to gauge the success of each iteration - time efficiency, labour efficiency, material efficiency, the total volume of salvage timber used, and the volume of salvage timber left unused. These values are calculated into a final score that is fed back into Unity. The ML-Agent utilizes this feedback to observe, learn and adapt, receiving rewards or penalties based on the score value.</p>
+<p>This page describes how to update the project to the latest release. You must have already setup the <a href="../setup/setup_env.html">environment</a>, <a href="../setup/setup_unity.html">unity</a> and <a href="../setup/setup_grasshopper.html">grasshopper</a> before updating the project.</p>
+<h2 id="update-class-library">Update Class Library</h2>
+<ol>
+<li>Download the <a href="https://github.com/sean1832/ML-Assembly/releases/latest">latest release</a> of <code>TimberAssembly-{version number}.zip</code> and its dependencies. It should be a <code>.zip</code> file containing <code>TimberAssembly.dll</code> and its dependencies.</li>
+<li>Unzip the <code>.zip</code> file to a folder on your local machine. Replace the existing files in that folder.</li>
+<li>Re-open grasshopper and navigate to <code>CompareDLL</code> to check if the version number is updated.</li>
+</ol>
+<h2 id="update-project-files-via-git-recommended">Update project files via git (recommended)</h2>
+<ol>
+<li>Ensure that you have <a href="https://git-scm.com/downloads">git</a> or <a href="https://desktop.github.com/">GitHub Desktop</a> installed.</li>
+<li>Open a terminal and navigate to your local <code>ML-Assembly</code> folder.</li>
+<li>Enter the following command:</li>
+</ol>
+<pre><code class="lang-bash">git pull
+</code></pre>
 <blockquote>
-<p>Please note that the project is currently in its developmental stages and is not yet ready for production use.
-This project is constantly evolving and will be updated frequently. Please check back often for the <a href="https://github.com/sean1832/ML-Assembly/releases/latest">latest release</a>.</p>
+<p>If you are using GitHub Desktop, you can also use the GUI to pull the latest changes.
+<a href="https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop">See here</a> for more information.</p>
 </blockquote>
-<h2 id="getting-started">Getting Started</h2>
+<h2 id="update-project-files-manually">Update project files manually</h2>
+<ol>
+<li>Download the <a href="https://github.com/sean1832/ML-Assembly/releases/latest">latest release</a> of <code>Source code.zip</code>. It should be a <code>.zip</code> file containing all the project files.</li>
+<li>Unzip the <code>.zip</code> file to a folder on your local machine. Replace or delete the existing files in that folder. You can also create a new folder and unzip files to that folder.</li>
+<li>Set up the project again. See:</li>
+</ol>
 <ul>
-<li><p><a href="articles/get_started/quick_start.html">Quick Start</a></p>
-</li>
-<li><p>Download <code>TimberAssembly.dll</code> <a href="https://github.com/sean1832/ML-Assembly/releases/latest">Latest Release</a>.</p>
-</li>
-<li><p>See <a href="articles/get_started/update.html">Update</a> for more information on how to update the project to the latest release.</p>
-</li>
-</ul>
-<h2 id="roadmap">Roadmap</h2>
-<ul>
-<li>Create documentation for end users and developers</li>
-<li><del>Create a universal match function, improve the quality of the match function</del> (<a class="xref" href="api/TimberAssembly.Operation.Match.UniMatch.html#TimberAssembly_Operation_Match_UniMatch_TimberAssembly_Entities_Remain__">See here</a>)</li>
-<li>Optimization.</li>
-<li>Visualization of resulted timber frame assembly with salvaged timber.</li>
-<li>Visualization of the agent's learning process.</li>
+<li><a href="../setup/setup_unity.html">Setup Unity</a></li>
+<li><a href="../setup/setup_grasshopper.html">Setup Grasshopper</a></li>
 </ul>
 </article>
                 </div>
@@ -130,11 +138,11 @@ This project is constantly evolving and will be updated frequently. Please check
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script type="text/javascript" src="styles/jquery.twbsPagination.min.js"></script>
+        <script type="text/javascript" src="../../styles/jquery.twbsPagination.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
-        <script type="text/javascript" src="styles/url.min.js"></script>
+        <script type="text/javascript" src="../../styles/url.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
-        <script type="text/javascript" src="styles/docfx.js"></script>
-        <script type="text/javascript" src="styles/main.js"></script>
-        <script type="text/javascript" src="styles/singulink.js"></script>    </body>
+        <script type="text/javascript" src="../../styles/docfx.js"></script>
+        <script type="text/javascript" src="../../styles/main.js"></script>
+        <script type="text/javascript" src="../../styles/singulink.js"></script>    </body>
 </html>

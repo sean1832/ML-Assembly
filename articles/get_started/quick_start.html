@@ -107,16 +107,133 @@
 <li><a href="../setup/setup_unity.html">Setup Unity</a></li>
 <li><a href="../setup/setup_grasshopper.html">Setup Grasshopper</a></li>
 </ul>
-<h2 id="step-1-collect-prepare-and-measure-salvaged-timbers">Step 1: Collect, prepare and measure salvaged timbers</h2>
+<h2 id="update">Update</h2>
+<hr>
+<p>If you have already completed the setup steps, but need to update the repository, please see <a href="update.html">Update Repository</a>.</p>
+<h2 id="step-1-collect-prepare-and-measure-salvaged-timbers"><strong>Step 1:</strong> Collect, prepare and measure salvaged timbers</h2>
 <hr>
 <p>Collect salvaged timber from a demolition site or warehouse. we recommend using timber with a rectangular cross-section. The timber should be measure to the nearest millimeter and labeled with a unique ID, this data should be recorded in <code>.csv</code> format.</p>
-<h2 id="step-2-create-a-target-structure">Step 2: Create a target structure</h2>
+<h2 id="step-2-create-a-target-structure"><strong>Step 2:</strong> Create a target structure</h2>
 <hr>
 <p>Create a target structure in Grasshopper by using the <code>Wall Frame.gh</code> script located at <code>ML-Assembly\Rhino-Grasshopper\_Scripts\Wall Frame.gh</code>. The script will generate a target structure (timber wall frame) with a given width, height. The script will also generate a window opening with a given width and height. The script will first output as a list of curve (length), it will then append height and width dimension for each timber and output as a list of timber IDs with their corresponding dimensions.</p>
 <blockquote>
 <p>Note you can also create your own target structure in Grasshopper by replacing the <code>Target Frame Creation</code> section in the <code>Wall Frame.gh</code> script with your own design. The output must be a list of curve (length).</p>
 </blockquote>
 <p><img src="../../Images/grasshopper-sc-target-frame-creation.png" alt="image"></p>
+<h2 id="step-3-import-collected-salvaged-timbers-data-into-grasshopper"><strong>Step 3:</strong> Import collected salvaged timbers data into Grasshopper</h2>
+<hr>
+<p>Locate the <code>Data Reader</code> section of the grasshopper script and replace the <code>Data Path</code> with the path to your salvaged timber data. The data should be in <code>.csv</code> format with the following columns: <code>ID</code>, <code>Length</code>, <code>Width</code>, <code>Height</code>. The data should be in the same format as the sample data located at <code>ML-Assembly\Rhino-Grasshopper\Data\Data.csv</code>.</p>
+<p>The data will be converted into a list of JSON objects and output as a list of timber IDs with their corresponding dimensions.</p>
+<h5 id="sample-csv-data">Sample CSV Data</h5>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Length</th>
+<th>Width</th>
+<th>Height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T01</td>
+<td>1000</td>
+<td>100</td>
+<td>100</td>
+</tr>
+<tr>
+<td>T02</td>
+<td>3000</td>
+<td>200</td>
+<td>200</td>
+</tr>
+<tr>
+<td>T03</td>
+<td>5050</td>
+<td>500</td>
+<td>300</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<h5 id="sample-json-data">Sample JSON Data</h5>
+<pre><code>[
+    {
+        &quot;ID&quot;: &quot;T01&quot;,
+        &quot;Dimension&quot;: {
+            &quot;X&quot;: 1000,
+            &quot;Y&quot;: 100,
+            &quot;Z&quot;: 100
+        }
+    },
+    {
+        &quot;ID&quot;: &quot;T02&quot;,
+        &quot;Dimension&quot;: {
+            &quot;X&quot;: 3000,
+            &quot;Y&quot;: 200,
+            &quot;Z&quot;: 200
+        }
+    },
+    {
+        &quot;ID&quot;: &quot;T03&quot;,
+        &quot;Dimension&quot;: {
+            &quot;X&quot;: 5050,
+            &quot;Y&quot;: 500,
+            &quot;Z&quot;: 300
+        }
+    },
+    ...
+]
+</code></pre>
+<h2 id="step-4-compare-and-evaluate-target-structure-against-salvaged-timbers"><strong>Step 4:</strong> Compare and evaluate target structure against Salvaged timbers</h2>
+<hr>
+<p>Locate the <code>Compare &amp; Evaluate</code> section of the script. The <code>CompareDLL</code> and <code>EvaluationDLL</code> components should be white. If not, please refer to <a href="../setup/setup_grasshopper.html">Setup Grasshopper</a>.</p>
+<p>The <code>CompareDLL</code> component takes in the target structure and salvaged timber data as <code>JSON objects</code> and outputs a list of <a href="../../api/TimberAssembly.Entities.Pair.html">Pairs</a> with timber IDs and their corresponding dimensions along with a list of <a href="../../api/TimberAssembly.Entities.Remain.html">Remains</a> which contains salvaged timber that are not able to matched. The <code>CompareDLL</code> will also trim the salvage timbers to the length of the target structure or add a new timber to the list if the target structure is longer than the salvaged timber and that there is no suitable combination of salvaged timbers that can be used to construct the target structure.</p>
+<p>The <code>EvaluationDLL</code> component takes in the output from the <code>CompareDLL</code> which are a list of <a href="../../api/TimberAssembly.Entities.Pair.html">Pairs</a> with timber IDs and their corresponding dimensions along with a list of <a href="../../api/TimberAssembly.Entities.Remain.html">Remains</a>, it will also takes initial salvage timber that are pre-matched in <code>initSalvageTimber</code> parameter. The <code>EvaluationDLL</code> will then evaluate and output
+<a class="xref" href="../../api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByCutCount.html#TimberAssembly_Operation_Evaluate_EvaluateEfficiencyByCutCount">cutCount</a>,
+<a class="xref" href="../../api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByVolume.html#TimberAssembly_Operation_Evaluate_EvaluateEfficiencyByVolume">newSubjectVolume</a>,
+<a class="xref" href="../../api/TimberAssembly.Operation.Evaluate.GetRecycleRateVolume.html#TimberAssembly_Operation_Evaluate_GetRecycleRateVolume">recycleRate</a>,
+<a class="xref" href="../../api/TimberAssembly.Operation.Evaluate.GetWasteRateByVolume.html#TimberAssembly_Operation_Evaluate_GetWasteRateByVolume">wasteRate</a>,
+<a class="xref" href="../../api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByVolume.html#TimberAssembly_Operation_Evaluate_EvaluateEfficiencyByVolume">materialEfficiency</a>,
+<a class="xref" href="../../api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByCutCount.html#TimberAssembly_Operation_Evaluate_EvaluateEfficiencyByCutCount">laborEfficiency</a>,
+<a class="xref" href="../../api/TimberAssembly.Operation.Evaluate.EvaluateEfficiencyByTime.html#TimberAssembly_Operation_Evaluate_EvaluateEfficiencyByTime_System_Double_System_Double_">timeEfficiency</a>.</p>
+<p><img src="../../Images/grasshopper-sc-script-CompareEvaluate.png" alt="image"></p>
+<h2 id="step-5-package-data-for-unity"><strong>Step 5:</strong> Package data for Unity</h2>
+<hr>
+<p>Locate the <code>ReJson</code> component and input the output from the <code>EvaluateDLL</code> along with other information for the ML-Agent to observe. The <code>ReJson</code> component will then output a single JSON object. This JSON object will then be send to Unity for the ML-Agent to observe via the <code>UDP Sender</code> component (with default port at <code>6001</code>).</p>
+<h2 id="step-6-run-unity"><strong>Step 6:</strong> Run Unity</h2>
+<hr>
+<p>Open the <code>ML-Assembly\Timber-Assembly</code> project in Unity and run the <code>ghLiveLink</code> scene.</p>
+<h2 id="step-7-run-ml-agent"><strong>Step 7:</strong> Run ML-Agent</h2>
+<hr>
+<p>Open the <code>ML-Assembly\Timber-Assembly</code> directory, and open a terminal window. Run the following command to start the ML-Agent:</p>
+<p>Start the virtual environment</p>
+<pre><code>venv\Scripts\activate
+</code></pre>
+<p>Start the ML-Agent</p>
+<pre><code>mlagents-learn --run-id=Test
+</code></pre>
+<p>Once the ML-Agent is running, you should see the following output:</p>
+<pre><code>[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+</code></pre>
+<p><img src="../../Images/ml-agent-console-play.png" alt="image"></p>
+<p>At this point you can press the play button in Unity to start the training process. The ML-Agent will create action and send a <code>csv</code> string to Grasshopper via the UDP protocol (with default port at <code>6000</code>) and wait for a response from Grasshopper. Grasshopper will recieve action from ML-Agent and update the environment, then it will send a JSON object back to the ML-Agent via the UDP protocol (with default port at <code>6001</code>). The ML-Agent will then use the JSON object recieved to observe and update action and repeat the process.</p>
+<blockquote>
+<p>Note: For the training to continue running, the Unity window must be both active and placed at the forefront. If the window is minimized, de-prioritized, or not the active window on your screen, the training process will pause until Unity is once again the primary active window. It's essential to keep this window open and focused to ensure uninterrupted training.</p>
+</blockquote>
+<blockquote>
+<p>If you encounter the following error:</p>
+<pre><code>&quot;Previous data from this run ID was found.&quot;
+</code></pre>
+<p>Use a different <code>run-id</code> or override the previous data by adding the <code>--force</code> flag:</p>
+<pre><code>mlagents-learn --run-id=Test --force
+</code></pre>
+</blockquote>
 </article>
                 </div>
 
