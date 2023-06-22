@@ -1,8 +1,8 @@
-- name: Setup
-  href: setup/toc.yml
-
 - name: Getting Started
   href: get_started/toc.yml
+
+- name: Setup
+  href: setup/toc.yml
 
 - name: Concept
   href: concept/toc.yml
