@@ -16,7 +16,7 @@ Optional (for development):
 
 ## Clone the repository
 Clone the repository to your local machine by running following command in your terminal:
-```
+```powershell
 git clone https://github.com/sean1832/ML-Assembly.git
 ```
 You can also [use Github Desktop to clone the repository](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop).
@@ -25,7 +25,7 @@ Otherwise you can [download the repository as a zip file](https://github.com/sea
 
 ## Update the repository
 To update the repository, run the following command in your terminal:
-```
+```powershell
 git pull
 ```
 You can also [use Github Desktop to update the repository](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch).
