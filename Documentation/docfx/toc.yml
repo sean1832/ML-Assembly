@@ -1,6 +1,6 @@
-- name: Docs
+- name: Articles
   href: articles/
-- name: API
+- name: API Documentation
   href: api/
 - name: GitHub
   href: https://github.com/sean1832/ML-Assembly
