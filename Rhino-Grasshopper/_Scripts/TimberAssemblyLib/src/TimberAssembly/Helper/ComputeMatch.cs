@@ -261,6 +261,11 @@ namespace TimberAssembly.Helper
                         {
                             break;
                         }
+                        if (totalVolume > target.Volume())
+                        {
+                            isOversize = true;
+                            break;
+                        }
                         // If a dimension of the target exceeds the corresponding dimension of the optimal
                         // orientation of the target, calculate the residual in that dimension.
                         if (tempTargetBin[i] > tempSubjectBin[i])

@@ -284,8 +284,8 @@ namespace TestTimberAssembly
             List<Agent> salvages = new List<Agent>()
             {
                 new Agent(dimension : new Vector3D(2.5, 7, 4)),
-                new Agent(dimension : new Vector3D(2.5, 7, 2)),
-                new Agent(dimension : new Vector3D(2.5, 7, 2)),
+                new Agent(dimension : new Vector3D(2.5, 7, 1)),
+                new Agent(dimension : new Vector3D(5, 1.5, 7)),
                 new Agent(dimension : new Vector3D(2, 3, 6)), // this will be remain
                 new Agent(dimension : new Vector3D(7, 8, 9)) // this will be remain
             };
